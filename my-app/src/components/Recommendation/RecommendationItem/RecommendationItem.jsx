@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
+import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
 const RecommendationItem = ({ data }) => {
     const { name, price, oldPrice, place, size, photoPath, inFavorite } = data;
@@ -19,17 +20,18 @@ const RecommendationItem = ({ data }) => {
             <Text style={styles.oldPrice}>
                 {oldPrice}
             </Text>
-        </View>
-    )
+        </View>)
         :
-        <Text style={styles.price}>{price}</Text>;
+        <View style={styles.priceBlock}>
+            <Text style={styles.price}>{price}</Text>
+        </View>
 
     return (
         <View style={styles.recommendation_item}>
             <Image source={photoPath} style={styles.recommendation_item_photo} alt={name} />
             <View style={styles.recommendation_item_block}>
                 {priceBlock}
-                {/* <AddToFavoriteButton inFavorite={inFavorite} /> */}
+                <AddToFavoriteButton inFavorite={inFavorite} />
             </View>
             <View style={styles.recommendation_item_info}>
                 <Text style={styles.recommendation_item_info_name}>{name}</Text>
@@ -50,6 +52,10 @@ const styles = StyleSheet.create({
         height: 170,
         borderRadius: 10,
         marginBottom: 10,
+    },
+    recommendation_item_block: {
+        flex: 1,
+        flexDirection: 'row'
     },
     priceBlock: {
         flex: 1,

@@ -1,5 +1,4 @@
 // import { Link } from 'react-router-dom';
-import React, { useState } from "react";
 import { StyleSheet, Image, Text, TouchableOpacity, View, Linking } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
