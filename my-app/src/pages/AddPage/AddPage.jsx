@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
 import FooterNavbar from '../../components/FooterNavbar/FooterNavbar';
 
-export default function ApartmentsPage({ navigation }) {
+export default function AddPage({ navigation }) {
 
     return (
         <>
@@ -13,5 +13,4 @@ export default function ApartmentsPage({ navigation }) {
         </>
     );
 }
-
 

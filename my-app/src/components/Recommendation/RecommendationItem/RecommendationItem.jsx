@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     },
     recommendation_item_photo: {
         width: '100%',
+        height: 170,
         borderRadius: 10,
         marginBottom: 10,
     },

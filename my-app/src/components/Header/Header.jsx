@@ -8,7 +8,7 @@ export default function Header() {
         <View style={styles.header}>
             <View style={styles.header_block}>
                 <TouchableOpacity style={styles.button} onPress={() => { alert("you clicked me") }}>
-                    <Image style={styles.buttonImg} source={require("../../../assets/Hamburger_icon.png")} />
+                    <Image style={styles.buttonImg} source={require("../../../assets/icon/Hamburger_icon.png")} />
                 </TouchableOpacity>
 
                 <View style={styles.input_block}>
@@ -20,17 +20,17 @@ export default function Header() {
                         keyboardType="default"
                     />
                     <TouchableOpacity style={styles.searchButton} onPress={() => { alert("you clicked me") }}>
-                        <Image style={styles.buttonImg} source={require("../../../assets/search_icon-01.png")} />
+                        <Image style={styles.buttonImg} source={require("../../../assets/icon/search_icon-01.png")} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.buttonBar}>
                     <TouchableOpacity style={styles.bellButton} onPress={() => { alert("you clicked me") }}>
-                        <Image style={styles.bellButtonImg} source={require("../../../assets/bell_icon.png")} />
+                        <Image style={styles.bellButtonImg} source={require("../../../assets/icon/bell_icon.png")} />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.userIcon} onPress={() => { alert("you clicked me") }}>
-                        <Image style={styles.userPhotoImg} source={require("../../../assets/user_photo.png")} />
+                        <Image style={styles.userPhotoImg} source={require("../../../assets/icon/user_photo.png")} />
                     </TouchableOpacity>
                 </View>
             </View>

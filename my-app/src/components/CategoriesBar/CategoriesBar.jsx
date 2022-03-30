@@ -40,9 +40,10 @@ export default function CategoriesBar() {
 
     const RenderItem = ({ item, id }) => {
         const backgroundColor = item.id === selectedId ? "whitesmoke" : "black";
-
         return (
-            <TouchableOpacity key={id} onPress={() => setSelectedId(item.id)} style={[styles.categories_item, backgroundColor]}>
+            <TouchableOpacity key={id}
+                onPress={() => setSelectedId(item.id)}
+                style={[styles.categories_item, backgroundColor]}>
                 <Image style={styles.buttonImg} source={item.uri} />
                 <Text
                     style={styles.categories_item_text}
@@ -83,17 +84,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'lightgray',
         borderRadius: 5,
-        paddingVertical: 10,
         paddingHorizontal: 22,
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 10,
         marginTop: 5,
-        height: 110,
+        height: 90,
     },
     categories_item_text: {
         marginTop: 10,
         fontSize: 10,
     }
-
 });
