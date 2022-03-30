@@ -35,7 +35,6 @@ export default function Header() {
                 </View>
             </View>
         </View>
-
     );
 }
 
@@ -45,10 +44,9 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         height: 42,
         width: '100%',
-        borderBottomColor: '#e6ecf5',
-        borderBottomWidth: 1,
+        borderBottomColor: '#f2f2f2',
+        borderBottomWidth: 1.5,
         paddingBottom: 15,
-
     },
 
     header_block: {
@@ -56,7 +54,6 @@ const styles = StyleSheet.create({
         height: 40,
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'space-between',
     },
@@ -86,8 +83,8 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 0,
         borderBottomLeftRadius: 5,
         borderTopLeftRadius: 5,
-        borderColor: '#e6ecf5',
-        borderWidth: 1,
+        borderColor: 'lightgray',
+        borderWidth: 1.5,
         borderStyle: 'solid',
         height: 40,
         margin: 0,
