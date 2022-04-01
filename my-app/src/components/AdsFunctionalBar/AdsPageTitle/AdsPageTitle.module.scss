@@ -1,0 +1,28 @@
+@import "../../../scss/variables";
+
+.adsHeader {
+    font-size: 23.5px;
+    margin-top: 37px;
+    margin-bottom: 5px;
+}
+.adsQueryNumber {
+    font-size: 13px;
+}
+@media screen and (max-width: 710px) {
+    .adsHeaderBlock {
+        margin-left: 7vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    .adsHeaderBlock {
+        margin-left: 4.3vw;
+    }
+    .adsHeader {
+        font-size: 20px;
+        margin-top: 32px;
+        margin-bottom: 4px;
+    }
+    .adsQueryNumber {
+        font-size: 12px;
+    }
+}

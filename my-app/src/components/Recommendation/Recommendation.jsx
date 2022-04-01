@@ -31,8 +31,6 @@ const Recommendation = () => {
 
 export default Recommendation;
 
-
-
 const styles = StyleSheet.create({
     main: {
         width: '100%',

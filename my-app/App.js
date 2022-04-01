@@ -73,7 +73,7 @@ export default function App() {
                 },
                 style: {
                     borderTopColor: '#66666666',
-                    backgroundColor: 'transparent',
+                    backgroundColor: 'white',
                     elevation: 10,
                 },
                 headerShown: false,

@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 
 import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
 import Recommendation from '../../components/Recommendation/Recommendation';
-// import FooterNavbar from '../../components/FooterNavbar/FooterNavbar';
 
 export default function HomePage({ navigation }) {
 
@@ -19,21 +18,24 @@ export default function HomePage({ navigation }) {
         return <AppLoading />;
     }
     return (
-        <>
+        <View style={styles.body}>
+            <Header />
             <ScrollView
                 horizontal={false}
-                style={styles.body}
+                style={styles.container}
             >
-                <Header />
                 <CategoriesBar navigation={navigation} />
                 <Recommendation />
             </ScrollView>
-            {/* <FooterNavbar navigation={navigation} /> */}
-        </>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'white',
+        fontFamily: 'Regular',
+    },
     body: {
         backgroundColor: 'white',
         flex: 9,

@@ -40,6 +40,7 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     header: {
+        backgroundColor: 'white',
         marginTop: 45,
         paddingLeft: 10,
         height: 42,

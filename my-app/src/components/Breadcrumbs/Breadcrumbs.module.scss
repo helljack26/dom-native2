@@ -1,0 +1,25 @@
+@import "../../scss/_variables.scss";
+
+.breadcrumbs {
+    font-family: "Rubik-Light";
+    font-size: 13.5px;
+    .ads {
+        color: $second-black;
+        cursor: pointer;
+    }
+    .page {
+        color: $font_black;
+        cursor: default;
+    }
+}
+@media screen and (max-width: 710px) {
+    .breadcrumbs {
+        margin-left: 7vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    .breadcrumbs {
+        margin-left: 4.2vw;
+        font-size: 12px;
+    }
+}
