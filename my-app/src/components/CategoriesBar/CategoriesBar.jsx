@@ -6,49 +6,53 @@ const CATEGORIES = [
     {
         id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
         title: "Квартиры",
-        path: "/apartments",
+        path: "ApartmentsPage",
         uri: require("../../../assets/categories-icon/apartment_categorie.png"),
     },
     {
         id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
         title: "Дома",
-        path: "/houses",
+        path: "HousesPage",
         uri: require("../../../assets/categories-icon/houses_categorie.png"),
     },
     {
         id: "58694a0f-3da1-471f-bd96-145571e29d72",
         title: "Участки",
-        path: "/plots",
+        path: "PlotsPage",
         uri: require("../../../assets/categories-icon/plots_categorie.png"),
     },
     {
         id: "58694a0f-3da1-471f-bd96-145571e29d73",
         title: "Коммерция",
-        path: "/commerce",
+        path: "CommercePage",
         uri: require("../../../assets/categories-icon/commerce_categorie.png"),
     },
     {
         id: "58694a0f-3da1-471f-bd96-145571e29d74",
         title: "Аренда",
-        path: "/rent",
+        path: "RentPage",
         uri: require("../../../assets/categories-icon/rent_categorie.png"),
     },
 ];
 
-export default function CategoriesBar() {
+export default function CategoriesBar({ navigation }) {
     const [selectedId, setSelectedId] = useState(null);
 
     const RenderItem = ({ item, id }) => {
         const backgroundColor = item.id === selectedId ? "whitesmoke" : "black";
         return (
             <TouchableOpacity key={id}
-                onPress={() => setSelectedId(item.id)}
-                style={[styles.categories_item, backgroundColor]}>
+                onPress={() => {
+                    return navigation.navigate(item.path),
+                        setSelectedId(item.id)
+                }
+                }
+                style={[styles.categories_item, backgroundColor]} >
                 <Image style={styles.buttonImg} source={item.uri} />
                 <Text
                     style={styles.categories_item_text}
                 >{item.title}</Text>
-            </TouchableOpacity>
+            </TouchableOpacity >
         );
     };
     return (

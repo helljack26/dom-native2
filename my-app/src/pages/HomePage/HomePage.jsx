@@ -6,7 +6,7 @@ import { useFonts } from 'expo-font';
 import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
 import Recommendation from '../../components/Recommendation/Recommendation';
-import FooterNavbar from '../../components/FooterNavbar/FooterNavbar';
+// import FooterNavbar from '../../components/FooterNavbar/FooterNavbar';
 
 export default function HomePage({ navigation }) {
 
@@ -25,10 +25,10 @@ export default function HomePage({ navigation }) {
                 style={styles.body}
             >
                 <Header />
-                <CategoriesBar />
+                <CategoriesBar navigation={navigation} />
                 <Recommendation />
             </ScrollView>
-            <FooterNavbar navigation={navigation} />
+            {/* <FooterNavbar navigation={navigation} /> */}
         </>
     );
 }

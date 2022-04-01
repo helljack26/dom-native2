@@ -1,15 +1,13 @@
 import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
-import FooterNavbar from '../../components/FooterNavbar/FooterNavbar';
 
-export default function FavoritePage({ navigation }) {
+export default function FavoritePage() {
 
     return (
         <>
             <Header />
             <CategoriesBar />
 
-            <FooterNavbar navigation={navigation} />
         </>
     );
 }

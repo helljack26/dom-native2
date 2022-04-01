@@ -2,6 +2,8 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from './src/pages/HomePage/HomePage.jsx';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
 {/* Categories */ }
 import ApartmentsPage from './src/pages/ApartmentsPage/ApartmentsPage.jsx'
@@ -15,30 +17,95 @@ import FavoritePage from './src/pages/FavoritePage/FavoritePage.jsx'
 import CollectionsPage from './src/pages/CollectionsPage/CollectionsPage.jsx'
 import ChatPage from './src/pages/ChatPage/ChatPage.jsx'
 
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName="Homepage"
-      screenOptions={{
-        headerShown: false
-      }}
-    >
+    const RenderNavbarItem = ({ name, routeName, focused }) => {
 
-      <Stack.Screen name="Home" component={HomePage} />
-      {/* Categories */}
-      <Stack.Screen name="ApartmentsPage" component={ApartmentsPage} />
-      <Stack.Screen name="HousesPage" component={HousesPage} />
-      <Stack.Screen name="PlotsPage" component={PlotsPage} />
-      <Stack.Screen name="CommercePage" component={CommercePage} />
-      <Stack.Screen name="RentPage" component={RentPage} />
-      {/* Navbar */}
-      <Stack.Screen name="AddPage" component={AddPage} />
-      <Stack.Screen name="FavoritePage" component={FavoritePage} />
-      <Stack.Screen name="CollectionsPage" component={CollectionsPage} />
-      <Stack.Screen name="ChatPage" component={ChatPage} />
+        return (
+            <>
+                <Image
+                    source={name}
+                    style={focused ? styles.active : styles.footerNavbar_img}
+                    alt={`Иконка}`} />
+                <Text numberOfLines={1}
+                    style={{ fontSize: 10, color: focused ? '#0072db' : '#222' }}>
+                    {routeName}
+                </Text>
+            </>
+        );
+    };
 
-    </Stack.Navigator>
-  </NavigationContainer>
+
+    return <NavigationContainer>
+        <Tab.Navigator
+            screenOptions={({ route }) => ({
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused }) => {
+                    let iconName;
+                    if (route.name === 'Объявления') {
+                        iconName = focused ? require("./assets/icon/Navbar/home_active_icon.png") : require("./assets/icon/Navbar/home_icon.png");
+                    } else if (route.name === 'Избранное') {
+                        iconName = focused ? require("./assets/icon/Navbar/favorite_active_icon.png") : require("./assets/icon/Navbar/favorite_icon.png");
+                    } else if (route.name === 'Создать') {
+                        iconName = focused ? require("./assets/icon/Navbar/add_active_icon.png") : require("./assets/icon/Navbar/add_icon.png");
+                    } else if (route.name === 'Подборки') {
+                        iconName = focused ? require("./assets/icon/Navbar/collections_active_icon.png") : require("./assets/icon/Navbar/collections_icon.png");
+                    } else if (route.name === 'Чаты') {
+                        iconName = focused ? require("./assets/icon/Navbar/chat_active_icon.png") : require("./assets/icon/Navbar/chat_icon.png");
+                    }
+                    return <RenderNavbarItem name={iconName} routeName={route.name} focused={focused} />
+                },
+                style: {
+                    borderTopColor: '#66666666',
+                    backgroundColor: 'transparent',
+                    elevation: 10,
+                },
+                headerShown: false,
+                showLabel: false,
+            })}
+        >
+            <Tab.Screen name="Объявления" component={HomePage} />
+            <Tab.Screen name="Избранное" component={FavoritePage} />
+            <Tab.Screen name="Создать" component={AddPage} />
+            <Tab.Screen name="Подборки" component={CollectionsPage} />
+            <Tab.Screen name="Чаты" component={ChatPage} />
+        </Tab.Navigator>
+        <Stack.Screen name="Home" component={HomePage} />
+        {/* Categories */}
+        <Stack.Screen name="ApartmentsPage" component={ApartmentsPage} />
+        <Stack.Screen name="HousesPage" component={HousesPage} />
+        <Stack.Screen name="PlotsPage" component={PlotsPage} />
+        <Stack.Screen name="CommercePage" component={CommercePage} />
+        <Stack.Screen name="RentPage" component={RentPage} />
+    </NavigationContainer >
 }
+
+
+const styles = StyleSheet.create({
+    footerNavbar: {
+        height: 50,
+        width: '100%',
+        flex: 0.08,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        paddingHorizontal: 10,
+    },
+    footerNavbar_item: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 9,
+    },
+    footerNavbar_img: {
+        width: 20,
+        resizeMode: 'contain',
+        height: 20,
+    },
+    active: {
+        width: 20,
+        height: 20,
+        resizeMode: 'contain',
+    }
+});

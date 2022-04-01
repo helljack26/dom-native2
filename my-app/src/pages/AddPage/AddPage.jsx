@@ -1,15 +1,12 @@
 import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
-import FooterNavbar from '../../components/FooterNavbar/FooterNavbar';
 
-export default function AddPage({ navigation }) {
+export default function AddPage() {
 
     return (
         <>
             <Header />
             <CategoriesBar />
-
-            <FooterNavbar navigation={navigation} />
         </>
     );
 }
