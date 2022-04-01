@@ -5,7 +5,7 @@ import HomePage from './src/pages/HomePage/HomePage.jsx';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
-{/* Categories */ }
+// Categories 
 import ApartmentsPage from './src/pages/ApartmentsPage/ApartmentsPage.jsx'
 import HousesPage from './src/pages/HousesPage/HousesPage.jsx'
 import PlotsPage from './src/pages/PlotsPage/PlotsPage.jsx'
@@ -20,9 +20,24 @@ import ChatPage from './src/pages/ChatPage/ChatPage.jsx'
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+function Home() {
+    return <Stack.Navigator
+        screenOptions={() => ({
+            tabBarShowLabel: false,
+            headerShown: false,
+        })}>
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="ApartmentsPage" component={ApartmentsPage} />
+        <Stack.Screen name="HousesPage" component={HousesPage} />
+        <Stack.Screen name="PlotsPage" component={PlotsPage} />
+        <Stack.Screen name="CommercePage" component={CommercePage} />
+        <Stack.Screen name="RentPage" component={RentPage} />
+    </Stack.Navigator>
+}
+
+
 export default function App() {
     const RenderNavbarItem = ({ name, routeName, focused }) => {
-
         return (
             <>
                 <Image
@@ -36,7 +51,6 @@ export default function App() {
             </>
         );
     };
-
 
     return <NavigationContainer>
         <Tab.Navigator
@@ -64,34 +78,19 @@ export default function App() {
                 },
                 headerShown: false,
                 showLabel: false,
-            })}
-        >
-            <Tab.Screen name="Объявления" component={HomePage} />
+            })}  >
+            <Tab.Screen name="Объявления" component={Home} />
             <Tab.Screen name="Избранное" component={FavoritePage} />
             <Tab.Screen name="Создать" component={AddPage} />
             <Tab.Screen name="Подборки" component={CollectionsPage} />
             <Tab.Screen name="Чаты" component={ChatPage} />
         </Tab.Navigator>
-        <Stack.Screen name="Home" component={HomePage} />
-        {/* Categories */}
-        <Stack.Screen name="ApartmentsPage" component={ApartmentsPage} />
-        <Stack.Screen name="HousesPage" component={HousesPage} />
-        <Stack.Screen name="PlotsPage" component={PlotsPage} />
-        <Stack.Screen name="CommercePage" component={CommercePage} />
-        <Stack.Screen name="RentPage" component={RentPage} />
-    </NavigationContainer >
+    </NavigationContainer>
 }
 
 
 const styles = StyleSheet.create({
-    footerNavbar: {
-        height: 50,
-        width: '100%',
-        flex: 0.08,
-        backgroundColor: 'white',
-        flexDirection: 'row',
-        paddingHorizontal: 10,
-    },
+
     footerNavbar_item: {
         flex: 1,
         justifyContent: 'center',

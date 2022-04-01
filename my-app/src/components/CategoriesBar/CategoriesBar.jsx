@@ -59,8 +59,7 @@ export default function CategoriesBar({ navigation }) {
         <SafeAreaView>
             <ScrollView
                 style={styles.categories}
-                horizontal={true}
-            >
+                horizontal={true} >
                 <View style={styles.categories_block}>
                     {CATEGORIES.map((item, id) => {
                         return <RenderItem item={item} key={id} />
