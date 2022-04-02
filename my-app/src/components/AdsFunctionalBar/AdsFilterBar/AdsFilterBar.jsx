@@ -38,11 +38,10 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: 'row',
-        width: "96%",
+        width: "100%",
         borderColor: 'black',
         borderWidth: 1,
         borderStyle: 'solid',
-        marginHorizontal: "2%",
         marginTop: 23,
         backgroundColor: "white",
         borderRadius: 5

@@ -1,11 +1,10 @@
 import COLORS from '../../res/colors'
 import FONTS from '../../res/fonts'
 
-import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Breadcrumbs = ({ title, ads }) => {
-
     const navigation = useNavigation();
 
     const isAds = ads && <TouchableOpacity
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     },
     ads: {
         fontSize: 12,
-        fontFamily: FONTS.light,
+        fontFamily: FONTS.regular,
         color: COLORS.secondBlack,
     },
     page: {

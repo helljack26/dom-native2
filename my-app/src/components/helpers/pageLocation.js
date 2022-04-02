@@ -2,9 +2,7 @@ import { useRoute } from '@react-navigation/native';
 
 const PageLocation = () => {
     const route = useRoute();
-
     let title, ads
-
     switch (route.name) {
         case 'ApartmentsPage':
             title = 'Квартиры'

@@ -1,8 +1,10 @@
+
+import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Image, Text } from 'react-native';
 
 import { useFonts } from "@use-expo/font";
 import AppLoading from 'expo-app-loading';
@@ -45,7 +47,6 @@ const customFonts = {
 };
 export default function App() {
     const [isLoaded] = useFonts(customFonts);
-
     if (!isLoaded) {
         return <AppLoading />;
     }

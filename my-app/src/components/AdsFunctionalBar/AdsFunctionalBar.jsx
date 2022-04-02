@@ -1,34 +1,27 @@
 import COLORS from '../../res/colors'
-import FONTS from '../../res/fonts'
 
-
-import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Breadcrumbs from '../Breadcrumbs'
 import AdsPageTitle from './AdsPageTitle'
 import AdsFilterBar from './AdsFilterBar'
-// import AdsButtonBar from './AdsButtonBar'
-// import ButtonGalleryMap from './ButtonGalleryMap'
+import AdsButtonBar from './AdsButtonBar'
 
 import PageLocation from '../helpers/pageLocation'
-
 
 const AdsFunctionalBar = () => {
 
     const { title, ads } = PageLocation();
     return (
-        <View style={styles.adsFunctionalBar}>
-            <Breadcrumbs title={title} ads={ads} />
-            <AdsPageTitle title={title} />
-            {/* TODO здесь нужно отправлять в фильтра данные */}
-            <AdsFilterBar />
-            {/*
-            <div className={style.button_bar}>
-                <AdsButtonBar />
-                <ButtonGalleryMap />
-            </div> */}
-
-        </View>
+        <>
+            <View style={styles.adsFunctionalBar}>
+                <Breadcrumbs title={title} ads={ads} />
+                <AdsPageTitle title={title} />
+                {/* TODO здесь нужно отправлять в фильтра данные */}
+                <AdsFilterBar />
+            </View>
+            <AdsButtonBar />
+        </>
     )
 }
 
@@ -38,8 +31,7 @@ const styles = StyleSheet.create({
     adsFunctionalBar: {
         width: '100%',
         paddingHorizontal: 15,
-        paddingVertical: 15,
+        paddingVertical: 18,
         backgroundColor: COLORS.backgroundGray,
-
     },
 });

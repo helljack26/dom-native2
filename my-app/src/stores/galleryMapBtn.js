@@ -10,7 +10,6 @@ class GalleryButtonStore {
         })
     }
     changeView() {
-        console.log(this.btnState);
         this.btnState = this.btnState ? false : true
     }
 }
