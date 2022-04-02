@@ -1,10 +1,13 @@
-import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomePage from './src/pages/HomePage/HomePage.jsx';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
+import { useFonts } from "@use-expo/font";
+import AppLoading from 'expo-app-loading';
+
+import HomePage from './src/pages/HomePage/HomePage.jsx';
 // Categories 
 import ApartmentsPage from './src/pages/ApartmentsPage/ApartmentsPage.jsx'
 import HousesPage from './src/pages/HousesPage/HousesPage.jsx'
@@ -35,8 +38,18 @@ function Home() {
     </Stack.Navigator>
 }
 
-
+const customFonts = {
+    RubikLight: require('./assets/fonts/Rubik-Light.otf'),
+    RubikRegular: require('./assets/fonts/Rubik-Regular.otf'),
+    RubikMedium: require('./assets/fonts/Rubik-Medium.otf'),
+};
 export default function App() {
+    const [isLoaded] = useFonts(customFonts);
+
+    if (!isLoaded) {
+        return <AppLoading />;
+    }
+
     const RenderNavbarItem = ({ name, routeName, focused }) => {
         return (
             <>

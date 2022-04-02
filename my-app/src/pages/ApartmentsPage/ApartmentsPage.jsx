@@ -7,7 +7,7 @@ import Header from '../../components/Header/Header';
 import AdsFunctionalBar from '../../components/AdsFunctionalBar/AdsFunctionalBar';
 import Recommendation from '../../components/Recommendation/Recommendation';
 
-export default function ApartmentsPage({ navigation }) {
+export default function ApartmentsPage() {
     let [fontsLoaded] = useFonts({
         'Light': require('../../../assets/fonts/Rubik-Light.otf'),
         'Regular': require('../../../assets/fonts/Rubik-Regular.otf'),
@@ -22,7 +22,7 @@ export default function ApartmentsPage({ navigation }) {
             <ScrollView
                 horizontal={false}
                 style={styles.container}>
-                <AdsFunctionalBar navigation={navigation} />
+                <AdsFunctionalBar />
                 <Recommendation />
                 {/* // TODO change to catalog */}
             </ScrollView>

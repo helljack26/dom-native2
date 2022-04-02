@@ -1,27 +1,28 @@
-import { useLocation } from "react-router-dom";
+import { useRoute } from '@react-navigation/native';
 
 const PageLocation = () => {
-    const location = useLocation();
+    const route = useRoute();
+
     let title, ads
 
-    switch (location.pathname) {
-        case '/apartments':
+    switch (route.name) {
+        case 'ApartmentsPage':
             title = 'Квартиры'
             ads = true
             break;
-        case '/houses':
+        case 'HousesPage':
             title = 'Дома'
             ads = true
             break;
-        case '/plots':
+        case 'PlotsPage':
             title = 'Участки'
             ads = true
             break;
-        case '/commerce':
+        case 'CommercePage':
             title = 'Коммерция'
             ads = true
             break;
-        case '/rent':
+        case 'RentPage':
             title = 'Аренда'
             ads = true
             break;

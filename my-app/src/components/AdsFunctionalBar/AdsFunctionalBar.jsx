@@ -7,14 +7,16 @@ import Breadcrumbs from '../Breadcrumbs'
 // import AdsButtonBar from './AdsButtonBar'
 // import ButtonGalleryMap from './ButtonGalleryMap'
 
-// import PageLocation from '../helpers/pageLocation'
+import PageLocation from '../helpers/pageLocation'
 
-const AdsFunctionalBar = ({ navigation }) => {
-    console.log(navigation.navigate);
+
+const AdsFunctionalBar = () => {
+
+    const { title, ads } = PageLocation();
     return (
         <View style={styles.adsFunctionalBar}>
-            <Breadcrumbs navigation={navigation} />
-            {/* <Breadcrumbs title={title} ads={ads} /> */}
+            <Breadcrumbs title={title} ads={ads} />
+            {/* <Breadcrumbs  /> */}
             {/* <AdsPageTitle title={title} /> */}
             {/*TODO еще нужно посылать город в тайтл и количество обьектов */}
             {/* <AdsFilterBar /> */}
