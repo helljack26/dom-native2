@@ -1,4 +1,5 @@
 import COLORS from '../../res/colors'
+import FONTS from '../../res/fonts'
 
 import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -8,13 +9,13 @@ const Breadcrumbs = ({ title, ads }) => {
     const navigation = useNavigation();
 
     const isAds = ads && <TouchableOpacity
-        onPress={() => navigation.navigate('Home')}
-        style={styles.ads}>
-        <Text>Объявления&nbsp; | &nbsp;</Text>
+        onPress={() => navigation.navigate('Home')}>
+        <Text
+            style={styles.ads}
+        >Объявления&nbsp; | &nbsp;</Text>
     </TouchableOpacity>
     return (
         <View style={styles.breadcrumbs}>
-
             {isAds}
             <Text style={styles.page}>{title}</Text>
         </View>
@@ -23,19 +24,20 @@ const Breadcrumbs = ({ title, ads }) => {
 export default Breadcrumbs;
 
 const styles = StyleSheet.create({
-    // TODO check font
+
     breadcrumbs: {
-        fontFamily: "Medium",
-        fontSize: 13.5,
+
         flex: 1,
         flexDirection: 'row'
     },
     ads: {
-
+        fontSize: 12,
+        fontFamily: FONTS.light,
         color: COLORS.secondBlack,
     },
     page: {
-        fontFamily: "RubikMedium",
+        fontSize: 12,
+        fontFamily: FONTS.regular,
         color: COLORS.mainBlack,
     }
 })

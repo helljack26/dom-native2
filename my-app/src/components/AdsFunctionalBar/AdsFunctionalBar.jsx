@@ -1,7 +1,11 @@
+import COLORS from '../../res/colors'
+import FONTS from '../../res/fonts'
+
+
 import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, View } from 'react-native';
 
 import Breadcrumbs from '../Breadcrumbs'
-// import AdsPageTitle from './AdsPageTitle'
+import AdsPageTitle from './AdsPageTitle'
 // import AdsFilterBar from './AdsFilterBar'
 // import AdsFilterBarMobile from './AdsFilterBarMobile'
 // import AdsButtonBar from './AdsButtonBar'
@@ -16,8 +20,7 @@ const AdsFunctionalBar = () => {
     return (
         <View style={styles.adsFunctionalBar}>
             <Breadcrumbs title={title} ads={ads} />
-            {/* <Breadcrumbs  /> */}
-            {/* <AdsPageTitle title={title} /> */}
+            <AdsPageTitle title={title} />
             {/*TODO еще нужно посылать город в тайтл и количество обьектов */}
             {/* <AdsFilterBar /> */}
             {/* TODO здесь нужно отправлять в фильтра данные */}
@@ -37,6 +40,8 @@ const styles = StyleSheet.create({
     adsFunctionalBar: {
         width: '100%',
         paddingHorizontal: 15,
-        paddingVertical: 10,
+        paddingVertical: 15,
+        backgroundColor: COLORS.backgroundGray,
+
     },
 });
