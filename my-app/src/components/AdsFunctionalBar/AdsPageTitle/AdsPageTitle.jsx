@@ -12,7 +12,7 @@ const AdsPageTitle = ({ title, city = 'Сочи', queryNumber = 143 }) => {
         </View>
         <View>{queryNumber &&
             <Text style={styles.adsQueryNumber}>{queryNumber}
-                <Text style={styles.adsQueryNumber}>объекта</Text>
+                <Text style={styles.adsQueryNumber}> объектов</Text>
             </Text>}
         </View>
     </View>

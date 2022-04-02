@@ -6,8 +6,7 @@ import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, Vi
 
 import Breadcrumbs from '../Breadcrumbs'
 import AdsPageTitle from './AdsPageTitle'
-// import AdsFilterBar from './AdsFilterBar'
-// import AdsFilterBarMobile from './AdsFilterBarMobile'
+import AdsFilterBar from './AdsFilterBar'
 // import AdsButtonBar from './AdsButtonBar'
 // import ButtonGalleryMap from './ButtonGalleryMap'
 
@@ -21,10 +20,9 @@ const AdsFunctionalBar = () => {
         <View style={styles.adsFunctionalBar}>
             <Breadcrumbs title={title} ads={ads} />
             <AdsPageTitle title={title} />
-            {/*TODO еще нужно посылать город в тайтл и количество обьектов */}
-            {/* <AdsFilterBar /> */}
             {/* TODO здесь нужно отправлять в фильтра данные */}
-            {/* <AdsFilterBarMobile />
+            <AdsFilterBar />
+            {/*
             <div className={style.button_bar}>
                 <AdsButtonBar />
                 <ButtonGalleryMap />
