@@ -1,11 +1,12 @@
 import COLORS from '../../../res/colors'
 import FONTS from '../../../res/fonts'
 import IMAGES from '../../../res/images'
-import { StyleSheet, TouchableOpacity, Image, View, Text, } from 'react-native';
 
 import { useState } from 'react'
 import styled from 'styled-components/native';
+
 const ArrowDownIcon = IMAGES.arrow_down;
+// Styles
 const Container = styled.View`
 display: flex;
 justify-content: space-between;
@@ -53,14 +54,11 @@ height: 14px;
 `;
 
 const AdsButtonBar = () => {
-
-
     const [type, setType] = useState(false);
     const sortValue = 'по умолчанию  '
 
     return (
         <Container>
-
             <SortButton>
                 <Title>Сортировка:  <SortValue>
                     {sortValue}

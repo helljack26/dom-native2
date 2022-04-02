@@ -1,10 +1,9 @@
-
 import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, Image, Text } from 'react-native';
+import { StyleSheet, Image, Text, View } from 'react-native';
 
 import { useFonts } from "@use-expo/font";
 import AppLoading from 'expo-app-loading';
@@ -52,17 +51,16 @@ export default function App() {
     }
 
     const RenderNavbarItem = ({ name, routeName, focused }) => {
-        return (
-            <>
-                <Image
-                    source={name}
-                    style={focused ? styles.active : styles.footerNavbar_img}
-                    alt={`Иконка}`} />
-                <Text numberOfLines={1}
-                    style={{ fontSize: 10, color: focused ? '#0072db' : '#222' }}>
-                    {routeName}
-                </Text>
-            </>
+        return (<View style={styles.navbarTab}>
+            <Image
+                source={name}
+                style={focused ? styles.active : styles.footerNavbar_img}
+                alt={`Иконка}`} />
+            <Text numberOfLines={1}
+                style={{ fontSize: 10, marginTop: 3, color: focused ? '#0072db' : '#222' }}>
+                {routeName}
+            </Text>
+        </View>
         );
     };
 
@@ -85,11 +83,7 @@ export default function App() {
                     }
                     return <RenderNavbarItem name={iconName} routeName={route.name} focused={focused} />
                 },
-                style: {
-                    borderTopColor: '#66666666',
-                    backgroundColor: 'white',
-                    elevation: 10,
-                },
+                tabBarStyle: { flex: 0.07, paddingLeft: 10, justifyContent: 'space-between', alignItems: 'center' },
                 headerShown: false,
                 showLabel: false,
             })}  >
@@ -104,21 +98,20 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-
-    footerNavbar_item: {
+    navbarTab: {
         flex: 1,
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 9,
     },
     footerNavbar_img: {
-        width: 20,
+        width: 16,
         resizeMode: 'contain',
-        height: 20,
+        height: 16,
     },
     active: {
-        width: 20,
-        height: 20,
+        width: 16,
+        height: 16,
         resizeMode: 'contain',
     }
 });
