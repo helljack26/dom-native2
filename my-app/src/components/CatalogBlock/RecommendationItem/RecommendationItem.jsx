@@ -1,19 +1,12 @@
+import FONTS from '../../../res/fonts'
 import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
-import AppLoading from 'expo-app-loading';
-import { useFonts } from 'expo-font';
+
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
 const RecommendationItem = ({ data }) => {
     const { name, price, oldPrice, place, size, photoPath, inFavorite } = data;
-    let [fontsLoaded] = useFonts({
-        'Light': require('../../../../assets/fonts/Rubik-Light.otf'),
-        'Regular': require('../../../../assets/fonts/Rubik-Regular.otf'),
-        'Medium': require('../../../../assets/fonts/Rubik-Medium.otf')
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />;
-    }
+
     const priceBlock = oldPrice !== undefined ? (
         <View style={styles.priceBlock}>
             <Text style={styles.newPrice}> {price}</Text>
@@ -31,7 +24,7 @@ const RecommendationItem = ({ data }) => {
             <Image source={photoPath} style={styles.recommendation_item_photo} alt={name} />
             <View style={styles.recommendation_item_block}>
                 {priceBlock}
-                <AddToFavoriteButton inFavorite={inFavorite} />
+                <AddToFavoriteButton inFavorite={inFavorite} isBig={true} />
             </View>
             <View style={styles.recommendation_item_info}>
                 <Text style={styles.recommendation_item_info_name}>{name}</Text>
@@ -49,7 +42,7 @@ const styles = StyleSheet.create({
     },
     recommendation_item_photo: {
         width: '100%',
-        height: 170,
+        height: 198,
         borderRadius: 10,
         marginBottom: 10,
     },
@@ -62,16 +55,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     price: {
-        fontSize: 15,
-        fontFamily: "Medium"
+        fontSize: 14,
+        fontFamily: FONTS.medium
     },
     newPrice: {
         marginRight: 13,
         color: "#0072db",
-        fontFamily: "Medium"
+        fontFamily: FONTS.medium
     },
     oldPrice: {
-        fontFamily: "Medium",
+        fontFamily: FONTS.medium,
         textDecorationLine: "line-through"
     },
     recommendation_item_info: {
@@ -79,18 +72,18 @@ const styles = StyleSheet.create({
         flexDirection: "column",
     },
     recommendation_item_info_name: {
-        fontSize: 19,
-        fontFamily: "Medium",
+        fontSize: 16,
+        fontFamily: FONTS.medium,
         marginBottom: 9,
         marginTop: 10,
     },
     recommendation_item_info_place: {
         fontSize: 11.5,
-        fontFamily: "Light",
+        fontFamily: FONTS.light,
         marginBottom: 5
     },
     recommendation_item_info_size: {
         fontSize: 11.5,
-        fontFamily: "Light"
+        fontFamily: FONTS.light
     },
 });

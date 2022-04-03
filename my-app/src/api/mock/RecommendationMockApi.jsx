@@ -1,4 +1,4 @@
-export const recommendation =
+export const RecommendationMockApi =
     [
         {
             id: 1,

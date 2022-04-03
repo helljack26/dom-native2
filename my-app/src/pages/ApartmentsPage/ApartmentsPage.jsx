@@ -1,21 +1,11 @@
+import FONTS from '../../res/fonts'
 import { StyleSheet, ScrollView, View } from 'react-native';
-
-import AppLoading from 'expo-app-loading';
-import { useFonts } from 'expo-font';
 
 import Header from '../../components/Header/Header';
 import AdsFunctionalBar from '../../components/AdsFunctionalBar/AdsFunctionalBar';
-import Recommendation from '../../components/Recommendation/Recommendation';
-
+import CatalogBlock from '../../components/CatalogBlock/CatalogBlock';
+import { ApartmentMockApi } from '../../api/mock/ApartmentMockApi.jsx'
 export default function ApartmentsPage() {
-    let [fontsLoaded] = useFonts({
-        'Light': require('../../../assets/fonts/Rubik-Light.otf'),
-        'Regular': require('../../../assets/fonts/Rubik-Regular.otf'),
-        'Medium': require('../../../assets/fonts/Rubik-Medium.otf'),
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />;
-    }
     return (
         <View style={styles.body}>
             <Header />
@@ -23,8 +13,7 @@ export default function ApartmentsPage() {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <Recommendation />
-                {/* // TODO change to catalog */}
+                <CatalogBlock data={ApartmentMockApi} catalog={true} />
             </ScrollView>
         </View>
     );
@@ -32,12 +21,12 @@ export default function ApartmentsPage() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        fontFamily: 'Regular',
+        fontFamily: FONTS.regular,
     },
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: 'Regular',
+        fontFamily: FONTS.regular,
     },
 })
 
