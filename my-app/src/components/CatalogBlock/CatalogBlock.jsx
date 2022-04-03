@@ -1,16 +1,11 @@
 import FONTS from '../../res/fonts'
+import IMAGES from '../../res/images'
 import COLORS from '../../res/colors'
 
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-
+import { StyleSheet, View, Text, Image } from 'react-native';
 import CatalogItem from './CatalogItem/CatalogItem'
-import RecommendationItem from './RecommendationItem/RecommendationItem'
-
-import { useRoute } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
-
 import { useGalleryButtonStore } from '../../stores/galleryMapBtn';
 
 import styled from 'styled-components/native';
@@ -24,38 +19,28 @@ width: 92%;
 background-color: white;
 padding-top: 12px;
 `;
-const CatalogBlock = observer(({ data, catalog }) => {
+const CatalogBlock = observer(({ data }) => {
     const { btnState } = useGalleryButtonStore();
-    const route = useRoute();
-    const [isHomePage, setIsHomePage] = useState();
-    useEffect(() => {
-        if (route.name === 'Home') {
-            setIsHomePage(true)
-        } else {
-            setIsHomePage(false)
-        }
-    }, [route.name]);
 
     return (
         <>
-            <Main
-                className={`
-            ${!btnState ? styles.dBlock : styles.dNone} 
-            ${isHomePage && styles.dBlock} `}>
-                <View style={catalog ? styles.main_catalog : styles.main_recommendation}>
+            {  btnState && <Main
+                style={`
+            ${styles.main} } `}>
+                <View style={styles.main_catalog}>
                     {data.map(item => {
-                        return (catalog ?
+                        return (
                             <CatalogItem data={item} key={item.id} />
-                            :
-                            <RecommendationItem data={item} key={item.id} />
                         )
                     })}
                 </View>
-            </Main>
-            {!isHomePage &&
-                <Text style={styles.main_block}>
-                    Карта
-            </Text>
+            </Main>}
+            {
+                !btnState &&
+                <Image
+                    style={styles.map_template}
+                    source={IMAGES.map_template} />
+                // <Text>Карта</Text>
             }
         </>
     )
@@ -74,16 +59,8 @@ const styles = StyleSheet.create({
         height: '100%',
         flex: 1,
         justifyContent: 'space-between',
-        // alignItems: 'flex-start'
     },
-    // main_block: {
-    //     width: '100%',
-    // },
-    // dBlock: {
-    //     visibility: 'visible',
-    // },
-    // dNone: {
-    //     visibility: 'hidden',
-    // },
-
+    map_template: {
+        marginTop: 15,
+    }
 });

@@ -4,7 +4,7 @@ import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
-import CatalogBlock from '../../components/CatalogBlock/CatalogBlock';
+import RecommendationBlock from '../../components/RecommendationBlock/RecommendationBlock';
 
 import { RecommendationMockApi } from '../../api/mock/RecommendationMockApi.jsx'
 export default function HomePage({ navigation }) {
@@ -19,7 +19,7 @@ export default function HomePage({ navigation }) {
                 <Text style={styles.mainHeader}>
                     Рекомендации для вас
                 </Text>
-                <CatalogBlock data={RecommendationMockApi} catalog={false} />
+                <RecommendationBlock data={RecommendationMockApi} />
             </ScrollView>
         </View>
     );

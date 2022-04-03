@@ -8,6 +8,7 @@ const IMAGES = {
     // Icon
     heart_default: require('../../assets/icon/heart_icon.png'),
     heart_active: require('../../assets/icon/heart_active_icon.png'),
+    map_template: require('../../assets/map_template.png'),
 
     // Svg
     arrow_down: ArrowDown,

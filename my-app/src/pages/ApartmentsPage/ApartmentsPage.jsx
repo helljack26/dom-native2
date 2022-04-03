@@ -13,7 +13,7 @@ export default function ApartmentsPage() {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <CatalogBlock data={ApartmentMockApi} catalog={true} />
+                <CatalogBlock data={ApartmentMockApi} />
             </ScrollView>
         </View>
     );
