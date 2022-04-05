@@ -1,0 +1,82 @@
+@import "../../../scss/_variables.scss";
+
+.map {
+    display: none;
+}
+
+@media screen and (max-width: 880px) {
+    .map {
+        display: block;
+        width: 100%;
+        margin-top: 55px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        column-gap: 8px;
+
+        &_btn {
+            white-space: nowrap;
+            bottom: 16px;
+            user-select: none;
+            border-radius: 8px;
+            width: 100%;
+            color: white;
+            font-size: 16px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 0px;
+            background-color: rgba($font_black, 0.7);
+            margin-top: 7px;
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 12px;
+                width: 22px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    .map {
+        display: block;
+        width: 100%;
+        margin-top: 55px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        column-gap: 8px;
+
+        &_btn {
+            white-space: nowrap;
+            bottom: 16px;
+            user-select: none;
+            border-radius: 8px;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 0px;
+            background-color: rgba($font_black, 0.7);
+            margin-top: 7px;
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 12px;
+                width: px;
+            }
+        }
+    }
+}

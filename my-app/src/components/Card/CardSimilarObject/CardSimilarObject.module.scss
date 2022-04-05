@@ -1,0 +1,82 @@
+@import "../../../scss/_variables.scss";
+
+.similar {
+    // padding-bottom: 24px;
+    width: 84vw;
+    padding-left: 2px;
+    margin: 0 auto;
+    margin-top: 89px;
+    h3 {
+        font-size: 22.5px;
+        font-family: $medium-font;
+        margin-bottom: 23px;
+    }
+    &_block {
+        display: grid;
+        width: 100%;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+}
+.map {
+    margin-top: 15px;
+    margin-bottom: -66px;
+    border: none;
+}
+
+.dNone {
+    display: none;
+}
+
+.dBlock {
+    display: block;
+}
+.mt {
+    padding-top: 0;
+}
+@media screen and (max-width: 1099px) {
+    .similar {
+        width: 88vw;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .similar {
+        &_block {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 710px) {
+    .similar {
+        // margin-top: 15px;
+        width: 92vw;
+        &_block {
+            margin-top: 15px;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .similar {
+        padding-top: 0px;
+        width: 92vw;
+        margin: 0 auto;
+
+        &_block {
+            // margin-top: 15px;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            column-gap: 0px;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .similar {
+        &_block {
+            row-gap: 10px;
+        }
+    }
+}

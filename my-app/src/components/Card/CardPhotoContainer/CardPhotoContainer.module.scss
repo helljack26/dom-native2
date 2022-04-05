@@ -1,0 +1,172 @@
+@import "../../../scss/_variables.scss";
+
+.container {
+    position: relative;
+    user-select: none;
+    &_photo {
+        min-height: 490px;
+        margin-top: 24px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+    &_btn {
+        white-space: nowrap;
+        bottom: 16px;
+        border-radius: 8px;
+        width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        color: white;
+        font-size: 13px;
+        font-family: $medium-font;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        padding: 15px 0px;
+        background-color: rgba($font_black, 0.7);
+
+        &:hover {
+            background-color: rgba($font_black, 0.9);
+            color: lightgray;
+        }
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        // min-height: 500px;
+        &_photo {
+            min-height: 390px;
+        }
+        &_btn {
+            white-space: nowrap;
+            bottom: 16px;
+            border-radius: 8px;
+            width: 220px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            color: white;
+            font-size: 13px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            padding: 15px 0px;
+            background-color: rgba($font_black, 0.7);
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 880px) {
+    .container {
+        &_btn {
+            white-space: nowrap;
+            bottom: -55px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            color: white;
+            font-size: 15px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            padding: 15px 0px;
+            background-color: rgba($font_black, 0.7);
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        &_photo {
+            min-height: 290px;
+        }
+        &_btn {
+            white-space: nowrap;
+            bottom: -55px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            color: white;
+            font-size: 16px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            padding: 15px 0px;
+            background-color: rgba($font_black, 0.7);
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 10px;
+                width: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .container {
+        &_photo {
+            min-height: 198px;
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    .container {
+        &_btn {
+            white-space: nowrap;
+            bottom: -55px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            color: white;
+            font-size: 14px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            padding: 15px 0px;
+            background-color: rgba($font_black, 0.7);
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+}

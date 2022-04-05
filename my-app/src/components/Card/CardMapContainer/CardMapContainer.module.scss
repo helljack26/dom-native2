@@ -1,0 +1,151 @@
+@import "../../../scss/_variables.scss";
+
+.map {
+    width: 100%;
+    margin-top: 40px;
+    background: url("../../../img/сard_map.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // max-height: 600px;
+    min-height: 490px;
+    border: 1px solid #e6ecf5;
+    border-radius: 8px;
+    padding: 0px 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    &_btn {
+        white-space: nowrap;
+        bottom: 16px;
+        user-select: none;
+        border-radius: 8px;
+        width: 100%;
+        color: white;
+        font-size: 13px;
+        font-family: $medium-font;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 17px 0px;
+        background-color: rgba($font_black, 0.7);
+        margin-top: 7px;
+
+        &:hover {
+            background-color: rgba($font_black, 0.9);
+            color: lightgray;
+        }
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+.favoriteView {
+    user-select: none;
+    margin-top: 28px;
+    &_block {
+        font-size: 13px;
+        font-family: $light-font;
+        display: flex;
+        margin-left: 3px;
+        margin-bottom: 13px;
+        img {
+            margin-right: 8px;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .map {
+        width: 100%;
+        margin-top: 40px;
+        background: url("../../../img/сard_map.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 390px;
+        border: 1px solid #e6ecf5;
+        border-radius: 8px;
+        padding: 0px 15px;
+        padding-bottom: 15px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        &_btn {
+            white-space: nowrap;
+            bottom: 16px;
+            user-select: none;
+            border-radius: 8px;
+            width: 100%;
+            color: white;
+            font-size: 11px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 17px 10px;
+            background-color: rgba($font_black, 0.7);
+            margin-top: 7px;
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+    .favoriteView {
+        &_block {
+            font-size: 12px;
+        }
+    }
+}
+@media screen and (max-width: 948px) {
+    .map {
+        padding: 0px 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        &_btn {
+            white-space: nowrap;
+            bottom: 16px;
+            user-select: none;
+            border-radius: 8px;
+            width: 100%;
+            color: white;
+            font-size: 10px;
+            font-family: $medium-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 17px 10px;
+            background-color: rgba($font_black, 0.7);
+            margin-top: 7px;
+
+            &:hover {
+                background-color: rgba($font_black, 0.9);
+                color: lightgray;
+            }
+            img {
+                margin-right: 7px;
+            }
+        }
+    }
+    .favoriteView {
+        &_block {
+            font-size: 12px;
+        }
+    }
+}
+@media screen and (max-width: 880px) {
+    .map {
+        display: none;
+    }
+    .favoriteView {
+        display: none;
+    }
+}

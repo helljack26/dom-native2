@@ -3,14 +3,15 @@ import COLORS from '../../../res/colors'
 import IMAGES from '../../../res/images'
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
 const PercentIcon = IMAGES.percent_icon;
 const ViewIcon = IMAGES.view_icon;
 const FavoriteSmallIcon = IMAGES.heart_small_icon;
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
-const CatalogItem = ({ data }) => {
-    const { name, price, oldPrice, place, size, photoPath, inFavorite, viewNumber, favoriteNumber } = data;
+const CatalogItem = ({ data, navigation }) => {
+    const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
 
     const priceBlock = oldPrice !== undefined ? (
         <View >
@@ -27,14 +28,24 @@ const CatalogItem = ({ data }) => {
         </View>
 
     return (
-        <View style={styles.catalog_item}>
-            <View style={styles.catalog_item_photo_container}>
-                <Image source={photoPath} style={styles.catalog_item_photo} alt={name} />
-            </View>
+        <View
+            style={styles.catalog_item}>
+            <TouchableOpacity style={styles.catalog_item_photo_container}
+                onPress={() => {
+                    /* 1. Navigate to the Details route with params */
+                    navigation.navigate('CardPage', {
+                        itemId: id,
+                        category: category,
+                    });
+                }}
+            >
+                <Image source={photoSmallPath}
+                    style={styles.catalog_item_photo} alt={name} />
+            </TouchableOpacity>
             <View style={styles.catalog_item_info}>
                 <Text style={styles.catalog_item_info_name}>{name}</Text>
                 {priceBlock}
-                <Text style={styles.catalog_item_info_place}>{place}</Text>
+                <Text style={styles.catalog_item_info_place}>{location}</Text>
                 <Text style={styles.catalog_item_info_size}>{size}</Text>
             </View>
             <View style={styles.catalog_item_buttonBlock}>
@@ -56,7 +67,14 @@ const CatalogItem = ({ data }) => {
                     </View >
                 </View>
                 {/* TODO добавить здесь переход на обьект */}
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => {
+                        /* 1. Navigate to the Details route with params */
+                        navigation.navigate('CardPage', {
+                            itemId: id
+                        });
+                    }}
+                >
                     <Text style={styles.catalog_item_footer_link}>Подробнее &gt;</Text>
                 </TouchableOpacity>
             </View>

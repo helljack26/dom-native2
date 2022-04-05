@@ -9,6 +9,7 @@ import { useFonts } from "@use-expo/font";
 import AppLoading from 'expo-app-loading';
 
 import HomePage from './src/pages/HomePage/HomePage.jsx';
+import CardPage from './src/pages/CardPage/CardPage.jsx';
 // Categories 
 import ApartmentsPage from './src/pages/ApartmentsPage/ApartmentsPage.jsx'
 import HousesPage from './src/pages/HousesPage/HousesPage.jsx'
@@ -31,6 +32,7 @@ function Home() {
             headerShown: false,
         })}>
         <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="CardPage" component={CardPage} />
         <Stack.Screen name="ApartmentsPage" component={ApartmentsPage} />
         <Stack.Screen name="HousesPage" component={HousesPage} />
         <Stack.Screen name="PlotsPage" component={PlotsPage} />

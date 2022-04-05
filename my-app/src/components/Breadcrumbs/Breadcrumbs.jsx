@@ -22,6 +22,13 @@ const Breadcrumbs = ({ title, ads }) => {
 }
 export default Breadcrumbs;
 
+{/* <div className={style.breadcrumbs_for_card_mobile}>
+<button type='button' className={style.page} onClick={() => navigate(-1)}>
+    <img src={IMAGES.arrow_left} alt="Arrow Left Icon" />Вернуться назад</button>
+</div> */}
+
+
+
 const styles = StyleSheet.create({
 
     breadcrumbs: {

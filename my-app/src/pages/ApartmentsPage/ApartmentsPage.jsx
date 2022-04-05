@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import AdsFunctionalBar from '../../components/AdsFunctionalBar/AdsFunctionalBar';
 import CatalogBlock from '../../components/CatalogBlock/CatalogBlock';
 import { ApartmentMockApi } from '../../api/mock/ApartmentMockApi.jsx'
-export default function ApartmentsPage() {
+export default function ApartmentsPage({ navigation }) {
     return (
         <View style={styles.body}>
             <Header />
@@ -13,7 +13,7 @@ export default function ApartmentsPage() {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <CatalogBlock data={ApartmentMockApi} />
+                <CatalogBlock navigation={navigation} data={ApartmentMockApi} />
             </ScrollView>
         </View>
     );
