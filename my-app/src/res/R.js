@@ -1,6 +1,6 @@
-import FONTS from './strings'
-import IMAGES from './images'
-import COLORS from './colors'
+import FONTS from './strings.js'
+import IMAGES from './images.js'
+import COLORS from './colors.js'
 
 export const R = {
     FONTS,

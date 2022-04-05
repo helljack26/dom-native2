@@ -1,49 +1,65 @@
-import COLORS from '../../res/colors'
-import FONTS from '../../res/fonts'
-
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { R } from '../../res/R.js'
+const ArrowLeftIcon = R.IMAGES.arrow_left;
+import { StyleSheet, TouchableOpacity, Text, Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styled from 'styled-components/native';
 
-const Breadcrumbs = ({ title, ads }) => {
+// Styles
+const GoBack = styled.TouchableOpacity`
+display: flex;
+align-items: center;
+flex-direction: row;
+margin-top: 12px;
+
+`;
+const Breadcrumbs = ({ title, ads, goBack }) => {
     const navigation = useNavigation();
 
-    const isAds = ads && <TouchableOpacity
-        onPress={() => navigation.navigate('Home')}>
-        <Text
-            style={styles.ads}
-        >Объявления&nbsp; | &nbsp;</Text>
-    </TouchableOpacity>
-    return (
+    const isAds = ads &&
         <View style={styles.breadcrumbs}>
-            {isAds}
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <Text style={styles.ads}>Объявления&nbsp; | &nbsp;</Text>
+            </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>
-        </View>
+        </View>;
+
+    const isGoBack = goBack &&
+        <GoBack
+            style={styles.breadcrumbs_goBack}
+            onPress={() => navigation.goBack()}>
+            <ArrowLeftIcon />
+            <Text style={styles.goBack}>Вернуться назад</Text>
+        </GoBack>
+
+    const breadcrumbs = !goBack ? isAds : isGoBack
+    return (
+        <>
+            { breadcrumbs}
+        </>
+
     )
 }
 export default Breadcrumbs;
 
-{/* <div className={style.breadcrumbs_for_card_mobile}>
-<button type='button' className={style.page} onClick={() => navigate(-1)}>
-    <img src={IMAGES.arrow_left} alt="Arrow Left Icon" />Вернуться назад</button>
-</div> */}
-
-
-
 const styles = StyleSheet.create({
-
+    goBack: {
+        marginLeft: 10,
+        color: R.COLORS.mainBlack,
+        fontSize: 12,
+        fontFamily: R.FONTS.light
+    },
     breadcrumbs: {
-
         flex: 1,
         flexDirection: 'row'
     },
     ads: {
         fontSize: 12,
-        fontFamily: FONTS.regular,
-        color: COLORS.secondBlack,
+        fontFamily: R.FONTS.regular,
+        color: R.COLORS.secondBlack,
     },
     page: {
         fontSize: 12,
-        fontFamily: FONTS.regular,
-        color: COLORS.mainBlack,
+        fontFamily: R.FONTS.regular,
+        color: R.COLORS.mainBlack,
     }
 })
