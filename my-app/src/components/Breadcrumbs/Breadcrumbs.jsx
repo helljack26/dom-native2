@@ -9,7 +9,7 @@ const GoBack = styled.TouchableOpacity`
 display: flex;
 align-items: center;
 flex-direction: row;
-margin-top: 12px;
+margin-top: 15px;
 
 `;
 const Breadcrumbs = ({ title, ads, goBack }) => {

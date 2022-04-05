@@ -9,8 +9,8 @@ export const ApartmentMockApi =
             size: "1 комната · 75 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_2.png'),
             photoLargePath: [
-                { url: './img/detail_card/1.png' },
-                { url: './img/detail_card/2.png' }
+                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
             viewNumber: 341,
@@ -48,8 +48,8 @@ export const ApartmentMockApi =
             size: "90 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_3.png'),
             photoLargePath: [
-                { url: './img/detail_card/1.png' },
-                { url: './img/detail_card/2.png' }
+                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
             viewNumber: 341,
@@ -85,8 +85,8 @@ export const ApartmentMockApi =
             size: "1 комната · 8,3 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_1.png'),
             photoLargePath: [
-                { url: './img/detail_card/1.png' },
-                { url: './img/detail_card/2.png' }
+                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
             viewNumber: 341,
@@ -124,8 +124,8 @@ export const ApartmentMockApi =
             size: "90 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_2.png'),
             photoLargePath: [
-                { url: './img/detail_card/1.png' },
-                { url: './img/detail_card/2.png' }
+                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
             viewNumber: 341,
@@ -161,8 +161,8 @@ export const ApartmentMockApi =
             size: "1 комната, 8,3 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_3.png'),
             photoLargePath: [
-                { url: './img/detail_card/1.png' },
-                { url: './img/detail_card/2.png' }
+                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
             viewNumber: 341,
@@ -198,8 +198,8 @@ export const ApartmentMockApi =
             size: "1 комната, 75 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_1.png'),
             photoLargePath: [
-                { url: './img/detail_card/1.png' },
-                { url: './img/detail_card/2.png' }
+                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
             viewNumber: 341,

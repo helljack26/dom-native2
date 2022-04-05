@@ -19,7 +19,7 @@ export default function HomePage({ navigation }) {
                 <Text style={styles.mainHeader}>
                     Рекомендации для вас
                 </Text>
-                <RecommendationBlock data={RecommendationMockApi} />
+                <RecommendationBlock navigation={navigation} data={RecommendationMockApi} />
             </ScrollView>
         </View>
     );

@@ -3,6 +3,9 @@ import ArrowLeft from '../../assets/icon/arrow_left_icon';
 import PercentIcon from '../../assets/icon/percent_icon.svg';
 import HeartSmallIcon from '../../assets/icon/favorite_small_icon.svg';
 import ViewIcon from '../../assets/icon/view_icon.svg';
+import CameraIcon from '../../assets/icon/camera_icon.svg';
+import ShowOnMapIcon from '../../assets/icon/show_map_icon.svg';
+import RouteIcon from '../../assets/icon/route_icon.svg';
 
 
 const IMAGES = {
@@ -17,6 +20,9 @@ const IMAGES = {
     percent_icon: PercentIcon,
     heart_small_icon: HeartSmallIcon,
     view_icon: ViewIcon,
+    camera: CameraIcon,
+    show_map: ShowOnMapIcon,
+    route: RouteIcon,
 
 }
 

@@ -18,14 +18,14 @@ width: 92%;
 background-color: white;
 padding-top: 12px;
 `;
-const RecommendationBlock = ({ data }) => {
+const RecommendationBlock = ({ data, navigation }) => {
     return (<Main
         style={`
             ${styles.main} } `}>
         <View style={styles.main_recommendation}>
             {data.map(item => {
                 return (
-                    <RecommendationItem data={item} key={item.id} />
+                    <RecommendationItem navigation={navigation} data={item} key={item.id} />
                 )
             })}
         </View>

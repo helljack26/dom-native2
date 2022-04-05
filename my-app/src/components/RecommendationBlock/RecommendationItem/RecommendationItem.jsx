@@ -1,34 +1,53 @@
 import FONTS from '../../../res/fonts'
 import React from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
-const RecommendationItem = ({ data }) => {
-    const { name, price, oldPrice, place, size, photoPath, inFavorite } = data;
+const RecommendationItem = ({ data, navigation }) => {
+    const { id, name, price, category, oldPrice, location, size, photoSmallPath, inFavorite } = data;
+    const spaceInPriceValue = (priceValue) => {
+        if (priceValue !== undefined) {
+            return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
+        }
+    }
+    const spacedPrice = spaceInPriceValue(price)
+    const spacedOldPrice = spaceInPriceValue(oldPrice)
 
     const priceBlock = oldPrice !== undefined ? (
         <View style={styles.priceBlock}>
-            <Text style={styles.newPrice}> {price}</Text>
+            <Text style={styles.newPrice}>{spacedPrice} $</Text>
             <Text style={styles.oldPrice}>
-                {oldPrice}
+                {spacedOldPrice} $
             </Text>
         </View>)
         :
         <View style={styles.priceBlock}>
-            <Text style={styles.price}>{price}</Text>
+            <Text style={styles.price}>{spacedPrice} $</Text>
         </View>
 
     return (
         <View style={styles.recommendation_item}>
-            <Image source={photoPath} style={styles.recommendation_item_photo} alt={name} />
+            <TouchableOpacity style={styles.catalog_item_photo_container}
+                onPress={() => {
+                    /* 1. Navigate to the Details route with params */
+                    navigation.navigate('CardPage', {
+                        itemId: id,
+                        category: category,
+                    });
+                }}
+            >
+                <Image source={photoSmallPath}
+
+                    style={styles.recommendation_item_photo} alt={name} />
+            </TouchableOpacity>
             <View style={styles.recommendation_item_block}>
                 {priceBlock}
                 <AddToFavoriteButton inFavorite={inFavorite} isBig={true} />
             </View>
             <View style={styles.recommendation_item_info}>
                 <Text style={styles.recommendation_item_info_name}>{name}</Text>
-                <Text style={styles.recommendation_item_info_place}>{place}</Text>
+                <Text style={styles.recommendation_item_info_place}>{location}</Text>
                 <Text style={styles.recommendation_item_info_size}>{size}</Text>
             </View>
         </View>

@@ -9,7 +9,7 @@ import Header from '../../components/Header/Header';
 
 import Breadcrumbs from '../../components/Breadcrumbs'
 
-// import CardPhotoContainer from '../../components/Card/CardPhotoContainer'
+import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPhotoContainer'
 // import CardDetailsContainer from '../../components/Card/CardDetailsContainer'
 // import CardSaveButton from '../../components/Card/CardSaveButton'
 // import CardMapContainer from '../../components/Card/CardMapContainer'
@@ -56,12 +56,13 @@ export default function CardPage({ route, navigation }) {
                     horizontal={false}
                     style={styles.container}>
                     <Breadcrumbs goBack={true} />
+                    <CardPhotoContainer photoCollection={photoLargePath} />
                 </Main>
             </SafeAreaView >
 
+
             {/* Photo */}
-            {/* <CardPhotoContainer photoCollection={photoLargePath} />
-                    <CardMapContainerMobile />
+            {/*<CardMapContainerMobile />
                     <CardDetailsContainer details={cardDetails} />
                     <CardSaveButton />
 
