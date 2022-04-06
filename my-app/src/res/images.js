@@ -1,5 +1,6 @@
 import ArrowDown from '../../assets/icon/arrow_down_icon.svg';
-import ArrowLeft from '../../assets/icon/arrow_left_icon';
+import ArrowUp from '../../assets/icon/arrow_up_icon.svg';
+import ArrowLeft from '../../assets/icon/arrow_left_icon.svg';
 import PercentIcon from '../../assets/icon/percent_icon.svg';
 import HeartSmallIcon from '../../assets/icon/favorite_small_icon.svg';
 import ViewIcon from '../../assets/icon/view_icon.svg';
@@ -17,6 +18,7 @@ const IMAGES = {
 
     // Svg
     arrow_down: ArrowDown,
+    ArrowUp: ArrowUp,
     arrow_left: ArrowLeft,
     percent_icon: PercentIcon,
     heart_small_icon: HeartSmallIcon,

@@ -1,7 +1,8 @@
 import IMAGES from '../../../res/images'
 import { useState } from 'react'
-
+import { StyleSheet, Image, SafeAreaView } from 'react-native';
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
+import CardAccordion from '../CardAccordion/CardAccordion'
 
 import { styles } from './style'
 const { Container,
@@ -17,22 +18,11 @@ const { Container,
     Price_block_square_rating,
     Price_block_price_square,
     Price_block_price_rating,
-    About,
-    Block_header,
-    About_block,
-    About_block_ul,
-    About_block_ul_li,
-    About_block_ul_title,
-    About_block_ul_link,
-    Description,
-    Description_text,
 } = styles;
 // import { Link } from 'react-router-dom';
 
 
 const CardDetailsContainer = ({ details }) => {
-    const [drop1, setOpen1] = useState(true);
-    const [drop2, setOpen2] = useState(true);
 
     const {
         id,
@@ -101,60 +91,7 @@ const CardDetailsContainer = ({ details }) => {
             </Price>
 
             {/* About object */}
-            {/* <div className={style.about}>
-                <h2 className={style.block_header}>Об объекте
-                <img src={drop1 ? IMAGES.arrow_up : IMAGES.arrow_down}
-                        onClick={() => setOpen1(drop1 === true ? false : true)}
-                        alt="Arrow down icon" /></h2>
-                {drop1 && <div className={style.about_block}>
-                    <ul className={style.about_block_ul}>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Тип недвижимости: &nbsp;</span>{apartmentType}</li>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Общая площадь: &nbsp;</span>{totalArea} м²</li>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Расстояние до моря: &nbsp;</span>{distanceToSea} м</li>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Отделка: &nbsp;</span>{!decorate ? 'без отделки' : '-'}</li>
-                    </ul>
-                    <ul className={style.about_block_ul}>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                ЖК: &nbsp;</span>
-                            <Link className={style.about_block_ul_link}
-                                to={`${residentialComplexPath}`}>{residentialComplex}
-                            </Link>
-                        </li>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Место на шахматке:  &nbsp;</span>
-                            <Link className={style.about_block_ul_link}
-                                to={`${placeOnChessBoardPath}`}>{placeOnChessBoard}
-                            </Link>
-                        </li>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Класс дома: &nbsp;</span>{apartmentClass}</li>
-                        <li>
-                            <span className={style.about_block_ul_title}>
-                                Срок сдачи: &nbsp;</span>{deadlines}</li>
-                    </ul>
-                </div>
-                }
-            </div> */}
-
-            {/* Description */}
-            {/* <div className={style.description}>
-                <h2 className={style.block_header}>Описание
-                <img src={drop2 ? IMAGES.arrow_up : IMAGES.arrow_down}
-                        onClick={() => setOpen2(drop2 === true ? false : true)}
-                        alt="Arrow down icon" /></h2>
-                {drop2 && <p className={style.description_text}>{description}</p>}
-            </div> */}
+            <CardAccordion objectDetails={objectDetails}/>
         </Container>
     )
 }

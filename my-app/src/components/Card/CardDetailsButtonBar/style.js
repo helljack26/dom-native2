@@ -28,7 +28,7 @@ margin-right: 18px;
 margin-bottom: 13px;
 `
 const FavoriteView_block_text = styled.Text`
-margin-left: 18px;
+margin-left: 8px;
 `
 const Details_mobile = styled.View`
 display: flex;
