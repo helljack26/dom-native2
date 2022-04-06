@@ -1,7 +1,8 @@
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 import CardAccordion from '../CardAccordion/CardAccordion'
+import { StyleSheet, TouchableOpacity, Image, Text, View, SafeAreaView } from 'react-native';
 
-import { styles } from './style'
+import { style } from './style'
 const { Container,
     Name_block,
     Name_block_header,
@@ -15,7 +16,7 @@ const { Container,
     Price_block_square_rating,
     Price_block_price_square,
     Price_block_price_rating,
-} = styles;
+} = style;
 
 const CardDetailsContainer = ({ details }) => {
     const {
@@ -48,7 +49,7 @@ const CardDetailsContainer = ({ details }) => {
                 <Name_block_header>
                     <Name_block_header_text>
                         {name}
-
+                        <View style={styles.catalog_item_separate}></View>
                         <Name_block_header_text_block>
                             {isNewHouse ?
                                 <Name_block_header_type>Первичное жилье</Name_block_header_type>
@@ -82,3 +83,9 @@ const CardDetailsContainer = ({ details }) => {
 }
 
 export default CardDetailsContainer;
+const styles = StyleSheet.create({
+    catalog_item_separate: {
+        width: 7,
+    },
+
+});

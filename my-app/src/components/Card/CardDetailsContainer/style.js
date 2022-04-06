@@ -13,15 +13,15 @@ display: flex;
 
 `;
 const Name_block_header = styled.View`
-
+display: flex;
 `
 const Name_block_header_text_block = styled.View`
 display: flex;
 justify-content: center;
 align-items: center;
 width: 105px;
-padding: 4px 0px;
-margin-top: 10px;
+padding: 3px 0px;
+margin-top: 20px;
 border-radius: 20px;
 background-color: #9b51e0;
 
@@ -30,12 +30,15 @@ const Name_block_header_text = styled.Text`
 font-size: 20px;
 letter-spacing: 0.4px;
 margin-right: 10px;
+
 font-family:${FONTS.medium};
 line-height: 30px;
+
 `;
+
 const Name_block_header_type = styled.Text`
 color: white;
-font-size: 9.5px;
+font-size: 9px;
 font-family: ${FONTS.medium};
 `;
 const Place = styled.Text`
@@ -70,7 +73,7 @@ font-size: 11px;
 color: #6abd24;
 `;
 
-export const styles = {
+export const style = {
     Container: Container,
     Name_block: Name_block,
     Name_block_header: Name_block_header,

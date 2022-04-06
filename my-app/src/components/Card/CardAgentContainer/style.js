@@ -113,9 +113,8 @@ flex-direction: column;
 flex-wrap: wrap;
 justify-content: center;
 padding-right: 10%;
-border-top-color: ${COLORS.borderGray};
-border-top-width: 1px;
-padding-top: 40px;
+padding-bottom: 23px;
+
 `
 const Footer_block = styled.View`
 width: 90%;

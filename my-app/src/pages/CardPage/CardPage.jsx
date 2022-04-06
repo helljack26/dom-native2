@@ -1,10 +1,8 @@
 import FONTS from '../../res/fonts'
 import IMAGES from '../../res/images'
-import { R } from '../../res/R'
-import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import React, { useEffect } from 'react';
 
-
-// import { useRoute } from '@react-navigation/native';
 import Header from '../../components/Header/Header';
 
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -13,7 +11,7 @@ import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPho
 import CardDetailsContainer from '../../components/Card/CardDetailsContainer/CardDetailsContainer'
 import CardSaveButton from '../../components/Card/CardSaveButton/CardSaveButton'
 import CardAgentContainer from '../../components/Card/CardAgentContainer/CardAgentContainer'
-// import CardSimilarObject from '../../components/Card/CardSimilarObject'
+import CardSimilarObject from '../../components/Card/CardSimilarObject/CardSimilarObject'
 
 import styled from 'styled-components/native';
 
@@ -28,6 +26,7 @@ import { ApartmentMockApi } from '../../api/mock/ApartmentMockApi.jsx'
 
 export default function CardPage({ route, navigation }) {
 
+
     const { itemId, category } = route.params;
 
     const whichCatalog = (catalogName) => {
@@ -41,27 +40,20 @@ export default function CardPage({ route, navigation }) {
     const catalogDefined = whichCatalog(category)
     const cardDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
 
-    const { id, name,
-        photoLargePath,
-        favoriteNumber,
-        viewNumber } = cardDetails;
-
-    return (
-        <>
-            <SafeAreaView style={styles.body}>
-                <Header />
-                <Main
-                    horizontal={false}
-                    style={styles.container}>
-                    <Breadcrumbs goBack={true} />
-                    <CardPhotoContainer photoCollection={photoLargePath} />
-                    <CardDetailsContainer details={cardDetails} />
-                    <CardSaveButton />
-                    <CardAgentContainer agentId={id} />
-                </Main>
-            </SafeAreaView >
-            {/* <CardSimilarObject /> */}
-        </>
+    const { id, photoLargePath } = cardDetails;
+    return (<SafeAreaView style={styles.body}>
+        <Header />
+        <Main
+            horizontal={false}
+            style={styles.container}>
+            <Breadcrumbs goBack={true} />
+            <CardPhotoContainer photoCollection={photoLargePath} />
+            <CardDetailsContainer details={cardDetails} />
+            <CardSaveButton />
+            <CardAgentContainer agentId={id} />
+            <CardSimilarObject />
+        </Main>
+    </SafeAreaView >
     )
 }
 const styles = StyleSheet.create({

@@ -1,18 +1,24 @@
-// import IMAGES from '../../../res/images'
+import { styles } from './style.js'
+import { useNavigation } from '@react-navigation/native';
 
-import style from './CardSimilarObject.module.scss'
-import CatalogItem from '../../CatalogBlock/CatalogItem'
+const {
+    Similar, Similar_header, Similar_block
+} = styles;
+
+import CardSimilarItem from './CardSimilarItem'
 import { SimilarMockApi } from '../../../api/mock/SimilarMockApi.jsx'
 
 const CardSimilarObject = () => {
-    const data = SimilarMockApi
+    const navigation = useNavigation();
+
+    const data = SimilarMockApi;
     return (
-        <div className={style.similar}>
-            <h3 >Похожие объекты</h3>
-            <div className={style.similar_block}>
-                {data.map(item => <CatalogItem data={item} key={item.id} />)}
-            </div>
-        </div>
+        <Similar>
+            <Similar_header >Похожие объекты</Similar_header>
+            <Similar_block >
+                {data.map(item => <CardSimilarItem data={item} key={item.id} navigation={navigation} />)}
+            </Similar_block>
+        </Similar>
     )
 }
 
