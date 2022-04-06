@@ -8,6 +8,10 @@ import CameraIcon from '../../assets/icon/camera_icon.svg';
 import ShowOnMapIcon from '../../assets/icon/show_map_icon.svg';
 import RouteIcon from '../../assets/icon/route_icon.svg';
 import ShareIcon from '../../assets/icon/share_icon.svg';
+import CollectionIcon from '../../assets/icon/collections_icon.svg';
+import DocIcon from '../../assets/icon/doc_icon.svg';
+import PdfIcon from '../../assets/icon/pdf_icon.svg';
+import ComplainIcon from '../../assets/icon/complain_icon.svg';
 
 
 const IMAGES = {
@@ -27,6 +31,10 @@ const IMAGES = {
     show_map: ShowOnMapIcon,
     route: RouteIcon,
     ShareIcon: ShareIcon,
+    CollectionIcon: CollectionIcon,
+    DocIcon: DocIcon,
+    PdfIcon: PdfIcon,
+    ComplainIcon: ComplainIcon,
 
 }
 

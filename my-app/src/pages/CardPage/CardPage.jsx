@@ -11,7 +11,7 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 
 import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPhotoContainer'
 import CardDetailsContainer from '../../components/Card/CardDetailsContainer/CardDetailsContainer'
-// import CardSaveButton from '../../components/Card/CardSaveButton'
+import CardSaveButton from '../../components/Card/CardSaveButton/CardSaveButton'
 // import CardMapContainer from '../../components/Card/CardMapContainer'
 // import CardMapContainerMobile from '../../components/Card/CardMapContainerMobile'
 // import CardAgentContainer from '../../components/Card/CardAgentContainer'
@@ -56,16 +56,14 @@ export default function CardPage({ route, navigation }) {
                     horizontal={false}
                     style={styles.container}>
                     <Breadcrumbs goBack={true} />
-
                     <CardPhotoContainer photoCollection={photoLargePath} />
-
                     <CardDetailsContainer details={cardDetails} />
+                    <CardSaveButton />
                 </Main>
             </SafeAreaView >
 
             {/* 
-                    <CardDetailsContainer details={cardDetails} />
-                    <CardSaveButton />
+              
 
                     <CardMapContainer favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
                     <CardAgentContainer id={id} />

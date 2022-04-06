@@ -13,6 +13,8 @@ border-top-width: 1px;
 background-color: white;
 padding-top: 16px;  
 padding-bottom: 16px;
+padding-right: 7px;
+
 flex-direction: row;
 display: flex;
 justify-content: space-between;

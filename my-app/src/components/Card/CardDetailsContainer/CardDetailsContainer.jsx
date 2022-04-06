@@ -1,6 +1,3 @@
-import IMAGES from '../../../res/images'
-import { useState } from 'react'
-import { StyleSheet, Image, SafeAreaView } from 'react-native';
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 import CardAccordion from '../CardAccordion/CardAccordion'
 
@@ -19,11 +16,8 @@ const { Container,
     Price_block_price_square,
     Price_block_price_rating,
 } = styles;
-// import { Link } from 'react-router-dom';
-
 
 const CardDetailsContainer = ({ details }) => {
-
     const {
         id,
         name,
@@ -39,16 +33,7 @@ const CardDetailsContainer = ({ details }) => {
         inFavorite,
         isNewHouse } = details;
     // Object details
-    const { apartmentType,
-        totalArea,
-        distanceToSea,
-        decorate,
-        residentialComplexPath,
-        residentialComplex,
-        placeOnChessBoard,
-        placeOnChessBoardPath,
-        apartmentClass,
-        deadlines } = objectDetails;
+    const { totalArea, } = objectDetails;
 
     const spaceInPriceValue = (priceValue) => {
         return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
@@ -91,7 +76,7 @@ const CardDetailsContainer = ({ details }) => {
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails}/>
+            <CardAccordion objectDetails={objectDetails} />
         </Container>
     )
 }

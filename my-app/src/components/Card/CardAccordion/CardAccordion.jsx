@@ -59,7 +59,7 @@ const CardAccordion = ({ objectDetails }) => {
                             </Block_header_Text>
                     <AntDesign
                         name={isEnabled1 ? 'up' : 'down'}
-                        size={25}
+                        size={15}
                         color="black" />
                 </Block_header>
                 <ScrollView>
@@ -168,7 +168,7 @@ const CardAccordion = ({ objectDetails }) => {
                             </Block_header_Text>
                     <AntDesign
                         name={isEnabled2 ? 'up' : 'down'}
-                        size={25}
+                        size={15}
                         color="black" />
                 </Block_header>
                 {/*Content of Single Collapsible*/}
