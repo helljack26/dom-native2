@@ -12,9 +12,7 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPhotoContainer'
 import CardDetailsContainer from '../../components/Card/CardDetailsContainer/CardDetailsContainer'
 import CardSaveButton from '../../components/Card/CardSaveButton/CardSaveButton'
-// import CardMapContainer from '../../components/Card/CardMapContainer'
-// import CardMapContainerMobile from '../../components/Card/CardMapContainerMobile'
-// import CardAgentContainer from '../../components/Card/CardAgentContainer'
+import CardAgentContainer from '../../components/Card/CardAgentContainer/CardAgentContainer'
 // import CardSimilarObject from '../../components/Card/CardSimilarObject'
 
 import styled from 'styled-components/native';
@@ -59,18 +57,10 @@ export default function CardPage({ route, navigation }) {
                     <CardPhotoContainer photoCollection={photoLargePath} />
                     <CardDetailsContainer details={cardDetails} />
                     <CardSaveButton />
+                    <CardAgentContainer agentId={id} />
                 </Main>
             </SafeAreaView >
-
-            {/* 
-              
-
-                    <CardMapContainer favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
-                    <CardAgentContainer id={id} />
-                 </div> 
-          */}
             {/* <CardSimilarObject /> */}
-
         </>
     )
 }

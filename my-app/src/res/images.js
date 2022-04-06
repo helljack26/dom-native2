@@ -12,6 +12,10 @@ import CollectionIcon from '../../assets/icon/collections_icon.svg';
 import DocIcon from '../../assets/icon/doc_icon.svg';
 import PdfIcon from '../../assets/icon/pdf_icon.svg';
 import ComplainIcon from '../../assets/icon/complain_icon.svg';
+import HomeSmallIcon from '../../assets/icon/home_icon.svg';
+import UserIcon from '../../assets/icon/user_icon.svg';
+import HandsIcon from '../../assets/icon/hands_icon.svg';
+import LockIcon from '../../assets/icon/lock_icon.svg';
 
 
 const IMAGES = {
@@ -35,6 +39,10 @@ const IMAGES = {
     DocIcon: DocIcon,
     PdfIcon: PdfIcon,
     ComplainIcon: ComplainIcon,
+    HomeSmallIcon: HomeSmallIcon,
+    UserIcon: UserIcon,
+    HandsIcon: HandsIcon,
+    LockIcon: LockIcon,
 
 }
 
