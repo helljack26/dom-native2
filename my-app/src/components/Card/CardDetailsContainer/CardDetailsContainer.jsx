@@ -1,11 +1,34 @@
 import IMAGES from '../../../res/images'
 import { useState } from 'react'
 
-import style from './CardDetailsContainer.module.scss'
-import CardDetailsButtonBar from '../CardDetailsButtonBar'
-import CardDetailsButtonBarMobile from '../CardDetailsButtonBarMobile'
+import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 
-import { Link } from 'react-router-dom';
+import { styles } from './style'
+const { Container,
+    Name_block,
+    Name_block_header,
+    Name_block_header_text,
+    Name_block_header_text_block,
+    Name_block_header_type,
+    Place,
+    Price,
+    Price_block,
+    Price_block_price,
+    Price_block_square_rating,
+    Price_block_price_square,
+    Price_block_price_rating,
+    About,
+    Block_header,
+    About_block,
+    About_block_ul,
+    About_block_ul_li,
+    About_block_ul_title,
+    About_block_ul_link,
+    Description,
+    Description_text,
+} = styles;
+// import { Link } from 'react-router-dom';
+
 
 const CardDetailsContainer = ({ details }) => {
     const [drop1, setOpen1] = useState(true);
@@ -44,36 +67,41 @@ const CardDetailsContainer = ({ details }) => {
     const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / totalArea))
 
     return (
-        <div className={style.container}>
+        <Container>
             {/* Main name */}
-            <div className={style.name_block}>
-                <div className={style.name_block_header}>
-                    <h1 className={style.name_block_header_text}>{name}&nbsp;&nbsp;&nbsp;
-                        {isNewHouse ? <span className={style.name_block_header_type}>Первичное жилье</span>
-                            :
-                            <span className={style.name_block_header_type}>Вторичное жилье</span>}
-                    </h1>
+            <Name_block>
+                <Name_block_header>
+                    <Name_block_header_text>
+                        {name}
 
-                </div>
-                <CardDetailsButtonBar inFavorite={inFavorite} id={id} />
-            </div>
+                        <Name_block_header_text_block>
+                            {isNewHouse ?
+                                <Name_block_header_type>Первичное жилье</Name_block_header_type>
+                                :
+                                <Name_block_header_type>Вторичное жилье</Name_block_header_type>}
+                        </Name_block_header_text_block>
+                    </Name_block_header_text>
+                </Name_block_header>
+            </Name_block>
 
             {/* Location */}
-            <span className={style.place}>{location}</span>
+            <Place>{location}</Place>
 
             {/* Price */}
-            <div className={style.price}>
-                <div className={style.price_block}>
-                    <span className={style.price_block_price}>{spacedPrice} $</span>
-                    <span className={style.price_block_price_square}>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </span>
-                    {/* TODO тут должно отображаться сравнение с рыночной */}
-                    <span className={style.price_block_price_rating}>Ниже рыночной</span>
-                </div>
-                <CardDetailsButtonBarMobile inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} id={id} />
-            </div>
+            <Price>
+                <Price_block>
+                    <Price_block_price>{spacedPrice} $</Price_block_price>
+                    <Price_block_square_rating>
+                        <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>
+                        <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
+                    </Price_block_square_rating>
+
+                </Price_block>
+                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} id={id} />
+            </Price>
 
             {/* About object */}
-            <div className={style.about}>
+            {/* <div className={style.about}>
                 <h2 className={style.block_header}>Об объекте
                 <img src={drop1 ? IMAGES.arrow_up : IMAGES.arrow_down}
                         onClick={() => setOpen1(drop1 === true ? false : true)}
@@ -117,17 +145,17 @@ const CardDetailsContainer = ({ details }) => {
                     </ul>
                 </div>
                 }
-            </div>
+            </div> */}
 
             {/* Description */}
-            <div className={style.description}>
+            {/* <div className={style.description}>
                 <h2 className={style.block_header}>Описание
                 <img src={drop2 ? IMAGES.arrow_up : IMAGES.arrow_down}
                         onClick={() => setOpen2(drop2 === true ? false : true)}
                         alt="Arrow down icon" /></h2>
                 {drop2 && <p className={style.description_text}>{description}</p>}
-            </div>
-        </div>
+            </div> */}
+        </Container>
     )
 }
 

@@ -4,13 +4,13 @@ import { R } from '../../res/R'
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 
 
-import { useRoute } from '@react-navigation/native';
+// import { useRoute } from '@react-navigation/native';
 import Header from '../../components/Header/Header';
 
 import Breadcrumbs from '../../components/Breadcrumbs'
 
 import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPhotoContainer'
-// import CardDetailsContainer from '../../components/Card/CardDetailsContainer'
+import CardDetailsContainer from '../../components/Card/CardDetailsContainer/CardDetailsContainer'
 // import CardSaveButton from '../../components/Card/CardSaveButton'
 // import CardMapContainer from '../../components/Card/CardMapContainer'
 // import CardMapContainerMobile from '../../components/Card/CardMapContainerMobile'
@@ -56,20 +56,21 @@ export default function CardPage({ route, navigation }) {
                     horizontal={false}
                     style={styles.container}>
                     <Breadcrumbs goBack={true} />
+
                     <CardPhotoContainer photoCollection={photoLargePath} />
+
+                    <CardDetailsContainer details={cardDetails} />
                 </Main>
             </SafeAreaView >
 
-
-            {/* Photo */}
-            {/*<CardMapContainerMobile />
+            {/* 
                     <CardDetailsContainer details={cardDetails} />
                     <CardSaveButton />
 
                     <CardMapContainer favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
                     <CardAgentContainer id={id} />
                  </div> 
-         
+          */}
             {/* <CardSimilarObject /> */}
 
         </>

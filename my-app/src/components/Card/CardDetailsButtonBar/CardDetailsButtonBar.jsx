@@ -1,31 +1,58 @@
 import IMAGES from '../../../res/images'
 import { useState, useEffect } from 'react'
-import style from './CardDetailsButtonBar.module.scss'
+import { StyleSheet, ScrollView, Text } from 'react-native';
+import { styles } from './style'
+import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton'
 
-const CardDetailsButtonBar = ({ id, inFavorite }) => {
-    const [type, setType] = useState();
 
-    useEffect(() => {
-        return inFavorite !== undefined ? setType(inFavorite) : null;
-    }, [setType, inFavorite])
+const ViewIcon = IMAGES.view_icon
+const HeartSmallIcon = IMAGES.heart_small_icon
+const PercentIcon = IMAGES.percent_icon
+const ShareIcon = IMAGES.ShareIcon
+
+const {
+    Card_details,
+    FavoriteView,
+    FavoriteView_block,
+    Details_mobile,
+    Details_mobile_btn,
+    FavoriteView_block_text,
+
+} = styles;
+
+
+const CardDetailsButtonBar = ({ id, inFavorite, favoriteNumber, viewNumber }) => {
 
     return (
-        <>
-            <div className={style.details}>
-                <button className={style.details_btn}>
-                    <img src={IMAGES.percent} width='14px' alt="Icon" />
-                </button>
-                <button className={style.details_btn}>
-                    <img src={IMAGES.share} width='14px' alt="Icon" />
-                </button>
-                <button className={style.details_btn}
-                    onClick={() => setType(type === true ? false : true)}
-                >
-                    <img src={type === true ? IMAGES.heartActive : IMAGES.heart} width='14px' alt="Icon" />
-                </button>
-            </div>
+        <Card_details>
+            <FavoriteView>
+                <FavoriteView_block>
+                    <HeartSmallIcon width='14px' />
+                    <FavoriteView_block_text>
+                        {favoriteNumber}
+                    </FavoriteView_block_text>
+                </FavoriteView_block>
 
-        </>
+                <FavoriteView_block>
+                    <ViewIcon width='14px' />
+                    <FavoriteView_block_text>
+                        {viewNumber}
+                    </FavoriteView_block_text>
+                </FavoriteView_block>
+            </FavoriteView>
+            <Details_mobile>
+                <Details_mobile_btn>
+                    <PercentIcon width='14px' />
+                </Details_mobile_btn>
+                <Details_mobile_btn>
+                    <ShareIcon width='14px' />
+                </Details_mobile_btn>
+                <Details_mobile_btn>
+                    <AddToFavoriteButton isBig={true} inFavorite={inFavorite} />
+                </Details_mobile_btn>
+            </Details_mobile>
+        </Card_details>
+
     )
 }
 

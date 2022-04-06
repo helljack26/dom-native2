@@ -29,13 +29,13 @@ margin-top: 23px;
 const MapButton = styled.TouchableOpacity`
 bottom: 16px;
 border-radius: 8px;
-width: 48%;
+width: 48.8%;
 font-size: 16px;
 flex-direction: row;
 display: flex;
 align-items: center;
 justify-content: center;
-padding: 8px 0px;
+padding: 9px 0px;
 background-color: rgba(34, 34, 34, 0.7);
 margin-top: 23px;
 `;
@@ -86,18 +86,18 @@ export default function CardPhotoContainer({ photoCollection }) {
                 itemWidth={ITEM_WIDTH}
             />
             <Button>
-                <CameraIcon />
+                <CameraIcon width={19} />
                 <AllPhotoText
                 >Показать все фото ({photoCollection.length})</AllPhotoText>
             </Button>
             <BtnBlock>
                 <MapButton>
-                    <ShowOnMapIcon width={17} />
+                    <ShowOnMapIcon width={18} />
                     <AllPhotoText
                     >На карте</AllPhotoText>
                 </MapButton>
                 <MapButton>
-                    <RouteIcon width={19} />
+                    <RouteIcon width={18} />
                     <AllPhotoText
                     >Маршрут</AllPhotoText>
                 </MapButton>
