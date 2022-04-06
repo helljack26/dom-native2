@@ -1,8 +1,10 @@
 import FONTS from '../../res/fonts'
 import IMAGES from '../../res/images'
-import { StyleSheet, SafeAreaView } from 'react-native';
-import React, { useEffect } from 'react';
-
+import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import {
+    useRef, useEffect
+} from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 import Header from '../../components/Header/Header';
 
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -25,9 +27,17 @@ import { ApartmentMockApi } from '../../api/mock/ApartmentMockApi.jsx'
 
 
 export default function CardPage({ route, navigation }) {
-
-
     const { itemId, category } = route.params;
+    const scrollViewRef = useRef(null)
+
+    const scrollTop = () => {
+        if (scrollViewRef.current) {
+            scrollViewRef.current.scrollTo({ y: 0, animated: true })
+        }
+    }
+    if (itemId) {
+        scrollTop()
+    }
 
     const whichCatalog = (catalogName) => {
         switch (catalogName) {
@@ -41,9 +51,12 @@ export default function CardPage({ route, navigation }) {
     const cardDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
 
     const { id, photoLargePath } = cardDetails;
-    return (<SafeAreaView style={styles.body}>
+    return (<SafeAreaView style={styles.body}
+
+    >
         <Header />
         <Main
+            ref={scrollViewRef}
             horizontal={false}
             style={styles.container}>
             <Breadcrumbs goBack={true} />
