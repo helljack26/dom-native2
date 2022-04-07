@@ -5,7 +5,7 @@ import COLORS from '../../../res/colors'
 const Container = styled.View`
 border-top-color: ${COLORS.borderGray};
 border-top-width: 1px;
-width: 100%;
+
 padding-top: 30px;
 `
 const Container_block = styled.View`
@@ -35,7 +35,7 @@ justify-content: space-between;
 `
 const Btn_phone = styled.TouchableOpacity`
 border-radius: 8px;
-width: 49%;
+width: 48.5%;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -45,7 +45,7 @@ border: 1px solid black;
 `
 const Btn_chat = styled.TouchableOpacity`
 border-radius: 8px;
-width: 48%;
+width: 48.5%;
 display: flex;
 align-items: center;
 justify-content: center;

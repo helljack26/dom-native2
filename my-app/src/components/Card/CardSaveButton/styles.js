@@ -11,8 +11,6 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 margin-top: 32px;
-
-
 padding: 5px 15px;
 `
 const Container_title = styled.View`
@@ -25,24 +23,22 @@ align-items: center;
 flex-direction: row;
 justify-content: space-between;
 width: 100%;
-
 `
 const Container_block_btn = styled.TouchableOpacity`
 background-color: white;
 border: 1px solid black;
-padding:10px 4%;
-
+padding:10px 13px;
 justify-content: center;
 display: flex;
 flex-direction: row;
 align-items: center;
 font-size: 14px;
-
 border-radius: 4px;
 `
 const Container_block_btn_text = styled.Text`
 margin-right: 5px;
 font-family: ${FONTS.light};
+font-size: 13px;
 
 color: ${COLORS.mainBlack};
 `
@@ -66,19 +62,6 @@ font-family: ${FONTS.light};
 color: #d30000;
 margin-left: 5px;
 `
-
-// const Block_header = styled.TouchableOpacity`
-// font-size: 20px;
-// border-top-color: ${COLORS.borderGray};
-// border-top-width: 1px;
-// background-color: white;
-// padding-top: 16px;  
-// padding-bottom: 16px;
-// flex-direction: row;
-// display: flex;
-// justify-content: space-between;
-// align-items: center;
-// `;
 
 export const styles = {
     Container: Container,

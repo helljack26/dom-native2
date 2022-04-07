@@ -1,10 +1,10 @@
 import FONTS from '../../res/fonts'
 import IMAGES from '../../res/images'
-import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+
+import { StyleSheet, SafeAreaView } from 'react-native';
 import {
-    useRef, useEffect
+    useRef, 
 } from 'react';
-import { useScrollToTop } from '@react-navigation/native';
 import Header from '../../components/Header/Header';
 
 import Breadcrumbs from '../../components/Breadcrumbs'

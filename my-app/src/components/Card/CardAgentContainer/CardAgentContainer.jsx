@@ -55,15 +55,15 @@ const CardAgentContainer = ({ agentId }) => {
                 <User>
                     <Image width='52px' height='52px' source={avatarPath} />
                     <User_info>
-                        <User_info_name>{name}</User_info_name>
+                        <User_info_name ellipsizeMode="clip">{name}</User_info_name>
                         <User_info_loginTime>Онлайн в {lastLogin}</User_info_loginTime>
                     </User_info>
                 </User>
                 {/* Button */}
                 <Btn_block >
                     <Btn_phone>
-                        <Btn_phone_text>
-                            Показать телефон
+                        <Btn_phone_text numberOfLines={1}>
+                            Телефон
                         </Btn_phone_text>
                     </Btn_phone>
                     <Btn_chat>
