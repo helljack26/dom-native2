@@ -5,7 +5,7 @@ import COLORS from '../../../res/colors'
 const Container = styled.View`
 width: 100%;
 background-color: #f4f4f4;
-height: 67px;
+height: 69px;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
@@ -27,7 +27,7 @@ width: 100%;
 const Container_block_btn = styled.TouchableOpacity`
 background-color: white;
 border: 1px solid black;
-padding:10px 13px;
+padding:12px 13px;
 justify-content: center;
 display: flex;
 flex-direction: row;

@@ -2,13 +2,14 @@ import IMAGES from '../../res/images'
 
 import React from 'react';
 import { useEffect } from 'react';
-
+import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Image } from 'react-native';
+
 import ApartmentItem from './ApartmentItem/ApartmentItem'
 import OtherCatalogItem from './OtherCatalogItem/OtherCatalogItem'
+
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '../../stores/CatalogApi';
-import { useRoute } from '@react-navigation/native';
 
 
 import styled from 'styled-components/native';
@@ -24,7 +25,6 @@ padding-top: 12px;
 `;
 const CatalogBlock = observer(() => {
     const { mapBtnState, catalog, setCatalog } = useCatalogApiStore();
-    // const catalogData = catalog ? catalog : []
 
     const route = useRoute();
     useEffect(() => {
@@ -32,7 +32,6 @@ const CatalogBlock = observer(() => {
             setCatalog(route.name);
         }
     }, [route]);
-
 
     return (
         <>

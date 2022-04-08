@@ -1,8 +1,8 @@
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 import CardAccordion from '../CardAccordion/CardAccordion'
-import React from 'react';
-
-import { StyleSheet, View } from 'react-native';
 
 import { style } from './style'
 const { Container,
@@ -27,16 +27,15 @@ const CardDetailsContainer = ({ details }) => {
         location,
         favoriteNumber,
         viewNumber,
-        // percentageText,
-        description,
-        objectDetails,
-        // agentId,
-        // coords,
+        totalArea,
         inFavorite,
-        isNewHouse } = details;
-
-    // Object details
-    const { totalArea } = objectDetails;
+        isNewHouse,
+        objectDetails,
+        description,
+        // coords,
+        // agentId,
+        // percentageText,
+    } = details;
 
     const spaceInPriceValue = (priceValue) => {
         return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
@@ -52,12 +51,13 @@ const CardDetailsContainer = ({ details }) => {
                     <Name_block_header_text>
                         {name}
                         <View style={styles.catalog_item_separate}></View>
-                        <Name_block_header_text_block>
-                            {isNewHouse ?
-                                <Name_block_header_type>Первичное жилье</Name_block_header_type>
-                                :
-                                <Name_block_header_type>Вторичное жилье</Name_block_header_type>}
-                        </Name_block_header_text_block>
+                        {isNewHouse !== undefined ?
+                            <Name_block_header_text_block>
+                                {isNewHouse ?
+                                    <Name_block_header_type>Первичное жилье</Name_block_header_type>
+                                    :
+                                    <Name_block_header_type>Вторичное жилье</Name_block_header_type>}
+                            </Name_block_header_text_block> : null}
                     </Name_block_header_text>
                 </Name_block_header>
             </Name_block>
@@ -79,7 +79,7 @@ const CardDetailsContainer = ({ details }) => {
             </Price>
 
             {/* About object */}
-            {/* <CardAccordion objectDetails={objectDetails}description={description} /> */}
+            <CardAccordion objectDetails={objectDetails} description={description} />
         </Container>
     )
 }

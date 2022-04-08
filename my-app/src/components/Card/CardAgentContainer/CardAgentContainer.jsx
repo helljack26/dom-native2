@@ -54,7 +54,9 @@ const CardAgentContainer = ({ agentId }) => {
             <Container_block>
                 {/* User */}
                 <User>
-                    <Image width='52px' height='52px' source={avatarPath} />
+                    <Image style={{
+                        width: 56, height: 56
+                    }} resizeMode='stretch' source={avatarPath} />
                     <User_info>
                         <User_info_name ellipsizeMode="clip">{name}</User_info_name>
                         <User_info_loginTime>Онлайн в {lastLogin}</User_info_loginTime>

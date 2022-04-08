@@ -52,7 +52,7 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
                 </Details_mobile_btn>
 
                 <Details_mobile_btn>
-                    <AddToFavoriteButton isBig={true} inFavorite={inFavorite} />
+                    <AddToFavoriteButton isBig={false} inFavorite={inFavorite} />
                 </Details_mobile_btn>
             </Details_mobile>
         </Card_details>

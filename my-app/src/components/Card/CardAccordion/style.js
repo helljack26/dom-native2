@@ -14,7 +14,6 @@ background-color: white;
 padding-top: 16px;  
 padding-bottom: 16px;
 padding-right: 7px;
-
 flex-direction: row;
 display: flex;
 justify-content: space-between;
@@ -27,7 +26,6 @@ font-size: 20px;
 const About_block = styled.View`
 display: flex;
 background-color: white;
-
 `;
 const About_block_ul = styled.View`
 font-family: ${FONTS.light};
@@ -66,6 +64,7 @@ const Description_text = styled.Text`
 font-family: ${FONTS.light};
 color: ${COLORS.mainBlack};
 font-size: 14px;
+line-height:21px;
 `;
 
 export const styles = {
@@ -80,5 +79,4 @@ export const styles = {
     About_block_ul_link: About_block_ul_link,
     Description: Description,
     Description_text: Description_text,
-
 }

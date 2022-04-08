@@ -41,7 +41,6 @@ const OtherCatalogItem = ({ data }) => {
             style={styles.catalog_item}>
             <TouchableOpacity style={styles.catalog_item_photo_container}
                 onPress={() => {
-                    /* 1. Navigate to the Details route with params */
                     navigation.navigate('CardPage', {
                         itemId: id,
                         category: category,
@@ -75,10 +74,9 @@ const OtherCatalogItem = ({ data }) => {
                         <Text style={styles.catalog_item_footer_block_text}>{viewNumber}</Text>
                     </View >
                 </View>
-                {/* TODO добавить здесь переход на обьект */}
+
                 <TouchableOpacity
                     onPress={() => {
-                        /* 1. Navigate to the Details route with params */
                         navigation.navigate('CardPage', {
                             itemId: id,
                             category: category,

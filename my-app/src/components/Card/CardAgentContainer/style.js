@@ -5,7 +5,6 @@ import COLORS from '../../../res/colors'
 const Container = styled.View`
 border-top-color: ${COLORS.borderGray};
 border-top-width: 1px;
-
 padding-top: 30px;
 `
 const Container_block = styled.View`
@@ -13,6 +12,8 @@ const Container_block = styled.View`
 const User = styled.TouchableOpacity`
 display: flex;
 flex-direction: row;
+align-items: center;
+
 `
 const User_info = styled.View`
 font-family: ${FONTS.light};
@@ -21,10 +22,12 @@ display: flex;
 flex-direction: column;
 `
 const User_info_name = styled.Text`
+font-family: ${FONTS.light};
 font-size: 16px;
 `
 const User_info_loginTime = styled.Text`
 font-size: 12px;
+font-family: ${FONTS.light};
 color: ${COLORS.secondBlack};
 `
 const Btn_block = styled.View`
@@ -34,7 +37,7 @@ flex-direction: row;
 justify-content: space-between;
 `
 const Btn_phone = styled.TouchableOpacity`
-border-radius: 8px;
+border-radius: 4px;
 width: 48.5%;
 display: flex;
 align-items: center;
@@ -44,7 +47,7 @@ background-color: white;
 border: 1px solid black;
 `
 const Btn_chat = styled.TouchableOpacity`
-border-radius: 8px;
+border-radius: 4px;
 width: 48.5%;
 display: flex;
 align-items: center;
@@ -68,12 +71,13 @@ display: flex;
 flex-direction: row;
 justify-content: flex-start;
 align-items: center;
-margin-top: 28px;
-margin-bottom: 28px;
+margin-top: 15px;
+margin-bottom: 20px;
 `
 const Rating_number = styled.Text`
 color: ${COLORS.mainBlack};
 font-size: 40px;
+margin-top:5px;
 font-family: ${FONTS.medium};
 `
 const Rating_block = styled.View`
@@ -89,7 +93,6 @@ const Rating_block_links = styled.View`
 display: flex;
 flex-direction: row;
 align-items: center;
-
 `
 const Rating_block_links_link = styled.TouchableOpacity`
 display: flex;
@@ -114,11 +117,10 @@ flex-wrap: wrap;
 justify-content: center;
 padding-right: 10%;
 padding-bottom: 23px;
-
 `
 const Footer_block = styled.View`
 width: 90%;
-margin-bottom: 17px;
+margin-bottom: 13px;
 display: flex;
 flex-direction: row;
 `
