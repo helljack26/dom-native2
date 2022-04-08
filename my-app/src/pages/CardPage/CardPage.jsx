@@ -30,7 +30,7 @@ export default function CardPage() {
     const route = useRoute();
     const { itemId, category } = route.params;
     const scrollViewRef = useRef(null)
-    console.log(itemId, category);
+
     const scrollTop = () => {
         if (scrollViewRef.current) {
             scrollViewRef.current.scrollTo({ y: 0, animated: true })
@@ -52,7 +52,7 @@ export default function CardPage() {
     }
     const catalogDefined = whichCatalog(category)
     const objectDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
-    console.log(objectDetails);
+
     const { id, photoLargePath } = objectDetails;
     return (<SafeAreaView style={styles.body}>
         <Header />

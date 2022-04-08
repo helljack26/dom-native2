@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeObservable, action, observable } from 'mobx';
+import { makeAutoObservable, action, observable } from 'mobx';
 import { apiMocks } from '../api/mock/apiMocks'
 import { log } from 'react-native-reanimated';
 
@@ -9,7 +9,7 @@ class CatalogApi {
     mapBtnState = false
 
     constructor() {
-        makeObservable(this, {
+        makeAutoObservable(this, {
             mapBtnState: observable,
             changeToMap: action.bound,
             setCatalog: action.bound,
@@ -20,10 +20,13 @@ class CatalogApi {
     }
     setCatalog(route) {
         if (route === 'ApartmentsPage') {
-            console.log(route);
+            this.catalog = []
             return this.catalog = apiMocks.ApartmentMockApi
 
         } else if (route === 'HousesPage') {
+            console.log(route);
+            this.catalog = []
+
             return this.catalog = apiMocks.HousesMockApi
         } else {
             return

@@ -23,12 +23,14 @@ padding-top: 12px;
 `;
 const CatalogBlock = observer(() => {
     const { mapBtnState, catalog, setCatalog } = useCatalogApiStore();
-    const catalogData = catalog ? catalog : []
+    // const catalogData = catalog ? catalog : []
 
     const route = useRoute();
     useEffect(() => {
-        setCatalog(route.name);
-    }, [route.name]);
+        if (route.name) {
+            setCatalog(route.name);
+        }
+    }, [route]);
 
     return (
         <>
@@ -36,7 +38,7 @@ const CatalogBlock = observer(() => {
                 style={`
             ${styles.main} } `}>
                 <View style={styles.main_catalog}>
-                    {catalogData.map(item => <CatalogItem data={item} key={item.id} />)}
+                    {catalog.map(item => <CatalogItem data={item} key={item.id} />)}
                 </View>
             </Main>}
             {

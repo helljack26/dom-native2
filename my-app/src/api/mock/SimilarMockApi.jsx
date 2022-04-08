@@ -3,7 +3,7 @@ export const SimilarMockApi =
         {
             id: 1,
             name: "Апартаменты-студия, 22,8 м², 4/8 эт.",
-            category: 'Квартиры',
+            category: 'apartments',
             price: 8430000,
             location: "жилой район Адлер, ул. Просвещения, 74Б • р-н Хостинский",
             size: "1 комната · 75 м²",
@@ -41,7 +41,7 @@ export const SimilarMockApi =
         {
             id: 2,
             name: "Гостиница, 90 м²",
-            category: 'Квартиры',
+            category: 'apartments',
             price: 3100000,
             oldPrice: 3400000,
             location: "жилой район Адлер, ул. Просвещения, 74Б",
@@ -79,7 +79,7 @@ export const SimilarMockApi =
         {
             id: 3,
             name: "1-к. Квартира, 18,3 м², 15/19 эт.",
-            category: 'Квартиры',
+            category: 'apartments',
             price: 7887300,
             location: "ул. Ясногорская, стр. 9 р-н Хостинский",
             size: "1 комната · 8,3 м²",
