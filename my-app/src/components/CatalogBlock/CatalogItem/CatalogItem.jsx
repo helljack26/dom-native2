@@ -3,22 +3,44 @@ import COLORS from '../../../res/colors'
 import IMAGES from '../../../res/images'
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
+// Icon
 const PercentIcon = IMAGES.percent_icon;
 const ViewIcon = IMAGES.view_icon;
 const FavoriteSmallIcon = IMAGES.heart_small_icon;
+
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
-const CatalogItem = ({ data, navigation }) => {
-    const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
+const CatalogItem = ({ data }) => {
+    const { id,
+        name,
+        price,
+        oldPrice,
+        category,
+        location,
+        size,
+        photoSmallPath,
+        inFavorite,
+        viewNumber,
+        favoriteNumber } = data;
+
+    const navigation = useNavigation();
+
+    const spaceInPriceValue = (priceValue) => {
+        if (priceValue !== undefined) {
+            return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
+        }
+    }
+    const spacedPrice = spaceInPriceValue(price)
+    const spacedOldPrice = spaceInPriceValue(oldPrice)
 
     const priceBlock = oldPrice !== undefined ? (
         <View >
             <Text style={styles.newPrice}>
-                {price}
+                {spacedPrice} $
             </Text>
             <Text style={styles.oldPrice}>
-                {oldPrice}
+                {spacedOldPrice} $
             </Text>
         </View>)
         :
@@ -31,13 +53,11 @@ const CatalogItem = ({ data, navigation }) => {
             style={styles.catalog_item}>
             <TouchableOpacity style={styles.catalog_item_photo_container}
                 onPress={() => {
-                    /* 1. Navigate to the Details route with params */
                     navigation.navigate('CardPage', {
                         itemId: id,
                         category: category,
                     });
-                }}
-            >
+                }}>
                 <Image source={photoSmallPath}
                     style={styles.catalog_item_photo} alt={name} />
             </TouchableOpacity>
@@ -65,12 +85,11 @@ const CatalogItem = ({ data, navigation }) => {
                         <Text style={styles.catalog_item_footer_block_text}>{viewNumber}</Text>
                     </View >
                 </View>
-                {/* TODO добавить здесь переход на обьект */}
                 <TouchableOpacity
                     onPress={() => {
-                        /* 1. Navigate to the Details route with params */
                         navigation.navigate('CardPage', {
-                            itemId: id
+                            itemId: id,
+                            category: category
                         });
                     }}
                 >

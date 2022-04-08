@@ -1,9 +1,9 @@
 import FONTS from '../../res/fonts'
 import IMAGES from '../../res/images'
-
-import { StyleSheet, SafeAreaView } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView, ScrollView, View, Text } from 'react-native';
 import {
-    useRef, 
+    useRef,
 } from 'react';
 import Header from '../../components/Header/Header';
 
@@ -14,6 +14,7 @@ import CardDetailsContainer from '../../components/Card/CardDetailsContainer/Car
 import CardSaveButton from '../../components/Card/CardSaveButton/CardSaveButton'
 import CardAgentContainer from '../../components/Card/CardAgentContainer/CardAgentContainer'
 import CardSimilarObject from '../../components/Card/CardSimilarObject/CardSimilarObject'
+import { useRoute } from '@react-navigation/native';
 
 import styled from 'styled-components/native';
 
@@ -23,13 +24,13 @@ background-color: white;
 padding: 0px 4%
 `;
 
-import { ApartmentMockApi } from '../../api/mock/ApartmentMockApi.jsx'
+import { apiMocks } from '../../api/mock/apiMocks'
 
-
-export default function CardPage({ route, navigation }) {
+export default function CardPage() {
+    const route = useRoute();
     const { itemId, category } = route.params;
     const scrollViewRef = useRef(null)
-
+    console.log(itemId, category);
     const scrollTop = () => {
         if (scrollViewRef.current) {
             scrollViewRef.current.scrollTo({ y: 0, animated: true })
@@ -41,19 +42,19 @@ export default function CardPage({ route, navigation }) {
 
     const whichCatalog = (catalogName) => {
         switch (catalogName) {
-            case 'Квартиры':
-                return ApartmentMockApi;
+            case 'apartments':
+                return apiMocks.ApartmentMockApi;
+            case 'houses':
+                return apiMocks.HousesMockApi;
             default:
                 break;
         }
     }
     const catalogDefined = whichCatalog(category)
-    const cardDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
-
-    const { id, photoLargePath } = cardDetails;
-    return (<SafeAreaView style={styles.body}
-
-    >
+    const objectDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
+    console.log(objectDetails);
+    const { id, photoLargePath } = objectDetails;
+    return (<SafeAreaView style={styles.body}>
         <Header />
         <Main
             ref={scrollViewRef}
@@ -61,7 +62,7 @@ export default function CardPage({ route, navigation }) {
             style={styles.container}>
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={photoLargePath} />
-            <CardDetailsContainer details={cardDetails} />
+            <CardDetailsContainer details={objectDetails} />
             <CardSaveButton />
             <CardAgentContainer agentId={id} />
             <CardSimilarObject />

@@ -1,4 +1,5 @@
 import IMAGES from '../../../res/images'
+import React from 'react';
 
 import { styles } from './style.js'
 import { Image } from 'react-native';

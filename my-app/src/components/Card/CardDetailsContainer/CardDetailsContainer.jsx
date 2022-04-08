@@ -1,6 +1,8 @@
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 import CardAccordion from '../CardAccordion/CardAccordion'
-import { StyleSheet, TouchableOpacity, Image, Text, View, SafeAreaView } from 'react-native';
+import React from 'react';
+
+import { StyleSheet, View } from 'react-native';
 
 import { style } from './style'
 const { Container,
@@ -20,7 +22,6 @@ const { Container,
 
 const CardDetailsContainer = ({ details }) => {
     const {
-        id,
         name,
         price,
         location,
@@ -33,8 +34,9 @@ const CardDetailsContainer = ({ details }) => {
         // coords,
         inFavorite,
         isNewHouse } = details;
+
     // Object details
-    const { totalArea, } = objectDetails;
+    const { totalArea } = objectDetails;
 
     const spaceInPriceValue = (priceValue) => {
         return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
@@ -73,11 +75,11 @@ const CardDetailsContainer = ({ details }) => {
                     </Price_block_square_rating>
 
                 </Price_block>
-                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} id={id} />
+                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails} />
+            {/* <CardAccordion objectDetails={objectDetails}description={description} /> */}
         </Container>
     )
 }

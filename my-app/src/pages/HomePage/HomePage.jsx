@@ -6,8 +6,7 @@ import Header from '../../components/Header/Header';
 import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
 import RecommendationBlock from '../../components/RecommendationBlock/RecommendationBlock';
 
-import { RecommendationMockApi } from '../../api/mock/RecommendationMockApi.jsx'
-export default function HomePage({ navigation }) {
+export default function HomePage() {
 
     return (
         <View style={styles.body}>
@@ -15,11 +14,11 @@ export default function HomePage({ navigation }) {
             <ScrollView
                 horizontal={false}
                 style={styles.container} >
-                <CategoriesBar navigation={navigation} />
+                <CategoriesBar />
                 <Text style={styles.mainHeader}>
                     Рекомендации для вас
                 </Text>
-                <RecommendationBlock navigation={navigation} data={RecommendationMockApi} />
+                <RecommendationBlock />
             </ScrollView>
         </View>
     );

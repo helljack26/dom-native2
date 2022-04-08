@@ -19,16 +19,13 @@ const {
     Description_text,
 } = styles;
 
-const CardAccordion = ({ objectDetails }) => {
+const CardAccordion = ({ objectDetails, description }) => {
     const { apartmentType,
         totalArea,
         distanceToSea,
         decorate,
         residentialComplex,
         placeOnChessBoard,
-        residentialComplexPath,
-        placeOnChessBoardPath,
-        description,
         apartmentClass,
         deadlines } = objectDetails;
 

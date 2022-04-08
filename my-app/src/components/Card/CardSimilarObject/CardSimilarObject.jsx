@@ -1,8 +1,12 @@
 import { styles } from './style.js'
+import React from 'react';
+
 import { useNavigation } from '@react-navigation/native';
 
 const {
-    Similar, Similar_header, Similar_block
+    Similar,
+    Similar_header,
+    Similar_block
 } = styles;
 
 import CardSimilarItem from './CardSimilarItem'

@@ -1,5 +1,6 @@
 import COLORS from '../../../res/colors'
 import FONTS from '../../../res/fonts'
+import React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
 

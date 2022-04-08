@@ -1,12 +1,13 @@
 import COLORS from '../../../res/colors'
 import FONTS from '../../../res/fonts'
+import React from 'react';
 
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
-import { useGalleryButtonStore } from '../../../stores/galleryMapBtn';
+import { useCatalogApiStore } from '../../../stores/CatalogApi';
 
 const AdsFilterBar = observer(() => {
-    const { btnState, changeView } = useGalleryButtonStore();
+    const { btnState, changeToMap } = useCatalogApiStore();
     const filterCounter = 3;
 
     return (
@@ -22,7 +23,7 @@ const AdsFilterBar = observer(() => {
             </TouchableOpacity>
             <View style={styles.border}></View>
             <TouchableOpacity
-                onPress={changeView}
+                onPress={changeToMap}
                 style={styles.button}>
                 <Text> {!btnState ? 'Галерея' : 'На карте'}</Text>
             </TouchableOpacity>

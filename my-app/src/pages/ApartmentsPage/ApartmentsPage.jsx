@@ -1,11 +1,12 @@
 import FONTS from '../../res/fonts'
-import { StyleSheet, ScrollView, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import Header from '../../components/Header/Header';
 import AdsFunctionalBar from '../../components/AdsFunctionalBar/AdsFunctionalBar';
 import CatalogBlock from '../../components/CatalogBlock/CatalogBlock';
-import { ApartmentMockApi } from '../../api/mock/ApartmentMockApi.jsx'
-export default function ApartmentsPage({ navigation }) {
+
+export default function ApartmentsPage() {
     return (
         <View style={styles.body}>
             <Header />
@@ -13,7 +14,7 @@ export default function ApartmentsPage({ navigation }) {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <CatalogBlock navigation={navigation} data={ApartmentMockApi} />
+                <CatalogBlock />
             </ScrollView>
         </View>
     );

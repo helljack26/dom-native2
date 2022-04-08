@@ -1,5 +1,7 @@
 import IMAGES from '../../../res/images'
 import { styles } from './style'
+import React from 'react';
+
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton'
 
 const ViewIcon = IMAGES.view_icon
@@ -16,7 +18,7 @@ const {
     FavoriteView_block_text,
 } = styles;
 
-const CardDetailsButtonBar = ({ id, inFavorite, favoriteNumber, viewNumber }) => {
+const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
     return (
         <Card_details>

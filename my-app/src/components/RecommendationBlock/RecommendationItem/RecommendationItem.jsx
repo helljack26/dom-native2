@@ -1,11 +1,23 @@
 import FONTS from '../../../res/fonts'
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
-const RecommendationItem = ({ data, navigation }) => {
-    const { id, name, price, category, oldPrice, location, size, photoSmallPath, inFavorite } = data;
+const RecommendationItem = ({ data }) => {
+    const { id,
+        name,
+        price,
+        category,
+        oldPrice,
+        location,
+        size,
+        photoSmallPath,
+        inFavorite } = data;
+
+    const navigation = useNavigation();
+
     const spaceInPriceValue = (priceValue) => {
         if (priceValue !== undefined) {
             return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
@@ -30,7 +42,6 @@ const RecommendationItem = ({ data, navigation }) => {
         <View style={styles.recommendation_item}>
             <TouchableOpacity style={styles.catalog_item_photo_container}
                 onPress={() => {
-                    /* 1. Navigate to the Details route with params */
                     navigation.navigate('CardPage', {
                         itemId: id,
                         category: category,

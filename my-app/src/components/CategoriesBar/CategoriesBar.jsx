@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import CATEGORIES from '../../res/strings'
 
-export default function CategoriesBar({ navigation }) {
+export default function CategoriesBar() {
     const [selectedId, setSelectedId] = useState(null);
+    const navigation = useNavigation();
 
     const RenderItem = ({ item, id }) => {
         const backgroundColor = item.id === selectedId ? "whitesmoke" : "black";

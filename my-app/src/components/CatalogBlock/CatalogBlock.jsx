@@ -1,10 +1,14 @@
 import IMAGES from '../../res/images'
 
 import React from 'react';
+import { useEffect } from 'react';
+
 import { StyleSheet, View, Image } from 'react-native';
 import CatalogItem from './CatalogItem/CatalogItem'
 import { observer } from 'mobx-react-lite';
-import { useGalleryButtonStore } from '../../stores/galleryMapBtn';
+import { useCatalogApiStore } from '../../stores/CatalogApi';
+import { useRoute } from '@react-navigation/native';
+
 
 import styled from 'styled-components/native';
 const Main = styled.View`
@@ -17,24 +21,26 @@ width: 92%;
 background-color: white;
 padding-top: 12px;
 `;
-const CatalogBlock = observer(({ data, navigation }) => {
-    const { btnState } = useGalleryButtonStore();
+const CatalogBlock = observer(() => {
+    const { mapBtnState, catalog, setCatalog } = useCatalogApiStore();
+    const catalogData = catalog ? catalog : []
+
+    const route = useRoute();
+    useEffect(() => {
+        setCatalog(route.name);
+    }, [route.name]);
 
     return (
         <>
-            {  !btnState && <Main
+            {!mapBtnState && <Main
                 style={`
             ${styles.main} } `}>
                 <View style={styles.main_catalog}>
-                    {data.map(item => {
-                        return (
-                            <CatalogItem navigation={navigation} data={item} key={item.id} />
-                        )
-                    })}
+                    {catalogData.map(item => <CatalogItem data={item} key={item.id} />)}
                 </View>
             </Main>}
             {
-                btnState &&
+                mapBtnState &&
                 <Image
                     style={styles.map_template}
                     source={IMAGES.map_template} />

@@ -9,7 +9,7 @@ export const SimilarMockApi =
             size: "1 комната · 75 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_2.png'),
             photoLargePath: [
-                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/apartment/appartment_2.png') },
                 { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
@@ -48,7 +48,7 @@ export const SimilarMockApi =
             size: "90 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_3.png'),
             photoLargePath: [
-                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/apartment/appartment_3.png') },
                 { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,
@@ -85,7 +85,7 @@ export const SimilarMockApi =
             size: "1 комната · 8,3 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_1.png'),
             photoLargePath: [
-                { url: require('../../../assets/detail_card/1.png') },
+                { url: require('../../../assets/apartment/appartment_1.png') },
                 { url: require('../../../assets/detail_card/2.png') }
             ],
             favoriteNumber: 9,

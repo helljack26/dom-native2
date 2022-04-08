@@ -1,6 +1,7 @@
 import COLORS from '../../../res/colors'
 import IMAGES from '../../../res/images'
 import FONTS from '../../../res/fonts'
+import React from 'react';
 
 import { useState } from 'react'
 import styled from 'styled-components/native';

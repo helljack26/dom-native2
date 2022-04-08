@@ -1,5 +1,7 @@
 import { R } from '../../res/R.js'
 const ArrowLeftIcon = R.IMAGES.arrow_left;
+import React from 'react';
+
 import { StyleSheet, TouchableOpacity, Text, Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styled from 'styled-components/native';

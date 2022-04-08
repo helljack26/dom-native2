@@ -1,11 +1,8 @@
-import FONTS from '../../res/fonts'
-import COLORS from '../../res/colors'
-
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import RecommendationItem from './RecommendationItem/RecommendationItem'
-
+import { RecommendationMockApi } from '../../api/mock/RecommendationMockApi.jsx'
 
 import styled from 'styled-components/native';
 const Main = styled.View`
@@ -18,14 +15,14 @@ width: 92%;
 background-color: white;
 padding-top: 12px;
 `;
-const RecommendationBlock = ({ data, navigation }) => {
+const RecommendationBlock = () => {
     return (<Main
         style={`
             ${styles.main} } `}>
         <View style={styles.main_recommendation}>
-            {data.map(item => {
+            {RecommendationMockApi.map(item => {
                 return (
-                    <RecommendationItem navigation={navigation} data={item} key={item.id} />
+                    <RecommendationItem data={item} key={item.id} />
                 )
             })}
         </View>
