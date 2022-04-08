@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeAutoObservable, action, observable } from 'mobx';
 import { apiMocks } from '../api/mock/apiMocks'
-import { log } from 'react-native-reanimated';
-
 
 class CatalogApi {
     catalog = []
@@ -24,9 +22,7 @@ class CatalogApi {
             return this.catalog = apiMocks.ApartmentMockApi
 
         } else if (route === 'HousesPage') {
-            console.log(route);
             this.catalog = []
-
             return this.catalog = apiMocks.HousesMockApi
         } else {
             return

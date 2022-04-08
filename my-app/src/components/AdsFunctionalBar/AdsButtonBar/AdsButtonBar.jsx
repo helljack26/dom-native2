@@ -32,7 +32,7 @@ align-items: center;
 const FavoriteButton = styled.TouchableOpacity`
 border-radius: 5px;
 border: 1px solid ${COLORS.mainBlack};
-padding: 12px 0px;
+padding: 14px 0px;
 width: 17%;
 font-size: 13px;
 display: flex;
@@ -50,7 +50,7 @@ font-family: ${FONTS.medium};
 margin-right: 20px;
 `;
 const HeartIcon = styled.Image`
-width: 14px;
+width: 15px;
 height: 14px;
 `;
 
@@ -61,9 +61,10 @@ const AdsButtonBar = () => {
     return (
         <Container>
             <SortButton>
-                <Title>Сортировка:  <SortValue>
-                    {sortValue}
-                </SortValue>
+                <Title>Сортировка:
+                    <SortValue>
+                        {sortValue}
+                    </SortValue>
                     <ArrowDownIcon />
                 </Title>
             </SortButton>
@@ -71,7 +72,7 @@ const AdsButtonBar = () => {
                 onPress={() => {
                     return setType(type ? false : true)
                 }}>
-                <HeartIcon source={type ? IMAGES.heart_active : IMAGES.heart_default} alt="Иконка сохранить поиск" />
+                <HeartIcon source={type ? IMAGES.heart_active : IMAGES.heart_default} />
             </FavoriteButton>
         </Container>
     )

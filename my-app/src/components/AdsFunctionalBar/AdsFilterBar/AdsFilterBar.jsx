@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '../../../stores/CatalogApi';
 
 const AdsFilterBar = observer(() => {
-    const { btnState, changeToMap } = useCatalogApiStore();
+    const { mapBtnState, changeToMap } = useCatalogApiStore();
     const filterCounter = 3;
 
     return (
@@ -25,7 +25,7 @@ const AdsFilterBar = observer(() => {
             <TouchableOpacity
                 onPress={changeToMap}
                 style={styles.button}>
-                <Text> {!btnState ? 'Галерея' : 'На карте'}</Text>
+                <Text> {mapBtnState ? 'Галерея' : 'На карте'}</Text>
             </TouchableOpacity>
         </View>
     )

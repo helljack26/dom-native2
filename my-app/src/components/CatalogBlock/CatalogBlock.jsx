@@ -4,7 +4,8 @@ import React from 'react';
 import { useEffect } from 'react';
 
 import { StyleSheet, View, Image } from 'react-native';
-import CatalogItem from './CatalogItem/CatalogItem'
+import ApartmentItem from './ApartmentItem/ApartmentItem'
+import OtherCatalogItem from './OtherCatalogItem/OtherCatalogItem'
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '../../stores/CatalogApi';
 import { useRoute } from '@react-navigation/native';
@@ -32,15 +33,18 @@ const CatalogBlock = observer(() => {
         }
     }, [route]);
 
+
     return (
         <>
-            {!mapBtnState && <Main
-                style={`
-            ${styles.main} } `}>
-                <View style={styles.main_catalog}>
-                    {catalog.map(item => <CatalogItem data={item} key={item.id} />)}
-                </View>
-            </Main>}
+            {!mapBtnState &&
+                <Main style={`${styles.main}`}>
+                    {/* ApartmentsPage render item in two column */}
+                    {route.name === 'ApartmentsPage' ? <View style={styles.main_catalog}>
+                        {catalog.map(item => <ApartmentItem data={item} key={item.id} />)}
+                    </View> : <View style={styles.main_other}>
+                            {catalog.map(item => <OtherCatalogItem data={item} key={item.id} />)}
+                        </View>}
+                </Main>}
             {
                 mapBtnState &&
                 <Image
@@ -54,9 +58,6 @@ const CatalogBlock = observer(() => {
 export default CatalogBlock;
 
 const styles = StyleSheet.create({
-    main_recommendation: {
-        width: '100%',
-    },
     main_catalog: {
         width: '100%',
         flexDirection: "row",
@@ -64,6 +65,13 @@ const styles = StyleSheet.create({
         height: '100%',
         flex: 1,
         justifyContent: 'space-between',
+    },
+    main_other: {
+        width: '100%',
+        flexDirection: "column",
+        height: '100%',
+        flex: 1,
+        alignContent: 'center',
     },
     map_template: {
         marginTop: 15,

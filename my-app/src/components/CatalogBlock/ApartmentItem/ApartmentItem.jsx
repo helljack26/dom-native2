@@ -11,7 +11,7 @@ const FavoriteSmallIcon = IMAGES.heart_small_icon;
 
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
-const CatalogItem = ({ data }) => {
+const ApartmentItem = ({ data }) => {
     const { id,
         name,
         price,
@@ -99,7 +99,7 @@ const CatalogItem = ({ data }) => {
         </View>
     )
 }
-export default CatalogItem;
+export default ApartmentItem;
 
 const styles = StyleSheet.create({
     catalog_item: {
