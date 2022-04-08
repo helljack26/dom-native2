@@ -4,33 +4,42 @@ import { apiMocks } from '../api/mock/apiMocks'
 
 class CatalogApi {
     catalog = []
-    mapBtnState = false
+    isGallery = true
 
     constructor() {
         makeAutoObservable(this, {
-            mapBtnState: observable,
-            changeToMap: action.bound,
+            isGallery: observable,
+            setMap: action.bound,
+            setGallery: action.bound,
             setCatalog: action.bound,
         })
     }
-    changeToMap() {
-        this.mapBtnState = this.mapBtnState ? false : true
+    setMap() {
+        this.isGallery = false
+    }
+    setGallery() {
+        this.isGallery = true
+    }
+    resetState() {
+        this.catalog = []
+        this.catalog.length === 0 && this.setGallery()
     }
     setCatalog(route) {
         if (route === 'ApartmentsPage') {
-            this.catalog = []
+            this.resetState()
             return this.catalog = apiMocks.ApartmentMockApi
-
         } else if (route === 'HousesPage') {
-            this.catalog = []
+            this.resetState()
             return this.catalog = apiMocks.HousesMockApi
-        } else {
+        } else if (route === 'PlotsPage') {
+            this.resetState()
+            return this.catalog = apiMocks.PlotMockApi
+        }
+        else {
             return
         }
     }
 }
-
-
 
 const catalogApiStore = new CatalogApi();
 

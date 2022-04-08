@@ -12,9 +12,11 @@ display: flex;
 align-items: center;
 flex-direction: row;
 margin-top: 15px;
-
 `;
-const Breadcrumbs = ({ title, ads, goBack }) => {
+
+import PageLocation from '../helpers/pageLocation'
+const Breadcrumbs = ({ goBack }) => {
+    const { title, ads } = PageLocation();
     const navigation = useNavigation();
 
     const isAds = ads &&
@@ -34,12 +36,9 @@ const Breadcrumbs = ({ title, ads, goBack }) => {
         </GoBack>
 
     const breadcrumbs = !goBack ? isAds : isGoBack
-    return (
-        <>
-            { breadcrumbs}
-        </>
 
-    )
+    return breadcrumbs
+
 }
 export default Breadcrumbs;
 

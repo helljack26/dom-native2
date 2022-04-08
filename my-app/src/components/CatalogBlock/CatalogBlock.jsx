@@ -1,7 +1,7 @@
 import IMAGES from '../../res/images'
 
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Image } from 'react-native';
 
@@ -10,7 +10,6 @@ import OtherCatalogItem from './OtherCatalogItem/OtherCatalogItem'
 
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '../../stores/CatalogApi';
-
 
 import styled from 'styled-components/native';
 const Main = styled.View`
@@ -24,7 +23,7 @@ background-color: white;
 padding-top: 12px;
 `;
 const CatalogBlock = observer(() => {
-    const { mapBtnState, catalog, setCatalog } = useCatalogApiStore();
+    const { isGallery, catalog, setCatalog } = useCatalogApiStore();
 
     const route = useRoute();
     useEffect(() => {
@@ -32,20 +31,21 @@ const CatalogBlock = observer(() => {
             setCatalog(route.name);
         }
     }, [route]);
-
     return (
         <>
-            {!mapBtnState &&
+            {isGallery &&
                 <Main style={`${styles.main}`}>
                     {/* ApartmentsPage render item in two column */}
-                    {route.name === 'ApartmentsPage' ? <View style={styles.main_catalog}>
-                        {catalog.map(item => <ApartmentItem data={item} key={item.id} />)}
-                    </View> : <View style={styles.main_other}>
+                    {route.name === 'ApartmentsPage' ?
+                        <View style={styles.main_catalog}>
+                            {catalog.map(item => <ApartmentItem data={item} key={item.id} />)}
+                        </View>
+                        :
+                        <View style={styles.main_other}>
                             {catalog.map(item => <OtherCatalogItem data={item} key={item.id} />)}
                         </View>}
                 </Main>}
-            {
-                mapBtnState &&
+            {isGallery === false &&
                 <Image
                     style={styles.map_template}
                     source={IMAGES.map_template} />

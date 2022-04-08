@@ -26,6 +26,17 @@ border-radius: 20px;
 background-color: #9b51e0;
 
 `;
+const Name_block_header_text_block_new = styled.View`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 105px;
+padding: 3px 0px;
+margin-top: 20px;
+border-radius: 20px;
+background-color: #6abd24;
+
+`;
 const Name_block_header_text = styled.Text`
 font-size: 20px;
 letter-spacing: 0.4px;
@@ -78,6 +89,7 @@ export const style = {
     Name_block: Name_block,
     Name_block_header: Name_block_header,
     Name_block_header_text_block: Name_block_header_text_block,
+    Name_block_header_text_block_new: Name_block_header_text_block_new,
     Name_block_header_text: Name_block_header_text,
     Name_block_header_type: Name_block_header_type,
     Place: Place,

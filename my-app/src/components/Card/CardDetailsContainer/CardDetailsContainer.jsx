@@ -11,6 +11,7 @@ const { Container,
     Name_block_header_text,
     Name_block_header_text_block,
     Name_block_header_type,
+    Name_block_header_text_block_new,
     Place,
     Price,
     Price_block,
@@ -51,12 +52,17 @@ const CardDetailsContainer = ({ details }) => {
                     <Name_block_header_text>
                         {name}
                         <View style={styles.catalog_item_separate}></View>
-                        {isNewHouse !== undefined ?
+                        {isNewHouse !== undefined ? isNewHouse === true ?
+                            <Name_block_header_text_block_new>
+                                <Name_block_header_type>
+                                    Новостройка
+                                </Name_block_header_type>
+                            </Name_block_header_text_block_new>
+                            :
                             <Name_block_header_text_block>
-                                {isNewHouse ?
-                                    <Name_block_header_type>Первичное жилье</Name_block_header_type>
-                                    :
-                                    <Name_block_header_type>Вторичное жилье</Name_block_header_type>}
+                                <Name_block_header_type>
+                                    Вторичное жилье
+                                </Name_block_header_type>
                             </Name_block_header_text_block> : null}
                     </Name_block_header_text>
                 </Name_block_header>
@@ -73,7 +79,6 @@ const CardDetailsContainer = ({ details }) => {
                         <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>
                         <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
                     </Price_block_square_rating>
-
                 </Price_block>
                 <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
             </Price>

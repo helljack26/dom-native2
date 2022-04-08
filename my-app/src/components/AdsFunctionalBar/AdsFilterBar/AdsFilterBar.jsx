@@ -7,9 +7,9 @@ import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '../../../stores/CatalogApi';
 
 const AdsFilterBar = observer(() => {
-    const { mapBtnState, changeToMap } = useCatalogApiStore();
-    const filterCounter = 3;
+    const { isGallery, setGallery, setMap } = useCatalogApiStore();
 
+    const filterCounter = 3;
     return (
         <View style={styles.filter_mobile}>
             <TouchableOpacity
@@ -17,17 +17,26 @@ const AdsFilterBar = observer(() => {
                 <Text style={styles.filterBtn_text} >
                     Фильтры
                 </Text>
+                {/* TODO где то здесь нужно получать в фильтра данные */}
                 <Text style={styles.filterBtn_number} >
                     {filterCounter}
                 </Text>
             </TouchableOpacity>
             <View style={styles.border}></View>
-            <TouchableOpacity
-                onPress={changeToMap}
-                style={styles.button}>
-                <Text> {mapBtnState ? 'Галерея' : 'На карте'}</Text>
-            </TouchableOpacity>
-        </View>
+            {isGallery === false ?
+                <TouchableOpacity
+                    onPress={setGallery}
+                    style={styles.button}>
+                    <Text>Галерея</Text>
+                </TouchableOpacity>
+                :
+                <TouchableOpacity
+                    onPress={setMap}
+                    style={styles.button}>
+                    <Text>На карте</Text>
+                </TouchableOpacity>
+            }
+        </View >
     )
 })
 

@@ -1,23 +1,19 @@
 import FONTS from '../../res/fonts'
-import IMAGES from '../../res/images'
+
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, View, Text } from 'react-native';
-import {
-    useRef,
-} from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import { useRef } from 'react';
+import { useRoute } from '@react-navigation/native';
+
 import Header from '../../components/Header/Header';
-
 import Breadcrumbs from '../../components/Breadcrumbs'
-
 import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPhotoContainer'
 import CardDetailsContainer from '../../components/Card/CardDetailsContainer/CardDetailsContainer'
 import CardSaveButton from '../../components/Card/CardSaveButton/CardSaveButton'
 import CardAgentContainer from '../../components/Card/CardAgentContainer/CardAgentContainer'
 import CardSimilarObject from '../../components/Card/CardSimilarObject/CardSimilarObject'
-import { useRoute } from '@react-navigation/native';
 
 import styled from 'styled-components/native';
-
 const Main = styled.ScrollView`
 width: 100%;
 background-color: white;
@@ -46,6 +42,8 @@ export default function CardPage() {
                 return apiMocks.ApartmentMockApi;
             case 'houses':
                 return apiMocks.HousesMockApi;
+            case 'plots':
+                return apiMocks.PlotMockApi;
             default:
                 break;
         }
