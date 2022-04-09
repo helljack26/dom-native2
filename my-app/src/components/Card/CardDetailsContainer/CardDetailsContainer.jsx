@@ -25,6 +25,7 @@ const CardDetailsContainer = ({ details }) => {
     const {
         name,
         price,
+        priceAfter,
         location,
         favoriteNumber,
         viewNumber,
@@ -74,7 +75,7 @@ const CardDetailsContainer = ({ details }) => {
             {/* Price */}
             <Price>
                 <Price_block>
-                    <Price_block_price>{spacedPrice} $</Price_block_price>
+                    <Price_block_price>{spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
                     <Price_block_square_rating>
                         <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>
                         <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>

@@ -34,6 +34,12 @@ class CatalogApi {
         } else if (route === 'PlotsPage') {
             this.resetState()
             return this.catalog = apiMocks.PlotMockApi
+        } else if (route === 'CommercePage') {
+            this.resetState()
+            return this.catalog = apiMocks.CommerceMockApi
+        } else if (route === 'RentPage') {
+            this.resetState()
+            return this.catalog = apiMocks.RentMockApi
         }
         else {
             return

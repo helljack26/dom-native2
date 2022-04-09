@@ -44,6 +44,10 @@ export default function CardPage() {
                 return apiMocks.HousesMockApi;
             case 'plots':
                 return apiMocks.PlotMockApi;
+            case 'commerce':
+                return apiMocks.CommerceMockApi;
+            case 'rent':
+                return apiMocks.RentMockApi;
             default:
                 break;
         }
@@ -56,8 +60,7 @@ export default function CardPage() {
         <Header />
         <Main
             ref={scrollViewRef}
-            horizontal={false}
-            style={styles.container}>
+            horizontal={false}>
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={photoLargePath} />
             <CardDetailsContainer details={objectDetails} />

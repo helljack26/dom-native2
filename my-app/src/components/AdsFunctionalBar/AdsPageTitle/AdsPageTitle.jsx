@@ -14,9 +14,7 @@ const AdsPageTitle = observer(({ city = 'Киеве' }) => {
 
     return (<View >
         <View style={styles.adsHeaderBlock}>
-            <Text style={styles.adsHeader}>{title}</Text>
-            <Text style={styles.adsHeader}> в </Text>
-            <Text style={styles.adsHeader}>{city}</Text>
+            <Text style={styles.adsHeader}>{title} в {city}</Text>
         </View>
         <View>
             <Text style={styles.adsQueryNumber}>{objectInCatalog}

@@ -17,7 +17,7 @@ const PageLocation = () => {
             ads = true
             break;
         case 'CommercePage':
-            title = 'Коммерция'
+            title = 'Коммерческие объекты'
             ads = true
             break;
         case 'RentPage':

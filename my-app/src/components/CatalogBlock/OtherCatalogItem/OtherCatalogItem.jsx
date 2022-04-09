@@ -67,15 +67,16 @@ const OtherCatalogItem = ({ data }) => {
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
                         <FavoriteSmallIcon />
-                        <Text style={styles.catalog_item_footer_block_text}>{favoriteNumber}</Text>
+                        <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{favoriteNumber}</Text>
                     </View >
                     <View style={styles.catalog_item_footer_block_info}>
                         <ViewIcon />
-                        <Text style={styles.catalog_item_footer_block_text}>{viewNumber}</Text>
+                        <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{viewNumber}</Text>
                     </View >
                 </View>
 
                 <TouchableOpacity
+                    style={styles.catalog_item_footer_link_block}
                     onPress={() => {
                         navigation.navigate('CardPage', {
                             itemId: id,
@@ -173,27 +174,27 @@ const styles = StyleSheet.create({
         marginTop: 8,
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-
     },
     catalog_item_footer_block: {
-        width: '20%',
-        flex: 0.25,
-        flexDirection: 'row',
-        alignItems: 'center'
-
-    },
-    catalog_item_footer_block_info: {
-        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    catalog_item_footer_block_info: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight: 5,
     },
     catalog_item_footer_block_text: {
         fontSize: 10,
         fontFamily: FONTS.light,
         color: COLORS.mainBlack,
-        marginLeft: 5,
+        marginHorizontal: 5,
+    },
+    catalog_item_footer_link_block: {
+        flex: 5,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
     },
     catalog_item_footer_link: {
         fontSize: 10,
