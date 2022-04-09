@@ -14,6 +14,7 @@ import PdfIcon from '../../assets/icon/pdf_icon.svg';
 import ComplainIcon from '../../assets/icon/complain_icon.svg';
 import HomeSmallIcon from '../../assets/icon/home_icon.svg';
 import UserIcon from '../../assets/icon/user_icon.svg';
+import UserHeaderIcon from '../../assets/icon/user_header_icon.svg';
 import HandsIcon from '../../assets/icon/hands_icon.svg';
 import LockIcon from '../../assets/icon/lock_icon.svg';
 
@@ -41,6 +42,7 @@ const IMAGES = {
     ComplainIcon: ComplainIcon,
     HomeSmallIcon: HomeSmallIcon,
     UserIcon: UserIcon,
+    UserHeaderIcon: UserHeaderIcon,
     HandsIcon: HandsIcon,
     LockIcon: LockIcon,
 

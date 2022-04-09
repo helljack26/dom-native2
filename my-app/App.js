@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Image, Text, View } from 'react-native';
@@ -9,39 +8,17 @@ import { StyleSheet, Image, Text, View } from 'react-native';
 import { useFonts } from "@use-expo/font";
 import AppLoading from 'expo-app-loading';
 
-import HomePage from './src/pages/HomePage/HomePage.jsx';
-import CardPage from './src/pages/CardPage/CardPage.jsx';
-// Categories 
-import ApartmentsPage from './src/pages/ApartmentsPage/ApartmentsPage.jsx'
-import HousesPage from './src/pages/HousesPage/HousesPage.jsx'
-import PlotsPage from './src/pages/PlotsPage/PlotsPage.jsx'
-import CommercePage from './src/pages/CommercePage/CommercePage.jsx'
-import RentPage from './src/pages/RentPage/RentPage.jsx'
 // Navbar
-import AddPage from './src/pages/AddPage/AddPage.jsx'
-import FavoritePage from './src/pages/FavoritePage/FavoritePage.jsx'
-import CollectionsPage from './src/pages/CollectionsPage/CollectionsPage.jsx'
-import ChatPage from './src/pages/ChatPage/ChatPage.jsx'
+import AddPage from './src/pages/Navbar/AddPage/AddPage'
+import FavoritePage from './src/pages/Navbar/FavoritePage/FavoritePage'
+import CollectionsPage from './src/pages/Navbar/CollectionsPage/CollectionsPage'
+import ChatPage from './src/pages/Navbar/ChatPage/ChatPage'
+
+// Import home
+// import HomeUser from './routes/HomeUser'
+import HomeRealtor from './routes/HomeRealtor'
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
-
-function Home() {
-    return <Stack.Navigator
-        screenOptions={() => ({
-            tabBarShowLabel: false,
-            headerShown: false,
-        })}>
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="CardPage" component={CardPage} />
-        <Stack.Screen name="ApartmentsPage" component={ApartmentsPage} />
-        <Stack.Screen name="HousesPage" component={HousesPage} />
-        <Stack.Screen name="PlotsPage" component={PlotsPage} />
-        <Stack.Screen name="CommercePage" component={CommercePage} />
-        <Stack.Screen name="RentPage" component={RentPage} />
-    </Stack.Navigator>
-}
-
 const customFonts = {
     RubikLight: require('./assets/fonts/Rubik-Light.otf'),
     RubikRegular: require('./assets/fonts/Rubik-Regular.otf'),
@@ -90,7 +67,11 @@ export default function App() {
                 headerShown: false,
                 showLabel: false,
             })}  >
-            <Tab.Screen name="Объявления" component={Home} />
+            {/* User Version */}
+            {/* <Tab.Screen name="Объявления" component={HomeUser} /> */}
+
+            {/* Realtor Version */}
+            <Tab.Screen name="Объявления" component={HomeRealtor} />
             <Tab.Screen name="Избранное" component={FavoritePage} />
             <Tab.Screen name="Создать" component={AddPage} />
             <Tab.Screen name="Подборки" component={CollectionsPage} />
