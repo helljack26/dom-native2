@@ -24,11 +24,16 @@ font-family: ${FONTS.light};
 display: flex;
 align-items: center;
 flex-direction: row;
-margin-right: 18px;
+margin-right: 16px;
 margin-bottom: 13px;
 `
 const FavoriteView_block_text = styled.Text`
 margin-left: 8px;
+font-family: ${FONTS.light};
+color: ${COLORS.mainBlack};
+font-size: 14px;
+
+
 `
 const Details_mobile = styled.View`
 display: flex;

@@ -1,14 +1,13 @@
 import FONTS from '../../../res/fonts'
 import COLORS from '../../../res/colors'
 import IMAGES from '../../../res/images'
+const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
+
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-const PercentIcon = IMAGES.percent_icon;
-const ViewIcon = IMAGES.view_icon;
-const FavoriteSmallIcon = IMAGES.heart_small_icon;
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
 const OtherCatalogItem = ({ data }) => {
@@ -66,7 +65,7 @@ const OtherCatalogItem = ({ data }) => {
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
-                        <FavoriteSmallIcon />
+                        <HeartSmallIcon width={10} />
                         <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{favoriteNumber}</Text>
                     </View >
                     <View style={styles.catalog_item_footer_block_info}>
@@ -81,10 +80,8 @@ const OtherCatalogItem = ({ data }) => {
                         navigation.navigate('CardPage', {
                             itemId: id,
                             category: category,
-
                         });
-                    }}
-                >
+                    }}  >
                     <Text style={styles.catalog_item_footer_link}>Подробнее &gt;</Text>
                 </TouchableOpacity>
             </View>

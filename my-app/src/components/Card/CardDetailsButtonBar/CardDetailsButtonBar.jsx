@@ -1,14 +1,14 @@
-import IMAGES from '../../../res/images'
-import { styles } from './style'
 import React from 'react';
 
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton'
 
-const ViewIcon = IMAGES.view_icon
-const HeartSmallIcon = IMAGES.heart_small_icon
-const PercentIcon = IMAGES.percent_icon
-const ShareIcon = IMAGES.ShareIcon
+import IMAGES from '../../../res/images'
+const { ViewIcon,
+    HeartSmallIcon,
+    PercentIcon,
+    ShareIcon } = IMAGES;
 
+import { styles } from './style'
 const {
     Card_details,
     FavoriteView,
@@ -26,7 +26,7 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
                 {/* Favorite */}
                 <FavoriteView_block>
-                    <HeartSmallIcon width='14px' />
+                    <HeartSmallIcon width={12} />
                     <FavoriteView_block_text>
                         {favoriteNumber}
                     </FavoriteView_block_text>
@@ -34,7 +34,7 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
                 {/* View */}
                 <FavoriteView_block>
-                    <ViewIcon width='14px' />
+                    <ViewIcon />
                     <FavoriteView_block_text>
                         {viewNumber}
                     </FavoriteView_block_text>
@@ -44,11 +44,11 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
             {/* Buttons */}
             <Details_mobile>
                 <Details_mobile_btn>
-                    <PercentIcon width='14px' />
+                    <PercentIcon width={14} />
                 </Details_mobile_btn>
 
                 <Details_mobile_btn>
-                    <ShareIcon width='14px' />
+                    <ShareIcon width={15} />
                 </Details_mobile_btn>
 
                 <Details_mobile_btn>

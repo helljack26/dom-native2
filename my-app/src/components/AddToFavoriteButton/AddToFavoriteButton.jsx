@@ -1,5 +1,9 @@
+
+import IMAGES from '../../res/images'
+const { HeartDefault, HeartActive } = IMAGES;
+
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 const AddToFavoriteButton = ({ inFavorite, isBig }) => {
     const [type, setType] = useState();
@@ -23,24 +27,12 @@ const AddToFavoriteButton = ({ inFavorite, isBig }) => {
         <TouchableOpacity
             onPress={() =>
                 setType(false)} >
-            <Image
-                source={require("../../../assets/icon/heart_active_icon.png")}
-                style={{
-                    width: iconWidth,
-                    height: iconHeight
-                }}
-                alt='Иконка удалить из избранного' />
+            <HeartActive width={iconWidth} height={iconHeight} />
         </TouchableOpacity> :
         <TouchableOpacity
             onPress={() =>
                 setType(true)} >
-            <Image
-                source={require("../../../assets/icon/heart_icon.png")}
-                style={{
-                    width: iconWidth,
-                    height: iconHeight
-                }}
-                alt='Иконка добавить из избранного' />
+            <HeartDefault width={iconWidth} height={iconHeight} />
         </TouchableOpacity>
 }
 

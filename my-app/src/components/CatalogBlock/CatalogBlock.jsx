@@ -1,7 +1,7 @@
 import IMAGES from '../../res/images'
 
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Image } from 'react-native';
 

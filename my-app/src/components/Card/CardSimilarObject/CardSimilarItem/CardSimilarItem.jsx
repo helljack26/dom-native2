@@ -4,9 +4,8 @@ import IMAGES from '../../../../res/images'
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
-const PercentIcon = IMAGES.percent_icon;
-const ViewIcon = IMAGES.view_icon;
-const FavoriteSmallIcon = IMAGES.heart_small_icon;
+const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
+
 import AddToFavoriteButton from '../../../AddToFavoriteButton/AddToFavoriteButton';
 
 const CardSimilarItem = ({ data, navigation }) => {
@@ -37,7 +36,6 @@ const CardSimilarItem = ({ data, navigation }) => {
             style={styles.catalog_item}>
             <TouchableOpacity style={styles.catalog_item_photo_container}
                 onPress={() => {
-                    /* 1. Navigate to the Details route with params */
                     navigation.navigate('CardPage', {
                         itemId: id,
                         category: category,
@@ -63,7 +61,7 @@ const CardSimilarItem = ({ data, navigation }) => {
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
-                        <FavoriteSmallIcon />
+                        <HeartSmallIcon width={10} />
                         <Text style={styles.catalog_item_footer_block_text}>{favoriteNumber}</Text>
                     </View >
                     <View style={styles.catalog_item_footer_block_info}>
@@ -71,10 +69,8 @@ const CardSimilarItem = ({ data, navigation }) => {
                         <Text style={styles.catalog_item_footer_block_text}>{viewNumber}</Text>
                     </View >
                 </View>
-                {/* TODO добавить здесь переход на обьект */}
                 <TouchableOpacity
                     onPress={() => {
-                        /* 1. Navigate to the Details route with params */
                         navigation.navigate('CardPage', {
                             itemId: id,
                             category: category,

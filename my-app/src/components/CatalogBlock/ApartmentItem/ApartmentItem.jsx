@@ -1,13 +1,13 @@
 import FONTS from '../../../res/fonts'
 import COLORS from '../../../res/colors'
 import IMAGES from '../../../res/images'
+const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
+
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-// Icon
-const PercentIcon = IMAGES.percent_icon;
-const ViewIcon = IMAGES.view_icon;
-const FavoriteSmallIcon = IMAGES.heart_small_icon;
+
+
 
 import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
 
@@ -71,13 +71,13 @@ const ApartmentItem = ({ data }) => {
                 <AddToFavoriteButton inFavorite={inFavorite} isBig={false} />
                 <View style={styles.catalog_item_separate}></View>
                 <TouchableOpacity>
-                    <PercentIcon />
+                    <PercentIcon width={15} height={15} />
                 </TouchableOpacity>
             </View>
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
-                        <FavoriteSmallIcon />
+                        <HeartSmallIcon width={10} />
                         <Text style={styles.catalog_item_footer_block_text}>{favoriteNumber}</Text>
                     </View >
                     <View style={styles.catalog_item_footer_block_info}>

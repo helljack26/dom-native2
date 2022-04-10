@@ -1,10 +1,9 @@
 import IMAGES from '../../../res/images'
 import React from 'react';
 
-import { styles } from './styles.js'
-
 const { CollectionIcon, DocIcon, PdfIcon, ComplainIcon } = IMAGES;
 
+import { styles } from './styles.js'
 const {
     Container,
     Container_block,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, Image, Text, ScrollView, SafeAreaView, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import CATEGORIES from '../../res/strings'
@@ -18,7 +18,7 @@ export default function CategoriesBar() {
                 }
                 }
                 style={[styles.categories_item, backgroundColor]} >
-                <Image style={styles.buttonImg} source={item.uri} />
+                {item.icon}
                 <Text
                     style={styles.categories_item_text}
                 >{item.title}</Text>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         height: 90,
     },
     categories_item_text: {
-        marginTop: 10,
+        marginTop: 8,
         fontSize: 10,
     }
 });

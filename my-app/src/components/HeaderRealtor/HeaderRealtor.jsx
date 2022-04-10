@@ -1,6 +1,8 @@
+import IMAGES from '../../res/images'
+const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
+
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
-
 
 export default function HeaderRealtor() {
     const [number, onChangeText] = React.useState(null);
@@ -8,7 +10,7 @@ export default function HeaderRealtor() {
         <View style={styles.header}>
             <View style={styles.header_block}>
                 <TouchableOpacity style={styles.button} onPress={() => { alert("you clicked me") }}>
-                    <Image style={styles.buttonImg} source={require("../../../assets/icon/Hamburger_icon.png")} />
+                    <BurgerMenuIcon width={25} />
                 </TouchableOpacity>
 
                 <View style={styles.input_block}>
@@ -20,13 +22,13 @@ export default function HeaderRealtor() {
                         keyboardType="default"
                     />
                     <TouchableOpacity style={styles.searchButton} onPress={() => { alert("you clicked me") }}>
-                        <Image style={styles.buttonImgSearch} source={require("../../../assets/icon/search_icon-01.png")} />
+                        <SearchIcon width={19} height={19} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.buttonBar}>
                     <TouchableOpacity style={styles.bellButton} onPress={() => { alert("you clicked me") }}>
-                        <Image style={styles.bellButtonImg} source={require("../../../assets/icon/bell_icon.png")} />
+                        <BellIcon height={33} width={25} />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.userIcon} onPress={() => { alert("you clicked me") }}>
@@ -42,17 +44,16 @@ const styles = StyleSheet.create({
     header: {
         backgroundColor: 'white',
         marginTop: 45,
-        paddingHorizontal: 5,
         height: 42,
         width: '100%',
         borderBottomColor: '#f2f2f2',
         borderBottomWidth: 1.5,
-        paddingBottom: 15,
+        paddingBottom: 10,
+        paddingRight: 5,
     },
 
     header_block: {
         width: '100%',
-        height: 40,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
@@ -62,7 +63,8 @@ const styles = StyleSheet.create({
         flex: 2.4,
         flexDirection: 'row',
         alignItems: 'center',
-        marginHorizontal: 17,
+        marginLeft: 20,
+        marginRight: 15,
     },
     button: {
         width: 30,
@@ -70,19 +72,10 @@ const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 15,
         marginLeft: 5,
-        // marginRight: 5,
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,
         shadowOpacity: 0.35,
-    },
-    buttonImgSearch: {
-        width: 24,
-        height: 24
-    },
-    buttonImg: {
-        width: 22,
-        height: 22
     },
     input: {
         width: '80%',
@@ -114,11 +107,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-
     },
     bellButton: {
-        width: 20,
-        height: 22,
         resizeMode: 'stretch',
         marginRight: 15,
         marginLeft: 0,
