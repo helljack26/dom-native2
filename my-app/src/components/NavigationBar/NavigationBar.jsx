@@ -1,29 +1,38 @@
 import IMAGES from '@/res/images'
-const { BurgerMenuIcon, SearchIcon, BellIcon, UserHeaderIcon } = IMAGES;
+const {
+    HomeNavIcon,
+    HomeActiveNavIcon,
+    HeartDefault,
+    HeartActive,
+    AddNavIcon,
+    AddActiveNavIcon,
+    CollectionNavIcon,
+    CollectionActiveNavIcon,
+    ChatNavIcon,
+    ChatActiveNavIcon,
+} = IMAGES;
 
 import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
 
 export default function NavbarItem({ focused, routeName }) {
-    let iconName
+    let icon
     if (routeName === 'Объявления') {
-        iconName = focused ? require("../../../assets/icon/Navbar/home_active_icon.png") : require("../../../assets/icon/Navbar/home_icon.png");
+        icon = !focused ? <HomeNavIcon width={16} height={16} /> : <HomeActiveNavIcon width={16} height={16} />
     } else if (routeName === 'Избранное') {
-        iconName = focused ? require("../../../assets/icon/Navbar/favorite_active_icon.png") : require("../../../assets/icon/Navbar/favorite_icon.png");
+        icon = !focused ? <HeartDefault width={16} height={16} /> : <HeartActive width={16} height={16} />
     } else if (routeName === 'Создать') {
-        iconName = focused ? require("../../../assets/icon/Navbar/add_active_icon.png") : require("../../../assets/icon/Navbar/add_icon.png");
+        icon = !focused ? <AddNavIcon width={16} height={16} /> : <AddActiveNavIcon width={16} height={16} />
     } else if (routeName === 'Подборки') {
-        iconName = focused ? require("../../../assets/icon/Navbar/collections_active_icon.png") : require("../../../assets/icon/Navbar/collections_icon.png");
+        icon = !focused ? <CollectionNavIcon width={16} height={16} /> : <CollectionActiveNavIcon width={16} height={16} />
     } else if (routeName === 'Чаты') {
-        iconName = focused ? require("../../../assets/icon/Navbar/chat_active_icon.png") : require("../../../assets/icon/Navbar/chat_icon.png");
+        icon = !focused ? <ChatNavIcon width={16} height={16} /> : <ChatActiveNavIcon width={16} height={16} />
     }
     return <View style={styles.navbarTab}>
-        <Image
-            source={iconName}
-            style={focused ? styles.active : styles.footerNavbar_img}
-            alt={`Иконка}`} />
+        {icon}
         <Text numberOfLines={1}
-            style={{ fontSize: 10, marginTop: 3, color: focused ? '#0072db' : '#222' }}>
+            ellipsizeMode='clip'
+            style={{ fontSize: 10, width: '15%', marginTop: 3, color: focused ? '#0072db' : '#222' }}>
             {routeName}
         </Text>
     </View>
@@ -31,7 +40,6 @@ export default function NavbarItem({ focused, routeName }) {
 
 const styles = StyleSheet.create({
     navbarTab: {
-        flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',

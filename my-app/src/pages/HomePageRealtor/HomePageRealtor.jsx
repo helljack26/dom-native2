@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     },
     body: {
         backgroundColor: 'white',
-        flex: 9,
         fontFamily: FONTS.regular,
     },
     mainHeader: {

@@ -1,11 +1,10 @@
 import IMAGES from '@/res/images'
-const { BurgerMenuIcon, SearchIcon, BellIcon,UserHeaderIcon } = IMAGES;
+const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
 
 export default function HeaderRealtor() {
-    const [number, onChangeText] = React.useState(null);
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
@@ -16,8 +15,7 @@ export default function HeaderRealtor() {
                 <View style={styles.input_block}>
                     <TextInput
                         style={styles.input}
-                        onChangeText={onChangeText}
-                        value={number}
+
                         placeholder="Поиск..."
                         keyboardType="default"
                     />
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
         width: 19,
         height: 25,
         paddingVertical: 10,
-        marginBottom: 15,
+        marginBottom: 20,
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,

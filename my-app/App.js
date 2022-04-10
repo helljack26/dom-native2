@@ -2,7 +2,6 @@ import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, Image, Text, View } from 'react-native';
 
 // Import header
 import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
@@ -39,25 +38,25 @@ export default function App() {
     return <NavigationContainer>
         <Tab.Navigator
             screenOptions={({ route }) => ({
-                tabBarShowLabel: false,
-                // Navigation Bar
-                tabBarIcon: ({ focused }) => {
-                    return <NavbarItem routeName={route.name} focused={focused} />
-                },
-                tabBarStyle: { flex: 0.07, paddingLeft: 10, justifyContent: 'space-between', alignItems: 'center' },
+                // Header
                 headerShown: true,
                 showLabel: false,
-                // Header
                 headerTitle: () => (
                     <HeaderRealtor />
                     // <HeaderUser />
                 ),
+                // Navigation Bar
+                tabBarStyle: { paddingLeft: 10, justifyContent: 'space-between', alignItems: 'center' },
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused }) => {
+                    return <NavbarItem routeName={route.name} focused={focused} />
+                },
             })}  >
 
-            {/* User Version */}
+            {/* User Page */}
             {/* <Tab.Screen name="Объявления" component={HomeUser} /> */}
 
-            {/* Realtor Version */}
+            {/* Realtor Page */}
             <Tab.Screen
                 options={{ title: '' }}
                 name="Объявления" component={HomeRealtor} />
