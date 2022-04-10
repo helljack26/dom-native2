@@ -1,4 +1,4 @@
-import IMAGES from '../../res/images'
+import IMAGES from '@/res/images'
 
 import React from 'react';
 import { useEffect } from 'react';
@@ -9,7 +9,7 @@ import ApartmentItem from './ApartmentItem/ApartmentItem'
 import OtherCatalogItem from './OtherCatalogItem/OtherCatalogItem'
 
 import { observer } from 'mobx-react-lite';
-import { useCatalogApiStore } from '../../stores/CatalogApi';
+import { useCatalogApiStore } from '@/stores/CatalogApi';
 
 import styled from 'styled-components/native';
 const Main = styled.View`

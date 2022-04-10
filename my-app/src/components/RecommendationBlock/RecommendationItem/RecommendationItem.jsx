@@ -1,9 +1,9 @@
-import FONTS from '../../../res/fonts'
+import FONTS from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
+import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 
 const RecommendationItem = ({ data }) => {
     const { id,

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '../../../res/fonts'
-import COLORS from '../../../res/colors'
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
 
 const About = styled.View`
 width: 100%;

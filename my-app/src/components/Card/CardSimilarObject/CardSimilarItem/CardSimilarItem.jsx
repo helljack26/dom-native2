@@ -1,12 +1,12 @@
-import FONTS from '../../../../res/fonts'
-import COLORS from '../../../../res/colors'
-import IMAGES from '../../../../res/images'
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
+import IMAGES from '@/res/images'
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
 
-import AddToFavoriteButton from '../../../AddToFavoriteButton/AddToFavoriteButton';
+import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 
 const CardSimilarItem = ({ data, navigation }) => {
     const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;

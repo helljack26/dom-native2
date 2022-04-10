@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '../../../res/fonts'
-import COLORS from '../../../res/colors'
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
 
 
 const Card_details = styled.View`

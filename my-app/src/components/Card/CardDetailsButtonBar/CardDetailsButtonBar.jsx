@@ -1,8 +1,8 @@
 import React from 'react';
 
-import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton'
+import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton'
 
-import IMAGES from '../../../res/images'
+import IMAGES from '@/res/images'
 const { ViewIcon,
     HeartSmallIcon,
     PercentIcon,

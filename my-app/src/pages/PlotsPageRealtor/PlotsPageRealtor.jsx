@@ -1,10 +1,10 @@
 import React from 'react';
 
-import FONTS from '../../res/fonts'
+import FONTS from '@/res/fonts'
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
-import HeaderRealtor from '../../components/HeaderRealtor/HeaderRealtor';
-import AdsFunctionalBar from '../../components/AdsFunctionalBar/AdsFunctionalBar';
-import CatalogBlock from '../../components/CatalogBlock/CatalogBlock';
+import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
+import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
+import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 
 
 export default function PlotsPageRealtor() {

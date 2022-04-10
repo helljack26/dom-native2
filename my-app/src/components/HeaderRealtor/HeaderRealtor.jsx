@@ -1,4 +1,4 @@
-import IMAGES from '../../res/images'
+import IMAGES from '@/res/images'
 const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
 
 import React from 'react';

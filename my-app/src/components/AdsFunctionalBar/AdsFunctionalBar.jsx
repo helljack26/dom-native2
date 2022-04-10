@@ -1,9 +1,9 @@
-import COLORS from '../../res/colors'
+import COLORS from '@/res/colors'
 import React from 'react';
 
 import { StyleSheet, View } from 'react-native';
 
-import Breadcrumbs from '../Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import AdsPageTitle from './AdsPageTitle'
 import AdsFilterBar from './AdsFilterBar'
 import AdsButtonBar from './AdsButtonBar'

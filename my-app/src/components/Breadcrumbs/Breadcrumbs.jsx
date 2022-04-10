@@ -1,8 +1,9 @@
-import { R } from '../../res/R.js'
+import { R } from '@/res/R.js'
 const ArrowLeftIcon = R.IMAGES.arrow_left;
+
 import React from 'react';
 
-import { StyleSheet, TouchableOpacity, Text, Image, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styled from 'styled-components/native';
 
@@ -14,7 +15,7 @@ flex-direction: row;
 margin-top: 15px;
 `;
 
-import PageLocation from '../helpers/pageLocation'
+import PageLocation from '@/components/helpers/pageLocation'
 const Breadcrumbs = ({ goBack }) => {
     const { title, ads } = PageLocation();
     const navigation = useNavigation();

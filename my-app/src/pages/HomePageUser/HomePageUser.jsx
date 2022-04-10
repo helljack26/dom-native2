@@ -1,10 +1,10 @@
-import FONTS from '../../res/fonts'
+import FONTS from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
-import HeaderUser from '../../components/HeaderUser/HeaderUser';
-import CategoriesBar from '../../components/CategoriesBar/CategoriesBar';
-import RecommendationBlock from '../../components/RecommendationBlock/RecommendationBlock';
+import HeaderUser from '@/components/HeaderUser/HeaderUser';
+import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
+import RecommendationBlock from '@/components/RecommendationBlock/RecommendationBlock';
 
 export default function HomePageUser() {
 

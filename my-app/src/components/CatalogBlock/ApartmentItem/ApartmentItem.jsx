@@ -1,15 +1,13 @@
-import FONTS from '../../../res/fonts'
-import COLORS from '../../../res/colors'
-import IMAGES from '../../../res/images'
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
+import IMAGES from '@/res/images'
 const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
 
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-
-
-import AddToFavoriteButton from '../../AddToFavoriteButton/AddToFavoriteButton';
+import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 
 const ApartmentItem = ({ data }) => {
     const { id,

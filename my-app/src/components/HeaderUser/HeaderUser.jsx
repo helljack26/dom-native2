@@ -1,5 +1,5 @@
 import React from 'react';
-import IMAGES from '../../res/images'
+import IMAGES from '@/res/images'
 const { BurgerMenuIcon, SearchIcon, BellIcon, UserHeaderIcon } = IMAGES;
 
 import { StyleSheet, TouchableOpacity, View, TextInput } from 'react-native';

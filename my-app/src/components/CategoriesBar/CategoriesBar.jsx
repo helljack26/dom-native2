@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import CATEGORIES from '../../res/strings'
+import CATEGORIES from '@/res/strings'
 
 export default function CategoriesBar() {
     const [selectedId, setSelectedId] = useState(null);

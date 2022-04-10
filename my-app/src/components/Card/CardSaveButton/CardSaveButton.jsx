@@ -1,4 +1,4 @@
-import IMAGES from '../../../res/images'
+import IMAGES from '@/res/images'
 import React from 'react';
 
 const { CollectionIcon, DocIcon, PdfIcon, ComplainIcon } = IMAGES;
@@ -23,7 +23,7 @@ const CardSaveButton = () => {
                     <Container_block_btn>
                         <Container_block_btn_text>
                             В подборку
-                    </Container_block_btn_text>
+                        </Container_block_btn_text>
                         <CollectionIcon width='16px' />
                     </Container_block_btn>
                     <Container_block_btn>

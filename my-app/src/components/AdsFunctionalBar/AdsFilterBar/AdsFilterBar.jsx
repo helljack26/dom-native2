@@ -1,10 +1,10 @@
-import COLORS from '../../../res/colors'
-import FONTS from '../../../res/fonts'
+import COLORS from '@/res/colors'
+import FONTS from '@/res/fonts'
 import React from 'react';
 
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
-import { useCatalogApiStore } from '../../../stores/CatalogApi';
+import { useCatalogApiStore } from '@/stores/CatalogApi';
 
 const AdsFilterBar = observer(() => {
     const { isGallery, setGallery, setMap } = useCatalogApiStore();

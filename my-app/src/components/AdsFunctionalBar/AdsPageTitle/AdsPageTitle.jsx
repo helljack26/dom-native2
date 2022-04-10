@@ -1,11 +1,11 @@
-import COLORS from '../../../res/colors'
-import FONTS from '../../../res/fonts'
+import COLORS from '@/res/colors'
+import FONTS from '@/res/fonts'
 import React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
-import { useCatalogApiStore } from '../../../stores/CatalogApi';
-import PageLocation from '../../helpers/pageLocation'
+import { useCatalogApiStore } from '@/stores/CatalogApi';
+import PageLocation from '@/components/helpers/pageLocation'
 
 const AdsPageTitle = observer(({ city = 'Киеве' }) => {
     const { catalog } = useCatalogApiStore();

@@ -1,4 +1,4 @@
-import IMAGES from '../../../res/images'
+import IMAGES from '@/res/images'
 import React from 'react';
 
 import { styles } from './style.js'
@@ -87,14 +87,14 @@ const CardAgentContainer = ({ agentId }) => {
                         <Rating_block_links_link >
                             <Rating_block_links_link_text >
                                 Оценить
-                        </Rating_block_links_link_text>
+                            </Rating_block_links_link_text>
                         </Rating_block_links_link>
 
                         <Devider></Devider>
                         <Rating_block_links_link >
                             <Rating_block_links_link_text >
                                 Читать отзыв
-                        </Rating_block_links_link_text>
+                            </Rating_block_links_link_text>
                         </Rating_block_links_link>
                     </Rating_block_links>
                 </Rating_block>
@@ -125,7 +125,7 @@ const CardAgentContainer = ({ agentId }) => {
                         <Footer_link >
                             <Footer_link_text >
                                 Посмотреть
-                        </Footer_link_text>
+                            </Footer_link_text>
                         </Footer_link>
                     </Footer_block_text>
                 </Footer_block>
@@ -137,7 +137,7 @@ const CardAgentContainer = ({ agentId }) => {
                         <Footer_link >
                             <Footer_link_text >
                                 Как работает услуга?
-                        </Footer_link_text>
+                            </Footer_link_text>
                         </Footer_link>
                     </Footer_block_text>
                 </Footer_block>

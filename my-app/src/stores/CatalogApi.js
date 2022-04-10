@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeAutoObservable, action, observable } from 'mobx';
-import { apiMocks } from '../api/mock/apiMocks'
+import { apiMocks } from '@/api/mock/apiMocks'
 
 class CatalogApi {
     catalog = []

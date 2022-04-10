@@ -1,16 +1,16 @@
-import FONTS from '../../res/fonts'
+import FONTS from '@/res/fonts'
 
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
-import HeaderUser from '../../components/HeaderUser/HeaderUser';
-import Breadcrumbs from '../../components/Breadcrumbs'
-import CardPhotoContainer from '../../components/Card/CardPhotoContainer/CardPhotoContainer'
-import CardDetailsContainer from '../../components/Card/CardDetailsContainer/CardDetailsContainer'
-import CardAgentContainer from '../../components/Card/CardAgentContainer/CardAgentContainer'
-import CardSimilarObject from '../../components/Card/CardSimilarObject/CardSimilarObject'
+import HeaderUser from '@/components/HeaderUser/HeaderUser';
+import Breadcrumbs from '@/components/Breadcrumbs'
+import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
+import CardDetailsContainer from '@/components/Card/CardDetailsContainer/CardDetailsContainer'
+import CardAgentContainer from '@/components/Card/CardAgentContainer/CardAgentContainer'
+import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
 
 import styled from 'styled-components/native';
 const Main = styled.ScrollView`
@@ -19,7 +19,7 @@ background-color: white;
 padding: 0px 4%
 `;
 
-import { apiMocks } from '../../api/mock/apiMocks'
+import { apiMocks } from '@/api/mock/apiMocks'
 
 export default function CardPageUser() {
     const route = useRoute();

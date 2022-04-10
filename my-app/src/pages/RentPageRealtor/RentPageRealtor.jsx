@@ -1,10 +1,10 @@
-import FONTS from '../../res/fonts'
+import FONTS from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 
-import HeaderRealtor from '../../components/HeaderRealtor/HeaderRealtor';
-import AdsFunctionalBar from '../../components/AdsFunctionalBar/AdsFunctionalBar';
-import CatalogBlock from '../../components/CatalogBlock/CatalogBlock';
+import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
+import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
+import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 
 export default function RentPageRealtor() {
     return (

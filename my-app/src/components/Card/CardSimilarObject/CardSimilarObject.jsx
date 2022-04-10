@@ -10,7 +10,7 @@ const {
 } = styles;
 
 import CardSimilarItem from './CardSimilarItem'
-import { SimilarMockApi } from '../../../api/mock/SimilarMockApi.jsx'
+import { SimilarMockApi } from '@/api/mock/SimilarMockApi.jsx'
 
 const CardSimilarObject = () => {
     const navigation = useNavigation();

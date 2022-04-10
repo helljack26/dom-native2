@@ -52,7 +52,7 @@ const IMAGES = {
     CategoriesPlot: CategoriesPlot,
     CategoriesCommerce: CategoriesCommerce,
     CategoriesRent: CategoriesRent,
-    
+
     // Add to favorite button
     HeartDefault: HeartDefault,
     HeartActive: HeartActive,

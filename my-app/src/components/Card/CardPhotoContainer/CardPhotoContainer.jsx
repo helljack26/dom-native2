@@ -1,5 +1,5 @@
-import { R } from '../../../res/R'
-import IMAGES from '../../../res/images'
+import { R } from '@/res/R'
+import IMAGES from '@/res/images'
 
 const { CameraIcon, ShowOnMapIcon, RouteIcon } = IMAGES;
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react'
 
-import IMAGES from '../../../res/images'
-const {ArrowDownIcon ,HeartDefault ,HeartActive } = IMAGES;
+import IMAGES from '@/res/images'
+const { ArrowDownIcon, HeartDefault, HeartActive } = IMAGES;
 
 // Styles
 import { styles } from './styles.js'
@@ -32,7 +32,7 @@ const AdsButtonBar = () => {
                 onPress={() => {
                     return setType(type ? false : true)
                 }}>
-                {type ?
+                {!type ?
                     <HeartDefault width={14} height={15} />
                     :
                     <HeartActive width={14} height={15} />}

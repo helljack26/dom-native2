@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import RecommendationItem from './RecommendationItem/RecommendationItem'
-import { RecommendationMockApi } from '../../api/mock/RecommendationMockApi.jsx'
+import { RecommendationMockApi } from '@/api/mock/RecommendationMockApi'
 
 import styled from 'styled-components/native';
 const Main = styled.View`

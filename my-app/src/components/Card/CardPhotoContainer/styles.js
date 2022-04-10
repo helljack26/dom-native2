@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '../../../res/fonts'
-import COLORS from '../../../res/colors'
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
 
 // Styles
 const Button = styled.TouchableOpacity`
@@ -46,8 +46,8 @@ margin-left: 10px;
 `;
 
 export const styles = {
-Button:Button,
- MapButton:MapButton,
- BtnBlock:BtnBlock,
- AllPhotoText:AllPhotoText,
+    Button: Button,
+    MapButton: MapButton,
+    BtnBlock: BtnBlock,
+    AllPhotoText: AllPhotoText,
 }

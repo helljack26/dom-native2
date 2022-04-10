@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -15,8 +15,8 @@ import CollectionsPage from './src/pages/Navbar/CollectionsPage/CollectionsPage'
 import ChatPage from './src/pages/Navbar/ChatPage/ChatPage'
 
 // Import home
-import HomeUser from './routes/HomeUser'
-// import HomeRealtor from './routes/HomeRealtor'
+// import HomeUser from './routes/HomeUser'
+import HomeRealtor from './routes/HomeRealtor'
 
 const Tab = createBottomTabNavigator();
 const customFonts = {
@@ -68,10 +68,10 @@ export default function App() {
                 showLabel: false,
             })}  >
             {/* User Version */}
-            <Tab.Screen name="Объявления" component={HomeUser} />
+            {/* <Tab.Screen name="Объявления" component={HomeUser} /> */}
 
             {/* Realtor Version */}
-            {/* <Tab.Screen name="Объявления" component={HomeRealtor} /> */}
+            <Tab.Screen name="Объявления" component={HomeRealtor} />
             <Tab.Screen name="Избранное" component={FavoritePage} />
             <Tab.Screen name="Создать" component={AddPage} />
             <Tab.Screen name="Подборки" component={CollectionsPage} />

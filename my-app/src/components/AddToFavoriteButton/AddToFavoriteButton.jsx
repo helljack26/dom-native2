@@ -1,5 +1,5 @@
 
-import IMAGES from '../../res/images'
+import IMAGES from '@/res/images'
 const { HeartDefault, HeartActive } = IMAGES;
 
 import React, { useState, useEffect } from 'react';
