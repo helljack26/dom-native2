@@ -5,7 +5,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
-import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
+
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
 import CardDetailsContainer from '@/components/Card/CardDetailsContainer/CardDetailsContainer'
@@ -57,7 +57,7 @@ export default function CardPageRealtor() {
 
     const { id, photoLargePath } = objectDetails;
     return (<SafeAreaView style={styles.body}>
-        <HeaderRealtor />
+
         <Main
             ref={scrollViewRef}
             horizontal={false}>

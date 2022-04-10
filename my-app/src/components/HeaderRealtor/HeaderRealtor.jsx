@@ -1,5 +1,5 @@
 import IMAGES from '@/res/images'
-const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
+const { BurgerMenuIcon, SearchIcon, BellIcon,UserHeaderIcon } = IMAGES;
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
@@ -32,7 +32,8 @@ export default function HeaderRealtor() {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.userIcon} onPress={() => { alert("you clicked me") }}>
-                        <Image style={styles.userPhotoImg} source={require("../../../assets/icon/user_photo.png")} />
+                        {/* Сюда должна прилетать картинка юзера */}
+                        <Image style={styles.userPhotoImg} source={IMAGES.UserPhoto} />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -41,14 +42,12 @@ export default function HeaderRealtor() {
 }
 
 const styles = StyleSheet.create({
+    // Header
     header: {
-        backgroundColor: 'white',
-        marginTop: 45,
+        marginTop: 10,
         height: 42,
         width: '100%',
-        borderBottomColor: '#f2f2f2',
-        borderBottomWidth: 1.5,
-        paddingBottom: 10,
+        paddingBottom: 5,
         paddingRight: 5,
     },
 
@@ -60,18 +59,17 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     input_block: {
-        flex: 2.4,
+        flex: 2.8,
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 20,
         marginRight: 15,
     },
     button: {
-        width: 30,
+        width: 19,
         height: 25,
-        padding: 10,
+        paddingVertical: 10,
         marginBottom: 15,
-        marginLeft: 5,
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,
@@ -110,7 +108,6 @@ const styles = StyleSheet.create({
     },
     bellButton: {
         resizeMode: 'stretch',
-        marginRight: 15,
         marginLeft: 0,
     },
     bellButtonImg: {
@@ -120,6 +117,7 @@ const styles = StyleSheet.create({
     },
     userPhotoImg: {
         width: 32,
-        height: 32
+        height: 32,
+        marginLeft: 15,
     },
 });

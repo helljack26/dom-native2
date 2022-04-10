@@ -1,15 +1,10 @@
-// import Header from '@/components/Header/Header';
-import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
 import React from 'react';
+import { Text } from 'react-native';
 
 export default function FavoritePage() {
 
-    return (
-        <>
-            {/* <Header /> */}
-            <CategoriesBar />
-
-        </>
-    );
+    return <Text numberOfLines={1}>
+        Избранное
+    </Text>
 }
 

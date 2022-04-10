@@ -2,7 +2,6 @@ import FONTS from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
-import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
 import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
 import RecommendationBlock from '@/components/RecommendationBlock/RecommendationBlock';
 
@@ -10,7 +9,7 @@ export default function HomePageRealtor() {
 
     return (
         <View style={styles.body}>
-            <HeaderRealtor />
+            {/*   */}
             <ScrollView
                 horizontal={false}
                 style={styles.container} >

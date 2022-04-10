@@ -40,6 +40,8 @@ import LockIcon from '../../assets/icon/lock_icon.svg';
 
 
 const IMAGES = {
+
+    UserPhoto: require("../../assets/icon/user_photo.png"),
     //Header
     BurgerMenuIcon: BurgerMenuIcon,
     SearchIcon: SearchIcon,

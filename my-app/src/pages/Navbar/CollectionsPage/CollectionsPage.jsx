@@ -1,14 +1,10 @@
-// import Header from '@/components/Header/Header';
-import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
 import React from 'react';
+import { Text } from 'react-native';
 
 export default function CollectionsPage() {
+    return <Text numberOfLines={1}>
+        Подборки
+    </Text>
 
-    return (
-        <>
-            {/* <Header /> */}
-            <CategoriesBar />
-        </>
-    );
 }
 
