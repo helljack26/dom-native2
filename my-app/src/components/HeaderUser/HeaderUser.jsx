@@ -9,9 +9,7 @@ import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-nati
 export default function HeaderUser() {
     const [number, onChangeText] = React.useState(null);
     const navigation = useNavigation();
-    const route = useRoute();
 
-    console.log(navigation);
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
@@ -57,6 +55,7 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingBottom: 5,
         paddingRight: 5,
+        paddingRight: '9%',
     },
 
     header_block: {

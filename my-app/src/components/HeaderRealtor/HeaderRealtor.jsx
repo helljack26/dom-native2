@@ -3,12 +3,17 @@ const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function HeaderRealtor() {
+    const navigation = useNavigation();
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
-                <TouchableOpacity style={styles.button} onPress={() => { alert("you clicked me") }}>
+                <TouchableOpacity style={styles.button}
+                    onPress={() => navigation.navigate('Home')}
+                >
                     <BurgerMenuIcon width={25} />
                 </TouchableOpacity>
 
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
         height: 42,
         width: '100%',
         paddingBottom: 5,
-        paddingRight: 5,
+        paddingRight: '9%',
     },
 
     header_block: {
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     input_block: {
-        flex: 2.8,
+        flex: 2.6,
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 20,

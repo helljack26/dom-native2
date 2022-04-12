@@ -16,7 +16,6 @@ import PlotsPageUser from '../src/pages/PlotsPageUser/PlotsPageUser.jsx'
 import CommercePageUser from '../src/pages/CommercePageUser/CommercePageUser.jsx'
 import RentPageUser from '../src/pages/RentPageUser/RentPageUser.jsx'
 
-
 // Realtor
 import HomePageRealtor from '../src/pages/HomePageRealtor/HomePageRealtor.jsx';
 import CardPageRealtor from '../src/pages/CardPageRealtor/CardPageRealtor.jsx';
