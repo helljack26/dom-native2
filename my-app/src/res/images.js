@@ -88,7 +88,7 @@ const IMAGES = {
     //Arrows
     ArrowDownIcon: ArrowDownIcon,
     ArrowUp: ArrowUp,
-    arrow_left: ArrowLeft,
+    ArrowLeft: ArrowLeft,
     // Card Derails
     ViewIcon: ViewIcon,
     HeartSmallIcon: HeartSmallIcon,

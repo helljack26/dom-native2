@@ -4,7 +4,7 @@ import { StyleSheet, ScrollView, View } from 'react-native';
 
 
 import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
-import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
+import CatalogBlockRealtor from '@/components/CatalogBlockRealtor/CatalogBlockRealtor';
 
 export default function RentPageRealtor() {
     return (
@@ -14,7 +14,7 @@ export default function RentPageRealtor() {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <CatalogBlock />
+                <CatalogBlockRealtor />
             </ScrollView>
         </View>
     );

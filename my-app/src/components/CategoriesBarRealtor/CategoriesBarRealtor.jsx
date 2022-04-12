@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import CATEGORIES from '@/res/categories'
-import IMAGES from '@/res/images'
+import CATEGORIESREALTOR from '@/res/categoriesRealtor'
 
-const { BurgerMenuIcon } = IMAGES;
 
-export default function CategoriesBar() {
+export default function CategoriesBarRealtor() {
+    console.log(CATEGORIESREALTOR);
     const [selectedId, setSelectedId] = useState(null);
     const navigation = useNavigation();
 
@@ -34,7 +33,7 @@ export default function CategoriesBar() {
                 style={styles.categories}
                 horizontal={true} >
                 <View style={styles.categories_block}>
-                    {CATEGORIES.map((item, id) => {
+                    {CATEGORIESREALTOR.map((item, id) => {
                         return <RenderItem item={item} key={id} />
                     })}
                 </View>

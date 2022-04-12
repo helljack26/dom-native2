@@ -4,7 +4,7 @@ import FONTS from '@/res/fonts'
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
-import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
+import CatalogBlockRealtor from '@/components/CatalogBlockRealtor/CatalogBlockRealtor';
 
 
 export default function PlotsPageRealtor() {
@@ -16,7 +16,7 @@ export default function PlotsPageRealtor() {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <CatalogBlock />
+                <CatalogBlockRealtor />
             </ScrollView>
         </View>
     );

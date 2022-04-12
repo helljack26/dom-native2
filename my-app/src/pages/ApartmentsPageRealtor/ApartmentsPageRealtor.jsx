@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
-import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
+import CatalogBlockRealtor from '@/components/CatalogBlockRealtor/CatalogBlockRealtor';
 
 export default function ApartmentsPageRealtor() {
     return (
@@ -12,7 +12,7 @@ export default function ApartmentsPageRealtor() {
                 horizontal={false}
                 style={styles.container}>
                 <AdsFunctionalBar />
-                <CatalogBlock />
+                <CatalogBlockRealtor />
             </ScrollView>
         </View>
     );

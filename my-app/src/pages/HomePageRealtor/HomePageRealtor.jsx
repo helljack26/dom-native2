@@ -2,8 +2,8 @@ import FONTS from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
-import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
-import RecommendationBlock from '@/components/RecommendationBlock/RecommendationBlock';
+import CategoriesBarRealtor from '@/components/CategoriesBarRealtor/CategoriesBarRealtor';
+import CatalogBlockRealtor from '@/components/CatalogBlockRealtor/CatalogBlockRealtor';
 
 export default function HomePageRealtor() {
 
@@ -13,11 +13,11 @@ export default function HomePageRealtor() {
             <ScrollView
                 horizontal={false}
                 style={styles.container} >
-                <CategoriesBar />
+                <CategoriesBarRealtor />
                 <Text style={styles.mainHeader}>
                     Рекомендации для вас
                 </Text>
-                <RecommendationBlock />
+                <CatalogBlockRealtor />
             </ScrollView>
         </View>
     );

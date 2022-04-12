@@ -1,11 +1,12 @@
 import React from 'react';
 
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton'
+import PercentButton from '@/components/PercentButton/PercentButton'
 
 import IMAGES from '@/res/images'
 const { ViewIcon,
     HeartSmallIcon,
-    PercentIcon,
+
     ShareIcon } = IMAGES;
 
 import { styles } from './style'
@@ -18,7 +19,9 @@ const {
     FavoriteView_block_text,
 } = styles;
 
-const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
+
+
+const CardDetailsButtonBarRealtor = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
     return (
         <Card_details>
@@ -43,16 +46,16 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
             {/* Buttons */}
             <Details_mobile>
+                <PercentButton isBig={true} />
+
                 <Details_mobile_btn>
-                    <ShareIcon width={15} />
+                    <ShareIcon width={17} />
                 </Details_mobile_btn>
 
-
                 <AddToFavoriteButton isBig={true} inFavorite={inFavorite} />
-
             </Details_mobile>
         </Card_details>
     )
 }
 
-export default CardDetailsButtonBar;
+export default CardDetailsButtonBarRealtor;

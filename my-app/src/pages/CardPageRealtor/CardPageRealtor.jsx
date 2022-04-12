@@ -8,10 +8,10 @@ import { useRoute } from '@react-navigation/native';
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import CardDetailsContainer from '@/components/Card/CardDetailsContainer/CardDetailsContainer'
+import CardDetailsContainerRealtor from '@/components/Card/CardDetailsContainerRealtor/CardDetailsContainerRealtor'
 import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
 import CardAgentContainer from '@/components/Card/CardAgentContainer/CardAgentContainer'
-import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
+import CardSimilarObjectRealtor from '@/components/Card/CardSimilarObjectRealtor/CardSimilarObjectRealtor'
 
 import styled from 'styled-components/native';
 const Main = styled.ScrollView`
@@ -63,10 +63,10 @@ export default function CardPageRealtor() {
             horizontal={false}>
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={photoLargePath} />
-            <CardDetailsContainer details={objectDetails} />
+            <CardDetailsContainerRealtor details={objectDetails} />
             <CardSaveButton />
             <CardAgentContainer agentId={id} />
-            <CardSimilarObject />
+            <CardSimilarObjectRealtor />
         </Main>
     </SafeAreaView >
     )

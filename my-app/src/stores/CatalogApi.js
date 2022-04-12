@@ -25,19 +25,22 @@ class CatalogApi {
         this.catalog.length === 0 && this.setGallery()
     }
     setCatalog(route) {
-        if (route === 'ApartmentsPage') {
+        if (route === 'Home' || route === 'HomePageRealtor') {
+            this.resetState()
+            return this.catalog = apiMocks.RecommendationMockApi
+        } else if (route === 'ApartmentsPage' || route === 'ApartmentsPageRealtor') {
             this.resetState()
             return this.catalog = apiMocks.ApartmentMockApi
-        } else if (route === 'HousesPage') {
+        } else if (route === 'HousesPage' || route === 'HousesPageRealtor') {
             this.resetState()
             return this.catalog = apiMocks.HousesMockApi
-        } else if (route === 'PlotsPage') {
+        } else if (route === 'PlotsPage' || route === 'PlotsPageRealtor') {
             this.resetState()
             return this.catalog = apiMocks.PlotMockApi
-        } else if (route === 'CommercePage') {
+        } else if (route === 'CommercePage' || route === 'CommercePageRealtor') {
             this.resetState()
             return this.catalog = apiMocks.CommerceMockApi
-        } else if (route === 'RentPage') {
+        } else if (route === 'RentPage' || route === 'RentPageRealtor') {
             this.resetState()
             return this.catalog = apiMocks.RentMockApi
         }

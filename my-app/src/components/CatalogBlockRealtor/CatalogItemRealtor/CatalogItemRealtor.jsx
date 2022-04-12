@@ -1,15 +1,19 @@
 import FONTS from '@/res/fonts'
 import COLORS from '@/res/colors'
 import IMAGES from '@/res/images'
+const { ViewIcon, HeartSmallIcon } = IMAGES;
+
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
-const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
-
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
+import PercentButton from '@/components/PercentButton/PercentButton';
 
-const CardSimilarItem = ({ data, navigation }) => {
+const CatalogItemRealtor = ({ data }) => {
     const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
+    const navigation = useNavigation();
+
     const spaceInPriceValue = (priceValue) => {
         if (priceValue !== undefined) {
             return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
@@ -36,7 +40,7 @@ const CardSimilarItem = ({ data, navigation }) => {
             style={styles.catalog_item}>
             <TouchableOpacity style={styles.catalog_item_photo_container}
                 onPress={() => {
-                    navigation.navigate('CardPage', {
+                    navigation.navigate('CardPageRealtor', {
                         itemId: id,
                         category: category,
                     });
@@ -52,39 +56,39 @@ const CardSimilarItem = ({ data, navigation }) => {
                 <Text style={styles.catalog_item_info_size}>{size}</Text>
             </View>
             <View style={styles.catalog_item_buttonBlock}>
-                <AddToFavoriteButton inFavorite={inFavorite} isBig={true} />
+                <AddToFavoriteButton inFavorite={inFavorite} isBig={false} />
                 <View style={styles.catalog_item_separate}></View>
                 <TouchableOpacity>
-                    <PercentIcon width={20} height={20} />
+                    <PercentButton isBig={false} />
                 </TouchableOpacity>
             </View>
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
                         <HeartSmallIcon width={10} />
-                        <Text style={styles.catalog_item_footer_block_text}>{favoriteNumber}</Text>
+                        <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{favoriteNumber}</Text>
                     </View >
                     <View style={styles.catalog_item_footer_block_info}>
                         <ViewIcon />
-                        <Text style={styles.catalog_item_footer_block_text}>{viewNumber}</Text>
+                        <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{viewNumber}</Text>
                     </View >
                 </View>
+
                 <TouchableOpacity
+                    style={styles.catalog_item_footer_link_block}
                     onPress={() => {
-                        navigation.navigate('CardPage', {
+                        navigation.navigate('CardPageRealtor', {
                             itemId: id,
                             category: category,
-
                         });
-                    }}
-                >
+                    }}  >
                     <Text style={styles.catalog_item_footer_link}>Подробнее &gt;</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
-export default CardSimilarItem;
+export default CatalogItemRealtor;
 
 const styles = StyleSheet.create({
     catalog_item: {
@@ -98,7 +102,7 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderRadius: 10,
         overflow: 'hidden',
-        marginBottom: 11,
+        marginBottom: 16,
     },
     catalog_item_photo: {
         width: '100%',
@@ -167,27 +171,27 @@ const styles = StyleSheet.create({
         marginTop: 8,
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-
     },
     catalog_item_footer_block: {
-        width: '20%',
-        flex: 0.25,
-        flexDirection: 'row',
-        alignItems: 'center'
-
-    },
-    catalog_item_footer_block_info: {
-        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    catalog_item_footer_block_info: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight: 5,
     },
     catalog_item_footer_block_text: {
         fontSize: 10,
         fontFamily: FONTS.light,
         color: COLORS.mainBlack,
-        marginLeft: 5,
+        marginHorizontal: 5,
+    },
+    catalog_item_footer_link_block: {
+        flex: 5,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
     },
     catalog_item_footer_link: {
         fontSize: 10,

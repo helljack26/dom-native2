@@ -35,5 +35,4 @@ const CATEGORIES = [
         icon: <CategoriesRent />,
     },
 ];
-
-export default CATEGORIES;
+export default CATEGORIES

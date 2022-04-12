@@ -2,9 +2,8 @@ import FONTS from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
-
 import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
-import RecommendationBlock from '@/components/RecommendationBlock/RecommendationBlock';
+import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 
 export default function HomePageUser() {
 
@@ -17,7 +16,7 @@ export default function HomePageUser() {
                 <Text style={styles.mainHeaderUser}>
                     Рекомендации для вас
                 </Text>
-                <RecommendationBlock />
+                <CatalogBlock />
             </ScrollView>
         </View>
     );

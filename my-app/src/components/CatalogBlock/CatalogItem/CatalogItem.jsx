@@ -4,24 +4,13 @@ import IMAGES from '@/res/images'
 const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
 
 import React from 'react';
-import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 
-const ApartmentItem = ({ data }) => {
-    const { id,
-        name,
-        price,
-        oldPrice,
-        category,
-        location,
-        size,
-        photoSmallPath,
-        inFavorite,
-        viewNumber,
-        favoriteNumber } = data;
-
+const CatalogItem = ({ data }) => {
+    const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
     const navigation = useNavigation();
 
     const spaceInPriceValue = (priceValue) => {
@@ -31,9 +20,8 @@ const ApartmentItem = ({ data }) => {
     }
     const spacedPrice = spaceInPriceValue(price)
     const spacedOldPrice = spaceInPriceValue(oldPrice)
-
     const priceBlock = oldPrice !== undefined ? (
-        <View >
+        <View style={styles.price_block}>
             <Text style={styles.newPrice}>
                 {spacedPrice} $
             </Text>
@@ -43,7 +31,7 @@ const ApartmentItem = ({ data }) => {
         </View>)
         :
         <View >
-            <Text style={styles.price}>{price}</Text>
+            <Text style={styles.price}>{spacedPrice} $</Text>
         </View>
 
     return (
@@ -55,54 +43,54 @@ const ApartmentItem = ({ data }) => {
                         itemId: id,
                         category: category,
                     });
-                }}>
+                }}
+            >
                 <Image source={photoSmallPath}
                     style={styles.catalog_item_photo} alt={name} />
             </TouchableOpacity>
             <View style={styles.catalog_item_info}>
-                <Text style={styles.catalog_item_info_name}>{name}</Text>
                 {priceBlock}
+                <Text style={styles.catalog_item_info_name}>{name}</Text>
                 <Text style={styles.catalog_item_info_place}>{location}</Text>
                 <Text style={styles.catalog_item_info_size}>{size}</Text>
             </View>
             <View style={styles.catalog_item_buttonBlock}>
                 <AddToFavoriteButton inFavorite={inFavorite} isBig={false} />
                 <View style={styles.catalog_item_separate}></View>
-                <TouchableOpacity>
-                    <PercentIcon width={15} height={15} />
-                </TouchableOpacity>
+
             </View>
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
                         <HeartSmallIcon width={10} />
-                        <Text style={styles.catalog_item_footer_block_text}>{favoriteNumber}</Text>
+                        <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{favoriteNumber}</Text>
                     </View >
                     <View style={styles.catalog_item_footer_block_info}>
                         <ViewIcon />
-                        <Text style={styles.catalog_item_footer_block_text}>{viewNumber}</Text>
+                        <Text style={styles.catalog_item_footer_block_text} ellipsizeMode='clip' numberOfLines={1}>{viewNumber}</Text>
                     </View >
                 </View>
+
                 <TouchableOpacity
+                    style={styles.catalog_item_footer_link_block}
                     onPress={() => {
                         navigation.navigate('CardPage', {
                             itemId: id,
-                            category: category
+                            category: category,
                         });
-                    }}
-                >
+                    }}  >
                     <Text style={styles.catalog_item_footer_link}>Подробнее &gt;</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
-export default ApartmentItem;
+export default CatalogItem;
 
 const styles = StyleSheet.create({
     catalog_item: {
         paddingBottom: 20,
-        width: "48.5%",
+        width: "100%",
     },
 
     catalog_item_photo_container: {
@@ -110,22 +98,29 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: 'solid',
         borderRadius: 10,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        marginBottom: 16,
     },
     catalog_item_photo: {
         width: '100%',
-        height: 100,
+        height: 198,
     },
     catalog_item_block: {
         flex: 1,
         flexDirection: 'row'
     },
+    price_block: {
+        flex: 1,
+        flexDirection: 'row'
+
+    },
     price: {
         fontSize: 12,
-        fontFamily: FONTS.medium
+        fontFamily: FONTS.medium,
     },
     newPrice: {
         fontSize: 12,
+        marginRight: 10,
         color: "#0072db",
         fontFamily: FONTS.medium
     },
@@ -139,60 +134,61 @@ const styles = StyleSheet.create({
         paddingRight: '20%',
         flex: 1,
         flexDirection: "column",
-        paddingBottom: 6,
+        paddingBottom: 8,
         borderBottomColor: COLORS.borderGray,
         borderBottomWidth: 1,
         position: 'relative'
     },
     catalog_item_buttonBlock: {
         position: 'absolute',
-        top: 113,
-        right: 0
+        top: 208,
+        right: 0,
+        flex: 1,
+        flexDirection: 'row-reverse',
     },
     catalog_item_separate: {
-        height: 7,
+        width: 14,
     },
     catalog_item_info_name: {
-        fontSize: 14.5,
-        fontFamily: FONTS.light,
-        marginBottom: 7,
-        marginTop: 10,
+        fontSize: 14,
+        fontFamily: FONTS.medium,
+        marginBottom: 8,
+        marginTop: 8,
     },
     catalog_item_info_place: {
         fontSize: 10,
         fontFamily: FONTS.light,
         marginBottom: 4,
-        marginTop: 8,
     },
     catalog_item_info_size: {
         fontSize: 10,
         fontFamily: FONTS.light
     },
     catalog_item_footer: {
-        marginTop: 9,
+        marginTop: 8,
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-
     },
     catalog_item_footer_block: {
-        width: '50%',
-        flex: 0.6,
-        flexDirection: 'row',
-        alignItems: 'center'
-
-    },
-    catalog_item_footer_block_info: {
-        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    catalog_item_footer_block_info: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight: 5,
     },
     catalog_item_footer_block_text: {
         fontSize: 10,
         fontFamily: FONTS.light,
         color: COLORS.mainBlack,
-        marginLeft: 5,
+        marginHorizontal: 5,
+    },
+    catalog_item_footer_link_block: {
+        flex: 5,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
     },
     catalog_item_footer_link: {
         fontSize: 10,

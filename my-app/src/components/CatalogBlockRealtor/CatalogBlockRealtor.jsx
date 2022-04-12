@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Image } from 'react-native';
 
-import CatalogItem from './CatalogItem/CatalogItem'
+import CatalogItemRealtor from './CatalogItemRealtor/CatalogItemRealtor'
 
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';
@@ -21,7 +21,7 @@ width: 92%;
 background-color: white;
 padding-top: 12px;
 `;
-const CatalogBlock = observer(() => {
+const CatalogBlockRealtor = observer(() => {
     const { isGallery, catalog, setCatalog } = useCatalogApiStore();
 
     const route = useRoute();
@@ -36,7 +36,7 @@ const CatalogBlock = observer(() => {
                 <Main style={`${styles.main}`}>
                     {/* ApartmentsPage render item in two column */}
                     <View style={styles.main_other}>
-                        {catalog.map(item => <CatalogItem data={item} key={item.id} />)}
+                        {catalog.map(item => <CatalogItemRealtor data={item} key={item.id} />)}
                     </View>
                 </Main>}
             {isGallery === false &&
@@ -48,7 +48,7 @@ const CatalogBlock = observer(() => {
     )
 })
 
-export default CatalogBlock;
+export default CatalogBlockRealtor;
 
 const styles = StyleSheet.create({
     main_catalog: {

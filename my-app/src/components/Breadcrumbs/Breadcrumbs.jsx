@@ -1,9 +1,10 @@
-import { R } from '@/res/R.js'
-const ArrowLeftIcon = R.IMAGES.arrow_left;
-
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
+import IMAGES from '../../res/images'
+const { ArrowLeft } = IMAGES
 import React from 'react';
 
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styled from 'styled-components/native';
 
@@ -17,7 +18,7 @@ margin-top: 15px;
 
 import PageLocation from '@/components/helpers/pageLocation'
 const Breadcrumbs = ({ goBack }) => {
-    const { title, ads } = PageLocation();
+    const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
 
     const isAds = ads &&
@@ -27,18 +28,33 @@ const Breadcrumbs = ({ goBack }) => {
             </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>
         </View>;
+    const isAdsRealtor = ads &&
+        <View style={styles.breadcrumbs}>
+            <TouchableOpacity onPress={() => navigation.navigate('HomeRealtor')}>
+                <Text style={styles.ads}>Объявления&nbsp; | &nbsp;</Text>
+            </TouchableOpacity>
+            <Text style={styles.page}>{title}</Text>
+        </View>;
 
     const isGoBack = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
             onPress={() => navigation.goBack()}>
-            <ArrowLeftIcon />
+            <ArrowLeft />
+            <Text style={styles.goBack}>Вернуться назад</Text>
+        </GoBack>
+    const isGoBackRealtor = goBack &&
+        <GoBack
+            style={styles.breadcrumbs_goBack}
+            onPress={() => navigation.goBack()}>
+            <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>
 
     const breadcrumbs = !goBack ? isAds : isGoBack
+    const breadcrumbsRealtor = !goBack ? isAdsRealtor : isGoBackRealtor
 
-    return breadcrumbs
+    return isRealtor ? breadcrumbsRealtor : breadcrumbs
 
 }
 export default Breadcrumbs;
@@ -46,9 +62,9 @@ export default Breadcrumbs;
 const styles = StyleSheet.create({
     goBack: {
         marginLeft: 10,
-        color: R.COLORS.mainBlack,
+        color: COLORS.mainBlack,
         fontSize: 12,
-        fontFamily: R.FONTS.light
+        fontFamily: FONTS.light
     },
     breadcrumbs: {
         flex: 1,
@@ -56,12 +72,12 @@ const styles = StyleSheet.create({
     },
     ads: {
         fontSize: 12,
-        fontFamily: R.FONTS.regular,
-        color: R.COLORS.secondBlack,
+        fontFamily: FONTS.regular,
+        color: COLORS.secondBlack,
     },
     page: {
         fontSize: 12,
-        fontFamily: R.FONTS.regular,
-        color: R.COLORS.mainBlack,
+        fontFamily: FONTS.regular,
+        color: COLORS.mainBlack,
     }
 })
