@@ -4,12 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Import header
-import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
-// import HeaderUser from '@/components/HeaderUser/HeaderUser';
+import HeaderUser from '@/components/HeaderUser/HeaderUser';
 
 // Import Home
-import HomeRealtor from './routes/HomeRealtor'
-// import HomeUser from './routes/HomeUser'
+import HomeUser from './routes/HomeUser'
 
 // Navbar
 import NavbarItem from './src/components/NavigationBar/NavigationBar'
@@ -38,13 +36,10 @@ export default function App() {
     return <NavigationContainer>
         <Tab.Navigator
             screenOptions={({ route }) => ({
-                // Header
-                headerShown: true,
+                tabBarShowLabel: false,
+                headerShown: false,
+                headerLeft: () => null,
                 showLabel: false,
-                headerTitle: () => (
-                    <HeaderRealtor />
-                    // <HeaderUser />
-                ),
                 // Navigation Bar
                 tabBarStyle: { paddingLeft: 10, justifyContent: 'space-between', alignItems: 'center' },
                 tabBarShowLabel: false,
@@ -52,14 +47,10 @@ export default function App() {
                     return <NavbarItem routeName={route.name} focused={focused} />
                 },
             })}  >
-
-            {/* User Page */}
-            {/* <Tab.Screen name="Объявления" component={HomeUser} /> */}
-
             {/* Realtor Page */}
             <Tab.Screen
                 options={{ title: '' }}
-                name="Объявления" component={HomeRealtor} />
+                name="Объявления" component={HomeUser} />
             <Tab.Screen name="Избранное" component={FavoritePage} />
             <Tab.Screen name="Создать" component={AddPage} />
             <Tab.Screen name="Подборки" component={CollectionsPage} />

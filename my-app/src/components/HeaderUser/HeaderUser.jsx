@@ -1,15 +1,23 @@
 import IMAGES from '@/res/images'
 const { BurgerMenuIcon, SearchIcon, BellIcon, UserHeaderIcon } = IMAGES;
+import { useNavigation } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
 
-export default function HeaderRealtor() {
+export default function HeaderUser() {
     const [number, onChangeText] = React.useState(null);
+    const navigation = useNavigation();
+    const route = useRoute();
+
+    console.log(navigation);
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
-                <TouchableOpacity style={styles.button} onPress={() => { alert("you clicked me") }}>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('HomeRealtor')}
+                    style={styles.button} >
                     <BurgerMenuIcon width={25} />
                 </TouchableOpacity>
 

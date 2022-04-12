@@ -2,7 +2,7 @@ import React from 'react';
 
 import FONTS from '@/res/fonts'
 import { StyleSheet, ScrollView, View } from 'react-native';
-import HeaderUser from '@/components/HeaderUser/HeaderUser';
+
 import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
 import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 
@@ -10,7 +10,7 @@ export default function HousesPageUser() {
 
     return (
         <View style={styles.body}>
-            <HeaderUser />
+
             <ScrollView horizontal={false} style={styles.container}>
                 <AdsFunctionalBar />
                 <CatalogBlock />

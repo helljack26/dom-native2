@@ -3,6 +3,9 @@ import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } fr
 import { useNavigation } from '@react-navigation/native';
 
 import CATEGORIES from '@/res/strings'
+import IMAGES from '@/res/images'
+
+const { BurgerMenuIcon } = IMAGES;
 
 export default function CategoriesBar() {
     const [selectedId, setSelectedId] = useState(null);
@@ -35,6 +38,11 @@ export default function CategoriesBar() {
                         return <RenderItem item={item} key={id} />
                     })}
                 </View>
+                <TouchableOpacity
+                    onPress={() => navigation.replace('HomeRealtor')}
+                    style={styles.button} >
+                    <BurgerMenuIcon width={25} />
+                </TouchableOpacity>
             </ScrollView>
         </SafeAreaView >
     );

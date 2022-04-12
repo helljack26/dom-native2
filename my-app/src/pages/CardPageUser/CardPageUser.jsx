@@ -5,7 +5,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
-import HeaderUser from '@/components/HeaderUser/HeaderUser';
+
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
 import CardDetailsContainer from '@/components/Card/CardDetailsContainer/CardDetailsContainer'
@@ -56,7 +56,7 @@ export default function CardPageUser() {
 
     const { id, photoLargePath } = objectDetails;
     return (<SafeAreaView style={styles.body}>
-        <HeaderUser />
+
         <Main
             ref={scrollViewRef}
             horizontal={false}>
