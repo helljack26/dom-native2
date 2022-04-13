@@ -11,7 +11,7 @@ const AdsPageTitle = observer(({ city = 'Киеве' }) => {
     const { catalog } = useCatalogApiStore();
     const objectInCatalog = catalog !== undefined && catalog.length
     const { title } = PageLocation();
-    console.log(title);
+
     return (<View >
         <View style={styles.adsHeaderBlock}>
             <Text style={styles.adsHeader}>{title} в {city}</Text>

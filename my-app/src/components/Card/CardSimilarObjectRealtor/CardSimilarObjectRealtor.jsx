@@ -3,7 +3,6 @@ import React from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
-
 import CatalogItemRealtor from '../../CatalogBlockRealtor/CatalogItemRealtor/CatalogItemRealtor'
 import { SimilarMockApi } from '@/api/mock/SimilarMockApi.jsx'
 const {

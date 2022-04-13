@@ -1,4 +1,4 @@
-import { R } from '@/res/R'
+import COLORS from '@/res/colors'
 import IMAGES from '@/res/images'
 
 const { CameraIcon, ShowOnMapIcon, RouteIcon } = IMAGES;
@@ -28,7 +28,7 @@ const RenderItem = ({ item }) => {
                 height: 200,
                 borderRadius: 8,
                 borderBottomWidth: 2,
-                borderBottomColor: R.COLORS.borderGray,
+                borderBottomColor: COLORS.borderGray,
                 justifyContent: 'center',
                 alignItems: 'center',
                 overflow: 'hidden',

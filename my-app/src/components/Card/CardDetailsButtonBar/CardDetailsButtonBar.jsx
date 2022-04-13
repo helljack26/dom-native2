@@ -1,12 +1,12 @@
 import React from 'react';
 
+import ShareButton from '@/components/ShareButton/ShareButton';
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton'
 
 import IMAGES from '@/res/images'
 const { ViewIcon,
     HeartSmallIcon,
-    PercentIcon,
-    ShareIcon } = IMAGES;
+} = IMAGES;
 
 import { styles } from './style'
 const {
@@ -14,7 +14,6 @@ const {
     FavoriteView,
     FavoriteView_block,
     Details_mobile,
-    Details_mobile_btn,
     FavoriteView_block_text,
 } = styles;
 
@@ -43,13 +42,8 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
             {/* Buttons */}
             <Details_mobile>
-                <Details_mobile_btn>
-                    <ShareIcon width={15} />
-                </Details_mobile_btn>
-
-
+                <ShareButton isBig={true} />
                 <AddToFavoriteButton isBig={true} inFavorite={inFavorite} />
-
             </Details_mobile>
         </Card_details>
     )

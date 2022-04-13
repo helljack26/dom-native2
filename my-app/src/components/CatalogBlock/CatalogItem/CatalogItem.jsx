@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
+import ShareButton from '@/components/ShareButton/ShareButton';
 
 const CatalogItem = ({ data }) => {
     const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
@@ -43,22 +44,22 @@ const CatalogItem = ({ data }) => {
                         itemId: id,
                         category: category,
                     });
-                }}
-            >
-                <Image source={photoSmallPath}
-                    style={styles.catalog_item_photo} alt={name} />
+                }} >
+                <Image source={photoSmallPath} style={styles.catalog_item_photo} alt={name} />
             </TouchableOpacity>
+            {/* Info */}
             <View style={styles.catalog_item_info}>
                 {priceBlock}
                 <Text style={styles.catalog_item_info_name}>{name}</Text>
                 <Text style={styles.catalog_item_info_place}>{location}</Text>
                 <Text style={styles.catalog_item_info_size}>{size}</Text>
             </View>
+            {/* Button */}
             <View style={styles.catalog_item_buttonBlock}>
                 <AddToFavoriteButton inFavorite={inFavorite} isBig={false} />
-                <View style={styles.catalog_item_separate}></View>
-
+                <ShareButton isBig={false} />
             </View>
+
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
                     <View style={styles.catalog_item_footer_block_info}>
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: FONTS.medium,
         marginBottom: 8,
-        marginTop: 8,
+        marginTop: 11,
     },
     catalog_item_info_place: {
         fontSize: 10,

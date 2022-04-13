@@ -7,24 +7,24 @@ import HeaderUser from '@/components/HeaderUser/HeaderUser';
 import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
 
 // User
-import HomePageUser from '../src/pages/HomePageUser/HomePageUser.jsx';
-import CardPageUser from '../src/pages/CardPageUser/CardPageUser.jsx';
+import HomePageUser from '../src/pages/User/HomePageUser/HomePageUser.jsx';
+import CardPageUser from '../src/pages/User/CardPageUser/CardPageUser.jsx';
 // Categories 
-import ApartmentsPageUser from '../src/pages/ApartmentsPageUser/ApartmentsPageUser.jsx'
-import HousesPageUser from '../src/pages/HousesPageUser/HousesPageUser.jsx'
-import PlotsPageUser from '../src/pages/PlotsPageUser/PlotsPageUser.jsx'
-import CommercePageUser from '../src/pages/CommercePageUser/CommercePageUser.jsx'
-import RentPageUser from '../src/pages/RentPageUser/RentPageUser.jsx'
+import ApartmentsPageUser from '../src/pages/User/ApartmentsPageUser/ApartmentsPageUser.jsx'
+import HousesPageUser from '../src/pages/User/HousesPageUser/HousesPageUser.jsx'
+import PlotsPageUser from '../src/pages/User/PlotsPageUser/PlotsPageUser.jsx'
+import CommercePageUser from '../src/pages/User/CommercePageUser/CommercePageUser.jsx'
+import RentPageUser from '../src/pages/User/RentPageUser/RentPageUser.jsx'
 
 // Realtor
-import HomePageRealtor from '../src/pages/HomePageRealtor/HomePageRealtor.jsx';
-import CardPageRealtor from '../src/pages/CardPageRealtor/CardPageRealtor.jsx';
+import HomePageRealtor from '../src/pages/Realtor/HomePageRealtor/HomePageRealtor.jsx';
+import CardPageRealtor from '../src/pages/Realtor/CardPageRealtor/CardPageRealtor.jsx';
 // Categories 
-import ApartmentsPageRealtor from '../src/pages/ApartmentsPageRealtor/ApartmentsPageRealtor.jsx'
-import HousesPageRealtor from '../src/pages/HousesPageRealtor/HousesPageRealtor.jsx'
-import PlotsPageRealtor from '../src/pages/PlotsPageRealtor/PlotsPageRealtor.jsx'
-import CommercePageRealtor from '../src/pages/CommercePageRealtor/CommercePageRealtor.jsx'
-import RentPageRealtor from '../src/pages/RentPageRealtor/RentPageRealtor.jsx'
+import ApartmentsPageRealtor from '../src/pages/Realtor/ApartmentsPageRealtor/ApartmentsPageRealtor.jsx'
+import HousesPageRealtor from '../src/pages/Realtor/HousesPageRealtor/HousesPageRealtor.jsx'
+import PlotsPageRealtor from '../src/pages/Realtor/PlotsPageRealtor/PlotsPageRealtor.jsx'
+import CommercePageRealtor from '../src/pages/Realtor/CommercePageRealtor/CommercePageRealtor.jsx'
+import RentPageRealtor from '../src/pages/Realtor/RentPageRealtor/RentPageRealtor.jsx'
 
 const Stack = createNativeStackNavigator();
 
@@ -43,8 +43,7 @@ export default function HomeUser() {
                 headerTitle: () => (
                     <HeaderUser />
                 )
-            })}
-        >
+            })}  >
             <Stack.Screen name="Home" component={HomePageUser} />
             <Stack.Screen name="CardPage" component={CardPageUser} />
             <Stack.Screen name="ApartmentsPage" component={ApartmentsPageUser} />

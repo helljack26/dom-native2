@@ -4,9 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import CATEGORIESREALTOR from '@/res/categoriesRealtor'
 
-
 export default function CategoriesBarRealtor() {
-    console.log(CATEGORIESREALTOR);
     const [selectedId, setSelectedId] = useState(null);
     const navigation = useNavigation();
 
@@ -17,13 +15,12 @@ export default function CategoriesBarRealtor() {
                 onPress={() => {
                     return navigation.navigate(item.path),
                         setSelectedId(item.id)
-                }
-                }
+                }}
                 style={[styles.categories_item, backgroundColor]} >
                 {item.icon}
-                <Text
-                    style={styles.categories_item_text}
-                >{item.title}</Text>
+                <Text style={styles.categories_item_text} >
+                    {item.title}
+                </Text>
             </TouchableOpacity >
         );
     };

@@ -9,6 +9,7 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 import PercentButton from '@/components/PercentButton/PercentButton';
+import ShareButton from '@/components/ShareButton/ShareButton';
 
 const CatalogItemRealtor = ({ data }) => {
     const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
@@ -57,10 +58,8 @@ const CatalogItemRealtor = ({ data }) => {
             </View>
             <View style={styles.catalog_item_buttonBlock}>
                 <AddToFavoriteButton inFavorite={inFavorite} isBig={false} />
-                <View style={styles.catalog_item_separate}></View>
-                <TouchableOpacity>
-                    <PercentButton isBig={false} />
-                </TouchableOpacity>
+                <ShareButton isBig={false} />
+                <PercentButton isBig={false} />
             </View>
             <View style={styles.catalog_item_footer}>
                 <View style={styles.catalog_item_footer_block}>
@@ -144,7 +143,7 @@ const styles = StyleSheet.create({
     },
     catalog_item_buttonBlock: {
         position: 'absolute',
-        top: 208,
+        top: 205,
         right: 0,
         flex: 1,
         flexDirection: 'row-reverse',
@@ -156,7 +155,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: FONTS.medium,
         marginBottom: 8,
-        marginTop: 8,
+        marginTop: 11,
     },
     catalog_item_info_place: {
         fontSize: 10,
