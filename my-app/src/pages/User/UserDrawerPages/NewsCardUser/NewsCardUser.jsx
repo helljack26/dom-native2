@@ -13,7 +13,8 @@ import IMAGES from '@/res/images'
 const { ArrowLeft } = IMAGES
 
 const source = {
-    html: `<div style="color:#222222; font-size:16px">
+    html: `<div style="
+    color:#222222; font-size:16px">
     <header style="
         width: 100%;
         border-radius: 20px;
@@ -172,6 +173,7 @@ const source = {
 };
 
 import styled from 'styled-components/native';
+import NewsCardSimilar from '@/components/NewsCardSimilar/NewsCardSimilar';
 const MainBlock = styled.ScrollView`
 width: 100%;
 background-color: white;
@@ -209,6 +211,7 @@ export default function NewsCardUser() {
                     <Text style={styles.goBack}>Вернуться назад</Text>
                 </GoBack>
                 <RenderHtml contentWidth={width} source={source} enableCSSInlineProcessing={true} />
+                <NewsCardSimilar />
             </MainBlock>
         </SafeAreaView>
     )

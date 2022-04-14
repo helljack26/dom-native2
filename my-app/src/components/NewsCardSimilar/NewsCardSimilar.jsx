@@ -1,18 +1,22 @@
-import React from "react";
+import FONTS from '@/res/fonts'
+import React from 'react';
 import { useEffect } from 'react';
-import { useLocation } from "react-router-dom";
-import newsStore from "stores/newsApi";
+import { StyleSheet, ScrollView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { observer } from "mobx-react";
+import { useNewsApiStore } from '@/stores/NewsApi';
+
+import { observer } from 'mobx-react-lite';
 import { toJS } from "mobx";
 
 // Styles
 import { style } from './style'
+
 const {
     Container,
     AdsHeader,
     AdsHeaderText,
-    NewsCotainer,
+    NewsContainer,
     NewsItemBlock,
     NewsItemImageBlock,
     NewsItemImage,
@@ -21,26 +25,28 @@ const {
     NewsItemDate,
 } = style;
 
-const NewsCardSimilar = observer(() => {
-    const location = useLocation();
-    const splitedRoute = location.pathname.split('/')
-    let route = '#/'
-    if (splitedRoute[1] === 'realtor') {
-        route = '#/realtor/'
-    }
-    const newsApi = toJS(newsStore.similarNews)
+const NewsUserPage = observer(() => {
+    const navigation = useNavigation();
+
+    const { similarNews, getSimilarNews } = useNewsApiStore();
+    const newsApi = toJS(similarNews)
     const isNews = newsApi ? newsApi : []
 
     useEffect(() => {
-        newsStore.getSimilarNews();
+        getSimilarNews();
     }, []);
 
     const NewsItem = ({ data }) => {
         const { id, name, creationDate, photoPath } = data;
-        return <NewsItemBlock as='a'
-            href={`${route}news/${id}`} >
+        return <NewsItemBlock onPress={() => {
+            navigation.navigate('NewsCardUser', {
+                itemId: id,
+            })
+        }} >
             <NewsItemImageBlock>
-                <NewsItemImage src={photoPath} />
+                <NewsItemImage
+                    resizeMode={'contain'}
+                    source={photoPath} />
             </NewsItemImageBlock>
             <NewsItemInfo>
                 <NewsItemTitle>
@@ -52,19 +58,36 @@ const NewsCardSimilar = observer(() => {
             </NewsItemInfo>
         </NewsItemBlock>
     }
-
     return (
-        <>
-            <Container>
-                <AdsHeader>
-                    <AdsHeaderText>Похожие новости</AdsHeaderText>
-                </AdsHeader>
-                <NewsCotainer>
-                    {isNews.map((item, id) => <NewsItem data={item} key={id} />)}
-                </NewsCotainer>
-            </Container>
-        </>
-    )
+        <View style={styles.body}>
+            <ScrollView
+                horizontal={false}
+                style={styles.container}>
+                <Container>
+                    {/* TODO  в обсервер прикинуть как можно получать в компоненте число объектов в тайтл */}
+                    <AdsHeader>
+                        <AdsHeaderText>Похожие новости</AdsHeaderText>
+                    </AdsHeader>
+                    <NewsContainer>
+                        {isNews.map((item, id) => <NewsItem data={item} key={id} />)}
+                    </NewsContainer>
+                </Container>
+
+            </ScrollView>
+        </View>
+    );
 })
 
-export default NewsCardSimilar;
+export default NewsUserPage;
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'white',
+        fontFamily: FONTS.regular,
+    },
+    body: {
+        backgroundColor: 'white',
+        flex: 9,
+        fontFamily: FONTS.regular,
+    },
+})
+
