@@ -19,7 +19,10 @@ const DrawerNavigator = () => {
             })}       >
             <Drawer.Screen name="User" component={UserStackNavigator} />
             <Drawer.Screen name="Realtor" component={RealtorStackNavigator} />
-            <Drawer.Screen name="Новости" component={NewsUserStack} />
+            <Drawer.Screen name="Новости"
+
+
+                component={NewsUserStack} />
 
         </Drawer.Navigator>
     );

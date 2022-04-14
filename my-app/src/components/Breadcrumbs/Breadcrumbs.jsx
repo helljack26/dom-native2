@@ -1,6 +1,6 @@
 import FONTS from '@/res/fonts'
 import COLORS from '@/res/colors'
-import IMAGES from '../../res/images'
+import IMAGES from '@/res/images'
 const { ArrowLeft } = IMAGES
 import React from 'react';
 

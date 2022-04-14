@@ -24,5 +24,5 @@ export default function NewsUserStack({ navigation }) {
             <Stack.Screen name="NewsUser" component={NewsUserPage} />
             <Stack.Screen name="NewsCardUser" component={NewsCardUser} />
         </Stack.Navigator>
-        )
+    )
 }
