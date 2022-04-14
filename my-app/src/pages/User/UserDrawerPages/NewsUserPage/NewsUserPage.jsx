@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import PageLocation from '@/components/helpers/pageLocation'
 
-// import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
+import Pagination from '@/components/Pagination/Pagination';
 import { useNewsApiStore } from '@/stores/NewsApi';
 
 import { observer } from 'mobx-react-lite';
@@ -78,8 +78,8 @@ const NewsUserPage = observer(() => {
                     <NewsContainer>
                         {isNews.map((item, id) => <NewsItem data={item} key={id} />)}
                     </NewsContainer>
-                    {/* <Pagination /> */}
                 </Container>
+                <Pagination />
 
             </ScrollView>
         </View>

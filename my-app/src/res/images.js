@@ -30,6 +30,8 @@ import CategoriesRent from '../../assets/icon/categories/rent_icon.svg';
 import ArrowDownIcon from '../../assets/icon/arrow_down_icon.svg';
 import ArrowUp from '../../assets/icon/arrow_up_icon.svg';
 import ArrowLeft from '../../assets/icon/arrow_left_icon.svg';
+import ArrowLeftPagin from '../../assets/icon/pagin_left_arrow.svg';
+import ArrowRightPagin from '../../assets/icon/pagin_right_arrow.svg';
 
 // Card Derails
 import PercentIcon from '../../assets/icon/percent_icon.svg';
@@ -89,6 +91,8 @@ const IMAGES = {
     ArrowDownIcon: ArrowDownIcon,
     ArrowUp: ArrowUp,
     ArrowLeft: ArrowLeft,
+    ArrowLeftPagin: ArrowLeftPagin,
+    ArrowRightPagin: ArrowRightPagin,
     // Card Derails
     ViewIcon: ViewIcon,
     HeartSmallIcon: HeartSmallIcon,
