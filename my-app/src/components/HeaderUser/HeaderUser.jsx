@@ -1,24 +1,31 @@
 import IMAGES from '@/res/images'
 const { BurgerMenuIcon, SearchIcon, BellIcon, UserHeaderIcon } = IMAGES;
-import { useNavigation } from '@react-navigation/native';
-import { useRoute } from '@react-navigation/native';
+
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
 
-export default function HeaderUser() {
+export default function HeaderUser({navigation}) {
     const [number, onChangeText] = React.useState(null);
-    const navigation = useNavigation();
+    
+    const NavigationDrawerStructure = (props) => {
+        const toggleDrawer = () => {
+            props.navigationProps.toggleDrawer();
+        };
+        return (
+            <TouchableOpacity 
+            style={styles.button}
+            onPress={toggleDrawer}>
+                <BurgerMenuIcon width={25} />
+            </TouchableOpacity>
+        );
+    };
 
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
-                <TouchableOpacity
-                    onPress={() => navigation.navigate('HomeRealtor')}
-                    style={styles.button} >
-                    <BurgerMenuIcon width={25} />
-                </TouchableOpacity>
-
+            <NavigationDrawerStructure navigationProps={navigation} />
+               
                 <View style={styles.input_block}>
                     <TextInput
                         style={styles.input}

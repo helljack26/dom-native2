@@ -6,8 +6,12 @@ import React from 'react';
 
 import { StyleSheet, TouchableOpacity, Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styled from 'styled-components/native';
 
+import { observer } from 'mobx-react-lite';
+import { useCatalogApiStore } from '@/stores/CatalogApi';
+
+
+import styled from 'styled-components/native';
 // Styles
 const GoBack = styled.TouchableOpacity`
 display: flex;
@@ -17,13 +21,17 @@ margin-top: 15px;
 `;
 
 import PageLocation from '@/components/helpers/pageLocation'
-const Breadcrumbs = ({ goBack }) => {
+const Breadcrumbs = observer(({ goBack }) => {
     const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
-
+    const { setCatalog } = useCatalogApiStore();
+    const combine = () => {
+        setCatalog('Home'),
+            navigation.navigate('Home')
+    }
     const isAds = ads &&
         <View style={styles.breadcrumbs}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => combine()}>
                 <Text style={styles.ads}>Объявления&nbsp; | &nbsp;</Text>
             </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>
@@ -56,7 +64,7 @@ const Breadcrumbs = ({ goBack }) => {
 
     return isRealtor ? breadcrumbsRealtor : breadcrumbs
 
-}
+})
 export default Breadcrumbs;
 
 const styles = StyleSheet.create({

@@ -3,24 +3,28 @@ const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
-
-export default function HeaderRealtor() {
-    const navigation = useNavigation();
+export default function HeaderRealtor({ navigation }) {
+    const NavigationDrawerStructure = (props) => {
+        const toggleDrawer = () => {
+            props.navigationProps.toggleDrawer();
+        };
+        return (
+            <TouchableOpacity
+                style={styles.button}
+                onPress={toggleDrawer}>
+                <BurgerMenuIcon width={25} />
+            </TouchableOpacity>
+        );
+    };
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => navigation.navigate('Home')}
-                >
-                    <BurgerMenuIcon width={25} />
-                </TouchableOpacity>
+                <NavigationDrawerStructure navigationProps={navigation} />
 
                 <View style={styles.input_block}>
                     <TextInput
                         style={styles.input}
-
                         placeholder="Поиск..."
                         keyboardType="default"
                     />
@@ -40,7 +44,7 @@ export default function HeaderRealtor() {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </View >
     );
 }
 
