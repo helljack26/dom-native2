@@ -7,10 +7,10 @@ import DrawerNavigator from './DrawerNavigator'
 // Navbar
 import NavbarItem from '../src/components/NavigationBar/NavigationBar'
 // Navbar
-import AddPage from '../src/pages/Navbar/AddPage/AddPage'
-import FavoritePage from '../src/pages/Navbar/FavoritePage/FavoritePage'
-import CollectionsPage from '../src/pages/Navbar/CollectionsPage/CollectionsPage'
-import ChatPage from '../src/pages/Navbar/ChatPage/ChatPage'
+import AddPage from '../src/pages/Tapbar/AddPage/AddPage'
+import FavoritePage from '../src/pages/Tapbar/FavoritePage/FavoritePage'
+import CollectionsPage from '../src/pages/Tapbar/CollectionsPage/CollectionsPage'
+import ChatPage from '../src/pages/Tapbar/ChatPage/ChatPage'
 
 const Tab = createBottomTabNavigator();
 

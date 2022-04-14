@@ -1,7 +1,9 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+
 import UserStackNavigator from './UserStackNavigator';
 import RealtorStackNavigator from './RealtorStackNavigator';
+import NewsUserStack from './User/NewsUserStack';
 // import HomeRealtor from '../users/HomeRealtor';
 
 const Drawer = createDrawerNavigator();
@@ -17,6 +19,7 @@ const DrawerNavigator = () => {
             })}       >
             <Drawer.Screen name="User" component={UserStackNavigator} />
             <Drawer.Screen name="Realtor" component={RealtorStackNavigator} />
+            <Drawer.Screen name="Новости" component={NewsUserStack} />
 
         </Drawer.Navigator>
     );

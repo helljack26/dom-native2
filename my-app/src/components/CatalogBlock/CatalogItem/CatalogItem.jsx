@@ -1,7 +1,7 @@
 import FONTS from '@/res/fonts'
 import COLORS from '@/res/colors'
 import IMAGES from '@/res/images'
-const { PercentIcon, ViewIcon, HeartSmallIcon } = IMAGES;
+const { ViewIcon, HeartSmallIcon } = IMAGES;
 
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
