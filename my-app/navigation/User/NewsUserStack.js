@@ -9,17 +9,14 @@ import NewsCardUser from '../../src/pages/User/UserDrawerPages/NewsCardUser/News
 
 const Stack = createNativeStackNavigator();
 
-export default function NewsUserStack({ navigation }) {
+export default function NewsUserStack() {
     return (
         <Stack.Navigator
             screenOptions={() => ({
                 itemStyle: { padding: 0 },
                 tabBarShowLabel: false,
                 headerBackVisible: false,
-                // Header
-                headerBackVisible: false,
-                headerShown: true,
-                headerTitle: () => (<HeaderUser navigation={navigation} />),
+                headerShown: false,
             })}>
             <Stack.Screen name="NewsUser" component={NewsUserPage} />
             <Stack.Screen name="NewsCardUser" component={NewsCardUser} />

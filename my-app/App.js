@@ -2,7 +2,8 @@ import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
 
-import TabsNavigator from './navigation/TabsNavigator';
+// import TabsNavigator from './navigation/TabsNavigator';
+import Router from './navigation/Router';
 // Fonts
 import { useFonts } from "@use-expo/font";
 import AppLoading from 'expo-app-loading';
@@ -18,8 +19,8 @@ export default function App() {
         return <AppLoading />;
     }
 
-    return( 
-    <NavigationContainer>
-      <TabsNavigator />
-    </NavigationContainer>)
+    return (
+        <NavigationContainer>
+            <Router />
+        </NavigationContainer>)
 }

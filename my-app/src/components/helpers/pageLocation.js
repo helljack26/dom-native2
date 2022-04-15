@@ -77,7 +77,6 @@ const PageLocation = () => {
         default:
             break;
     }
-    console.log(title, ads, isRealtor);
     return ({ title, ads, isRealtor })
 }
 

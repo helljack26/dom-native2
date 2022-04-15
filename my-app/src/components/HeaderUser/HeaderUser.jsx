@@ -5,17 +5,17 @@ const { BurgerMenuIcon, SearchIcon, BellIcon, UserHeaderIcon } = IMAGES;
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
 
-export default function HeaderUser({navigation}) {
+export default function HeaderUser({ navigation }) {
     const [number, onChangeText] = React.useState(null);
-    
-    const NavigationDrawerStructure = (props) => {
+
+    const NavigationDrawerStructure = ({ navigationProps }) => {
         const toggleDrawer = () => {
-            props.navigationProps.toggleDrawer();
+            navigationProps.toggleDrawer();
         };
         return (
-            <TouchableOpacity 
-            style={styles.button}
-            onPress={toggleDrawer}>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={toggleDrawer}>
                 <BurgerMenuIcon width={25} />
             </TouchableOpacity>
         );
@@ -24,8 +24,8 @@ export default function HeaderUser({navigation}) {
     return (
         <View style={styles.header}>
             <View style={styles.header_block}>
-            <NavigationDrawerStructure navigationProps={navigation} />
-               
+                <NavigationDrawerStructure navigationProps={navigation} />
+
                 <View style={styles.input_block}>
                     <TextInput
                         style={styles.input}
@@ -61,8 +61,7 @@ const styles = StyleSheet.create({
         height: 42,
         width: '100%',
         paddingBottom: 5,
-        paddingRight: 5,
-        paddingRight: '9%',
+        paddingRight: 15,
     },
 
     header_block: {
@@ -73,11 +72,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     input_block: {
-        flex: 2.8,
+        flex: 3,
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 20,
-        marginRight: 15,
+        marginRight: 10,
     },
     button: {
         width: 19,
