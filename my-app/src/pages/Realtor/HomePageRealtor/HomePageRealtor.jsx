@@ -9,7 +9,6 @@ export default function HomePageRealtor() {
 
     return (
         <View style={styles.body}>
-            {/*   */}
             <ScrollView
                 horizontal={false}
                 style={styles.container} >

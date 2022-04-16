@@ -187,7 +187,7 @@ flex-direction: row;
 margin-top: 15px;
 `;
 
-export default function NewsCardUser() {
+export default function NewsCardRealtor() {
     const navigation = useNavigation();
     const route = useRoute();
     const { itemId } = route.params;

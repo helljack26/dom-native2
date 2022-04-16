@@ -15,7 +15,7 @@ import NewsCardUser from '../../src/pages/User/UserDrawerPages/NewsCardUser/News
 
 const Stack = createNativeStackNavigator();
 
-export default function UserStackNavigator({ navigation }) {
+export default function UserStackNavigator() {
     return (
         <Stack.Navigator
             screenOptions={() => ({

@@ -59,6 +59,10 @@ const PageLocation = () => {
             console.log('кайф');
             title = 'Новости'
             break;
+        case 'NewsRealtor':
+            console.log('кайф');
+            title = 'Новости'
+            break;
         case '/disconts':
             title = 'Акции'
             break;

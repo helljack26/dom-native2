@@ -13,9 +13,7 @@ export default function StartPage() {
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => navigation.navigate('User')}>
-                <Text
-                    style={styles.buttonText}
-                >
+                <Text style={styles.buttonText}  >
                     User
                 </Text>
             </TouchableOpacity>
@@ -23,9 +21,7 @@ export default function StartPage() {
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => navigation.navigate('Realtor')}>
-                <Text
-                    style={styles.buttonText}
-                >
+                <Text style={styles.buttonText} >
                     Realtor
                 </Text>
             </TouchableOpacity>
