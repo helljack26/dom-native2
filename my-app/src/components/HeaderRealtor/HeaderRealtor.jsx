@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
         height: 42,
         width: '100%',
         paddingBottom: 5,
-        paddingRight: '9%',
     },
 
     header_block: {

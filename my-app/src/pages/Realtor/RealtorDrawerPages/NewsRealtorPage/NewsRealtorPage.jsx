@@ -31,7 +31,7 @@ const {
 
 const NewsRealtorPage = observer(() => {
     const { title } = PageLocation();
-    console.log(title);
+
     const navigation = useNavigation();
 
     const { news, setNews } = useNewsApiStore();

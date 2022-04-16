@@ -7,10 +7,10 @@ import HeaderRealtor from '@/components/HeaderRealtor/HeaderRealtor';
 // Navbar
 import NavbarItem from '@/components/NavigationBar/NavigationBar'
 // Navbar
-import AddPage from '@/pages/Tapbar/AddPage/AddPage'
-import FavoritePage from '@/pages/Tapbar/FavoritePage/FavoritePage'
-import CollectionsPage from '@/pages/Tapbar/CollectionsPage/CollectionsPage'
-import ChatPage from '@/pages/Tapbar/ChatPage/ChatPage'
+import AddPageRealtor from '@/pages/RealtorTapbar/AddPageRealtor/AddPageRealtor'
+import FavoritePageRealtor from '@/pages/RealtorTapbar/FavoritePageRealtor/FavoritePageRealtor'
+import CollectionsPageRealtor from '@/pages/RealtorTapbar/CollectionsPageRealtor/CollectionsPageRealtor'
+import ChatPageRealtor from '@/pages/RealtorTapbar/ChatPageRealtor/ChatPageRealtor'
 
 const Tab = createBottomTabNavigator();
 
@@ -35,10 +35,10 @@ const RealtorTabsNavigator = ({ navigation }) => {
       <Tab.Screen
         options={{ title: '' }}
         name="Объявления" component={RealtorStackNavigator} />
-      <Tab.Screen name="Избранное" component={FavoritePage} />
-      <Tab.Screen name="Создать" component={AddPage} />
-      <Tab.Screen name="Подборки" component={CollectionsPage} />
-      <Tab.Screen name="Чаты" component={ChatPage} />
+      <Tab.Screen name="Избранное" component={FavoritePageRealtor} />
+      <Tab.Screen name="Создать" component={AddPageRealtor} />
+      <Tab.Screen name="Подборки" component={CollectionsPageRealtor} />
+      <Tab.Screen name="Чаты" component={ChatPageRealtor} />
     </Tab.Navigator>
   );
 };

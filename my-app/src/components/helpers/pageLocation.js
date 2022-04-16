@@ -56,12 +56,13 @@ const PageLocation = () => {
             ads = true
             break;
         case 'NewsUser':
-            console.log('кайф');
             title = 'Новости'
             break;
         case 'NewsRealtor':
-            console.log('кайф');
             title = 'Новости'
+            break;
+        case 'Избранное':
+            title = 'Избранное'
             break;
         case '/disconts':
             title = 'Акции'

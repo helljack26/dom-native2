@@ -56,6 +56,10 @@ import UserIcon from '../../assets/icon/user_icon.svg';
 import HandsIcon from '../../assets/icon/hands_icon.svg';
 import LockIcon from '../../assets/icon/lock_icon.svg';
 
+// Icon
+import CrossIcon from '../../assets/icon/cross_icon.svg';
+import CheckedIcon from '../../assets/icon/checked_icon.svg';
+
 const IMAGES = {
     UserPhoto: require("../../assets/icon/user_photo.png"),
     //Header
@@ -115,6 +119,10 @@ const IMAGES = {
     UserIcon: UserIcon,
     HandsIcon: HandsIcon,
     LockIcon: LockIcon,
+
+    // Icon
+    CrossIcon: CrossIcon,
+    CheckedIcon: CheckedIcon,
 }
 
 export default IMAGES;

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default function ChatPage() {
+export default function CollectionsPageRealtor() {
     return <Text numberOfLines={1}>
-        Чаты
+        Подборки
     </Text>
+
 }
 

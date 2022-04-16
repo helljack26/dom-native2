@@ -2,7 +2,6 @@ import React from 'react';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList, useDrawerProgress, } from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import UserTabsNavigator from './UserTabsNavigator';
-// import HomeRealtor from '../users/HomeRealtor';
 
 const Drawer = createDrawerNavigator();
 function CustomDrawerContent(props) {
@@ -34,7 +33,6 @@ const UserSideMenuNavigator = () => {
                 headerShown: false,
             })}>
             <Drawer.Screen name="Stack" component={UserTabsNavigator} />
-            {/* <Drawer.Screen name="Realtor" component={RealtorStackNavigator} /> */}
         </Drawer.Navigator>
     );
 };

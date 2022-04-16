@@ -38,13 +38,18 @@ const styles = StyleSheet.create({
         fontFamily: FONTS.regular,
     },
     button: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: "center",
         padding: 20,
-        borderRadius: 10,
-        marginBottom: 20,
+        width: '100%',
+        height: '50%',
+        borderBottomWidth: 2,
+        borderBottomColor: 'white',
         backgroundColor: '#0072db',
     },
     buttonText: {
-        fontSize: 20,
+        fontSize: 40,
         fontFamily: FONTS.medium,
         color: 'white',
     }

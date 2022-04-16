@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         height: 42,
         width: '100%',
         paddingBottom: 5,
-        paddingRight: 15,
+        paddingRight: 10,
     },
 
     header_block: {
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     },
     bellButton: {
         resizeMode: 'stretch',
-        marginRight: 20,
-        marginLeft: 5,
+        marginRight: 18,
+        marginLeft: 8,
     },
     bellButtonImg: {
         width: 20,

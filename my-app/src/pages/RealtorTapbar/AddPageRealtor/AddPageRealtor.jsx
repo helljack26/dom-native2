@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default function CollectionsPage() {
+export default function AddPageRealtor() {
     return <Text numberOfLines={1}>
-        Подборки
+        Добавить объявление
     </Text>
 
 }

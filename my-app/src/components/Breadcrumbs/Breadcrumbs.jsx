@@ -28,6 +28,10 @@ const Breadcrumbs = observer(({ goBack }) => {
         setCatalog('Home'),
             navigation.navigate('Home')
     }
+    const combineRealtor = () => {
+        setCatalog('HomePageRealtor'),
+            navigation.navigate('HomePageRealtor')
+    }
     const isAds = ads &&
         <View style={styles.breadcrumbs}>
             <TouchableOpacity onPress={() => combine()}>
@@ -37,7 +41,7 @@ const Breadcrumbs = observer(({ goBack }) => {
         </View>;
     const isAdsRealtor = ads &&
         <View style={styles.breadcrumbs}>
-            <TouchableOpacity onPress={() => navigation.navigate('HomeRealtor')}>
+            <TouchableOpacity onPress={() => combineRealtor()}>
                 <Text style={styles.ads}>Объявления&nbsp; | &nbsp;</Text>
             </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>

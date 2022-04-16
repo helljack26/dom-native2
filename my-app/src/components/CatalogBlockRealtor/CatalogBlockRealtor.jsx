@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Image } from 'react-native';
 
-import CatalogItemRealtor from './CatalogItemRealtor/CatalogItemRealtor'
+import CatalogItemRealtor from './CatalogItemRealtor/CatalogItemRealtor.jsx'
 
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';

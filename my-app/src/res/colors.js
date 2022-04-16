@@ -3,6 +3,7 @@ const COLORS = {
     secondBlack: '#575757',
     mainBlue: '#0072db',
     borderGray: '#e6ecf5',
+    borderDarkGray: '#dadada',
     backgroundGray: '#f4f4f4',
 }
 
