@@ -10,8 +10,28 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 import ShareButton from '@/components/ShareButton/ShareButton';
 
+const AbsoluteStatus = ({ props }) => {
+    const type = props === 'Новинка' ? true : false;
+    return <View style={type ? styles.AbsoluteStatus_new : styles.AbsoluteStatus_sale}>
+        <Text style={styles.AbsoluteStatusText}>
+            {props}
+        </Text>
+    </View>
+}
+
 const CatalogItem = ({ data }) => {
-    const { id, name, price, oldPrice, category, location, size, photoSmallPath, inFavorite, viewNumber, favoriteNumber } = data;
+    const { id,
+        name,
+        price,
+        oldPrice,
+        category,
+        location,
+        size,
+        photoSmallPath,
+        inFavorite,
+        viewNumber,
+        itemStatus,
+        favoriteNumber } = data;
     const navigation = useNavigation();
 
     const spaceInPriceValue = (priceValue) => {
@@ -45,6 +65,8 @@ const CatalogItem = ({ data }) => {
                         category: category,
                     });
                 }} >
+                {/* Label new or disconts */}
+                {itemStatus && <AbsoluteStatus props={itemStatus} />}
                 <Image source={photoSmallPath} style={styles.catalog_item_photo} alt={name} />
             </TouchableOpacity>
             {/* Info */}
@@ -105,6 +127,48 @@ const styles = StyleSheet.create({
     catalog_item_photo: {
         width: '100%',
         height: 198,
+        position: 'relative',
+
+    },
+    AbsoluteStatus_sale: {
+        position: 'absolute',
+        zIndex: 990,
+        top: 11,
+        left: 0,
+        fontSize: 12,
+        lineHeight: 17,
+        paddingVertical: 9,
+        paddingHorizontal: 16,
+        backgroundColor: '#d30000',
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 6,
+        borderBottomRightRadius: 6,
+        borderBottomLeftRadius: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    AbsoluteStatus_new: {
+        position: 'absolute',
+        zIndex: 990,
+        top: 11,
+        left: 0,
+        fontSize: 12,
+        lineHeight: 17,
+        paddingVertical: 9,
+        paddingHorizontal: 16,
+        backgroundColor: '#6abd24',
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 6,
+        borderBottomRightRadius: 6,
+        borderBottomLeftRadius: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    AbsoluteStatusText: {
+        fontFamily: FONTS.medium,
+        color: 'white',
     },
     catalog_item_block: {
         flex: 1,

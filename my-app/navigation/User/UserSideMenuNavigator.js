@@ -16,6 +16,7 @@ function CustomDrawerContent(props) {
             <Animated.View style={{ transform: [{ translateX }] }}>
                 <DrawerItem label="Объявления" onPress={() => props.navigation.navigate("Home")} />
                 <DrawerItem label="Новости" onPress={() => props.navigation.navigate("NewsUser")} />
+                <DrawerItem label="Новинки" onPress={() => props.navigation.navigate("NoveltiesPage")} />
                 <DrawerItem label="Выход" onPress={() => props.navigation.navigate("Start")} />
             </Animated.View>
         </DrawerContentScrollView>

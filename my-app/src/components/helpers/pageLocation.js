@@ -64,6 +64,11 @@ const PageLocation = () => {
         case 'Избранное':
             title = 'Избранное'
             break;
+        case 'NoveltiesPage':
+            title = 'Новинки'
+            isRealtor = false
+            ads = true
+            break;
         case 'NoveltiesPageRealtor':
             isRealtor = true
             ads = true

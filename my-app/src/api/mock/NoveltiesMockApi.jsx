@@ -1,5 +1,49 @@
 export const NoveltiesMockApi = [
     {
+        id: 457,
+        name: "2-комн. квартира, 45 м²",
+        category: 'rent',
+        totalArea: 45,
+        price: 95000,
+        priceAfter: '/мес',
+        location: "Краснодарский край, Сочи, р-н Центральный, мкр. Центр, ул. Роз, 36",
+        size: "45 м²",
+        photoSmallPath: require('../../../assets/rent_mock/rent_3.png'),
+        photoLargePath: [
+            { url: require('../../../assets/rent_mock/rent_3.png') },
+            { url: require('../../../assets/rent_mock/rent_2.png') },
+        ],
+        favoriteNumber: 1525,
+        viewNumber: 281,
+        itemStatus: 'Новинка',
+        percentageText: 'Процент на ипотеку',
+        description: 'Апартаменты находятся в комплексе "роз дель мар" на 12 этаже. В квартире имеется все необходимое для приятного проживания. Предоставляются постельное белье и полотенца .',
+        objectDetails: [
+            {
+                title: 'Тип объекта:',
+                value: 'квартира'
+            },
+            {
+                title: 'Общая площадь:',
+                value: '45 м²',
+            },
+            {
+                title: 'Отделка:',
+                value: 'Без отделки'
+            },
+            {
+                title: 'Тип аренды:',
+                value: 'Долгосрочная'
+            },
+        ],
+        agentId: 1,
+        coords: [{
+            lat: 654654,
+            lon: 856156,
+        }],
+        inFavorite: false
+    },
+    {
         id: 1,
         name: "Апартаменты-студия, 22,8 м², 4/8 эт.",
         category: 'apartments',
@@ -61,50 +105,6 @@ export const NoveltiesMockApi = [
         }],
         inFavorite: true
 
-    },
-    {
-        id: 457,
-        name: "2-комн. квартира, 45 м²",
-        category: 'rent',
-        totalArea: 45,
-        price: 95000,
-        priceAfter: '/мес',
-        location: "Краснодарский край, Сочи, р-н Центральный, мкр. Центр, ул. Роз, 36",
-        size: "45 м²",
-        photoSmallPath: require('../../../assets/rent_mock/rent_3.png'),
-        photoLargePath: [
-            { url: require('../../../assets/rent_mock/rent_3.png') },
-            { url: require('../../../assets/rent_mock/rent_2.png') },
-        ],
-        favoriteNumber: 1525,
-        viewNumber: 281,
-        itemStatus: 'Новинка',
-        percentageText: 'Процент на ипотеку',
-        description: 'Апартаменты находятся в комплексе "роз дель мар" на 12 этаже. В квартире имеется все необходимое для приятного проживания. Предоставляются постельное белье и полотенца .',
-        objectDetails: [
-            {
-                title: 'Тип объекта:',
-                value: 'квартира'
-            },
-            {
-                title: 'Общая площадь:',
-                value: '45 м²',
-            },
-            {
-                title: 'Отделка:',
-                value: 'Без отделки'
-            },
-            {
-                title: 'Тип аренды:',
-                value: 'Долгосрочная'
-            },
-        ],
-        agentId: 1,
-        coords: [{
-            lat: 654654,
-            lon: 856156,
-        }],
-        inFavorite: false
     },
     {
         id: 43433257,

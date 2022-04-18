@@ -27,7 +27,7 @@ const CatalogBlockRealtor = observer(() => {
 
     const route = useRoute();
     useEffect(() => {
-        if (route.name) {
+        if (route) {
             setCatalog(route.name);
         }
     }, [route]);
