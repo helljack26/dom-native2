@@ -10,8 +10,9 @@ import PlotsPageRealtor from '../../src/pages/Realtor/PlotsPageRealtor/PlotsPage
 import CommercePageRealtor from '../../src/pages/Realtor/CommercePageRealtor/CommercePageRealtor.jsx'
 import RentPageRealtor from '../../src/pages/Realtor/RentPageRealtor/RentPageRealtor.jsx'
 // Side navigation
-import NewsRealtorPage from '../../src/pages/Realtor/RealtorDrawerPages/NewsRealtorPage/NewsRealtorPage';
-import NewsCardRealtor from '../../src/pages/Realtor/RealtorDrawerPages/NewsCardRealtor/NewsCardRealtor';
+import NewsRealtorPage from '../../src/pages/RealtorSideMenuPages/NewsRealtorPage/NewsRealtorPage';
+import NewsCardRealtor from '../../src/pages/RealtorSideMenuPages/NewsCardRealtor/NewsCardRealtor';
+import NoveltiesPageRealtor from '../../src/pages/RealtorSideMenuPages/NoveltiesPageRealtor/NoveltiesPageRealtor';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,5 +34,6 @@ export default function RealtorStackNavigator() {
             {/* Side navigation */}
             <Stack.Screen name="NewsRealtor" component={NewsRealtorPage} />
             <Stack.Screen name="NewsCardRealtor" component={NewsCardRealtor} />
+            <Stack.Screen name="NoveltiesPageRealtor" component={NoveltiesPageRealtor} />
         </Stack.Navigator>)
 }

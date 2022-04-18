@@ -1,9 +1,7 @@
 import React from 'react';
 
-
 import { useState } from 'react'
 import IMAGES from '@/res/images'
-
 
 const { CheckedIcon, CrossIcon } = IMAGES
 

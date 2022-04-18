@@ -43,6 +43,9 @@ class CatalogApi {
         } else if (route === 'RentPage' || route === 'RentPageRealtor') {
             this.resetState()
             return this.catalog = apiMocks.RentMockApi
+        } else if (route === 'NoveltiesPage' || route === 'NoveltiesPageRealtor') {
+            this.resetState()
+            return this.catalog = apiMocks.NoveltiesMockApi;
         }
         else {
             return

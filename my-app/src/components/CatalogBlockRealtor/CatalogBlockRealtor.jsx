@@ -1,6 +1,6 @@
-import IMAGES from '@/res/images'
-
 import React from 'react';
+
+import IMAGES from '@/res/images'
 import { useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Image } from 'react-native';
@@ -21,6 +21,7 @@ width: 92%;
 background-color: white;
 padding-top: 12px;
 `;
+
 const CatalogBlockRealtor = observer(() => {
     const { isGallery, catalog, setCatalog } = useCatalogApiStore();
 
@@ -34,7 +35,6 @@ const CatalogBlockRealtor = observer(() => {
         <>
             {isGallery &&
                 <Main style={`${styles.main}`}>
-                    {/* ApartmentsPage render item in two column */}
                     <View style={styles.main_other}>
                         {catalog.map(item => <CatalogItemRealtor data={item} key={item.id} />)}
                     </View>

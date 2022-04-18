@@ -10,8 +10,8 @@ import PlotsPageUser from '../../src/pages/User/PlotsPageUser/PlotsPageUser.jsx'
 import CommercePageUser from '../../src/pages/User/CommercePageUser/CommercePageUser.jsx'
 import RentPageUser from '../../src/pages/User/RentPageUser/RentPageUser.jsx'
 // Side navigation
-import NewsUserPage from '../../src/pages/User/UserDrawerPages/NewsUserPage/NewsUserPage';
-import NewsCardUser from '../../src/pages/User/UserDrawerPages/NewsCardUser/NewsCardUser';
+import NewsUserPage from '../../src/pages/UserSideMenuPages/NewsUserPage/NewsUserPage';
+import NewsCardUser from '../../src/pages/UserSideMenuPages/NewsCardUser/NewsCardUser';
 
 const Stack = createNativeStackNavigator();
 
