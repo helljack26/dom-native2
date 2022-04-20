@@ -5,6 +5,9 @@ const COLORS = {
     borderGray: '#e6ecf5',
     borderDarkGray: '#dadada',
     backgroundGray: '#f4f4f4',
+    green: "#6abd24",
+    violet: "#9b51e0",
+    orange: '#F2994A',
 }
 
 export default COLORS;

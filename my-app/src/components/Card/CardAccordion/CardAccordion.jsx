@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, TouchableOpacity, } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 // Icon
 import { AntDesign } from '@expo/vector-icons';
 // Accordion
@@ -16,32 +18,35 @@ const {
     About_block_ul_title,
     About_block_ul_value,
     About_block_ul_link,
+    About_block_ul_link_text,
     Description,
     Description_text,
 } = styles;
 
 const CardAccordion = ({ objectDetails, description }) => {
+    const navigation = useNavigation();
+
     // Li component
     const Li = ({ data }) => {
         if (data === undefined) {
             return
-        } else if (data.link !== undefined) {
+        } else if (data.complexId !== undefined) {
             return (
                 <About_block_ul_li>
                     {/* TODO add link */}
                     <About_block_ul_title>
                         {data.title} &nbsp;
                     </About_block_ul_title>
-                    <TouchableOpacity
-                    // onPress={() => {
-                    //     /* 1. Navigate to the Details route with params */
-                    //     navigation.navigate('CardPage', {
-                    //         itemId: id
-                    //     });
-                    // }}
+                    <About_block_ul_link
+                        onPress={() => {
+                            /* 1. Navigate to the Details route with params */
+                            navigation.navigate('ApartmentsComplexPageRealtor', {
+                                complexId: data.complexId
+                            });
+                        }}
                     >
-                        <About_block_ul_link>{data.value}</About_block_ul_link>
-                    </TouchableOpacity>
+                        <About_block_ul_link_text>{data.value}</About_block_ul_link_text>
+                    </About_block_ul_link>
                 </About_block_ul_li>
             )
         } else {
@@ -80,7 +85,7 @@ const CardAccordion = ({ objectDetails, description }) => {
                 <Block_header onPress={combine1}   >
                     <Block_header_Text >
                         Об объекте
-                            </Block_header_Text>
+                    </Block_header_Text>
                     <AntDesign
                         name={isEnabled1 ? 'up' : 'down'}
                         size={15}
@@ -103,7 +108,7 @@ const CardAccordion = ({ objectDetails, description }) => {
                 <Block_header onPress={combine2}  >
                     <Block_header_Text >
                         Описание
-                            </Block_header_Text>
+                    </Block_header_Text>
                     <AntDesign
                         name={isEnabled2 ? 'up' : 'down'}
                         size={15}

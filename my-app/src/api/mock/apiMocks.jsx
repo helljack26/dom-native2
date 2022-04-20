@@ -1,5 +1,6 @@
 import { RecommendationMockApi } from './RecommendationMockApi'
 import { ApartmentMockApi } from './ApartmentMockApi'
+import { ApartmentComplexMockApi } from './ApartmentComplexMockApi'
 import { HousesMockApi } from './HousesMockApi'
 import { PlotMockApi } from './PlotMockApi'
 import { CommerceMockApi } from './CommerceMockApi'
@@ -12,6 +13,7 @@ import { NewsMockApi } from './NewsMockApi'
 export const apiMocks = {
     RecommendationMockApi: RecommendationMockApi,
     ApartmentMockApi: ApartmentMockApi,
+    ApartmentComplexMockApi: ApartmentComplexMockApi,
     HousesMockApi: HousesMockApi,
     PlotMockApi: PlotMockApi,
     CommerceMockApi: CommerceMockApi,

@@ -3,8 +3,7 @@ import FONTS from '@/res/fonts'
 import COLORS from '@/res/colors'
 
 const Similar = styled.ScrollView`
-border-top-color: ${COLORS.borderGray};
-border-top-width: 1px;
+
 width: 100%;
 `
 const Similar_header = styled.Text`

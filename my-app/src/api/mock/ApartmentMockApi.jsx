@@ -38,8 +38,8 @@ export const ApartmentMockApi =
                 },
                 {
                     title: 'ЖК:',
-                    value: 'Апартотель "Моравия"',
-                    link: '/'
+                    value: 'АК Архитектор',
+                    complexId: 2658
                 },
                 {
                     title: 'Место на шахматке:',
@@ -62,7 +62,6 @@ export const ApartmentMockApi =
                 lon: 856156,
             }],
             inFavorite: false
-
         },
         {
             id: 1,
@@ -101,8 +100,8 @@ export const ApartmentMockApi =
                 },
                 {
                     title: 'ЖК:',
-                    value: 'Апартотель "Моравия"',
-                    link: '/'
+                    value: 'АК Архитектор',
+                    complexId: 2658
                 },
                 {
                     title: 'Место на шахматке:',
@@ -165,8 +164,8 @@ export const ApartmentMockApi =
                 },
                 {
                     title: 'ЖК:',
-                    value: 'Апартотель "Моравия"',
-                    link: '/'
+                    value: 'АК Архитектор',
+                    complexId: 2658
                 },
                 {
                     title: 'Место на шахматке:',
@@ -228,8 +227,8 @@ export const ApartmentMockApi =
                 },
                 {
                     title: 'ЖК:',
-                    value: 'Апартотель "Моравия"',
-                    link: '/'
+                    value: 'АК Архитектор',
+                    complexId: 2658
                 },
                 {
                     title: 'Место на шахматке:',

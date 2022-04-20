@@ -22,7 +22,7 @@ align-items: center;
 padding: 3px 10px;
 margin-top: 20px;
 border-radius: 20px;
-background-color: ${COLORS.violet};
+background-color: ${COLORS.orange};
 
 `;
 const Name_block_header_text_block_new = styled.View`
@@ -39,8 +39,10 @@ const Name_block_header_text = styled.Text`
 font-size: 20px;
 letter-spacing: 0.4px;
 margin-right: 10px;
+
 font-family:${FONTS.medium};
 line-height: 30px;
+
 `;
 
 const Name_block_header_type = styled.Text`

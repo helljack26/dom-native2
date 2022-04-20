@@ -49,7 +49,10 @@ font-size: 14px;
 color: ${COLORS.mainBlack};
 align-items: center;
 `;
-const About_block_ul_link = styled.Text`
+const About_block_ul_link = styled.TouchableOpacity`
+
+`;
+const About_block_ul_link_text = styled.Text`
 text-decoration: underline;
 color: ${COLORS.mainBlue};
 `;
@@ -77,6 +80,7 @@ export const styles = {
     About_block_ul_title: About_block_ul_title,
     About_block_ul_value: About_block_ul_value,
     About_block_ul_link: About_block_ul_link,
+    About_block_ul_link_text: About_block_ul_link_text,
     Description: Description,
     Description_text: Description_text,
 }
