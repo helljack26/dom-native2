@@ -1,13 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
-import CardAccordion from '../CardAccordion/CardAccordion'
-
-import IMAGES from '@/res/images'
-const {
-    ComplainIcon,
-} = IMAGES;
+import CardDetailsButtonBar from '@/components/Card/CardDetailsButtonBar/CardDetailsButtonBar'
+import ComplexAccordion from '../ComplexAccordion/ComplexAccordion'
 
 import { style } from './style'
 const { Container,
@@ -23,13 +18,9 @@ const { Container,
     Price_block_price,
     Price_block_square_rating,
     Price_block_price_square,
-    Price_block_price_rating,
-    Complain,
-    Complain_link,
-    Complain_link_text,
 } = style;
 
-const CardDetailsContainer = ({ details }) => {
+const ComplexDetailsUser = ({ details }) => {
     const {
         name,
         price,
@@ -39,9 +30,7 @@ const CardDetailsContainer = ({ details }) => {
         viewNumber,
         totalArea,
         inFavorite,
-        isNewHouse,
-        objectDetails,
-        description,
+        isDone,
         // coords,
         // agentId,
         // percentageText,
@@ -61,16 +50,16 @@ const CardDetailsContainer = ({ details }) => {
                     <Name_block_header_text>
                         {name}
                         <View style={styles.catalog_item_separate}></View>
-                        {isNewHouse !== undefined ? isNewHouse === true ?
+                        {isDone !== undefined ? isDone === true ?
                             <Name_block_header_text_block_new>
                                 <Name_block_header_type>
-                                    Новостройка
+                                    Сдан
                                 </Name_block_header_type>
                             </Name_block_header_text_block_new>
                             :
                             <Name_block_header_text_block>
                                 <Name_block_header_type>
-                                    Вторичное жилье
+                                    {isDone}
                                 </Name_block_header_type>
                             </Name_block_header_text_block> : null}
                     </Name_block_header_text>
@@ -83,32 +72,24 @@ const CardDetailsContainer = ({ details }) => {
             {/* Price */}
             <Price>
                 <Price_block>
-                    <Price_block_price>{spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
+                    <Price_block_price>от {spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
                     <Price_block_square_rating>
-                        <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>
-                        <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
+                        <Price_block_price_square>от {priceForSquareMeter} $ за м²</Price_block_price_square>
                     </Price_block_square_rating>
                 </Price_block>
                 <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails} description={description} />
-            {/* Complain */}
-            <Complain>
-                <Complain_link>
-                    <ComplainIcon width='14px' />
-                    <Complain_link_text>Пожаловаться</Complain_link_text>
-                </Complain_link>
-            </Complain>
+            <ComplexAccordion details={details} />
         </Container>
     )
 }
 
-export default CardDetailsContainer;
+export default ComplexDetailsUser;
+
 const styles = StyleSheet.create({
     catalog_item_separate: {
         width: 7,
-    },
-
+    }
 });

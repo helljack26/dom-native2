@@ -47,7 +47,6 @@ align-items: center;
 const About_block_ul_value = styled.Text`
 margin-bottom: 10px;
 display: flex;
-margin-left: 5px;
 font-size: 14px;
 color: ${COLORS.mainBlack};
 align-items: center;
@@ -112,7 +111,6 @@ const BlockItemName = styled.Text`
 font-family: ${FONTS.medium};
 color: ${COLORS.mainBlack};
 font-size: 17px;
-
 `
 const BlockItemDescription = styled.Text`
 font-family: ${FONTS.light};
@@ -152,30 +150,29 @@ font-family: ${FONTS.regular};
 padding: 0;
 `
 
-
 export const styles = {
-    About: About,
-    Block_header: Block_header,
-    Block_header_Text: Block_header_Text,
-    About_block: About_block,
-    About_block_ul: About_block_ul,
-    About_block_ul_li: About_block_ul_li,
-    About_block_ul_title: About_block_ul_title,
-    About_block_ul_value: About_block_ul_value,
-    About_block_ul_link: About_block_ul_link,
-    About_block_ul_link_text: About_block_ul_link_text,
-    Benefits_value: Benefits_value,
-    Description: Description,
-    Description_text: Description_text,
-    PartsBlock: PartsBlock,
-    BlockItem: BlockItem,
-    BlockItemCol: BlockItemCol,
-    BlockItemInfo: BlockItemInfo,
-    BlockItemName: BlockItemName,
-    BlockItemDescription: BlockItemDescription,
-    BlockItemLink: BlockItemLink,
-    BlockItemLinkText: BlockItemLinkText,
-    DoneLabel: DoneLabel,
-    LabelText: LabelText,
-    ExpiryDateLabel: ExpiryDateLabel,
+  About: About,
+  Block_header: Block_header,
+  Block_header_Text: Block_header_Text,
+  About_block: About_block,
+  About_block_ul: About_block_ul,
+  About_block_ul_li: About_block_ul_li,
+  About_block_ul_title: About_block_ul_title,
+  About_block_ul_value: About_block_ul_value,
+  About_block_ul_link: About_block_ul_link,
+  About_block_ul_link_text: About_block_ul_link_text,
+  Benefits_value: Benefits_value,
+  Description: Description,
+  Description_text: Description_text,
+  PartsBlock: PartsBlock,
+  BlockItem: BlockItem,
+  BlockItemCol: BlockItemCol,
+  BlockItemInfo: BlockItemInfo,
+  BlockItemName: BlockItemName,
+  BlockItemDescription: BlockItemDescription,
+  BlockItemLink: BlockItemLink,
+  BlockItemLinkText: BlockItemLinkText,
+  DoneLabel: DoneLabel,
+  LabelText: LabelText,
+  ExpiryDateLabel: ExpiryDateLabel,
 }

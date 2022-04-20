@@ -22,7 +22,7 @@ align-items: center;
 padding: 3px 10px;
 margin-top: 20px;
 border-radius: 20px;
-background-color: ${COLORS.violet};
+background-color: ${COLORS.orange};
 
 `;
 const Name_block_header_text_block_new = styled.View`
@@ -39,8 +39,10 @@ const Name_block_header_text = styled.Text`
 font-size: 20px;
 letter-spacing: 0.4px;
 margin-right: 10px;
+
 font-family:${FONTS.medium};
 line-height: 30px;
+
 `;
 
 const Name_block_header_type = styled.Text`
@@ -79,26 +81,7 @@ font-family: ${FONTS.light};
 font-size: 11px;
 color: #6abd24;
 `;
-const Complain = styled.View`
-width: 100%;
-margin-top: 12px;
-margin-bottom: 40px;
-align-items: flex-end;
-`
-const Complain_link = styled.TouchableOpacity`
-font-size: 13px;
-font-family: ${FONTS.light};
-display: flex;
-flex-direction: row;
-align-items: center;
-color: #d30000;
-`
-const Complain_link_text = styled.Text`
-font-size: 13px;
-font-family: ${FONTS.light};
-color: #d30000;
-margin-left: 5px;
-`
+
 export const style = {
     Container: Container,
     Name_block: Name_block,
@@ -114,7 +97,4 @@ export const style = {
     Price_block_square_rating: Price_block_square_rating,
     Price_block_price_square: Price_block_price_square,
     Price_block_price_rating: Price_block_price_rating,
-    Complain: Complain,
-    Complain_link: Complain_link,
-    Complain_link_text: Complain_link_text,
 }

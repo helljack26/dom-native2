@@ -1,26 +1,31 @@
-import FONTS from '@/res/fonts'
-
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
+import FONTS from '@/res/fonts'
 
+import IMAGES from '@/res/images'
+const {
+    ComplainIcon,
+} = IMAGES;
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import ComplexDetailsRealtor from '@/components/ApartmentComplex/ComplexDetailsRealtor/ComplexDetailsRealtor'
-import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
+import ComplexDetailsUser from '@/components/ApartmentComplex/ComplexDetailsUser/ComplexDetailsUser'
 
-import CardSimilarObjectRealtor from '@/components/Card/CardSimilarObjectRealtor/CardSimilarObjectRealtor'
+import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
 import { apiMocks } from '@/api/mock/apiMocks'
 
 import { style } from './style.js'
 const {
     Main,
+    Complain,
+    Complain_link,
+    Complain_link_text,
 } = style;
 
 
-export default function ApartmentsComplexPageRealtor() {
+export default function ApartmentsComplexPageUser() {
     const route = useRoute();
     const { complexId } = route.params;
     const scrollViewRef = useRef(null)
@@ -44,10 +49,15 @@ export default function ApartmentsComplexPageRealtor() {
             horizontal={false}>
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={photoLargePath} />
-            <ComplexDetailsRealtor details={objectDetails} />
-
-            <CardSaveButton />
-            <CardSimilarObjectRealtor />
+            <ComplexDetailsUser details={objectDetails} />
+            {/* Complain */}
+            <Complain>
+                <Complain_link>
+                    <ComplainIcon width='14px' />
+                    <Complain_link_text>Пожаловаться</Complain_link_text>
+                </Complain_link>
+            </Complain>
+            <CardSimilarObject />
         </Main>
     </SafeAreaView >
     )

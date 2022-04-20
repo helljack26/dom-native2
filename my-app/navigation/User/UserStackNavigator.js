@@ -5,6 +5,7 @@ import HomePageUser from '../../src/pages/User/HomePageUser/HomePageUser.jsx';
 import CardPageUser from '../../src/pages/User/CardPageUser/CardPageUser.jsx';
 // Categories 
 import ApartmentsPageUser from '../../src/pages/User/ApartmentsPageUser/ApartmentsPageUser.jsx'
+import ApartmentsComplexPageUser from '../../src/pages/User/ApartmentsComplexPageUser/ApartmentsComplexPageUser.jsx'
 import HousesPageUser from '../../src/pages/User/HousesPageUser/HousesPageUser.jsx'
 import PlotsPageUser from '../../src/pages/User/PlotsPageUser/PlotsPageUser.jsx'
 import CommercePageUser from '../../src/pages/User/CommercePageUser/CommercePageUser.jsx'
@@ -28,6 +29,7 @@ export default function UserStackNavigator() {
             <Stack.Screen name="Home" component={HomePageUser} />
             <Stack.Screen name="CardPage" component={CardPageUser} />
             <Stack.Screen name="ApartmentsPage" component={ApartmentsPageUser} />
+            <Stack.Screen name="ApartmentsComplexPage" component={ApartmentsComplexPageUser} />
             <Stack.Screen name="HousesPage" component={HousesPageUser} />
             <Stack.Screen name="PlotsPage" component={PlotsPageUser} />
             <Stack.Screen name="CommercePage" component={CommercePageUser} />

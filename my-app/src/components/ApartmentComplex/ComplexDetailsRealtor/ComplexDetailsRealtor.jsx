@@ -21,7 +21,7 @@ const { Container,
     Price_block_price_rating,
 } = style;
 
-const ComplexDetails = ({ details }) => {
+const ComplexDetailsRealtor = ({ details }) => {
     const {
         name,
         price,
@@ -44,7 +44,7 @@ const ComplexDetails = ({ details }) => {
     }
     const spacedPrice = spaceInPriceValue(price)
     const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / totalArea))
-    console.log(isDone);
+
     return (
         <Container>
             {/* Main name */}
@@ -89,7 +89,7 @@ const ComplexDetails = ({ details }) => {
     )
 }
 
-export default ComplexDetails;
+export default ComplexDetailsRealtor;
 
 const styles = StyleSheet.create({
     catalog_item_separate: {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import PageLocation from '@/components/helpers/pageLocation'
 
 // Icon
 import { AntDesign } from '@expo/vector-icons';
@@ -25,7 +26,9 @@ const {
 
 const CardAccordion = ({ objectDetails, description }) => {
     const navigation = useNavigation();
-
+    const { isRealtor } = PageLocation();
+    // TODO неособо секьюрно
+    const complexPath = isRealtor === true ? 'ApartmentsComplexPageRealtor' : 'ApartmentsComplexPage'
     // Li component
     const Li = ({ data }) => {
         if (data === undefined) {
@@ -33,14 +36,13 @@ const CardAccordion = ({ objectDetails, description }) => {
         } else if (data.complexId !== undefined) {
             return (
                 <About_block_ul_li>
-                    {/* TODO add link */}
                     <About_block_ul_title>
                         {data.title} &nbsp;
                     </About_block_ul_title>
                     <About_block_ul_link
                         onPress={() => {
                             /* 1. Navigate to the Details route with params */
-                            navigation.navigate('ApartmentsComplexPageRealtor', {
+                            navigation.navigate(`${complexPath}`, {
                                 complexId: data.complexId
                             });
                         }}
@@ -52,7 +54,6 @@ const CardAccordion = ({ objectDetails, description }) => {
         } else {
             return (
                 <About_block_ul_li>
-                    {/* TODO add link */}
                     <About_block_ul_title>
                         {data.title} &nbsp;
                     </About_block_ul_title>

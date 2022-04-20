@@ -5,6 +5,8 @@ import COLORS from '@/res/colors'
 const About = styled.View`
 width: 100%;
 margin-top: 24px;
+border-bottom-color: ${COLORS.borderGray};
+border-bottom-width: 1px;
 `;
 const Block_header = styled.TouchableOpacity`
 font-size: 20px;
@@ -60,8 +62,6 @@ const Description = styled.View`
 display:flex;
 background-color: white;
 padding-bottom: 20px;
-border-bottom-color: ${COLORS.borderGray};
-border-bottom-width: 1px;
 `;
 const Description_text = styled.Text`
 font-family: ${FONTS.light};

@@ -74,6 +74,13 @@ const PageLocation = () => {
             ads = true
             title = 'Новинки'
             break;
+        case 'CardPage':
+
+            isRealtor = false
+            break;
+        case 'CardPageRealtor':
+            isRealtor = true
+            break;
         case '/selections':
             title = 'Подборки'
             break;
