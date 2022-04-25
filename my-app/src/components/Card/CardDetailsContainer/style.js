@@ -79,26 +79,7 @@ font-family: ${FONTS.light};
 font-size: 11px;
 color: #6abd24;
 `;
-const Complain = styled.View`
-width: 100%;
-margin-top: 12px;
-margin-bottom: 40px;
-align-items: flex-end;
-`
-const Complain_link = styled.TouchableOpacity`
-font-size: 13px;
-font-family: ${FONTS.light};
-display: flex;
-flex-direction: row;
-align-items: center;
-color: #d30000;
-`
-const Complain_link_text = styled.Text`
-font-size: 13px;
-font-family: ${FONTS.light};
-color: #d30000;
-margin-left: 5px;
-`
+
 export const style = {
     Container: Container,
     Name_block: Name_block,
@@ -114,7 +95,4 @@ export const style = {
     Price_block_square_rating: Price_block_square_rating,
     Price_block_price_square: Price_block_price_square,
     Price_block_price_rating: Price_block_price_rating,
-    Complain: Complain,
-    Complain_link: Complain_link,
-    Complain_link_text: Complain_link_text,
 }

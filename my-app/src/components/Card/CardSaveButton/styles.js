@@ -39,29 +39,9 @@ const Container_block_btn_text = styled.Text`
 margin-right: 5px;
 font-family: ${FONTS.light};
 font-size: 13px;
-
 color: ${COLORS.mainBlack};
 `
-const Complain = styled.View`
-width: 100%;
-margin-top: 12px;
-margin-bottom: 40px;
-align-items: flex-end;
-`
-const Complain_link = styled.TouchableOpacity`
-font-size: 13px;
-font-family: ${FONTS.light};
-display: flex;
-flex-direction: row;
-align-items: center;
-color: #d30000;
-`
-const Complain_link_text = styled.Text`
-font-size: 13px;
-font-family: ${FONTS.light};
-color: #d30000;
-margin-left: 5px;
-`
+
 
 export const styles = {
     Container: Container,
@@ -69,7 +49,4 @@ export const styles = {
     Container_block: Container_block,
     Container_block_btn_text: Container_block_btn_text,
     Container_block_btn: Container_block_btn,
-    Complain: Complain,
-    Complain_link: Complain_link,
-    Complain_link_text: Complain_link_text,
 }

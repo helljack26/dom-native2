@@ -1,16 +1,16 @@
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
-import IMAGES from '@/res/images'
-const { ArrowLeft } = IMAGES
 import React from 'react';
-
-import { StyleSheet, TouchableOpacity, Text, View, Image } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';
 
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
+import IMAGES from '@/res/images'
+
 import styled from 'styled-components/native';
+const { ArrowLeft } = IMAGES;
 // Styles
 const GoBack = styled.TouchableOpacity`
 display: flex;
@@ -24,6 +24,7 @@ const Breadcrumbs = observer(({ goBack }) => {
     const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
     const { setCatalog } = useCatalogApiStore();
+
     // Reset catalog when press Обьявления
     const combine = () => {
         setCatalog('Home'),
@@ -33,6 +34,7 @@ const Breadcrumbs = observer(({ goBack }) => {
         setCatalog('HomePageRealtor'),
             navigation.navigate('HomePageRealtor')
     }
+    // For catalog
     const isAds = ads &&
         <View style={styles.breadcrumbs}>
             <TouchableOpacity onPress={() => combine()}>
@@ -40,6 +42,7 @@ const Breadcrumbs = observer(({ goBack }) => {
             </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>
         </View>;
+
     const isAdsRealtor = ads &&
         <View style={styles.breadcrumbs}>
             <TouchableOpacity onPress={() => combineRealtor()}>
@@ -47,7 +50,7 @@ const Breadcrumbs = observer(({ goBack }) => {
             </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>
         </View>;
-
+    //For card goBack 
     const isGoBack = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
@@ -55,6 +58,7 @@ const Breadcrumbs = observer(({ goBack }) => {
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>
+
     const isGoBackRealtor = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}

@@ -66,8 +66,7 @@ const CatalogItemRealtor = ({ data }) => {
             >
                 {/* Label new or disconts */}
                 {itemStatus && <AbsoluteStatus props={itemStatus} />}
-                <Image source={photoSmallPath}
-                    style={styles.catalog_item_photo} alt={name} />
+                <Image source={photoSmallPath} style={styles.catalog_item_photo} alt={name} />
             </TouchableOpacity>
             <View style={styles.catalog_item_info}>
                 {priceBlock}

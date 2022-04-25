@@ -1,18 +1,16 @@
-import IMAGES from '@/res/images'
 import React from 'react';
 
-const { CollectionIcon, DocIcon, PdfIcon, ComplainIcon } = IMAGES;
+import IMAGES from '@/res/images'
+import ComplainLink from '@/components/Buttons/ComplainLink/ComplainLink';
 
 import { styles } from './styles.js'
+
+const { CollectionIcon, DocIcon, PdfIcon } = IMAGES;
 const {
     Container,
     Container_block,
     Container_block_btn,
     Container_block_btn_text,
-    Complain,
-    Complain_link,
-    Complain_link_text,
-
 } = styles;
 
 const CardSaveButton = () => {
@@ -20,29 +18,29 @@ const CardSaveButton = () => {
         <>
             <Container>
                 <Container_block>
+
                     <Container_block_btn>
                         <Container_block_btn_text>
                             В подборку
                         </Container_block_btn_text>
                         <CollectionIcon width='16px' />
                     </Container_block_btn>
+
                     <Container_block_btn>
                         <Container_block_btn_text>в DOC</Container_block_btn_text>
                         <DocIcon width='14px' />
                     </Container_block_btn>
+
                     <Container_block_btn>
                         <Container_block_btn_text>в PDF</Container_block_btn_text>
                         <PdfIcon width='14px' />
                     </Container_block_btn>
+
                 </Container_block>
             </Container>
-            <Complain>
-                {/* TODO сделать ссылка на пожаловаться */}
-                <Complain_link>
-                    <ComplainIcon width='14px' />
-                    <Complain_link_text>Пожаловаться</Complain_link_text>
-                </Complain_link>
-            </Complain>
+
+            {/* Complain link */}
+            <ComplainLink />
         </>
     )
 }
