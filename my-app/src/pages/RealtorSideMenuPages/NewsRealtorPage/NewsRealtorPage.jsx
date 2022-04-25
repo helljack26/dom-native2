@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import PageLocation from '@/components/helpers/pageLocation'
 
-import Pagination from '@/components/Pagination/Pagination';
+import Pagination from '@/components/Buttons/Pagination/Pagination';
 import { useNewsApiStore } from '@/stores/NewsApi';
 
 import { observer } from 'mobx-react-lite';

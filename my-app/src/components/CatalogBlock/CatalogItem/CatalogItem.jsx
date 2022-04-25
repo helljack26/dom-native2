@@ -7,8 +7,8 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
-import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
-import ShareButton from '@/components/ShareButton/ShareButton';
+import AddToFavoriteButton from '@/components/Buttons/AddToFavoriteButton/AddToFavoriteButton';
+import ShareButton from '@/components/Buttons/ShareButton/ShareButton';
 
 import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
