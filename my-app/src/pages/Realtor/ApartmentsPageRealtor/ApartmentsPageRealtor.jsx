@@ -1,6 +1,6 @@
 import FONTS from '@/res/fonts'
 import React from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 
 import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
 import CatalogBlockRealtor from '@/components/CatalogBlockRealtor/CatalogBlockRealtor';

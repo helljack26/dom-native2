@@ -24,6 +24,7 @@ const Breadcrumbs = observer(({ goBack }) => {
     const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
     const { setCatalog } = useCatalogApiStore();
+    // Reset catalog when press Обьявления
     const combine = () => {
         setCatalog('Home'),
             navigation.navigate('Home')

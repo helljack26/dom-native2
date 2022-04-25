@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 import CardAccordion from '../CardAccordion/CardAccordion'
 
@@ -47,9 +49,6 @@ const CardDetailsContainer = ({ details }) => {
         // percentageText,
     } = details;
 
-    const spaceInPriceValue = (priceValue) => {
-        return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
-    }
     const spacedPrice = spaceInPriceValue(price)
     const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / totalArea))
 

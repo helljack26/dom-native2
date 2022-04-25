@@ -10,6 +10,8 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import AddToFavoriteButton from '@/components/AddToFavoriteButton/AddToFavoriteButton';
 import ShareButton from '@/components/ShareButton/ShareButton';
 
+import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+
 const AbsoluteStatus = ({ props }) => {
     const type = props === 'Новинка' ? true : false;
     return <View style={type ? styles.AbsoluteStatus_new : styles.AbsoluteStatus_sale}>
@@ -34,13 +36,9 @@ const CatalogItem = ({ data }) => {
         favoriteNumber } = data;
     const navigation = useNavigation();
 
-    const spaceInPriceValue = (priceValue) => {
-        if (priceValue !== undefined) {
-            return priceValue.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
-        }
-    }
     const spacedPrice = spaceInPriceValue(price)
     const spacedOldPrice = spaceInPriceValue(oldPrice)
+
     const priceBlock = oldPrice !== undefined ? (
         <View style={styles.price_block}>
             <Text style={styles.newPrice}>

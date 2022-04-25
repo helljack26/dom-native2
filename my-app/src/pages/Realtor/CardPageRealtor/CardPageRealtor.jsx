@@ -17,7 +17,7 @@ import styled from 'styled-components/native';
 const Main = styled.ScrollView`
 width: 100%;
 background-color: white;
-padding: 0px 4%
+padding: 0px 4%;
 `;
 
 import { apiMocks } from '@/api/mock/apiMocks'
