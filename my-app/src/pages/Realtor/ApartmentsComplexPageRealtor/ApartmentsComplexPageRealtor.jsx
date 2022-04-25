@@ -5,26 +5,26 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
-
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
 import ComplexDetailsRealtor from '@/components/ApartmentComplex/ComplexDetailsRealtor/ComplexDetailsRealtor'
-import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
+import ComplexDetailsPlans from '@/components/ApartmentComplex/ComplexDetailsPlans/ComplexDetailsPlans'
 
+import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
 import CardSimilarObjectRealtor from '@/components/Card/CardSimilarObjectRealtor/CardSimilarObjectRealtor'
+
 import { apiMocks } from '@/api/mock/apiMocks'
 
 import { style } from './style.js'
 const {
-    Main,
+    Main
 } = style;
-
 
 export default function ApartmentsComplexPageRealtor() {
     const route = useRoute();
     const { complexId } = route.params;
-    const scrollViewRef = useRef(null)
 
+    const scrollViewRef = useRef(null)
     const scrollTop = () => {
         if (scrollViewRef.current) {
             scrollViewRef.current.scrollTo({ y: 0, animated: true })
@@ -35,7 +35,7 @@ export default function ApartmentsComplexPageRealtor() {
     }
 
     const complexApi = apiMocks.ApartmentComplexMockApi;
-    const objectDetails = complexApi.find((item) => item.id === Number(complexId) && item);
+    const objectDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
 
     const { photoLargePath } = objectDetails;
     return (<SafeAreaView style={styles.body}>
@@ -45,6 +45,7 @@ export default function ApartmentsComplexPageRealtor() {
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={photoLargePath} />
             <ComplexDetailsRealtor details={objectDetails} />
+            <ComplexDetailsPlans details={objectDetails} role={'Realtor'} />
 
             <CardSaveButton />
             <CardSimilarObjectRealtor />
