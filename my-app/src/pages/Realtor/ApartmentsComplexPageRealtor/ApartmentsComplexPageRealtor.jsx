@@ -7,8 +7,8 @@ import { useRoute } from '@react-navigation/native';
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import ComplexDetailsRealtor from '@/components/ApartmentComplex/ComplexDetailsRealtor/ComplexDetailsRealtor'
-import ComplexDetailsPlans from '@/components/ApartmentComplex/ComplexDetailsPlans/ComplexDetailsPlans'
+import ComplexDetailsRealtor from '@/components/Complex/ComplexDetailsRealtor/ComplexDetailsRealtor'
+import ComplexDetailsPlans from '@/components/Complex/ComplexDetailsPlans/ComplexDetailsPlans'
 
 import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
 import CardSimilarObjectRealtor from '@/components/Card/CardSimilarObjectRealtor/CardSimilarObjectRealtor'
@@ -39,9 +39,8 @@ export default function ApartmentsComplexPageRealtor() {
 
     const { photoLargePath } = objectDetails;
     return (<SafeAreaView style={styles.body}>
-        <Main
-            ref={scrollViewRef}
-            horizontal={false}>
+        <Main ref={scrollViewRef} horizontal={false}>
+
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={photoLargePath} />
             <ComplexDetailsRealtor details={objectDetails} />
@@ -49,6 +48,7 @@ export default function ApartmentsComplexPageRealtor() {
 
             <CardSaveButton />
             <CardSimilarObjectRealtor />
+
         </Main>
     </SafeAreaView >
     )

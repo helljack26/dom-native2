@@ -1,9 +1,9 @@
-import IMAGES from '@/res/images'
 import React from 'react';
-
-import { styles } from './style.js'
 import { Image } from 'react-native';
 
+import { styles } from './style.js'
+
+import IMAGES from '@/res/images'
 const { HomeSmallIcon, UserIcon, HandsIcon, LockIcon } = IMAGES;
 
 const {

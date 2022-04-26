@@ -3188,8 +3188,3 @@ export const ApartmentComplexMockApi = [{
 
 }
 ]
-
-
-
-
-

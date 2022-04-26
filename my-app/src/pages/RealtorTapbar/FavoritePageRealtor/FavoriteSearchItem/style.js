@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 import COLORS from '@/res/colors'
 import FONTS from '@/res/fonts'
 
-
 const SearchItem = styled.View`
 width: 100%;
 display: flex;
@@ -20,7 +19,6 @@ const FilterBlock = styled.View`
 width:100%;
 display: flex;
 flex-direction: column;
-/* padding-bottom: 16px; */
 margin-bottom: 16px;
 border-bottom-width: 1px;
 border-bottom-color:${COLORS.borderDarkGray};
@@ -65,16 +63,12 @@ const ReceiveEmailCheckboxImg = styled.View`
   border: 1px solid ${COLORS.borderDarkGray};
   border-radius: 4px;
 margin-right: 10px;
-
 `;
 const ReceiveEmailText = styled.Text`
 font-size: 13px;
 color: ${COLORS.mainBlack};
 font-family: ${FONTS.regular};
-/* padding-left: 10px; */
-/* margin-bottom: 10px; */
 `;
-
 const SearchButtonsRight = styled.View`
 display: flex;
 flex-direction: row;
@@ -93,10 +87,8 @@ font-family: ${FONTS.medium};
 color: ${COLORS.mainBlack};
 `;
 const ShowResults = styled.TouchableOpacity`
-
 border-radius: 4px;
 align-self: center;
-
 display: flex;
 flex-direction: row;
 align-items: center;

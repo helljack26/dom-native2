@@ -6,8 +6,8 @@ import FONTS from '@/res/fonts'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import ComplexDetailsUser from '@/components/ApartmentComplex/ComplexDetailsUser/ComplexDetailsUser'
-import ComplexDetailsPlans from '@/components/ApartmentComplex/ComplexDetailsPlans/ComplexDetailsPlans'
+import ComplexDetailsUser from '@/components/Complex/ComplexDetailsUser/ComplexDetailsUser'
+import ComplexDetailsPlans from '@/components/Complex/ComplexDetailsPlans/ComplexDetailsPlans'
 import ComplainLink from '@/components/Buttons/ComplainLink/ComplainLink'
 
 import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'

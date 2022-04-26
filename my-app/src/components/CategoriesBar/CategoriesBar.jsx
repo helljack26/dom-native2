@@ -3,9 +3,6 @@ import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } fr
 import { useNavigation } from '@react-navigation/native';
 
 import CATEGORIES from '@/res/categories'
-import IMAGES from '@/res/images'
-
-const { BurgerMenuIcon } = IMAGES;
 
 export default function CategoriesBar() {
     const [selectedId, setSelectedId] = useState(null);

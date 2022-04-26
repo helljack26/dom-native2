@@ -55,6 +55,7 @@ import HomeSmallIcon from '../../assets/icon/home_icon.svg';
 import UserIcon from '../../assets/icon/user_icon.svg';
 import HandsIcon from '../../assets/icon/hands_icon.svg';
 import LockIcon from '../../assets/icon/lock_icon.svg';
+import LockGrayIcon from '../../assets/icon/lock_gray_icon.svg';
 
 // Icon
 import CrossIcon from '../../assets/icon/cross_icon.svg';
@@ -97,6 +98,7 @@ const IMAGES = {
     ArrowLeft: ArrowLeft,
     ArrowLeftPagin: ArrowLeftPagin,
     ArrowRightPagin: ArrowRightPagin,
+
     // Card Derails
     ViewIcon: ViewIcon,
     HeartSmallIcon: HeartSmallIcon,
@@ -119,6 +121,7 @@ const IMAGES = {
     UserIcon: UserIcon,
     HandsIcon: HandsIcon,
     LockIcon: LockIcon,
+    LockGrayIcon:LockGrayIcon,
 
     // Icon
     CrossIcon: CrossIcon,

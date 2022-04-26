@@ -6,6 +6,7 @@ import CardPageRealtor from '../../src/pages/Realtor/CardPageRealtor/CardPageRea
 // Categories 
 import ApartmentsPageRealtor from '../../src/pages/Realtor/ApartmentsPageRealtor/ApartmentsPageRealtor.jsx'
 import ApartmentsComplexPageRealtor from '../../src/pages/Realtor/ApartmentsComplexPageRealtor/ApartmentsComplexPageRealtor.jsx'
+import ApartmentsComplexPlanPageRealtor from '../../src/pages/Realtor/ApartmentsComplexPlanPageRealtor/ApartmentsComplexPlanPageRealtor.jsx'
 import HousesPageRealtor from '../../src/pages/Realtor/HousesPageRealtor/HousesPageRealtor.jsx'
 import PlotsPageRealtor from '../../src/pages/Realtor/PlotsPageRealtor/PlotsPageRealtor.jsx'
 import CommercePageRealtor from '../../src/pages/Realtor/CommercePageRealtor/CommercePageRealtor.jsx'
@@ -29,6 +30,7 @@ export default function RealtorStackNavigator() {
             <Stack.Screen name="CardPageRealtor" component={CardPageRealtor} />
             <Stack.Screen name="ApartmentsPageRealtor" component={ApartmentsPageRealtor} />
             <Stack.Screen name="ApartmentsComplexPageRealtor" component={ApartmentsComplexPageRealtor} />
+            <Stack.Screen name="ApartmentsComplexPlanPageRealtor" component={ApartmentsComplexPlanPageRealtor} />
             <Stack.Screen name="HousesPageRealtor" component={HousesPageRealtor} />
             <Stack.Screen name="PlotsPageRealtor" component={PlotsPageRealtor} />
             <Stack.Screen name="CommercePageRealtor" component={CommercePageRealtor} />
