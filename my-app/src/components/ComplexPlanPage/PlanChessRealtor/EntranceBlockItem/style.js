@@ -9,9 +9,9 @@ justify-content: center;
 padding: 12px;
 position:relative;
 background-color: white;
-border-radius: 8px;
-border-color: ${COLORS.borderGray};
-border-width: 1px;
+border-radius: 8px;;
+/* border-color: ${props => props.borderActive || COLORS.secondBlack }; */
+border-width: 1.5px;
 z-index:10;
 height: 52px;
 width:117px;

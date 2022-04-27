@@ -1,10 +1,12 @@
 import React from "react";
+import { useState, useEffect, useRef } from 'react';
+import COLORS from '@/res/colors'
 
-// import useComponentVisible from '@/components/helpers/useComponentVisible'
+import useComponentVisible from '@/components/helpers/useComponentVisible'
+
+import { usePopupStore } from '@/stores/popupStore';
 
 import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
-
-// import ApartmentPopupBlock from '../ApartmentPopupBlock/ApartmentPopupBlock'
 
 // Images
 import IMAGES from '@/res/images'
@@ -13,6 +15,7 @@ const { LockGrayIcon } = IMAGES;
 
 // Styles
 import { style } from './style.js'
+import { observer } from "mobx-react-lite";
 const {
     ApartmentSmallCell,
     ApartmentSmallCellHeader,
@@ -23,7 +26,7 @@ const {
     ApartmentSmallCellDisableText,
 } = style;
 
-const EntranceBlockItem = ({ apartmentData, isOpenPopup, isLast }) => {
+const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
     const {
         id,
         isSold,
@@ -31,13 +34,33 @@ const EntranceBlockItem = ({ apartmentData, isOpenPopup, isLast }) => {
         price,
     } = apartmentData;
 
-    // const { ref, isComponentVisible, setIsComponentVisible, leftOffset } = useComponentVisible(isOpenPopup);
-
     const ApartmentSmallCellName = typeof (roomCount) !== 'number' ? roomCount : `${roomCount} кв`
     const spacedPrice = spaceInPriceValue(price)
-    // Border for small cell
-    // const activeBorder = isComponentVisible ? '1.5px solid #0072db' : '1.5px solid #e6ecf5'
-    const marginRight = isLast ? 0 : 8
+    const marginRight = isLast ? 0 : 8;
+
+    const [itemXPosition, setItemXPosition] = useState();
+
+    const { setPopupDataStore } = usePopupStore();
+
+    const { ref, isComponentVisible, setIsComponentVisible, setLeftOffset } = useComponentVisible(false);
+
+    // const UIManager = require('NativeModules').UIManager;
+    // const handle = React.findNodeHandle(this.refs.ref);
+
+    // UIManager.measureLayoutRelativeToParent(
+    //     handle,
+    //     (e) => { console.error(e) },
+    //     (x, y, w, h) => {
+    //         console.log('offset', x, y, w, h);
+    //     });
+
+    const openPopup = () => {
+        setIsComponentVisible(true)
+        setPopupDataStore(apartmentData)
+        console.log('из копонента', itemXPosition);
+        setLeftOffset(itemXPosition)
+    }
+
     switch (isSold) {
         case true:
             return (<ApartmentSmallCellDisable
@@ -76,29 +99,40 @@ const EntranceBlockItem = ({ apartmentData, isOpenPopup, isLast }) => {
             </ApartmentSmallCellReserved>)
         //Available 
         default:
-            return (<>
-                <ApartmentSmallCell
-                    id={id}
-                    // ref={ref}
-                    // onClick={setIsComponentVisible}
-                    style={{ marginRight: marginRight }}
+            return (
+                <>
+                    <ApartmentSmallCell
+                        id={id}
+                        // ref={ref}
+                        ref={ref}
+                        onPress={() => openPopup()}
+                        style={{
+                            marginRight: marginRight,
+                            borderColor: isComponentVisible === true ? COLORS.mainBlue : COLORS.borderGray
+                        }}
+                    // onLayout={(event) => {
+                    //     event.target.measure(
+                    //         (x, y, width, height, pageX, px) => {
+                    //             setItemXPosition(Math.round(px));
+                    //         },
+                    //     );
+                    // }}
+                    // onLayout={(event) => {
+                    //     event.target.measure(
+                    //         (x, y, width, height, pageX, pageY) => setItemXPosition(x));
+                    // }}
+                    >
+                        <ApartmentSmallCellHeader>
 
-                // style={{ border: `${activeBorder}` }} 
-                >
-                    <ApartmentSmallCellHeader>
-                        {ApartmentSmallCellName}
-                    </ApartmentSmallCellHeader>
-                    <ApartmentSmallCellPrice>
-                        {spacedPrice} $
-                    </ApartmentSmallCellPrice>
-                </ApartmentSmallCell>
-                {/* Modal */}
-                {/* {isComponentVisible &&
-                    <ApartmentPopupBlock
-                        leftOffset={leftOffset}
-                        apartmentData={apartmentData}
-                    />} */}
-            </>)
+                            {/* {ApartmentSmallCellName} */}
+                            {itemXPosition}
+                        </ApartmentSmallCellHeader>
+                        <ApartmentSmallCellPrice>
+                            {spacedPrice} $
+                        </ApartmentSmallCellPrice>
+                    </ApartmentSmallCell>
+                </>
+            )
     }
-}
+})
 export default EntranceBlockItem;

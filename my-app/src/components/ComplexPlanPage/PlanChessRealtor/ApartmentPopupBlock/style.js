@@ -1,125 +1,100 @@
-import styled from "styled-components";
+import styled from 'styled-components/native';
+import FONTS from '@/res/fonts'
+import COLORS from '@/res/colors'
 
-import FONTS from 'res/fonts'
-import COLORS from 'res/colors'
-
-const Popup = styled.div`
+const Popup = styled.View`
 width: ${props => props.scrollWidth - 8 + 'px'};
-height: inherit;
-position: absolute;
-background-color: #9aceff10;
-z-index: 990;
-top:0;
-left:0;
-right:0;
-bottom:0;
-padding-left: ${props => props.clientX + 'px'};
-margin-top: 40px;
+height: ${props => props.scrollHeight - 8 + 'px'};
+background-color: rgba(236, 236, 236, 0.353);
 border-radius: 8px;
+margin-top: 40px;
 margin-bottom: 25px;
 padding-top: 14px;
+/* padding-left: 800px; */
+padding-left: ${props => props.clientX + 'px'};
+ position: absolute;
+ top: 0;
+ left: 0;
+z-index: 998;
 `;
-const PopupContainer = styled.div`
-width: fit-content;
-height: fit-content;
-position: relative;
+const PopupContainer = styled.View`
 `
-const PopupBlock = styled.div`
-width: 300px;
-min-height: 350px;
-height: fit-content;
+const PopupBlock = styled.View`
+width: 270px;
+min-height: 330px;
 background-color: white;
 border-radius: 8px;
 border: 1px solid ${COLORS.borderGray};
 display: flex;
 flex-direction:column;
 align-items: center;
-padding: 17px 20px;
-@media (max-width: 450px) {
-padding:12px 16px;
-width: 270px;
-min-height: 330px;
-}
+padding: 12px 16px;
+
 `;
-const PopupHeader = styled.div`
+const PopupHeader = styled.View`
 display: flex;
-user-select: none;
+flex-direction: row;
 align-items: center;
 justify-content: space-between;
 width: 100%;
 `;
-const PopupHeaderNumber = styled.span`
+const PopupHeaderNumber = styled.Text`
 color: ${COLORS.mainBlack};
 font-family: ${FONTS.regular};
-font-size: 19px;
-@media (max-width: 450px) {
-  font-size: 17px;
-}
+font-size: 17px;
 `;
-const PopupHeaderClose = styled.button`
+const PopupHeaderClose = styled.TouchableOpacity`
+padding: 12px 16px;
 position: absolute;
+top: 0;
+right: 0;
 
-top: 0px;
-right: 0px; 
 `;
-const PopupImageBlock = styled.div`
+const PopupImageBlock = styled.View`
 width: 100%;
-user-select: none;
 height: 152px;
 overflow: hidden;
 border-radius: 8px;
 border: 1px solid ${COLORS.borderGray};
-margin-top: 17px;
-@media (max-width: 450px) {
-  margin-top: 12px;
-}
+margin-top: 12px;
 `;
-const PopupDetails = styled.div`
+const PopupDetails = styled.View`
 display: flex;
 width: 100%;
+flex-direction: row;
 justify-content: space-between;
-position: relative;
-padding-right: 30px;
+/* padding-right: 30px; */
 `;
-const PopupDetailsCol = styled.div`
+const PopupDetailsCol = styled.View`
 display: flex;
 margin-top: 13px;
 flex-direction: column;
 `;
-const PopupDetailsPrice = styled.span`
+const PopupDetailsPrice = styled.Text`
     color: ${COLORS.mainBlack};
     font-family: ${FONTS.medium};
     font-size: 15px;
 `;
-const PopupDetailsName = styled.span`
+const PopupDetailsName = styled.Text`
 margin-top: 11px ;
-margin-bottom: 10px ;
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.medium};
-    font-size: 19px;
-    @media (max-width: 450px) {
-  font-size: 17px;
+color: ${COLORS.mainBlack};
+font-family: ${FONTS.medium};
+font-size: 17px;
 margin-bottom: 8px ;
-
-}
 `;
-const PopupDetailsArea = styled.span`
+const PopupDetailsArea = styled.Text`
     color: ${COLORS.mainBlack};
     font-family: ${FONTS.light};
-    font-size: 14px;
-    @media (max-width: 450px) {
-  font-size: 12px;
-}
+    font-size: 12px;
 `;
-const PopupDetailsButtons = styled.div`
+const PopupDetailsButtons = styled.View`
 position: absolute;
-top: 7px;
+top: -7px;
 right: 0;
 display: flex;
 flex-direction: row;
-column-gap: 5px;
 `;
-const PopupFooter = styled.div`
+const PopupFooter = styled.View`
 margin-top: 20px;
   display: flex;
   align-items: center;
@@ -127,39 +102,31 @@ margin-top: 20px;
   justify-content: space-between;
   width: 100%;
 `;
-const PopupFooterBlock = styled.div`
-  user-select: none;
+const PopupFooterBlock = styled.View`
   display: flex;
   align-items: center;
   flex-direction: row;
 `;
-const PopupFooterInfo = styled.div`
+const PopupFooterInfo = styled.View`
   display: flex;
   align-items: center;
   flex-direction: row;
 `;
-const PopupFooterInfoText = styled.span`
-font-size: 14px;
+const PopupFooterInfoText = styled.Text`
+font-size: 12px;
 margin-right: 15px;
 margin-left: 10px;
 margin-top: 2px;
 font-family: ${FONTS.light};
 color: ${COLORS.mainBlack};
-@media (max-width: 450px) {
-  font-size: 12px;
-}
 `;
-const PopupFooterLink = styled.a`
+const PopupFooterLink = styled.TouchableOpacity`
 
 `;
-const PopupFooterLinkText = styled.span`
+const PopupFooterLinkText = styled.Text`
 font-size: 13.3px;
 color: ${COLORS.mainBlue};
 font-family: ${FONTS.medium};
-&:hover {
-    text-decoration: underline;
-    color: ${COLORS.hoverBlue};
-}
 `;
 
 export const style = {

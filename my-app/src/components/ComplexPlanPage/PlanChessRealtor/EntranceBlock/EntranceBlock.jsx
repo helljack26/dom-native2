@@ -60,8 +60,8 @@ const EntranceBlock = ({ entranceData, isLast }) => {
             {floors.map((item, id) => {
                 const isLast = (id === floors.length - 1)
                 return <FloorRow floor={item} isLast={isLast} key={id} />
+            })
             }
-            )}
 
         </EntranceColumn>
     )

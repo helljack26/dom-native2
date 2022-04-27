@@ -59,6 +59,7 @@ import LockGrayIcon from '../../assets/icon/lock_gray_icon.svg';
 
 // Icon
 import CrossIcon from '../../assets/icon/cross_icon.svg';
+import CrossBlueIcon from '../../assets/icon/cross_blue_icon.svg';
 import CheckedIcon from '../../assets/icon/checked_icon.svg';
 
 const IMAGES = {
@@ -125,6 +126,7 @@ const IMAGES = {
 
     // Icon
     CrossIcon: CrossIcon,
+    CrossBlueIcon:CrossBlueIcon,
     CheckedIcon: CheckedIcon,
 }
 
