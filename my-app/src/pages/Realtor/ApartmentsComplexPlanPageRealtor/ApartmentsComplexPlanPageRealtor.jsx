@@ -56,7 +56,6 @@ export default function ApartmentsComplexPlanPageRealtor() {
             {/* Go back */}
             <PlanHeaderBackButtonMobile
                 onPress={() => {
-                    /* 1. Navigate to the Details route with params */
                     navigation.navigate('ApartmentsComplexPageRealtor', {
                         complexId: complexId
                     });
@@ -101,9 +100,9 @@ export default function ApartmentsComplexPlanPageRealtor() {
 
             {/* Chess plan */}
             <PlanChessContainer>
-                
-            <PlanChessRealtor planEntrance={planEntrance} />
-            <ContainerBlockBorder></ContainerBlockBorder>
+
+                <PlanChessRealtor planEntrance={planEntrance} />
+                <ContainerBlockBorder></ContainerBlockBorder>
             </PlanChessContainer>
         </Main>
     </SafeAreaView >

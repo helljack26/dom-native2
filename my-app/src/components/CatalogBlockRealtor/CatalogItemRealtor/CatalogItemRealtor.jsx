@@ -28,6 +28,7 @@ const CatalogItemRealtor = ({ data }) => {
         oldPrice,
         category,
         location,
+        complexName,
         size,
         photoSmallPath,
         inFavorite,
@@ -71,6 +72,7 @@ const CatalogItemRealtor = ({ data }) => {
             <View style={styles.catalog_item_info}>
                 {priceBlock}
                 <Text style={styles.catalog_item_info_name}>{name}</Text>
+                {complexName && <Text style={styles.catalog_item_info_place}>{complexName}</Text>}
                 <Text style={styles.catalog_item_info_place}>{location}</Text>
                 <Text style={styles.catalog_item_info_size}>{size}</Text>
             </View>

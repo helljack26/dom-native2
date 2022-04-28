@@ -15,6 +15,8 @@ import RentPageRealtor from '../../src/pages/Realtor/RentPageRealtor/RentPageRea
 import NewsRealtorPage from '../../src/pages/RealtorSideMenuPages/NewsRealtorPage/NewsRealtorPage';
 import NewsCardRealtor from '../../src/pages/RealtorSideMenuPages/NewsCardRealtor/NewsCardRealtor';
 import NoveltiesPageRealtor from '../../src/pages/RealtorSideMenuPages/NoveltiesPageRealtor/NoveltiesPageRealtor';
+{/* Tabs sub screen */}
+import CollectionsCardPageRealtor from '../../src/pages/RealtorTapbar/CollectionsCardPageRealtor/CollectionsCardPageRealtor';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,5 +41,7 @@ export default function RealtorStackNavigator() {
             <Stack.Screen name="NewsRealtor" component={NewsRealtorPage} />
             <Stack.Screen name="NewsCardRealtor" component={NewsCardRealtor} />
             <Stack.Screen name="NoveltiesPageRealtor" component={NoveltiesPageRealtor} />
+            {/* Tabs sub screen */}
+            <Stack.Screen name="CollectionsCardPageRealtor" component={CollectionsCardPageRealtor} />
         </Stack.Navigator>)
 }

@@ -191,6 +191,7 @@ export default function NewsCardRealtor() {
     const navigation = useNavigation();
     const route = useRoute();
     const { itemId } = route.params;
+
     const scrollViewRef = useRef(null)
     const scrollTop = () => {
         if (scrollViewRef.current) {

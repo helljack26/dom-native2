@@ -1,7 +1,7 @@
 export const ApartmentMockApi =
     [
         {
-            id: 2,
+            id: 10848,
             name: "Гостиница, 90 м²",
             category: 'apartments',
             totalArea: 35,
@@ -64,7 +64,7 @@ export const ApartmentMockApi =
             inFavorite: false
         },
         {
-            id: 1,
+            id: 17093,
             name: "Апартаменты-студия, 22,8 м², 4/8 эт.",
             category: 'apartments',
             totalArea: 30,

@@ -1,8 +1,6 @@
 import React from "react";
 import { useEffect } from 'react';
 
-import { Text } from 'react-native';
-
 import { useCollectionsApiStore } from "@/stores/collectionsStore";
 
 import { observer } from "mobx-react-lite";
@@ -45,10 +43,10 @@ const CollectionsPageRealtor = observer(() => {
             </AdsHeader>
 
             <CollectionsContainer>
-                {numberOfCollection === 0 ?
-                    <CollectionsEmptyText>У вас пока ни одной подборки</CollectionsEmptyText>
-                    :
+                {numberOfCollection > 0 ?
                     isCollections.map((item, id) => <CollectionItem data={item} key={id} />)
+                    :
+                    <CollectionsEmptyText>У вас пока ни одной подборки</CollectionsEmptyText>
                 }
             </CollectionsContainer>
 

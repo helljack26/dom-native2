@@ -46,8 +46,8 @@ const CollectionItem = ({ data }) => {
         <CollectionItemBlockCol>
             <CollectionItemImageBlock
                 onPress={() => {
-                    navigation.navigate('CollectionsCardPage', {
-                        itemId: collectionId,
+                    navigation.navigate('CollectionsCardPageRealtor', {
+                        collectionId: collectionId,
                     });
                 }}
             >
@@ -58,8 +58,8 @@ const CollectionItem = ({ data }) => {
                     <CollectionItemTitle
                         numberOfLines={3}
                         onPress={() => {
-                            navigation.navigate('CollectionsCardPage', {
-                                itemId: collectionId,
+                            navigation.navigate('CollectionsCardPageRealtor', {
+                                collectionId: collectionId,
                             });
                         }}  >
                         {itemName}

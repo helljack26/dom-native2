@@ -9,7 +9,7 @@ import NavbarItem from '@/components/NavigationBar/NavigationBar'
 // Navbar
 import AddPageRealtor from '@/pages/RealtorTapbar/AddPageRealtor/AddPageRealtor'
 import FavoritePageRealtor from '@/pages/RealtorTapbar/FavoritePageRealtor/FavoritePageRealtor'
-import CollectionsPageRealtor from '@/pages/RealtorTapbar/CollectionsPageRealtor/CollectionsPageRealtor'
+import RealtorCollectionsStackNavigator from './RealtorCollectionsStackNavigator'
 import ChatPageRealtor from '@/pages/RealtorTapbar/ChatPageRealtor/ChatPageRealtor'
 
 const Tab = createBottomTabNavigator();
@@ -37,7 +37,7 @@ const RealtorTabsNavigator = ({ navigation }) => {
         name="Объявления" component={RealtorStackNavigator} />
       <Tab.Screen name="Избранное" component={FavoritePageRealtor} />
       <Tab.Screen name="Создать" component={AddPageRealtor} />
-      <Tab.Screen name="Подборки" component={CollectionsPageRealtor} />
+      <Tab.Screen name="Подборки" component={RealtorCollectionsStackNavigator} />
       <Tab.Screen name="Чаты" component={ChatPageRealtor} />
     </Tab.Navigator>
   );
