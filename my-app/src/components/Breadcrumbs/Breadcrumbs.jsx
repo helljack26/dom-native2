@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import PageLocation from '@/components/helpers/pageLocation'
+
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';
 
@@ -19,7 +21,6 @@ flex-direction: row;
 margin-top: 15px;
 `;
 
-import PageLocation from '@/components/helpers/pageLocation'
 const Breadcrumbs = observer(({ goBack }) => {
     const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
@@ -27,12 +28,10 @@ const Breadcrumbs = observer(({ goBack }) => {
 
     // Reset catalog when press Обьявления
     const combine = () => {
-        setCatalog('Home'),
-            navigation.navigate('Home')
+        setCatalog('Home'), navigation.navigate('Home')
     }
     const combineRealtor = () => {
-        setCatalog('HomePageRealtor'),
-            navigation.navigate('HomePageRealtor')
+        setCatalog('HomePageRealtor'), navigation.navigate('HomePageRealtor')
     }
     // For catalog
     const isAds = ads &&
@@ -50,11 +49,13 @@ const Breadcrumbs = observer(({ goBack }) => {
             </TouchableOpacity>
             <Text style={styles.page}>{title}</Text>
         </View>;
+
     //For card goBack 
     const isGoBack = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
-            onPress={() => navigation.goBack()}>
+            onPress={() => navigation.goBack()}
+        >
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>
@@ -71,7 +72,6 @@ const Breadcrumbs = observer(({ goBack }) => {
     const breadcrumbsRealtor = !goBack ? isAdsRealtor : isGoBackRealtor
 
     return isRealtor ? breadcrumbsRealtor : breadcrumbs
-
 })
 export default Breadcrumbs;
 

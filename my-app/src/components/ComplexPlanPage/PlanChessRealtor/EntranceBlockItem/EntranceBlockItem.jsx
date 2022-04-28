@@ -53,6 +53,7 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
     //     (x, y, w, h) => {
     //         console.log('offset', x, y, w, h);
     //     });
+    // TODO остановился на вычислении расстояния относильно ячейки, при скролле берет значение относительно страницы и все что уезжает в лево устанавливает в минус, найти способ как узнать сдвиг относительно родительского контейнера 
 
     const openPopup = () => {
         setIsComponentVisible(true)

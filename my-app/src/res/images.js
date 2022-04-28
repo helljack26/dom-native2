@@ -61,6 +61,9 @@ import LockGrayIcon from '../../assets/icon/lock_gray_icon.svg';
 import CrossIcon from '../../assets/icon/cross_icon.svg';
 import CrossBlueIcon from '../../assets/icon/cross_blue_icon.svg';
 import CheckedIcon from '../../assets/icon/checked_icon.svg';
+import CheckIcon from  '../../assets/icon/check_icon.svg'
+import DuplicateIcon from  '../../assets/icon/duplicate_icon.svg'
+import RenameIcon from  '../../assets/icon/rename_icon.svg'
 
 const IMAGES = {
     UserPhoto: require("../../assets/icon/user_photo.png"),
@@ -128,6 +131,9 @@ const IMAGES = {
     CrossIcon: CrossIcon,
     CrossBlueIcon:CrossBlueIcon,
     CheckedIcon: CheckedIcon,
+    CheckIcon:CheckIcon,
+DuplicateIcon:DuplicateIcon,
+RenameIcon:RenameIcon,
 }
 
 export default IMAGES;

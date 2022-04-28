@@ -3,7 +3,6 @@ import { useRoute } from '@react-navigation/native';
 const PageLocation = () => {
     const route = useRoute();
     let title, ads, isRealtor
-
     switch (route.name) {
         case 'ApartmentsPage':
             title = 'Квартиры'
@@ -75,13 +74,12 @@ const PageLocation = () => {
             title = 'Новинки'
             break;
         case 'CardPage':
-
             isRealtor = false
             break;
         case 'CardPageRealtor':
             isRealtor = true
             break;
-        case '/selections':
+        case 'Подборки':
             title = 'Подборки'
             break;
         case '/contacts':

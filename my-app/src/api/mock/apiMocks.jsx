@@ -7,6 +7,7 @@ import { CommerceMockApi } from './CommerceMockApi'
 import { RentMockApi } from './RentMockApi'
 
 import { NoveltiesMockApi } from './NoveltiesMockApi'
+import { CollectionsMockApi } from './CollectionsMockApi'
 
 import { NewsMockApi } from './NewsMockApi'
 
@@ -20,6 +21,7 @@ export const apiMocks = {
     RentMockApi: RentMockApi,
 
     NoveltiesMockApi: NoveltiesMockApi,
+    CollectionsMockApi: CollectionsMockApi,
 
     NewsMockApi: NewsMockApi,
 }

@@ -6,6 +6,7 @@ const Container = styled.ScrollView`
     width: 100%;
     padding: 0px 4%;
     padding-top: 50px;
+    background-color: white ;
     padding-bottom: 100px;
 `;
 // Header
@@ -13,7 +14,8 @@ const Header = styled.View`
     width: 100%;
 `;
 const HeaderText = styled.Text`
-    font-size: 23.5px;
+    font-size: 20px;
+    font-family: ${FONTS.medium};
     margin-bottom: 2px;
     color: ${COLORS.mainBlack};
 `;
@@ -27,7 +29,7 @@ const FavoriteSwithBlock = styled.View`
     display: flex;
     flex-direction: row; 
     align-content: center;
-       width:100%;
+    width:100%;
 `;
 const Button = styled.TouchableOpacity`
   display: flex;

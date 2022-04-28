@@ -12,7 +12,7 @@ const AdsHeader = styled.View`
     width: 100%;
 `;
 const AdsHeaderText = styled.Text`
-    font-size: 23.5px;
+    font-size: 20px;
     margin-bottom: 2px;
     color: ${COLORS.mainBlack};
     font-family: ${FONTS.medium};
