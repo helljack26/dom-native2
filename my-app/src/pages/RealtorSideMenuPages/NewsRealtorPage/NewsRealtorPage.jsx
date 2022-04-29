@@ -1,7 +1,7 @@
 import FONTS from '@/res/fonts'
 import React from 'react';
 import { useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import PageLocation from '@/components/helpers/pageLocation'

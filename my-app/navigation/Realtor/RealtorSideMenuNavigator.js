@@ -17,6 +17,7 @@ function CustomDrawerContent(props) {
                 <DrawerItem label="Объявления" onPress={() => props.navigation.navigate("HomePageRealtor")} />
                 <DrawerItem label="Новости" onPress={() => props.navigation.navigate("NewsRealtor")} />
                 <DrawerItem label="Новинки" onPress={() => props.navigation.navigate("NoveltiesPageRealtor")} />
+                <DrawerItem label="Контакты" onPress={() => props.navigation.navigate("ContactsPageRealtor")} />
                 <DrawerItem label="Шахматка" onPress={() => props.navigation.navigate("ApartmentsComplexPlanPageRealtor", {
                         complexId: 2658,
                         planId: 1215

@@ -64,6 +64,9 @@ import CheckedIcon from '../../assets/icon/checked_icon.svg';
 import CheckIcon from  '../../assets/icon/check_icon.svg'
 import DuplicateIcon from  '../../assets/icon/duplicate_icon.svg'
 import RenameIcon from  '../../assets/icon/rename_icon.svg'
+// Form
+import PhoneIcon from  '../../assets/icon/phone_icon.svg'
+import MessageIcon from  '../../assets/icon/message_icon.svg'
 
 const IMAGES = {
     UserPhoto: require("../../assets/icon/user_photo.png"),
@@ -132,8 +135,12 @@ const IMAGES = {
     CrossBlueIcon:CrossBlueIcon,
     CheckedIcon: CheckedIcon,
     CheckIcon:CheckIcon,
-DuplicateIcon:DuplicateIcon,
-RenameIcon:RenameIcon,
+    DuplicateIcon:DuplicateIcon,
+    RenameIcon:RenameIcon,
+
+    // Form
+    PhoneIcon:PhoneIcon,
+    MessageIcon:MessageIcon,
 }
 
 export default IMAGES;
