@@ -14,6 +14,7 @@ import RentPageUser from '../../src/pages/User/RentPageUser/RentPageUser.jsx'
 import NewsUserPage from '../../src/pages/UserSideMenuPages/NewsUserPage/NewsUserPage';
 import NewsCardUser from '../../src/pages/UserSideMenuPages/NewsCardUser/NewsCardUser';
 import NoveltiesPageUser from '../../src/pages/UserSideMenuPages/NoveltiesPageUser/NoveltiesPageUser';
+import ContactsPageUser from '../../src/pages/UserSideMenuPages/ContactsPageUser/ContactsPageUser';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,5 +39,7 @@ export default function UserStackNavigator() {
             <Stack.Screen name="NewsUser" component={NewsUserPage} />
             <Stack.Screen name="NewsCardUser" component={NewsCardUser} />
             <Stack.Screen name="NoveltiesPage" component={NoveltiesPageUser} />
+            <Stack.Screen name="ContactsPage" component={ContactsPageUser} />
+
         </Stack.Navigator>)
 }

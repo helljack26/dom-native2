@@ -32,7 +32,7 @@ const {
     ErrorMessage,
 } = style;
 
-const ContactsPageRealtor = () => {
+const ContactsPageUser = () => {
     const { control, handleSubmit, resetField, formState: { errors } } = useForm({
         defaultValues: { firstName: '', email: '', message: '', }
     });
@@ -66,7 +66,6 @@ const ContactsPageRealtor = () => {
                     Позвоните нам или оставьте свой вопрос в форме обратной связи
                 </HeaderSubscription>
 
-                {/* Links */}
                 <PhoneLink
                     onPress={() => Linking.openURL('tel:+71234567890')}
                 >
@@ -191,4 +190,4 @@ const ContactsPageRealtor = () => {
     )
 }
 
-export default ContactsPageRealtor;
+export default ContactsPageUser;
