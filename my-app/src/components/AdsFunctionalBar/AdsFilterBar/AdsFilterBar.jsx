@@ -1,5 +1,5 @@
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
+import C from '@/res/colors'
+import F from '@/res/fonts'
 import React from 'react';
 
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
@@ -79,11 +79,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         color: "white",
-        backgroundColor: COLORS.mainBlue,
+        backgroundColor: C.mainBlue,
         marginLeft: 13,
         paddingRight: 1,
         paddingTop: 5,
-        fontFamily: FONTS.medium,
+        fontFamily: F.medium,
         fontSize: 12
     }
 });

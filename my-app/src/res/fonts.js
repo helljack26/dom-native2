@@ -1,7 +1,7 @@
-const FONTS = {
+const F = {
     light: 'RubikLight',
     regular: 'RubikRegular',
     medium: 'RubikMedium',
 }
 
-export default FONTS;
+export default F;

@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })

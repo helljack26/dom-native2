@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
+import C from '@/res/colors'
+import F from '@/res/fonts'
 
 const Container = styled.ScrollView`
     width: 100%;
@@ -15,7 +15,7 @@ const Header = styled.View`
 const HeaderText = styled.Text`
     font-size: 23.5px;
     margin-bottom: 2px;
-    color: ${COLORS.mainBlack};
+    color: ${C.mainBlack};
 `;
 
 // Button
@@ -38,15 +38,15 @@ const Button = styled.TouchableOpacity`
  width:50%;
 `;
 const ItemButton = styled(Button)`
-  background-color: ${(props) => props.isActive === true ? `${COLORS.mainBlack}` : "white"};
+  background-color: ${(props) => props.isActive === true ? `${C.mainBlack}` : "white"};
 `;
 const SearchButton = styled(Button)`
-  background-color: ${(props) => props.isActive === true ? `${COLORS.mainBlack}` : "white"};
+  background-color: ${(props) => props.isActive === true ? `${C.mainBlack}` : "white"};
 `;
 const ButtonTextMobile = styled.Text`
   font-size: 12px;
-  font-family: ${FONTS.regular};
-  color: ${(props) => props.isActive === true ? "white" : `${COLORS.mainBlack}`};
+  font-family: ${F.regular};
+  color: ${(props) => props.isActive === true ? "white" : `${C.mainBlack}`};
 `;
 // Blocks
 const FavoriteItemContainer = styled.View`

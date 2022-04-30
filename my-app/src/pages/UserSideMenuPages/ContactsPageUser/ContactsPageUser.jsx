@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import { Linking } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import COLORS from '@/res/colors'
+import C from '@/res/colors'
 
 // Images
 import IMAGES from '@/res/images'
@@ -106,14 +106,14 @@ const ContactsPageUser = () => {
                                 {errors.firstName && <ErrorMessage>Обязательное поле*</ErrorMessage>}
                             </FormInputLabel>
                             <FormInput
-                                selectionColor={COLORS.mainBlue}
+                                selectionColor={C.mainBlue}
                                 cursorColor={'blue'}
 
 
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
-                                style={{ borderColor: `${errors.firstName ? 'red' : COLORS.borderGray}` }}
+                                style={{ borderColor: `${errors.firstName ? 'red' : C.borderGray}` }}
                             />
                         </FormInputBlock>
                     )}
@@ -136,11 +136,11 @@ const ContactsPageUser = () => {
                                 {errors.email && <ErrorMessage>{errors.email.message || 'Обязательное поле*'}</ErrorMessage>}
                             </FormInputLabel>
                             <FormInput
-                                selectionColor={COLORS.mainBlue}
+                                selectionColor={C.mainBlue}
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
-                                style={{ borderColor: `${errors.email ? 'red' : COLORS.borderGray}` }}
+                                style={{ borderColor: `${errors.email ? 'red' : C.borderGray}` }}
                             />
                         </FormInputBlock>
                     )}
@@ -160,14 +160,14 @@ const ContactsPageUser = () => {
                                 {errors.message && <ErrorMessage>Обязательное поле*</ErrorMessage>}
                             </FormInputLabel>
                             <FormTextArea
-                                selectionColor={COLORS.mainBlue}
+                                selectionColor={C.mainBlue}
                                 onBlur={onBlur}
                                 multiline={true}
                                 numberOfLines={4}
                                 onChangeText={onChange}
                                 value={value}
                                 style={{
-                                    borderColor: `${errors.message ? 'red' : COLORS.borderGray}`,
+                                    borderColor: `${errors.message ? 'red' : C.borderGray}`,
                                     textAlignVertical: 'top'
                                 }}
                             />

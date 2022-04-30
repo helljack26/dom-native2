@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import FONTS from 'res/fonts'
-import COLORS from 'res/colors'
+import F from 'res/fonts'
+import C from 'res/colors'
 
 const Container = styled.div`
     width: 84vw;
@@ -25,7 +25,7 @@ const ContainerBlockBorder = styled.span`
     display: block;
     height: inherit;
     margin-bottom: 30px;
-    background-color: ${COLORS.borderGray};
+    background-color: ${C.borderGray};
 `;
 
 const ContainerBlock = styled.div`
@@ -46,22 +46,22 @@ const ContainerBlock = styled.div`
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background: -webkit-gradient(linear, left top, left bottom, from(${COLORS.mainBlue}), to(#0084ff));
-    background: linear-gradient(180deg, ${COLORS.mainBlue}, #0084ff);
+    background: -webkit-gradient(linear, left top, left bottom, from(${C.mainBlue}), to(#0084ff));
+    background: linear-gradient(180deg, ${C.mainBlue}, #0084ff);
   }
 
 `;
 
 const FloorColumn = styled.div`
-border-right: 1px solid ${COLORS.borderGray};
+border-right: 1px solid ${C.borderGray};
 padding-right: 8px;
 height: fit-content;
 `
 const Item = styled.div`
 border-radius:8px;
-border: 1px solid ${COLORS.borderGray};
+border: 1px solid ${C.borderGray};
 width: 32px;
-background-color : ${COLORS.backgroundGray};
+background-color : ${C.backgroundGray};
 display: flex;
 align-items: center;
 justify-content: center;
@@ -80,8 +80,8 @@ const FloorItems = styled(Item)`
 
 `;
 const FloorItemsNumber = styled.span`
-    color: ${COLORS.secondBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.secondBlack};
+    font-family: ${F.medium};
     font-size: 13px;
 `;
 

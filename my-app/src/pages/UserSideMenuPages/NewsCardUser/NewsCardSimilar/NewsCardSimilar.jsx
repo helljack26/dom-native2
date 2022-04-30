@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import React from 'react';
 import { useEffect } from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
@@ -82,12 +82,12 @@ export default NewsUserPage;
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })
 

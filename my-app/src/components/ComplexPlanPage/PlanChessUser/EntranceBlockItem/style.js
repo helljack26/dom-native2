@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import FONTS from 'res/fonts'
-import COLORS from 'res/colors'
+import F from 'res/fonts'
+import C from 'res/colors'
 
 const ApartmentSmallCell = styled.div`
 display: flex;
@@ -11,7 +11,7 @@ padding: 12px;
 position:relative;
 background-color: white;
 border-radius: 8px;
-border: 1px solid ${COLORS.borderGray};
+border: 1px solid ${C.borderGray};
 user-select: none;
 cursor: pointer;
 z-index:10;
@@ -20,18 +20,18 @@ width:117px;
 transition: all 0.3s ease-in-out;
 
 :hover{
-background-color: ${COLORS.backgroundGray};
+background-color: ${C.backgroundGray};
 }
 `;
 const ApartmentSmallCellHeader = styled.span`
-    color: ${COLORS.secondBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.secondBlack};
+    font-family: ${F.medium};
     font-size: 13px;
     margin-bottom: 4px;
 `;
 const ApartmentSmallCellPrice = styled.span`
-    color: ${COLORS.secondBlack};
-    font-family: ${FONTS.light};
+    color: ${C.secondBlack};
+    font-family: ${F.light};
     font-size: 11px;
 `;
 const ApartmentSmallCellCol = styled.div`
@@ -40,7 +40,7 @@ const ApartmentSmallCellCol = styled.div`
 `;
 const ApartmentSmallCellDisable = styled(ApartmentSmallCell)`
     cursor: default;
-    background-color: ${COLORS.backgroundGray};
+    background-color: ${C.backgroundGray};
     pointer-events: none;
     display: flex;
     flex-direction:row;
@@ -55,9 +55,9 @@ const ApartmentSmallCellReserved = styled(ApartmentSmallCellDisable)`
     
 `;
 const ApartmentSmallCellDisableText = styled.span`
-    color: ${COLORS.secondBlack};
+    color: ${C.secondBlack};
     filter: brightness(1.5);
-    font-family: ${FONTS.light};
+    font-family: ${F.light};
     font-size: 12px;
     text-align: center;
 `;

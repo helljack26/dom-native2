@@ -1,7 +1,7 @@
 import React from "react";
 
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 // Images
 import IMAGES from '@/res/images'
 import styled from 'styled-components/native';
@@ -36,7 +36,7 @@ const PaginationBlock = styled.View`
 `;
 const PaginationItem = styled.TouchableOpacity`
     height: 100%;
-    border: 1px solid ${COLORS.borderGray}; 
+    border: 1px solid ${C.borderGray}; 
     background-color: white;
 text-align: center;
     display: flex;
@@ -47,18 +47,18 @@ text-align: center;
     margin: 0px 4px;
 `;
 const PaginationItemActive = styled(PaginationItem)`
-    background-color: ${COLORS.mainBlack};
+    background-color: ${C.mainBlack};
 `;
 const PaginationItemNumActive = styled.Text`
 
     color: white;
-    font-family: ${FONTS.regular};
+    font-family: ${F.regular};
     font-size: 12px;  
 `;
 const PaginationItemNum = styled.Text`
 
-    color:  ${COLORS.mainBlack};
-    font-family: ${FONTS.regular};
+    color:  ${C.mainBlack};
+    font-family: ${F.regular};
     font-size: 12px;  
 `;
 

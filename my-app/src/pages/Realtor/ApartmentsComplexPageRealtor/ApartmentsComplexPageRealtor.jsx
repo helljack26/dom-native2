@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
@@ -11,7 +11,8 @@ import ComplexDetailsRealtor from '@/components/Complex/ComplexDetailsRealtor/Co
 import ComplexDetailsPlans from '@/components/Complex/ComplexDetailsPlans/ComplexDetailsPlans'
 
 import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
-import CardSimilarObjectRealtor from '@/components/Card/CardSimilarObjectRealtor/CardSimilarObjectRealtor'
+import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
+import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
 import { apiMocks } from '@/api/mock/apiMocks'
 
@@ -38,25 +39,29 @@ export default function ApartmentsComplexPageRealtor() {
     const objectDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
 
     const { photoLargePath } = objectDetails;
-    return (<SafeAreaView style={styles.body}>
-        <Main ref={scrollViewRef} horizontal={false}>
 
-            <Breadcrumbs goBack={true} />
-            <CardPhotoContainer photoCollection={photoLargePath} />
-            <ComplexDetailsRealtor details={objectDetails} />
-            <ComplexDetailsPlans details={objectDetails} role={'Realtor'} />
+    const percentButton = <PercentButton isBig={false} />
 
-            <CardSaveButton />
-            <CardSimilarObjectRealtor />
+    return (
+        <SafeAreaView style={styles.body}>
+            <Main ref={scrollViewRef} horizontal={false}>
 
-        </Main>
-    </SafeAreaView >
+                <Breadcrumbs goBack={true} />
+                <CardPhotoContainer photoCollection={photoLargePath} />
+                <ComplexDetailsRealtor details={objectDetails} />
+                <ComplexDetailsPlans details={objectDetails} role={'Realtor'} />
+
+                <CardSaveButton />
+                <CardSimilarObject percentButton={percentButton} />
+
+            </Main>
+        </SafeAreaView >
     )
 }
 const styles = StyleSheet.create({
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })

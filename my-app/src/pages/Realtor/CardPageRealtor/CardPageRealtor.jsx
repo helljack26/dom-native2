@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
@@ -11,8 +11,10 @@ import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoCo
 import CardDetailsContainerRealtor from '@/components/Card/CardDetailsContainerRealtor/CardDetailsContainerRealtor'
 import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
 import CardAgentContainer from '@/components/Card/CardAgentContainer/CardAgentContainer'
-import CardSimilarObjectRealtor from '@/components/Card/CardSimilarObjectRealtor/CardSimilarObjectRealtor'
+import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
+import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
+// Style
 import styled from 'styled-components/native';
 const Main = styled.ScrollView`
 width: 100%;
@@ -56,25 +58,26 @@ export default function CardPageRealtor() {
     const objectDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
 
     const { id, photoLargePath } = objectDetails;
-    return (<SafeAreaView style={styles.body}>
-
-        <Main
-            ref={scrollViewRef}
-            horizontal={false}>
-            <Breadcrumbs goBack={true} />
-            <CardPhotoContainer photoCollection={photoLargePath} />
-            <CardDetailsContainerRealtor details={objectDetails} />
-            <CardSaveButton />
-            <CardAgentContainer agentId={id} />
-            <CardSimilarObjectRealtor />
-        </Main>
-    </SafeAreaView >
+    const percentButton = <PercentButton isBig={false} />
+    return (
+        <SafeAreaView style={styles.body}>
+            <Main
+                ref={scrollViewRef}
+                horizontal={false}>
+                <Breadcrumbs goBack={true} />
+                <CardPhotoContainer photoCollection={photoLargePath} />
+                <CardDetailsContainerRealtor details={objectDetails} />
+                <CardSaveButton />
+                <CardAgentContainer agentId={id} />
+                <CardSimilarObject percentButton={percentButton} />
+            </Main>
+        </SafeAreaView >
     )
 }
 const styles = StyleSheet.create({
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })

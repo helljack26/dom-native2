@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useState } from 'react'
 
-import CatalogItem from '@/components/CatalogBlock/CatalogItem/CatalogItem'
+import CatalogBlockItem from '@/components/CatalogBlockItem/CatalogBlockItem'
 import FavoriteSearchItem from './FavoriteSearchItem/FavoriteSearchItem'
 
 import PageLocation from '@/components/helpers/pageLocation'
@@ -59,9 +59,9 @@ export default function FavoritePage() {
             {isItemBlock === true ?
                 // Item
                 <FavoriteItemContainer>
-                    <CatalogItem data={ApartmentMockApi[1]} />
-                    <CatalogItem data={ApartmentMockApi[3]} />
-                    <CatalogItem data={ApartmentMockApi[2]} />
+                    <CatalogBlockItem data={ApartmentMockApi[1]} />
+                    <CatalogBlockItem data={ApartmentMockApi[3]} />
+                    <CatalogBlockItem data={ApartmentMockApi[2]} />
                 </FavoriteItemContainer>
                 :
                 // Search

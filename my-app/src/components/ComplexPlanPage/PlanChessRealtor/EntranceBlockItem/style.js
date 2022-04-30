@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const ApartmentSmallCell = styled.TouchableOpacity`
 display: flex;
@@ -10,21 +10,21 @@ padding: 12px;
 position:relative;
 background-color: white;
 border-radius: 8px;;
-/* border-color: ${props => props.borderActive || COLORS.secondBlack }; */
+/* border-color: ${props => props.borderActive || C.secondBlack}; */
 border-width: 1.5px;
 z-index:10;
 height: 52px;
 width:117px;
 `;
 const ApartmentSmallCellHeader = styled.Text`
-    color: ${COLORS.secondBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.secondBlack};
+    font-family: ${F.medium};
     font-size: 13px;
     margin-bottom: 4px;
 `;
 const ApartmentSmallCellPrice = styled.Text`
-    color: ${COLORS.secondBlack};
-    font-family: ${FONTS.light};
+    color: ${C.secondBlack};
+    font-family: ${F.light};
     font-size: 11px;
 `;
 const ApartmentSmallCellCol = styled.View`
@@ -32,7 +32,7 @@ const ApartmentSmallCellCol = styled.View`
     flex-direction: column;
 `;
 const ApartmentSmallCellDisable = styled.View`
-    background-color: ${COLORS.backgroundGray};
+    background-color: ${C.backgroundGray};
     display: flex;
     align-items: center;
     flex-direction:row;
@@ -40,7 +40,7 @@ const ApartmentSmallCellDisable = styled.View`
     position:relative;
     background-color: white;
     border-radius: 8px;
-    border-color: ${COLORS.borderGray};
+    border-color: ${C.borderGray};
     border-width: 1px;
     z-index:10;
     height: 52px;
@@ -55,7 +55,7 @@ const ApartmentSmallCellReserved = styled(ApartmentSmallCellDisable)`
 `;
 const ApartmentSmallCellDisableText = styled.Text`
     color: #a6a6a6;
-    font-family: ${FONTS.light};
+    font-family: ${F.light};
     font-size: 12px;
     text-align: center;
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
+import C from '@/res/colors'
+import F from '@/res/fonts'
 
 const SearchItem = styled.View`
 width: 100%;
@@ -11,7 +11,7 @@ padding: 0px 16px;
 padding-top: 20px;
 padding-bottom: 13px;
 
-border: 1px solid ${COLORS.borderDarkGray};
+border: 1px solid ${C.borderDarkGray};
 margin-bottom: 24px;
 border-radius: 8px;
 `;
@@ -21,7 +21,7 @@ display: flex;
 flex-direction: column;
 margin-bottom: 16px;
 border-bottom-width: 1px;
-border-bottom-color:${COLORS.borderDarkGray};
+border-bottom-color:${C.borderDarkGray};
 `;
 const FilterItem = styled.View`
 display: flex;
@@ -32,14 +32,14 @@ align-content: center;
 `;
 const FilterHeader = styled.Text`
 font-size: 14px;
-  font-family: ${FONTS.light};
-  color:${COLORS.secondBlack};
+  font-family: ${F.light};
+  color:${C.secondBlack};
   margin-right: 8px;
 `;
 const FilterValue = styled.Text`
 font-size: 14px;
-  font-family: ${FONTS.light};
-  color:${COLORS.mainBlack};
+  font-family: ${F.light};
+  color:${C.mainBlack};
 `;
 const SearchButtons = styled.View`
 display: flex;
@@ -60,14 +60,14 @@ flex-direction: row;
 const ReceiveEmailCheckboxImg = styled.View`
   height: 29px;
   width: 29px;
-  border: 1px solid ${COLORS.borderDarkGray};
+  border: 1px solid ${C.borderDarkGray};
   border-radius: 4px;
 margin-right: 10px;
 `;
 const ReceiveEmailText = styled.Text`
 font-size: 13px;
-color: ${COLORS.mainBlack};
-font-family: ${FONTS.regular};
+color: ${C.mainBlack};
+font-family: ${F.regular};
 `;
 const SearchButtonsRight = styled.View`
 display: flex;
@@ -83,8 +83,8 @@ align-items: center;
 `;
 const RemoveSearchText = styled.Text`
 margin-left: 13px;
-font-family: ${FONTS.medium};
-color: ${COLORS.mainBlack};
+font-family: ${F.medium};
+color: ${C.mainBlack};
 `;
 const ShowResults = styled.TouchableOpacity`
 border-radius: 4px;
@@ -94,13 +94,13 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 padding: 16px 25px;
-background-color: ${COLORS.mainBlue};
+background-color: ${C.mainBlue};
 width: 50%;
 `;
 const ShowResultsTextMobile = styled.Text`
 font-size: 13px;
 color:white;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 font-size: 14px;
 `;
 

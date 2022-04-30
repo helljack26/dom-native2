@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const Container = styled.View`
 width: 100%;
@@ -37,9 +37,9 @@ border-radius: 4px;
 `
 const Container_block_btn_text = styled.Text`
 margin-right: 5px;
-font-family: ${FONTS.light};
+font-family: ${F.light};
 font-size: 13px;
-color: ${COLORS.mainBlack};
+color: ${C.mainBlack};
 `
 
 

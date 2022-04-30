@@ -1,14 +1,14 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 const Plans = styled.View`
 width: 100%;
-border-bottom-color: ${COLORS.borderGray};
+border-bottom-color: ${C.borderGray};
 border-bottom-width: 1px;
 `;
 const Block_header = styled.TouchableOpacity`
 font-size: 20px;
-border-top-color: ${COLORS.borderGray};
+border-top-color: ${C.borderGray};
 border-top-width: 1px;
 background-color: white;
 padding-top: 16px;  
@@ -20,7 +20,7 @@ justify-content: space-between;
 align-items: center;
 `;
 const Block_header_Text = styled.Text`
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 font-size: 20px;
 `;
 const About_block = styled.View`
@@ -28,7 +28,7 @@ display: flex;
 background-color: white;
 `;
 const About_block_ul = styled.View`
-font-family: ${FONTS.light};
+font-family: ${F.light};
 margin-bottom: 10px;
 `;
 
@@ -42,7 +42,7 @@ const BlockItemInfo = styled.View`
 width:90%;
 `
 const BlockItem = styled.View`
-border: 1px solid ${COLORS.borderGray};
+border: 1px solid ${C.borderGray};
 padding: 14px;
 margin-bottom: 12px;
 padding-right: 10px;
@@ -60,22 +60,22 @@ justify-content: space-between;
 flex-direction: column;
 `
 const BlockItemName = styled.Text`
-font-family: ${FONTS.medium};
-color: ${COLORS.mainBlack};
+font-family: ${F.medium};
+color: ${C.mainBlack};
 font-size: 17px;
 `
 const BlockItemDescription = styled.Text`
-font-family: ${FONTS.light};
-color: ${COLORS.secondBlack};
+font-family: ${F.light};
+color: ${C.secondBlack};
 font-size: 13px;
 margin-bottom: 10px;
 `
 const BlockItemLink = styled.TouchableOpacity`
 `
 const BlockItemLinkText = styled.Text`
-color: ${COLORS.mainBlue};
+color: ${C.mainBlue};
 font-size: 13px;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 `
 const Label = styled.View`
 display: flex;
@@ -88,22 +88,22 @@ top: 0px;
 right: 0px;
 `
 const DoneLabel = styled(Label)`
-background-color: ${COLORS.green};
+background-color: ${C.green};
 margin-left: 10px;
 `
 const ExpiryDateLabel = styled(Label)`
-background-color: ${COLORS.orange};
+background-color: ${C.orange};
 margin-left: 10px;
 `
 const LabelText = styled.Text`
 color: white;
 font-size: 10px;
-font-family: ${FONTS.regular};
+font-family: ${F.regular};
 padding: 0;
 `
 
 export const styles = {
-  Plans:Plans,
+  Plans: Plans,
   Block_header: Block_header,
   Block_header_Text: Block_header_Text,
   About_block: About_block,

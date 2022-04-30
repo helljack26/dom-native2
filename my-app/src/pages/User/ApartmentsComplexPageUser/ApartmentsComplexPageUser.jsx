@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })

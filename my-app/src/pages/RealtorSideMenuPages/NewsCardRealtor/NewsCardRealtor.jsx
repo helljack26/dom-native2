@@ -1,6 +1,6 @@
 import * as React from 'react';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 import { StyleSheet, SafeAreaView, Text } from 'react-native';
 import { useRef } from 'react';
@@ -221,12 +221,12 @@ const styles = StyleSheet.create({
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     goBack: {
         marginLeft: 10,
-        color: COLORS.mainBlack,
+        color: C.mainBlack,
         fontSize: 13,
-        fontFamily: FONTS.light
+        fontFamily: F.light
     },
 })

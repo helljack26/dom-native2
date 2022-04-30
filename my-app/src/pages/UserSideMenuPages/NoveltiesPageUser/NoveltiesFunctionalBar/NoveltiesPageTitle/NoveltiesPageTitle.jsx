@@ -1,5 +1,5 @@
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
+import C from '@/res/colors'
+import F from '@/res/fonts'
 import React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     adsHeader: {
-        fontFamily: FONTS.medium,
-        color: COLORS.mainBlack,
+        fontFamily: F.medium,
+        color: C.mainBlack,
         fontSize: 20,
         marginTop: 32,
         marginBottom: 4,
     },
     adsQueryNumber: {
         fontSize: 12,
-        color: COLORS.mainBlack,
+        color: C.mainBlack,
     }
 });

@@ -1,4 +1,4 @@
-import COLORS from '@/res/colors'
+import C from '@/res/colors'
 import React from 'react';
 
 import { StyleSheet, View } from 'react-native';
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingHorizontal: 15,
         paddingVertical: 18,
-        backgroundColor: COLORS.backgroundGray,
+        backgroundColor: C.backgroundGray,
     },
 });

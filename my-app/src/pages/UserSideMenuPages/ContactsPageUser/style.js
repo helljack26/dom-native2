@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
-import {M} from '@/res/mixin'
+import C from '@/res/colors'
+import F from '@/res/fonts'
+import { M } from '@/res/mixin'
 
 const Container = styled(M.MainContainer)`
 `;
@@ -18,7 +18,7 @@ flex-direction: column;
 
 const HeaderSubscription = styled.Text`
 line-height: 22px;
-font-family: ${FONTS.light};
+font-family: ${F.light};
 margin-bottom: 24px;
 font-size: 13px;
 `;
@@ -33,7 +33,7 @@ justify-content: center;
 align-items: center;
 flex-direction: row;
 padding: 12px 0px;
-border-color: ${COLORS.borderGray};
+border-color: ${C.borderGray};
 border-width: 1px;
 border-style: solid;
 border-radius: 4px;
@@ -48,15 +48,15 @@ const MailLink = styled(Link)`
 `;
 const LinkText = styled.Text`
 font-size: 13.5px;
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
+font-family: ${F.light};
+color: ${C.mainBlack};
 margin-left: 11px;
 `;
 const ContainerRightBlock = styled.View`
 display: flex;
 align-items: center;
 flex-direction: column;
-background-color: ${COLORS.backgroundGray};
+background-color: ${C.backgroundGray};
 border-radius: 8px;
 overflow: hidden;
 padding: 24px 17px;   
@@ -66,7 +66,7 @@ margin-bottom: 48px;
 const SuccessWindow = styled.View`
 width: 100%;
 height: 100%;
-background-color: ${COLORS.mainBlue};
+background-color: ${C.mainBlue};
 z-index: 800;
 position: absolute;
 border-radius:8px;
@@ -82,7 +82,7 @@ color: white;
 `;
 const SuccessWindowText = styled.Text`
 font-size: 20px;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 color: white;
 padding: 0px 0px;
 margin: 0px 0px;
@@ -96,8 +96,8 @@ width: 100%;
 
 const FormInputLabel = styled.Text`
 font-size: 13.5px;
-font-family: ${FONTS.light};
-color: ${COLORS.secondBlack};
+font-family: ${F.light};
+color: ${C.secondBlack};
 margin-bottom: 5px;
 display: flex;
 flex-direction: row;
@@ -109,9 +109,9 @@ padding-left: 10px;
 padding-right: 10px;
 width: 100%;
 background-color: white;
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
-border-color: ${COLORS.borderDarkGray};
+font-family: ${F.light};
+color: ${C.mainBlack};
+border-color: ${C.borderDarkGray};
 border-width: 1px;
 border-style: solid;
 border-radius: 4px;
@@ -122,9 +122,9 @@ const FormTextArea = styled.TextInput`
 font-size: 16px;
 padding: 7px 10px;
 background-color: white;
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
-border-color: ${COLORS.borderDarkGray};
+font-family: ${F.light};
+color: ${C.mainBlack};
+border-color: ${C.borderDarkGray};
 border-width: 1px;
 border-style: solid;
 border-radius: 4px;
@@ -144,22 +144,22 @@ margin-left: 10px;
 `;
 
 export const style = {
-Container: Container,
-HeaderText: HeaderText,
-ContainerLeftBlock:ContainerLeftBlock,
-HeaderSubscription:HeaderSubscription,
-HeaderLinks:HeaderLinks,
-PhoneLink:PhoneLink,
-MailLink:MailLink,
-LinkText:LinkText,
-ContainerRightBlock:ContainerRightBlock,
-FormTextArea:FormTextArea,
-FormInputBlock:FormInputBlock,
-FormInputLabel:FormInputLabel,
-FormInput:FormInput,
-ButtonSubmit :ButtonSubmit ,
-ButtonSubmitText:ButtonSubmitText,
-ErrorMessage:ErrorMessage,
-SuccessWindow:SuccessWindow,
-SuccessWindowText:SuccessWindowText,
+    Container: Container,
+    HeaderText: HeaderText,
+    ContainerLeftBlock: ContainerLeftBlock,
+    HeaderSubscription: HeaderSubscription,
+    HeaderLinks: HeaderLinks,
+    PhoneLink: PhoneLink,
+    MailLink: MailLink,
+    LinkText: LinkText,
+    ContainerRightBlock: ContainerRightBlock,
+    FormTextArea: FormTextArea,
+    FormInputBlock: FormInputBlock,
+    FormInputLabel: FormInputLabel,
+    FormInput: FormInput,
+    ButtonSubmit: ButtonSubmit,
+    ButtonSubmitText: ButtonSubmitText,
+    ErrorMessage: ErrorMessage,
+    SuccessWindow: SuccessWindow,
+    SuccessWindowText: SuccessWindowText,
 }

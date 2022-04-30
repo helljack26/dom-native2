@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const Main = styled.ScrollView`
 width: 100%;
@@ -20,9 +20,9 @@ margin-bottom: 22px;
 `;
 const PlanHeaderBackButtonMobileText = styled.Text`
 margin-left: 8px;
-font-family: ${FONTS.light};
+font-family: ${F.light};
 font-size: 12px;
-color: ${COLORS.mainBlack};
+color: ${C.mainBlack};
 margin-top: 2px;
 `
 const PlanHeaderNameBlock = styled.View`
@@ -35,13 +35,13 @@ const PlanHeaderName = styled.Text`
 font-weight: 100;
 margin-right: 10px;
 line-height: 30px;
-font-family: ${FONTS.medium};
-color: ${COLORS.mainBlack};
+font-family: ${F.medium};
+color: ${C.mainBlack};
 font-size: 19px;
 `;
 const PlanHeaderComplex = styled.Text`
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
+font-family: ${F.light};
+color: ${C.mainBlack};
 font-size: 13px;
 
 `;
@@ -54,15 +54,15 @@ padding: 4px 8px;
 border-radius: 20px;
 `
 const DoneLabel = styled(Label)`
-background-color: ${COLORS.green};
+background-color: ${C.green};
 `
 const ExpiryDateLabel = styled(Label)`
-background-color: ${COLORS.orange};
+background-color: ${C.orange};
 `
 const LabelText = styled.Text`
 color: white;
 font-size: 10px;
-font-family: ${FONTS.regular};
+font-family: ${F.regular};
 padding: 0px;
 `
 const PlanChessContainer = styled.View`
@@ -75,12 +75,12 @@ const ContainerBlockBorder = styled.Text`
     margin-bottom: 74px;
     width: 2px;
     display: flex;
-    background-color: ${COLORS.borderGray};
+    background-color: ${C.borderGray};
 `;
 export const style = {
     Main: Main,
     PlanHeader: PlanHeader,
-    PlanHeaderNameBlock:PlanHeaderNameBlock,
+    PlanHeaderNameBlock: PlanHeaderNameBlock,
     PlanHeaderName: PlanHeaderName,
     PlanHeaderComplex: PlanHeaderComplex,
     DoneLabel: DoneLabel,
@@ -88,6 +88,6 @@ export const style = {
     ExpiryDateLabel: ExpiryDateLabel,
     PlanHeaderBackButtonMobile: PlanHeaderBackButtonMobile,
     PlanHeaderBackButtonMobileText: PlanHeaderBackButtonMobileText,
-    ContainerBlockBorder:ContainerBlockBorder,
-    PlanChessContainer:PlanChessContainer,
+    ContainerBlockBorder: ContainerBlockBorder,
+    PlanChessContainer: PlanChessContainer,
 }

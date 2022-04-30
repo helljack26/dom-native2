@@ -1,16 +1,16 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const About = styled.View`
 width: 100%;
 margin-top: 24px;
-border-bottom-color: ${COLORS.borderGray};
+border-bottom-color: ${C.borderGray};
 border-bottom-width: 1px;
 `;
 const Block_header = styled.TouchableOpacity`
 font-size: 20px;
-border-top-color: ${COLORS.borderGray};
+border-top-color: ${C.borderGray};
 border-top-width: 1px;
 background-color: white;
 padding-top: 16px;  
@@ -22,7 +22,7 @@ justify-content: space-between;
 align-items: center;
 `;
 const Block_header_Text = styled.Text`
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 font-size: 20px;
 `;
 const About_block = styled.View`
@@ -30,7 +30,7 @@ display: flex;
 background-color: white;
 `;
 const About_block_ul = styled.View`
-font-family: ${FONTS.light};
+font-family: ${F.light};
 `;
 const About_block_ul_li = styled.View`
 flex-direction: row;
@@ -40,7 +40,7 @@ const About_block_ul_title = styled.Text`
 margin-bottom: 12px;
 display: flex;
 font-size: 14px;
-color: ${COLORS.secondBlack};
+color: ${C.secondBlack};
 align-items: center;
 `;
 const About_block_ul_value = styled.Text`
@@ -48,7 +48,7 @@ margin-bottom: 10px;
 display: flex;
 margin-left: 5px;
 font-size: 14px;
-color: ${COLORS.mainBlack};
+color: ${C.mainBlack};
 align-items: center;
 `;
 const About_block_ul_link = styled.TouchableOpacity`
@@ -56,7 +56,7 @@ const About_block_ul_link = styled.TouchableOpacity`
 `;
 const About_block_ul_link_text = styled.Text`
 text-decoration: underline;
-color: ${COLORS.mainBlue};
+color: ${C.mainBlue};
 `;
 const Description = styled.View`
 display:flex;
@@ -64,8 +64,8 @@ background-color: white;
 padding-bottom: 20px;
 `;
 const Description_text = styled.Text`
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
+font-family: ${F.light};
+color: ${C.mainBlack};
 font-size: 14px;
 line-height:21px;
 `;

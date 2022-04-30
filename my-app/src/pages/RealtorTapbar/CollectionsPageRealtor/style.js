@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
+import C from '@/res/colors'
+import F from '@/res/fonts'
 
 const Container = styled.ScrollView`
 width: 100%;
@@ -14,8 +14,8 @@ width: 100%;
 `;
 const AdsHeaderText = styled.Text`
 margin-bottom: 2px;
-color: ${COLORS.mainBlack};
-font-family: ${FONTS.medium};
+color: ${C.mainBlack};
+font-family: ${F.medium};
 font-size: 20px;
 `;
 const CollectionsEmptyText = styled.Text`
@@ -25,11 +25,11 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 width: 100%;
-color: ${COLORS.mainBlack};
+color: ${C.mainBlack};
 `;
 const AdsQueryNumber = styled.Text`
-color: ${COLORS.secondBlack};
-font-family: ${FONTS.light};
+color: ${C.secondBlack};
+font-family: ${F.light};
 font-size: 12px;
 `;
 const CollectionsContainer = styled.View`
@@ -42,7 +42,7 @@ export const style = {
     Container: Container,
     AdsHeader: AdsHeader,
     AdsHeaderText: AdsHeaderText,
-    CollectionsEmptyText:CollectionsEmptyText,
+    CollectionsEmptyText: CollectionsEmptyText,
     AdsQueryNumber: AdsQueryNumber,
     CollectionsContainer: CollectionsContainer,
 }

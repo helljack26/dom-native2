@@ -1,5 +1,5 @@
 import React from "react";
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import IMAGES from '@/res/images'
 
 // Styles
@@ -20,7 +20,7 @@ align-items: center;
 `
 const ComplainLinkText = styled.Text`
 font-size: 13px;
-font-family: ${FONTS.light};
+font-family: ${F.light};
 color: #d30000;
 margin-left: 5px;
 `

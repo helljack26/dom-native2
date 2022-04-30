@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 // Styles
 const Button = styled.TouchableOpacity`
@@ -39,7 +39,7 @@ justify-content: space-between;
 margin-top: -16px;
 `;
 const AllPhotoText = styled.Text`
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 color: white;
 font-size: 14px;
 margin-left: 10px;

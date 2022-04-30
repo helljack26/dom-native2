@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const Container = styled.View`
-border-top-color: ${COLORS.borderGray};
+border-top-color: ${C.borderGray};
 border-top-width: 1px;
 padding-top: 30px;
 `
@@ -16,19 +16,19 @@ align-items: center;
 
 `
 const User_info = styled.View`
-font-family: ${FONTS.light};
+font-family: ${F.light};
 margin-left: 15px;
 display: flex;
 flex-direction: column;
 `
 const User_info_name = styled.Text`
-font-family: ${FONTS.light};
+font-family: ${F.light};
 font-size: 16px;
 `
 const User_info_loginTime = styled.Text`
 font-size: 12px;
-font-family: ${FONTS.light};
-color: ${COLORS.secondBlack};
+font-family: ${F.light};
+color: ${C.secondBlack};
 `
 const Btn_block = styled.View`
 margin-top: 24px;
@@ -52,17 +52,17 @@ width: 48.5%;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: ${COLORS.mainBlue};
+background-color: ${C.mainBlue};
 padding: 14px 0px;
 `
 const Btn_phone_text = styled.Text`
 font-size: 13px;
-font-family: ${FONTS.medium};
-color: ${COLORS.mainBlack};
+font-family: ${F.medium};
+color: ${C.mainBlack};
 `
 const Btn_chat_text = styled.Text`
 color: white;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 font-size: 13px;
 `
 const Rating = styled.View`
@@ -75,10 +75,10 @@ margin-top: 15px;
 margin-bottom: 20px;
 `
 const Rating_number = styled.Text`
-color: ${COLORS.mainBlack};
+color: ${C.mainBlack};
 font-size: 40px;
 margin-top:5px;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 `
 const Rating_block = styled.View`
 margin-top: 3px;
@@ -106,8 +106,8 @@ flex-direction: row;
 margin:0px 10px;
 `
 const Rating_block_links_link_text = styled.Text`
-color: ${COLORS.mainBlue};
-font-family: ${FONTS.medium};
+color: ${C.mainBlue};
+font-family: ${F.medium};
 font-size: 14px;
 `
 const Footer = styled.View`
@@ -130,8 +130,8 @@ display: flex;
 flex-direction: column;
 `
 const Footer_block_text_value = styled.Text`
-color: ${COLORS.mainBlack};
-font-family: ${FONTS.light};
+color: ${C.mainBlack};
+font-family: ${F.light};
 font-size: 14px;
 `
 const Footer_link = styled.TouchableOpacity`
@@ -139,11 +139,11 @@ display: flex;
 flex-direction: row;
 `
 const Footer_link_text = styled.Text`
-color: ${COLORS.mainBlue};
-font-family: ${FONTS.light};
+color: ${C.mainBlue};
+font-family: ${F.light};
 font-size: 14px;
 border-bottom-width: 1px;
-border-bottom-color: ${COLORS.mainBlue};
+border-bottom-color: ${C.mainBlue};
 border-style: dashed;
 `
 

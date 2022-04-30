@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
-import COLORS from '@/res/colors'
-import FONTS from '@/res/fonts'
+import C from '@/res/colors'
+import F from '@/res/fonts'
 
 const MainContainer = styled.ScrollView`
 width: 100%;
@@ -14,8 +14,8 @@ padding: 0px 4%;
 const HeaderH1 = styled.Text`
 font-size: 23px;
 font-weight: 100;
-font-family: ${FONTS.medium};
-color: ${COLORS.mainBlack};
+font-family: ${F.medium};
+color: ${C.mainBlack};
 `
 
 const ButtonBlue = styled.TouchableOpacity`
@@ -24,20 +24,19 @@ display: flex;
 align-items: center;
 justify-content: center;
 padding: 15px 36px;
-background-color: ${COLORS.mainBlue};
+background-color: ${C.mainBlue};
 color:white;
 `
 const ButtonBlueText = styled.Text`
 font-size: 13.5px;
 color: white;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 font-weight: 100;
 `
 
 export const M = {
     MainContainer: MainContainer,
-    HeaderH1:HeaderH1,
-    ButtonBlue:ButtonBlue,
-ButtonBlueText:ButtonBlueText,
-
+    HeaderH1: HeaderH1,
+    ButtonBlue: ButtonBlue,
+    ButtonBlueText: ButtonBlueText,
 }

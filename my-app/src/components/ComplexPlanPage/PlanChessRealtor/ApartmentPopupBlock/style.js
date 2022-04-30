@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const Popup = styled.View`
 width: ${props => props.scrollWidth - 8 + 'px'};
@@ -24,7 +24,7 @@ width: 270px;
 min-height: 330px;
 background-color: white;
 border-radius: 8px;
-border: 1px solid ${COLORS.borderGray};
+border: 1px solid ${C.borderGray};
 display: flex;
 flex-direction:column;
 align-items: center;
@@ -39,8 +39,8 @@ justify-content: space-between;
 width: 100%;
 `;
 const PopupHeaderNumber = styled.Text`
-color: ${COLORS.mainBlack};
-font-family: ${FONTS.regular};
+color: ${C.mainBlack};
+font-family: ${F.regular};
 font-size: 17px;
 `;
 const PopupHeaderClose = styled.TouchableOpacity`
@@ -55,7 +55,7 @@ width: 100%;
 height: 152px;
 overflow: hidden;
 border-radius: 8px;
-border: 1px solid ${COLORS.borderGray};
+border: 1px solid ${C.borderGray};
 margin-top: 12px;
 `;
 const PopupDetails = styled.View`
@@ -71,20 +71,20 @@ margin-top: 13px;
 flex-direction: column;
 `;
 const PopupDetailsPrice = styled.Text`
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.mainBlack};
+    font-family: ${F.medium};
     font-size: 15px;
 `;
 const PopupDetailsName = styled.Text`
 margin-top: 11px ;
-color: ${COLORS.mainBlack};
-font-family: ${FONTS.medium};
+color: ${C.mainBlack};
+font-family: ${F.medium};
 font-size: 17px;
 margin-bottom: 8px ;
 `;
 const PopupDetailsArea = styled.Text`
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.light};
+    color: ${C.mainBlack};
+    font-family: ${F.light};
     font-size: 12px;
 `;
 const PopupDetailsButtons = styled.View`
@@ -117,16 +117,16 @@ font-size: 12px;
 margin-right: 15px;
 margin-left: 10px;
 margin-top: 2px;
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
+font-family: ${F.light};
+color: ${C.mainBlack};
 `;
 const PopupFooterLink = styled.TouchableOpacity`
 
 `;
 const PopupFooterLinkText = styled.Text`
 font-size: 13.3px;
-color: ${COLORS.mainBlue};
-font-family: ${FONTS.medium};
+color: ${C.mainBlue};
+font-family: ${F.medium};
 `;
 
 export const style = {

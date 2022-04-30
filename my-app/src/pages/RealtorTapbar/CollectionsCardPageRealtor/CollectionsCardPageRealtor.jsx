@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import { useRoute } from '@react-navigation/native';
@@ -6,7 +6,8 @@ import { useRoute } from '@react-navigation/native';
 import { apiMocks } from '@/api/mock/apiMocks'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
-import CatalogItemRealtor from '@/components/CatalogBlockRealtor/CatalogItemRealtor/CatalogItemRealtor';
+import CatalogBlockItem from '@/components/CatalogBlockItem/CatalogBlockItem';
+import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
 import IMAGES from '@/res/images';
 const { ShareIcon } = IMAGES;
@@ -37,6 +38,7 @@ export default function CollectionsCardPageRealtor() {
         collectionItems,
     } = collectionCard;
     const objectInCollection = collectionItems !== undefined && collectionItems.length
+    const percentButton = <PercentButton isBig={false} />
     return (
         <ScrollView style={styles.body}>
             <FunctionalBar>
@@ -59,7 +61,12 @@ export default function CollectionsCardPageRealtor() {
             </FunctionalBar>
             <Container>
                 <CollectionsContainer>
-                    {collectionItems.map((item, id) => <CatalogItemRealtor data={item} key={id} />)}
+                    {collectionItems.map((item, id) =>
+                        <CatalogBlockItem
+                            data={item}
+                            key={id}
+                            percentButton={percentButton}
+                        />)}
                 </CollectionsContainer>
 
             </Container>
@@ -69,12 +76,12 @@ export default function CollectionsCardPageRealtor() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })
 

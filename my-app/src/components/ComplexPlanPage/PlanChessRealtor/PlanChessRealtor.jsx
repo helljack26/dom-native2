@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { Alert, Modal, StyleSheet, Image, Text, Pressable, ScrollView } from "react-native";
 
-import COLORS from '@/res/colors'
+import C from '@/res/colors'
 import { observer } from "mobx-react-lite";
 
 import ScrollIndicator from "react-native-custom-scroll-indicator";
@@ -101,7 +101,7 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
                 }} indicatorStyle={{
                     height: 8,
                     width: 80,
-                    backgroundColor: `${COLORS.mainBlue}`,
+                    backgroundColor: `${C.mainBlue}`,
                     borderRadius: 4
                 }} indicatorBoxStyle={{
                     width: "99%",

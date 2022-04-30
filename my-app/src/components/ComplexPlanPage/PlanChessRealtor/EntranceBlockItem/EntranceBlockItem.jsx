@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
-import COLORS from '@/res/colors'
+import C from '@/res/colors'
 
 import useComponentVisible from '@/components/helpers/useComponentVisible'
 
@@ -109,7 +109,7 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
                         onPress={() => openPopup()}
                         style={{
                             marginRight: marginRight,
-                            borderColor: isComponentVisible === true ? COLORS.mainBlue : COLORS.borderGray
+                            borderColor: isComponentVisible === true ? C.mainBlue : C.borderGray
                         }}
                     // onLayout={(event) => {
                     //     event.target.measure(

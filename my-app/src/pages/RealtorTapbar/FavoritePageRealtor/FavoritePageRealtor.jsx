@@ -3,7 +3,8 @@ import React from 'react';
 
 import { useState } from 'react'
 
-import CatalogItem from '@/components/CatalogBlockRealtor/CatalogItemRealtor'
+import CatalogBlockItem from '@/components/CatalogBlockItem/CatalogBlockItem'
+import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 import FavoriteSearchItem from './FavoriteSearchItem/FavoriteSearchItem'
 
 import PageLocation from '@/components/helpers/pageLocation'
@@ -30,6 +31,8 @@ export default function FavoritePageRealtor() {
     const [isItemBlock, setItemBlock] = useState(true);
     const itemsInFavorite = 0;
     const searchesInFavorite = 0;
+
+    const percentButton = <PercentButton isBig={false} />
 
     return (
         <Container>
@@ -59,9 +62,9 @@ export default function FavoritePageRealtor() {
             {isItemBlock === true ?
                 // Item
                 <FavoriteItemContainer>
-                    <CatalogItem data={ApartmentMockApi[1]} />
-                    <CatalogItem data={ApartmentMockApi[3]} />
-                    <CatalogItem data={ApartmentMockApi[2]} />
+                    <CatalogBlockItem data={ApartmentMockApi[1]} percentButton={percentButton} />
+                    <CatalogBlockItem data={ApartmentMockApi[3]} percentButton={percentButton} />
+                    <CatalogBlockItem data={ApartmentMockApi[2]} percentButton={percentButton} />
                 </FavoriteItemContainer>
                 :
                 // Search

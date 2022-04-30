@@ -1,15 +1,17 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const Similar = styled.ScrollView`
 width: 100%;
 `
 const Similar_header = styled.Text`
 font-size:20px;
-font-family: ${FONTS.medium};
-color: ${COLORS.mainBlack};
-padding-top: 16px;
+font-family: ${F.medium};
+color: ${C.mainBlack};
+border-top-color: ${C.borderGray};
+border-top-width: 1px;
+padding-top: 28px;
 padding-bottom: 16px;
 `
 const Similar_block = styled.View`

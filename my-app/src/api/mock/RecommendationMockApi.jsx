@@ -1,7 +1,7 @@
 export const RecommendationMockApi =
     [
         {
-            id: 1,
+            id: 17093,
             name: "Апартаменты-студия, 22,8 м², 4/8 эт.",
             category: 'apartments',
             totalArea: 30,
@@ -15,6 +15,7 @@ export const RecommendationMockApi =
             ],
             favoriteNumber: 9,
             viewNumber: 341,
+            itemStatus: 'Новинка',
             percentageText: 'Процент на ипотеку',
             description: 'ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ!!! Продается однокомнатная квартира с кухней-гостинной в новом жилом комплексе в центре Адлера! По площади это самый большой комплекс в Сочи – 12.5 гектаров земли. Объект реально хорош и для проживания (раз уже берут избалованные сочинцы), и для краткосрочного инвестирования. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции.Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. ',
             objectDetails: [
@@ -36,8 +37,8 @@ export const RecommendationMockApi =
                 },
                 {
                     title: 'ЖК:',
-                    value: 'Апартотель "Моравия"',
-                    link: '/'
+                    value: 'АК Архитектор',
+                    complexId: 2658
                 },
                 {
                     title: 'Место на шахматке:',
@@ -63,7 +64,7 @@ export const RecommendationMockApi =
 
         },
         {
-            id: 2,
+            id: 10848,
             name: "Гостиница, 90 м²",
             category: 'apartments',
             totalArea: 35,
@@ -100,8 +101,8 @@ export const RecommendationMockApi =
                 },
                 {
                     title: 'ЖК:',
-                    value: 'Апартотель "Моравия"',
-                    link: '/'
+                    value: 'АК Архитектор',
+                    complexId: 2658
                 },
                 {
                     title: 'Место на шахматке:',
@@ -124,15 +125,14 @@ export const RecommendationMockApi =
                 lon: 856156,
             }],
             inFavorite: false
-
         },
         {
             id: 3,
-            name: "1-к. Квартира, 18,3 м², 15/19 эт.",
+            name: "1-к. Квартира",
             category: 'apartments',
             totalArea: 30,
             price: 7887300,
-            location: "ул. Ясногорская, стр. 9 р-н Хостинский",
+            location: "ул. Ясногорская, стр. 9",
             size: "1 комната · 8,3 м²",
             photoSmallPath: require('../../../assets/apartment/appartment_1.png'),
             photoLargePath: [

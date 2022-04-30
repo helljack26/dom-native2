@@ -1,12 +1,12 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const CollectionItemBlock = styled.View`
   width: 100%;
   margin-bottom: 14px;
-  background-color: ${COLORS.backgroundGray};
-  border-color: ${COLORS.borderGray};
+  background-color: ${C.backgroundGray};
+  border-color: ${C.borderGray};
   border-width: 1px;
   display: flex;
   justify-content: space-between;
@@ -23,7 +23,7 @@ height: 100%;
 `;
 const CollectionItemImageBlock = styled.TouchableOpacity`
 border-radius: 8px;
-border-color: ${COLORS.borderGray};
+border-color: ${C.borderGray};
 border-width: 1px;
 overflow: hidden;
 display: flex;
@@ -42,8 +42,8 @@ margin-left: 10px;
 width: 50%;
 `;
 const CollectionItemTitle = styled.Text`
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.mainBlack};
+    font-family: ${F.medium};
     font-size: 14px;
     margin-bottom: 5px;
     display: flex;
@@ -52,11 +52,11 @@ const CollectionItemTitle = styled.Text`
     `;
 const CollectionItemInput = styled.TextInput`
     background-color: white;
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.mainBlack};
+    font-family: ${F.medium};
     margin-bottom: 8px;
     border-radius: 8px;
-    border-color: ${COLORS.borderGray};
+    border-color: ${C.borderGray};
     border-width: 1px;
     display: flex;
     flex-direction: row;
@@ -69,8 +69,8 @@ const CollectionItemInput = styled.TextInput`
     font-size: 14px;
 `;
 const CollectionItemNumber = styled.Text`
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.light};
+    color: ${C.mainBlack};
+    font-family: ${F.light};
     font-size: 12px;
 `;
 const CollectionItemBlockButtons = styled.View`
@@ -90,13 +90,13 @@ flex-direction: row;
 
 export const style = {
     CollectionItemBlock: CollectionItemBlock,
-    CollectionItemBlockCol:CollectionItemBlockCol,
-    CollectionItemBlockButtons:CollectionItemBlockButtons,
+    CollectionItemBlockCol: CollectionItemBlockCol,
+    CollectionItemBlockButtons: CollectionItemBlockButtons,
     CollectionItemImage: CollectionItemImage,
     CollectionItemImageBlock: CollectionItemImageBlock,
     CollectionItemInfo: CollectionItemInfo,
     CollectionItemTitle: CollectionItemTitle,
-    CollectionItemInput:CollectionItemInput,
+    CollectionItemInput: CollectionItemInput,
     CollectionItemNumber: CollectionItemNumber,
-    Button:Button,
+    Button: Button,
 }

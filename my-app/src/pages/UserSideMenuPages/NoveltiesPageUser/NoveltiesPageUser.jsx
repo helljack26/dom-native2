@@ -1,6 +1,6 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import React from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 
 import NoveltiesFunctionalBar from './NoveltiesFunctionalBar';
 import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
@@ -20,12 +20,12 @@ export default function NoveltiesPageUser() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })
 

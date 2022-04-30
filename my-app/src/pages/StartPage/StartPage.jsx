@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: "center",
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     button: {
         flex: 1,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 40,
-        fontFamily: FONTS.medium,
+        fontFamily: F.medium,
         color: 'white',
     }
 })

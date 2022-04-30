@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 
 const Container = styled.View`
@@ -22,7 +22,7 @@ align-items: center;
 padding: 3px 10px;
 margin-top: 20px;
 border-radius: 20px;
-background-color: ${COLORS.orange};
+background-color: ${C.orange};
 
 `;
 const Name_block_header_text_block_new = styled.View`
@@ -32,7 +32,7 @@ align-items: center;
 padding: 3px 10px;
 margin-top: 20px;
 border-radius: 20px;
-background-color: ${COLORS.green};
+background-color: ${C.green};
 
 `;
 const Name_block_header_text = styled.Text`
@@ -40,7 +40,7 @@ font-size: 20px;
 letter-spacing: 0.4px;
 margin-right: 10px;
 
-font-family:${FONTS.medium};
+font-family:${F.medium};
 line-height: 30px;
 
 `;
@@ -48,13 +48,13 @@ line-height: 30px;
 const Name_block_header_type = styled.Text`
 color: white;
 font-size: 9px;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 `;
 const Place = styled.Text`
 display: flex;
 margin-top: 5px;
 font-size: 12px;
-font-family: ${FONTS.light};
+font-family: ${F.light};
 `;
 const Price = styled.View`
 display: flex;
@@ -66,18 +66,18 @@ display: flex;
 const Price_block_price = styled.Text`
 font-size: 24px;
 margin-right: 16px;
-font-family:${FONTS.medium};
+font-family:${F.medium};
 `;
 const Price_block_square_rating = styled.View`
 display: flex;
 flex-direction: row;
 `;
 const Price_block_price_square = styled.Text`
-font-family: ${FONTS.light};
+font-family: ${F.light};
 font-size: 12px;
 `;
 const Price_block_price_rating = styled.Text`
-font-family: ${FONTS.light};
+font-family: ${F.light};
 font-size: 11px;
 color: #6abd24;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const PlanFiltersMobile = styled.TouchableOpacity`
 display: flex;
@@ -8,7 +8,7 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 width: 100%;
-border-color: ${COLORS.mainBlack};
+border-color: ${C.mainBlack};
 border-width: 1px;
 margin-top: 23px;
 background-color: white;
@@ -20,8 +20,8 @@ height: 42px;
 `
 const PlanFiltersMobileText = styled.Text`
 font-size: 14px;
-font-family: ${FONTS.light};
-color: ${COLORS.secondBlack};
+font-family: ${F.light};
+color: ${C.secondBlack};
 `
 const PlanFiltersMobileNumber = styled.View`
 border-top-left-radius: 12px;
@@ -34,13 +34,13 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-background-color : ${COLORS.mainBlue};
+background-color : ${C.mainBlue};
 margin-left: 13px;
 padding-right: 1px;
 `
 const PlanFiltersMobileNumberText = styled.Text`
 color: white;
-font-family: ${FONTS.medium};
+font-family: ${F.medium};
 font-size: 12px;
 `
 

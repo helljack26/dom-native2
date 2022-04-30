@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 
 const Card_details = styled.View`
@@ -20,7 +20,7 @@ align-items: center;
 `;
 const FavoriteView_block = styled.View`
 font-size: 14px;
-font-family: ${FONTS.light};
+font-family: ${F.light};
 display: flex;
 align-items: center;
 flex-direction: row;
@@ -29,8 +29,8 @@ margin-bottom: 13px;
 `
 const FavoriteView_block_text = styled.Text`
 margin-left: 8px;
-font-family: ${FONTS.light};
-color: ${COLORS.mainBlack};
+font-family: ${F.light};
+color: ${C.mainBlack};
 font-size: 14px;
 `
 const Details_mobile = styled.View`

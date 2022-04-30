@@ -1,4 +1,4 @@
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
@@ -16,7 +16,7 @@ export default function HomePageUser() {
                 <Text style={styles.mainHeaderUser}>
                     Рекомендации для вас
                 </Text>
-                <CatalogBlock />
+                <CatalogBlock isRecommendation={true} />
             </ScrollView>
         </View>
     );
@@ -25,16 +25,16 @@ export default function HomePageUser() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     mainHeaderUser: {
         fontSize: 20,
-        fontFamily: FONTS.medium,
+        fontFamily: F.medium,
         marginTop: 15,
         marginLeft: 15
     }

@@ -1,4 +1,4 @@
-const COLORS = {
+const C = {
     mainBlack: '#222222',
     secondBlack: '#575757',
     mainBlue: '#0072db',
@@ -10,4 +10,4 @@ const COLORS = {
     orange: '#F2994A',
 }
 
-export default COLORS;
+export default C;

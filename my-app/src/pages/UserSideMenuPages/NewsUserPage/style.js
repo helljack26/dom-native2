@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 
 const Container = styled.View`
  padding-bottom: 24px;
@@ -14,14 +14,14 @@ const AdsHeader = styled.View`
 const AdsHeaderText = styled.Text`
     font-size: 23.5px;
     margin-bottom: 2px;
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.mainBlack};
+    font-family: ${F.medium};
 
 `;
 const AdsQueryNumber = styled.Text`
     font-size: 13px;
-    color: ${COLORS.secondBlack};
-    font-family: ${FONTS.light};
+    color: ${C.secondBlack};
+    font-family: ${F.light};
 `;
 const NewsContainer = styled.View`
   margin-top: 30px;
@@ -50,15 +50,15 @@ const NewsItemInfo = styled.View`
   flex-direction: column;
 `;
 const NewsItemTitle = styled.Text`
-    color: ${COLORS.mainBlack};
-    font-family: ${FONTS.medium};
+    color: ${C.mainBlack};
+    font-family: ${F.medium};
     font-size: 19px;
     margin-bottom: 5px;
     line-height: 23.5px;
 `;
 const NewsItemDate = styled.Text`
-      color: ${COLORS.secondBlack};
-    font-family: ${FONTS.light};
+      color: ${C.secondBlack};
+    font-family: ${F.light};
     font-size: 13px;
 `;
 

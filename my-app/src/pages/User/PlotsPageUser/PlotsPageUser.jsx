@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FONTS from '@/res/fonts'
+import F from '@/res/fonts'
 import { StyleSheet, ScrollView, View } from 'react-native';
 
 import AdsFunctionalBar from '@/components/AdsFunctionalBar/AdsFunctionalBar';
@@ -24,11 +24,11 @@ export default function PlotsPageUser() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
     body: {
         backgroundColor: 'white',
         flex: 9,
-        fontFamily: FONTS.regular,
+        fontFamily: F.regular,
     },
 })

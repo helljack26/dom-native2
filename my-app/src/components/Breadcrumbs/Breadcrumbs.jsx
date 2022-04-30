@@ -7,8 +7,8 @@ import PageLocation from '@/components/helpers/pageLocation'
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';
 
-import FONTS from '@/res/fonts'
-import COLORS from '@/res/colors'
+import F from '@/res/fonts'
+import C from '@/res/colors'
 import IMAGES from '@/res/images'
 
 import styled from 'styled-components/native';
@@ -78,9 +78,9 @@ export default Breadcrumbs;
 const styles = StyleSheet.create({
     goBack: {
         marginLeft: 10,
-        color: COLORS.mainBlack,
+        color: C.mainBlack,
         fontSize: 12,
-        fontFamily: FONTS.light
+        fontFamily: F.light
     },
     breadcrumbs: {
         flex: 1,
@@ -88,12 +88,12 @@ const styles = StyleSheet.create({
     },
     ads: {
         fontSize: 12,
-        fontFamily: FONTS.regular,
-        color: COLORS.secondBlack,
+        fontFamily: F.regular,
+        color: C.secondBlack,
     },
     page: {
         fontSize: 12,
-        fontFamily: FONTS.regular,
-        color: COLORS.mainBlack,
+        fontFamily: F.regular,
+        color: C.mainBlack,
     }
 })
