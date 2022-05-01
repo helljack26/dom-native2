@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // User
-import HomePageUser from '../../src/pages/User/HomePageUser/HomePageUser.jsx';
+// import HomePageUser from '../../src/pages/User/HomePageUser/HomePageUser.jsx';
 import CardPageUser from '../../src/pages/User/CardPageUser/CardPageUser.jsx';
 // Categories 
 import ApartmentsPageUser from '../../src/pages/User/ApartmentsPageUser/ApartmentsPageUser.jsx'
@@ -27,7 +27,6 @@ export default function UserStackNavigator() {
                 headerShown: false,
             })}
         >
-            <Stack.Screen name="Home" component={HomePageUser} />
             <Stack.Screen name="CardPage" component={CardPageUser} />
             <Stack.Screen name="ApartmentsPage" component={ApartmentsPageUser} />
             <Stack.Screen name="ApartmentsComplexPage" component={ApartmentsComplexPageUser} />

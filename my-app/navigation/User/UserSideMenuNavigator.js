@@ -3,10 +3,13 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemL
 import Animated from 'react-native-reanimated';
 import UserTabsNavigator from './UserTabsNavigator';
 
+import { useCatalogApiStore } from '@/stores/CatalogApi';
+
 const Drawer = createDrawerNavigator();
 function CustomDrawerContent(props) {
-    const progress = useDrawerProgress();
+    const { setCatalog } = useCatalogApiStore();
 
+    const progress = useDrawerProgress();
     const translateX = Animated.interpolateNode(progress, {
         inputRange: [0, 1],
         outputRange: [-100, 0],
@@ -14,10 +17,14 @@ function CustomDrawerContent(props) {
     return (
         <DrawerContentScrollView {...props}>
             <Animated.View style={{ transform: [{ translateX }] }}>
-                <DrawerItem label="Объявления" onPress={() => props.navigation.navigate("Home")} />
-                <DrawerItem label="Новости" onPress={() => props.navigation.navigate("NewsUser")} />
-                <DrawerItem label="Новинки" onPress={() => props.navigation.navigate("NoveltiesPage")} />
-                <DrawerItem label="Контакты" onPress={() => props.navigation.navigate("ContactsPage")} />
+                <DrawerItem label="Объявления" onPress={() => {
+                    props.navigation.navigate('Объявления User'),
+                        setCatalog('Объявления User')
+                }
+                } />
+                <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenUser', { screen: "NewsUser" })} />
+                <DrawerItem label="Новинки" onPress={() => props.navigation.navigate('ScreenUser', { screen: "NoveltiesPage" })} />
+                <DrawerItem label="Контакты" onPress={() => props.navigation.navigate('ScreenUser', { screen: "ContactsPage" })} />
                 <DrawerItem label="Выход" onPress={() => props.navigation.navigate("Start")} />
             </Animated.View>
         </DrawerContentScrollView>

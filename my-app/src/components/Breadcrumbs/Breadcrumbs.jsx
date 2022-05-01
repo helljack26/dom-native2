@@ -28,10 +28,10 @@ const Breadcrumbs = observer(({ goBack }) => {
 
     // Reset catalog when press Обьявления
     const combine = () => {
-        setCatalog('Home'), navigation.navigate('Home')
+        setCatalog('Объявления User'), navigation.navigate('Объявления User')
     }
     const combineRealtor = () => {
-        setCatalog('HomePageRealtor'), navigation.navigate('HomePageRealtor')
+        setCatalog('Объявления Realtor'), navigation.navigate('Объявления Realtor')
     }
     // For catalog
     const isAds = ads &&
@@ -54,8 +54,7 @@ const Breadcrumbs = observer(({ goBack }) => {
     const isGoBack = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
-            onPress={() => navigation.goBack()}
-        >
+            onPress={() => navigation.goBack()}>
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>

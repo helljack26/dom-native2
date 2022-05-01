@@ -1,14 +1,28 @@
+import  React from 'react';
+import { useRef } from 'react';
+import { useRoute } from '@react-navigation/native';
+
 import F from '@/res/fonts'
-import React from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
 import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 
 export default function HomePageUser() {
-
+    const route = useRoute();
+    const scrollViewRef = useRef(null)
+    const scrollTop = () => {
+        if (scrollViewRef.current) {
+            scrollViewRef.current.scrollTo({ y: 0, animated: false })
+        }
+    }
+    if (route) {
+        scrollTop()
+    }
     return (
-        <View style={styles.body}>
+        <ScrollView
+            ref={scrollViewRef}
+            style={styles.body}>
             <ScrollView
                 horizontal={false}
                 style={styles.container} >
@@ -18,7 +32,7 @@ export default function HomePageUser() {
                 </Text>
                 <CatalogBlock isRecommendation={true} />
             </ScrollView>
-        </View>
+        </ScrollView>
     );
 }
 

@@ -12,6 +12,7 @@ border-radius: 4px;
 display: flex;
 align-items: center;
 justify-content: center;
+margin-left: 10px;
 `
 const ButtonSmall = styled.TouchableOpacity`
 background-color: white;
@@ -27,6 +28,6 @@ margin-left: 10px;
 margin-bottom: 8px;
 `
 export const styleCatalogButton = {
-    ButtonLarge:ButtonLarge,
-    ButtonSmall:ButtonSmall,
+    ButtonLarge: ButtonLarge,
+    ButtonSmall: ButtonSmall,
 }

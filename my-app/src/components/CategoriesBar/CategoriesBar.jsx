@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useRef } from 'react';
+import { useRoute } from '@react-navigation/native';
 import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -8,12 +10,22 @@ export default function CategoriesBar() {
     const [selectedId, setSelectedId] = useState(null);
     const navigation = useNavigation();
 
+    const route = useRoute();
+    const scrollViewRef = useRef(null)
+    const scrollTop = () => {
+        if (scrollViewRef.current) {
+            scrollViewRef.current.scrollTo({ x: 0, animated: false })
+        }
+    }
+    if (route) {
+        scrollTop()
+    }
     const RenderItem = ({ item, id }) => {
         const backgroundColor = item.id === selectedId ? "whitesmoke" : "black";
         return (
             <TouchableOpacity key={id}
                 onPress={() => {
-                    return navigation.navigate(item.path),
+                    return navigation.navigate('ScreenUser', { screen: item.path }),
                         setSelectedId(item.id)
                 }
                 }
@@ -28,6 +40,8 @@ export default function CategoriesBar() {
     return (
         <SafeAreaView>
             <ScrollView
+                showsHorizontalScrollIndicator={false}
+                ref={scrollViewRef}
                 style={styles.categories}
                 horizontal={true} >
                 <View style={styles.categories_block}>

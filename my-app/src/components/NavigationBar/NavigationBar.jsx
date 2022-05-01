@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
-import PageLocation from '@/components/helpers/pageLocation'
 import { useCatalogApiStore } from '@/stores/CatalogApi';
 
 import IMAGES from '@/res/images'
@@ -20,57 +19,61 @@ const {
     ChatActiveNavIcon,
 } = IMAGES;
 
-export default function NavbarItem({ focused, routeName }) {
-    const { isRealtor } = PageLocation();
+export default function NavbarItem({ focused, tabName }) {
+
     const navigation = useNavigation();
+
+    let focuseCheck = focused;
+
+    const splitedTabName = tabName.split(' ')[0]
+    const splitedTabNameIsRealtor = tabName.split(' ')[1]
 
     const { setCatalog } = useCatalogApiStore();
 
     let icon
     const iconSize = 16;
 
-    if (routeName === 'Объявления') {
-        icon = !focused ? <HomeNavIcon width={iconSize} height={iconSize} /> : <HomeActiveNavIcon width={iconSize} height={iconSize} />
-    } else if (routeName === 'Избранное') {
-        icon = !focused ? <HeartDefault width={iconSize} height={iconSize} /> : <HeartActive width={iconSize} height={iconSize} />
-    } else if (routeName === 'Создать') {
-        icon = !focused ? <AddNavIcon width={iconSize} height={iconSize} /> : <AddActiveNavIcon width={iconSize} height={iconSize} />
-    } else if (routeName === 'Подборки') {
-        icon = !focused ? <CollectionNavIcon width={iconSize} height={iconSize} /> : <CollectionActiveNavIcon width={iconSize} height={iconSize} />
-    } else if (routeName === 'Чаты') {
-        icon = !focused ? <ChatNavIcon width={iconSize} height={iconSize} /> : <ChatActiveNavIcon width={iconSize} height={iconSize} />
+    if (splitedTabName === 'Объявления') {
+        icon = !focuseCheck ? <HomeNavIcon width={iconSize} height={iconSize} /> : <HomeActiveNavIcon width={iconSize} height={iconSize} />
+
+    } else if (splitedTabName === 'Избранное') {
+        icon = !focuseCheck ? <HeartDefault width={iconSize} height={iconSize} /> : <HeartActive width={iconSize} height={iconSize} />
+    } else if (splitedTabName === 'Создать') {
+        icon = !focuseCheck ? <AddNavIcon width={iconSize} height={iconSize} /> : <AddActiveNavIcon width={iconSize} height={iconSize} />
+    } else if (splitedTabName === 'Подборки') {
+        icon = !focuseCheck ? <CollectionNavIcon width={iconSize} height={iconSize} /> : <CollectionActiveNavIcon width={iconSize} height={iconSize} />
+    } else if (splitedTabName === 'Чаты') {
+        icon = !focuseCheck ? <ChatNavIcon width={iconSize} height={iconSize} /> : <ChatActiveNavIcon width={iconSize} height={iconSize} />
     }
     const resetCatalog = () => {
-        return isRealtor !== true ?
-            (setCatalog('Home'), navigation.navigate('Home')
-            )
+        return splitedTabNameIsRealtor === 'Realtor' ?
+            (setCatalog('Объявления Realtor'), navigation.navigate("Объявления Realtor"))
             :
-            (setCatalog('HomePageRealtor'),
-                navigation.navigate('HomePageRealtor')
-            )
+            (setCatalog('Объявления User'), navigation.navigate('Объявления User'))
     }
-    return (routeName !== 'Объявления' ?
-        <View
-            style={styles.navbarTab}
-        >
-            {icon}
-            <Text numberOfLines={1}
-                ellipsizeMode='clip'
-                style={{ fontSize: 10, width: '15%', marginTop: 3, color: focused ? '#0072db' : '#222' }}>
-                {routeName}
-            </Text>
-        </View> :
+
+    return (splitedTabName === 'Объявления' ?
         <TouchableOpacity
             style={styles.navbarTab}
             onPress={() => resetCatalog()} >
             {icon}
             <Text numberOfLines={1}
                 ellipsizeMode='clip'
-                style={{ fontSize: 10, width: '15%', marginTop: 3, color: focused ? '#0072db' : '#222' }}>
-                {routeName}
+                style={{ fontSize: 10, width: '15%', marginTop: 3, color: focuseCheck ? '#0072db' : '#222' }}>
+                {splitedTabName}
             </Text>
         </TouchableOpacity>
-
+        :
+        <View
+            style={styles.navbarTab}
+        >
+            {icon}
+            <Text numberOfLines={1}
+                ellipsizeMode='clip'
+                style={{ fontSize: 10, width: '15%', marginTop: 3, color: focuseCheck ? '#0072db' : '#222' }}>
+                {splitedTabName}
+            </Text>
+        </View>
     )
 }
 

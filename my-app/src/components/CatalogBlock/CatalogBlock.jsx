@@ -14,6 +14,7 @@ import { styleCatalogBlock } from './styleCatalogBlock'
 import { styleRecommendationBlock } from './styleRecommendationBlock'
 
 const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
+
     // StyleSheet defined
     const style = isRecommendation !== undefined ? styleRecommendationBlock : styleCatalogBlock;
     const { isGallery, catalog, setCatalog } = useCatalogApiStore();
@@ -24,9 +25,8 @@ const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
 
     const route = useRoute();
     useEffect(() => {
-        if (route.name) setCatalog(route.name);
-    }, [route]);
-
+        setCatalog(route.name);
+    }, [route.name]);
     return (
         <>
             {isGallery &&

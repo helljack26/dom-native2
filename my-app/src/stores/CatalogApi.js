@@ -25,7 +25,7 @@ class CatalogApi {
         this.catalog.length === 0 && this.setGallery()
     }
     setCatalog(route) {
-        if (route === 'Home' || route === 'HomePageRealtor') {
+        if (route === 'Объявления User' || route === 'Объявления Realtor') {
             this.resetState()
             return this.catalog = apiMocks.RecommendationMockApi
         } else if (route === 'ApartmentsPage' || route === 'ApartmentsPageRealtor') {

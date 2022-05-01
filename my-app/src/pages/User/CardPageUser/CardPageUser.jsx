@@ -28,7 +28,7 @@ export default function CardPageUser() {
 
     const scrollTop = () => {
         if (scrollViewRef.current) {
-            scrollViewRef.current.scrollTo({ y: 0, animated: true })
+            scrollViewRef.current.scrollTo({ y: 0, animated: false })
         }
     }
     if (itemId) {

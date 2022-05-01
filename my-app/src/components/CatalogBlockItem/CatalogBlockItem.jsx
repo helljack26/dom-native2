@@ -71,9 +71,12 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
         <СatalogItem>
             <CatalogItemImageBlock
                 onPress={() => {
-                    navigation.navigate(isRealtorLink, {
-                        itemId: id,
-                        category: category,
+                    navigation.navigate('ScreenUser', {
+                        screen: isRealtorLink,
+                        params: {
+                            itemId: id,
+                            category: category,
+                        }
                     });
                 }}
             >
@@ -102,7 +105,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
 
             {/* Item Name */}
             <CatalogItemInfo>
-                <CatalogItemInfoBlock isRealtorHeight={isRealtorHeight}          >
+                <CatalogItemInfoBlock isRealtorHeight={isRealtorHeight} >
                     {/* Price */}
                     {oldPrice !== undefined && price !== undefined ?
                         <PriceBlock>
@@ -115,9 +118,12 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     {/* Name */}
                     {name !== undefined && <CatalogItemInfoName
                         onPress={() => {
-                            navigation.navigate(isRealtorLink, {
-                                itemId: id,
-                                category: category,
+                            navigation.navigate('ScreenUser', {
+                                screen: isRealtorLink,
+                                params: {
+                                    itemId: id,
+                                    category: category,
+                                }
                             });
                         }}
                     >
@@ -157,9 +163,12 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     </CatalogItemFooterBlock>
                     <CatalogItemFooterLink
                         onPress={() => {
-                            navigation.navigate(isRealtorLink, {
-                                itemId: id,
-                                category: category,
+                            navigation.navigate('ScreenUser', {
+                                screen: isRealtorLink,
+                                params: {
+                                    itemId: id,
+                                    category: category,
+                                }
                             });
                         }}
                     >

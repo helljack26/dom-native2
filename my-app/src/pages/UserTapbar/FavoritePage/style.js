@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import C from '@/res/colors'
 import F from '@/res/fonts'
+import { M } from '@/res/mixin'
 
 const Container = styled.ScrollView`
     width: 100%;
@@ -12,10 +13,8 @@ const Container = styled.ScrollView`
 const Header = styled.View`
     width: 100%;
 `;
-const HeaderText = styled.Text`
-    font-size: 23.5px;
+const HeaderText = styled(M.HeaderH1)`
     margin-bottom: 2px;
-    color: ${C.mainBlack};
 `;
 
 // Button

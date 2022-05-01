@@ -2,30 +2,22 @@ import { useRoute } from '@react-navigation/native';
 
 const PageLocation = () => {
     const route = useRoute();
+
     let title, ads, isRealtor
     switch (route.name) {
+        // HomePage
+        case 'Объявления User':
+            title = 'Объявления'
+
+            break;
         case 'ApartmentsPage':
             title = 'Квартиры'
             isRealtor = false
             ads = true
             break;
-        case 'HousesPage':
-            title = 'Дома'
-            isRealtor = false
-            ads = true
-            break;
-        case 'PlotsPage':
-            title = 'Участки'
-            isRealtor = false
-            ads = true
-            break;
-        case 'CommercePage':
-            title = 'Коммерческие объекты'
-            isRealtor = false
-            ads = true
-            break;
-        case 'RentPage':
-            title = 'Аренда'
+        // Apartments
+        case 'ApartmentsPage':
+            title = 'Квартиры'
             isRealtor = false
             ads = true
             break;
@@ -34,9 +26,33 @@ const PageLocation = () => {
             isRealtor = true
             ads = true
             break;
+
+        // Complex
+        case 'ApartmentsComplexPageRealtor':
+            title = 'Жк'
+            isRealtor = true
+            break;
+        case 'ApartmentsComplexPlanPageRealtor':
+            title = 'Шахматка'
+            isRealtor = true
+            break;
+
+        // House
+        case 'HousesPage':
+            title = 'Дома'
+            isRealtor = false
+            ads = true
+            break;
         case 'HousesPageRealtor':
             title = 'Дома'
             isRealtor = true
+            ads = true
+            break;
+
+        // Plots
+        case 'PlotsPage':
+            title = 'Участки'
+            isRealtor = false
             ads = true
             break;
         case 'PlotsPageRealtor':
@@ -44,9 +60,23 @@ const PageLocation = () => {
             isRealtor = true
             ads = true
             break;
+
+        // Commerce
+        case 'CommercePage':
+            title = 'Коммерческие объекты'
+            isRealtor = false
+            ads = true
+            break;
         case 'CommercePageRealtor':
             title = 'Коммерческие объекты'
             isRealtor = true
+            ads = true
+            break;
+
+        // Rent
+        case 'RentPage':
+            title = 'Аренда'
+            isRealtor = false
             ads = true
             break;
         case 'RentPageRealtor':
@@ -54,14 +84,57 @@ const PageLocation = () => {
             isRealtor = true
             ads = true
             break;
+
+        // Catalog card
+        case 'CardPage':
+            isRealtor = false
+            break;
+        case 'CardPageRealtor':
+            isRealtor = true
+            break;
+
+        // Tapbar
+        // Favorite
+        case 'Избранное User':
+            title = 'Избранное'
+            break;
+        case 'Избранное Realtor':
+            title = 'Избранное'
+            isRealtor = true
+            break;
+        // Add
+        case 'Создать User':
+            title = 'Создать'
+            break;
+        case 'Создать Realtor':
+            title = 'Создать'
+            isRealtor = true
+            break;
+        // Collection
+        case 'Подборки Realtor':
+            title = 'Подборки'
+            isRealtor = true
+            break;
+        case 'CollectionsCardPageRealtor':
+            title = 'Подборки'
+            isRealtor = true
+            break;
+        // Chats
+        case 'Чаты User':
+            title = 'Чаты'
+            break;
+        case 'Чаты Realtor':
+            title = 'Чаты'
+            isRealtor = true
+            break;
+
+        // SideMenu
         case 'NewsUser':
             title = 'Новости'
             break;
         case 'NewsRealtor':
             title = 'Новости'
-            break;
-        case 'Избранное':
-            title = 'Избранное'
+            isRealtor = true
             break;
         case 'NoveltiesPage':
             title = 'Новинки'
@@ -73,28 +146,10 @@ const PageLocation = () => {
             ads = true
             title = 'Новинки'
             break;
-        case 'CardPage':
-            isRealtor = false
-            break;
-        case 'CardPageRealtor':
-            isRealtor = true
-            break;
-        case 'CollectionsPageRealtor':
-            title = 'Подборки'
-            break;
-        case 'CollectionsCardPageRealtor':
-            title = 'Подборки'
-            isRealtor = true
-            ads = false
-            break;
-        case '/contacts':
+
+        case 'ContactsPageRealtor':
             title = 'Контакты'
-            break;
-        case '/chats':
-            title = 'Чаты'
-            break;
-        case '/news':
-            title = 'Новости'
+            isRealtor = true
             break;
         default:
             break;
