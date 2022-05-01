@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // Realtor
-import HomePageRealtor from '../../src/pages/Realtor/HomePageRealtor/HomePageRealtor.jsx';
 import CardPageRealtor from '../../src/pages/Realtor/CardPageRealtor/CardPageRealtor.jsx';
 // Categories 
 import ApartmentsPageRealtor from '../../src/pages/Realtor/ApartmentsPageRealtor/ApartmentsPageRealtor.jsx'
@@ -16,8 +15,6 @@ import NewsRealtorPage from '../../src/pages/RealtorSideMenuPages/NewsRealtorPag
 import NewsCardRealtor from '../../src/pages/RealtorSideMenuPages/NewsCardRealtor/NewsCardRealtor';
 import NoveltiesPageRealtor from '../../src/pages/RealtorSideMenuPages/NoveltiesPageRealtor/NoveltiesPageRealtor';
 import ContactsPageRealtor from '../../src/pages/RealtorSideMenuPages/ContactsPageRealtor/ContactsPageRealtor';
-{/* Tabs sub screen */}
-import CollectionsCardPageRealtor from '../../src/pages/RealtorTapbar/CollectionsCardPageRealtor/CollectionsCardPageRealtor';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,8 +26,6 @@ export default function RealtorStackNavigator() {
                 headerBackVisible: false,
                 headerShown: false,
             })}>
-            <Stack.Screen name="HomePageRealtor" component={HomePageRealtor} />
-            <Stack.Screen name="CardPageRealtor" component={CardPageRealtor} />
             <Stack.Screen name="ApartmentsPageRealtor" component={ApartmentsPageRealtor} />
             <Stack.Screen name="ApartmentsComplexPageRealtor" component={ApartmentsComplexPageRealtor} />
             <Stack.Screen name="ApartmentsComplexPlanPageRealtor" component={ApartmentsComplexPlanPageRealtor} />
@@ -43,7 +38,7 @@ export default function RealtorStackNavigator() {
             <Stack.Screen name="NewsCardRealtor" component={NewsCardRealtor} />
             <Stack.Screen name="NoveltiesPageRealtor" component={NoveltiesPageRealtor} />
             <Stack.Screen name="ContactsPageRealtor" component={ContactsPageRealtor} />
-            {/* Tabs sub screen */}
-            <Stack.Screen name="CollectionsCardPageRealtor" component={CollectionsCardPageRealtor} />
+            <Stack.Screen name="CardPageRealtor" component={CardPageRealtor} />
+
         </Stack.Navigator>)
 }

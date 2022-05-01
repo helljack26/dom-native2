@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
 import F from '@/res/fonts'
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, Text } from 'react-native';
 
 import CategoriesBar from '@/components/CategoriesBar/CategoriesBar';
 import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';

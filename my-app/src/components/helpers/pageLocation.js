@@ -111,7 +111,7 @@ const PageLocation = () => {
             isRealtor = true
             break;
         // Collection
-        case 'Подборки Realtor':
+        case 'CollectionsPageRealtor':
             title = 'Подборки'
             isRealtor = true
             break;

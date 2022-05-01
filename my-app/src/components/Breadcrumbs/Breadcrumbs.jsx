@@ -24,8 +24,9 @@ margin-top: 15px;
 const Breadcrumbs = observer(({ goBack }) => {
     const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
+    const state = navigation.getState();
     const { setCatalog } = useCatalogApiStore();
-
+    console.log(state.history);
     // Reset catalog when press Обьявления
     const combine = () => {
         setCatalog('Объявления User'), navigation.navigate('Объявления User')
@@ -54,7 +55,7 @@ const Breadcrumbs = observer(({ goBack }) => {
     const isGoBack = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
-            onPress={() => navigation.goBack()}>
+            onPress={() => navigation.goBack(null)}>
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>
@@ -62,7 +63,7 @@ const Breadcrumbs = observer(({ goBack }) => {
     const isGoBackRealtor = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
-            onPress={() => navigation.goBack()}>
+            onPress={() => navigation.goBack(null)}>
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>

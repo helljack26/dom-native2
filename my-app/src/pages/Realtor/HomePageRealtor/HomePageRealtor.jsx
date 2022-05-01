@@ -1,6 +1,10 @@
-import F from '@/res/fonts'
 import React from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { useRef, useEffect } from 'react';
+import { useRoute } from '@react-navigation/native';
+import { useCatalogApiStore } from '@/stores/CatalogApi';
+
+import F from '@/res/fonts'
+import { StyleSheet, ScrollView, Text } from 'react-native';
 
 import CategoriesBarRealtor from '@/components/CategoriesBarRealtor/CategoriesBarRealtor';
 import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
@@ -8,9 +12,25 @@ import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
 export default function HomePageRealtor() {
     const percentButton = <PercentButton isBig={false} isRecommendation={true} />
+    const route = useRoute();
+    const scrollViewRef = useRef(null)
+    const { setCatalog } = useCatalogApiStore();
 
+    const scrollTop = () => {
+        if (scrollViewRef.current) {
+            scrollViewRef.current.scrollTo({ y: 0, animated: false })
+        }
+    }
+    useEffect(() => {
+        if (route.name) {
+            scrollTop()
+            setCatalog('Объявления Realtor')
+        }
+    }, [route.name]);
     return (
-        <View style={styles.body}>
+        <ScrollView
+            ref={scrollViewRef}
+            style={styles.body}>
             <ScrollView
                 horizontal={false}
                 style={styles.container} >
@@ -20,7 +40,7 @@ export default function HomePageRealtor() {
                 </Text>
                 <CatalogBlock percentButton={percentButton} isRecommendation={true} />
             </ScrollView>
-        </View>
+        </ScrollView>
     );
 }
 

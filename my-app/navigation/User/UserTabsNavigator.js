@@ -26,9 +26,6 @@ const UserTabsNavigator = ({ navigation }) => {
         tabBarStyle: { width: '100%', justifyContent: 'space-between', alignItems: 'center' },
         tabBarShowLabel: false,
         tabBarIcon: ({ focused }) => {
-          if (route.name === 'ScreenUser') {
-            return null
-          }
           return <NavbarItem tabName={route.name} focused={focused} />
         },
       })}  >

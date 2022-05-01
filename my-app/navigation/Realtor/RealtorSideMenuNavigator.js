@@ -3,8 +3,12 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, useDrawerPr
 import Animated from 'react-native-reanimated';
 import RealtorTabsNavigator from './RealtorTabsNavigator';
 
+import { useCatalogApiStore } from '@/stores/CatalogApi';
+
 const Drawer = createDrawerNavigator();
 function CustomDrawerContent(props) {
+    const { setCatalog } = useCatalogApiStore();
+
     const progress = useDrawerProgress();
 
     const translateX = Animated.interpolateNode(progress, {
@@ -14,14 +18,18 @@ function CustomDrawerContent(props) {
     return (
         <DrawerContentScrollView {...props}>
             <Animated.View style={{ transform: [{ translateX }] }}>
-                <DrawerItem label="Объявления" onPress={() => props.navigation.navigate("HomePageRealtor")} />
-                <DrawerItem label="Новости" onPress={() => props.navigation.navigate("NewsRealtor")} />
-                <DrawerItem label="Новинки" onPress={() => props.navigation.navigate("NoveltiesPageRealtor")} />
-                <DrawerItem label="Контакты" onPress={() => props.navigation.navigate("ContactsPageRealtor")} />
-                <DrawerItem label="Шахматка" onPress={() => props.navigation.navigate("ApartmentsComplexPlanPageRealtor", {
-                        complexId: 2658,
-                        planId: 1215
-                    })} />
+                <DrawerItem label="Объявления" onPress={() => {
+                    props.navigation.navigate('Объявления Realtor'),
+                        setCatalog('Объявления Realtor')
+                }
+                } />
+                <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NewsRealtor" })} />
+                <DrawerItem label="Новинки" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NoveltiesPageRealtor" })} />
+                <DrawerItem label="Контакты" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ContactsPageRealtor" })} />
+                <DrawerItem label="Шахматка" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ApartmentsComplexPlanPageRealtor" }, {
+                    complexId: 2658,
+                    planId: 1215
+                })} />
                 <DrawerItem label="Выход" onPress={() => props.navigation.navigate("Start")} />
             </Animated.View>
         </DrawerContentScrollView>
@@ -33,6 +41,7 @@ const RealtorSideMenuNavigator = () => {
             initialRouteName="Home"
             useLegacyImplementation
             drawerContent={(props) => <CustomDrawerContent {...props} />}
+
             screenOptions={() => ({
                 itemStyle: { padding: 5 },
                 headerBackVisible: false,

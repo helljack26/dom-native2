@@ -43,7 +43,7 @@ const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
                 </Main>}
             {isGallery === false &&
                 <Image
-                    style={styles.map_template}
+                    style={{ width: '100%' }}
                     source={IMAGES.map_template} />
             }
         </>

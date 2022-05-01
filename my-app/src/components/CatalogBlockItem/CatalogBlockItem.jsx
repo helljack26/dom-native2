@@ -64,6 +64,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
     const spacedPrice = spaceInPriceValue(price)
     const spacedOldPrice = spaceInPriceValue(oldPrice)
 
+    const isRealtor = percentButton !== undefined ? 'ScreenRealtor' : 'ScreenUser'
     const isRealtorLink = percentButton !== undefined ? 'CardPageRealtor' : 'CardPage'
     const isRealtorHeight = percentButton !== undefined ? '97px' : '64px'
 
@@ -71,7 +72,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
         <СatalogItem>
             <CatalogItemImageBlock
                 onPress={() => {
-                    navigation.navigate('ScreenUser', {
+                    navigation.navigate(isRealtor, {
                         screen: isRealtorLink,
                         params: {
                             itemId: id,
@@ -118,7 +119,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     {/* Name */}
                     {name !== undefined && <CatalogItemInfoName
                         onPress={() => {
-                            navigation.navigate('ScreenUser', {
+                            navigation.navigate(isRealtor, {
                                 screen: isRealtorLink,
                                 params: {
                                     itemId: id,
@@ -163,7 +164,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     </CatalogItemFooterBlock>
                     <CatalogItemFooterLink
                         onPress={() => {
-                            navigation.navigate('ScreenUser', {
+                            navigation.navigate(isRealtor, {
                                 screen: isRealtorLink,
                                 params: {
                                     itemId: id,
