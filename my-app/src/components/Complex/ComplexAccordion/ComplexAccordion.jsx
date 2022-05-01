@@ -91,7 +91,7 @@ const ComplexAccordion = ({ details }) => {
                 </ScrollView>
 
                 {/* Benefits */}
-                <Block_header onPress={combine2}   >
+                <Block_header onPress={combine2} >
                     <Block_header_Text >
                         Преимущества
                     </Block_header_Text>
@@ -100,8 +100,8 @@ const ComplexAccordion = ({ details }) => {
                         size={15}
                         color="black" />
                 </Block_header>
-                   
-                    {/*Content of Single Collapsible*/}
+
+                {/*Benefits*/}
                 <ScrollView>
                     <Collapsible collapsed={collapsed2} align="center">
                         <About_block>
@@ -125,7 +125,7 @@ const ComplexAccordion = ({ details }) => {
                         color="black" />
                 </Block_header>
 
-                {/*Collapsible Content*/}
+                {/*Description*/}
                 <ScrollView>
                     <Collapsible collapsed={collapsed3} align="center">
                         <Description>

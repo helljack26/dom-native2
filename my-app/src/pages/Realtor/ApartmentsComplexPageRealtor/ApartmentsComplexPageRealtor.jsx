@@ -1,7 +1,7 @@
 import F from '@/res/fonts'
 
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import {  SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
@@ -16,10 +16,12 @@ import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
 import { apiMocks } from '@/api/mock/apiMocks'
 
-import { style } from './style.js'
-const {
-    Main
-} = style;
+import styled from 'styled-components/native';
+const Main = styled.ScrollView`
+width: 100%;
+background-color: white;
+padding: 0px 4%;
+`;
 
 export default function ApartmentsComplexPageRealtor() {
     const route = useRoute();
@@ -28,7 +30,7 @@ export default function ApartmentsComplexPageRealtor() {
     const scrollViewRef = useRef(null)
     const scrollTop = () => {
         if (scrollViewRef.current) {
-            scrollViewRef.current.scrollTo({ y: 0, animated: true })
+            scrollViewRef.current.scrollTo({ y: 0, animated: false })
         }
     }
     if (complexId) {
@@ -43,13 +45,13 @@ export default function ApartmentsComplexPageRealtor() {
     const percentButton = <PercentButton isBig={false} />
 
     return (
-        <SafeAreaView style={styles.body}>
+        <SafeAreaView>
             <Main ref={scrollViewRef} horizontal={false}>
 
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={photoLargePath} />
                 <ComplexDetailsRealtor details={objectDetails} />
-                <ComplexDetailsPlans details={objectDetails} role={'Realtor'} />
+                <ComplexDetailsPlans details={objectDetails} isRealtor={true} />
 
                 <CardSaveButton />
                 <CardSimilarObject percentButton={percentButton} />
@@ -58,10 +60,3 @@ export default function ApartmentsComplexPageRealtor() {
         </SafeAreaView >
     )
 }
-const styles = StyleSheet.create({
-    body: {
-        backgroundColor: 'white',
-        flex: 9,
-        fontFamily: F.regular,
-    },
-})

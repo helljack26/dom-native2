@@ -1,7 +1,5 @@
-import F from '@/res/fonts'
-
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
@@ -50,7 +48,7 @@ export default function ApartmentsComplexPlanPageRealtor() {
     } = planDetails;
 
 
-    return (<SafeAreaView style={styles.body}>
+    return (<SafeAreaView >
         <Main horizontal={false}>
 
             {/* Go back */}
@@ -108,10 +106,3 @@ export default function ApartmentsComplexPlanPageRealtor() {
     </SafeAreaView >
     )
 }
-const styles = StyleSheet.create({
-    body: {
-        backgroundColor: 'white',
-        flex: 9,
-        fontFamily: F.regular,
-    },
-})

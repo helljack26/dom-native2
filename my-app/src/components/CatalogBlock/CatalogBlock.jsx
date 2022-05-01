@@ -25,8 +25,10 @@ const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
 
     const route = useRoute();
     useEffect(() => {
-        setCatalog(route.name);
-    }, [route.name]);
+        if (route) {
+            setCatalog(route.name);
+        }
+    }, [route]);
     return (
         <>
             {isGallery &&

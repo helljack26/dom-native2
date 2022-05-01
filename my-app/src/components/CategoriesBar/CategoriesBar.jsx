@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { StyleSheet, TouchableOpacity, Text, ScrollView, SafeAreaView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -17,9 +17,12 @@ export default function CategoriesBar() {
             scrollViewRef.current.scrollTo({ x: 0, animated: false })
         }
     }
-    if (route) {
-        scrollTop()
-    }
+    useEffect(() => {
+        if (route) {
+            scrollTop()
+        }
+    }, [route]);
+
     const RenderItem = ({ item, id }) => {
         const backgroundColor = item.id === selectedId ? "whitesmoke" : "black";
         return (

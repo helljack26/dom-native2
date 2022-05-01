@@ -27,7 +27,7 @@ const {
     ExpiryDateLabel,
 } = styles;
 
-const ComplexDetailsPlans = ({ details, role }) => {
+const ComplexDetailsPlans = ({ details, isRealtor }) => {
     const {
         plans,
     } = details;
@@ -37,6 +37,8 @@ const ComplexDetailsPlans = ({ details, role }) => {
     const PartsBlockItem = ({ data }) => {
         const { planName, planDescription, isDone, planId } = data;
 
+        const isRealtorScreen = isRealtor === true ? 'ScreenRealtor' : 'ScreenUser'
+        const isRealtorPlanLink = isRealtor === true ? 'ApartmentsComplexPlanPageRealtor' : 'ApartmentsComplexPlanPageUser'
         if (data === undefined) {
             return
         } else {
@@ -54,9 +56,12 @@ const ComplexDetailsPlans = ({ details, role }) => {
                         </BlockItemInfo>
                         <BlockItemLink
                             onPress={() => {
-                                navigation.navigate(`ApartmentsComplexPlanPage${role}`, {
-                                    complexId: details.complexId,
-                                    planId: planId,
+                                navigation.navigate(isRealtorScreen, {
+                                    screen: isRealtorPlanLink,
+                                    params: {
+                                        complexId: details.complexId,
+                                        planId: planId,
+                                    }
                                 });
                             }}
                         >

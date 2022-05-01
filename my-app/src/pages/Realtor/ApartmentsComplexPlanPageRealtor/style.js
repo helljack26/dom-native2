@@ -6,7 +6,7 @@ const Main = styled.ScrollView`
 width: 100%;
 background-color: white;
 padding: 0px 4%;
-margin-top: 15px;
+padding-top: 15px;
 `;
 const PlanHeader = styled.View`
 width: 100%;

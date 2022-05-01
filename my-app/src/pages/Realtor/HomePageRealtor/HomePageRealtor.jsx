@@ -22,11 +22,11 @@ export default function HomePageRealtor() {
         }
     }
     useEffect(() => {
-        if (route.name) {
+        if (route) {
             scrollTop()
             setCatalog('Объявления Realtor')
         }
-    }, [route.name]);
+    }, [route]);
     return (
         <ScrollView
             ref={scrollViewRef}

@@ -26,7 +26,7 @@ const Breadcrumbs = observer(({ goBack }) => {
     const navigation = useNavigation();
     const state = navigation.getState();
     const { setCatalog } = useCatalogApiStore();
-    console.log(state.history);
+
     // Reset catalog when press Обьявления
     const combine = () => {
         setCatalog('Объявления User'), navigation.navigate('Объявления User')

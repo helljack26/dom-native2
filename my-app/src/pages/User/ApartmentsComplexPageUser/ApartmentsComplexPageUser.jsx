@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import {  SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 import F from '@/res/fonts'
@@ -13,10 +13,13 @@ import ComplainLink from '@/components/Buttons/ComplainLink/ComplainLink'
 import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
 import { apiMocks } from '@/api/mock/apiMocks'
 
-import { style } from './style.js'
-const {
-    Main,
-} = style;
+import styled from 'styled-components/native';
+
+const Main = styled.ScrollView`
+width: 100%;
+background-color: white;
+padding: 0px 4%;
+`;
 
 export default function ApartmentsComplexPageUser() {
     const route = useRoute();
@@ -25,7 +28,7 @@ export default function ApartmentsComplexPageUser() {
 
     const scrollTop = () => {
         if (scrollViewRef.current) {
-            scrollViewRef.current.scrollTo({ y: 0, animated: true })
+            scrollViewRef.current.scrollTo({ y: 0, animated: false })
         }
     }
     if (complexId) {
@@ -37,14 +40,14 @@ export default function ApartmentsComplexPageUser() {
 
     const { photoLargePath } = objectDetails;
     return (
-        <SafeAreaView style={styles.body}>
+        <SafeAreaView >
             <Main
                 ref={scrollViewRef}
                 horizontal={false}>
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={photoLargePath} />
                 <ComplexDetailsUser details={objectDetails} />
-                <ComplexDetailsPlans details={objectDetails} role={'User'} />
+                <ComplexDetailsPlans details={objectDetails} isRealtor={false}/>
 
                 {/* Complain link */}
                 <ComplainLink />
@@ -53,10 +56,3 @@ export default function ApartmentsComplexPageUser() {
         </SafeAreaView >
     )
 }
-const styles = StyleSheet.create({
-    body: {
-        backgroundColor: 'white',
-        flex: 9,
-        fontFamily: F.regular,
-    },
-})

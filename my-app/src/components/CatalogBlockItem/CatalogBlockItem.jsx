@@ -11,11 +11,17 @@ import ShareButton from '@/components/Buttons/ShareButton/ShareButton';
 import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
 // Styles
-import { styleCatalog } from './styleCatalog'
-import { styleRecommendation } from './styleRecommendation'
+import { styleCatalogItem } from './styleCatalogItem'
+import { styleRecommendationItem } from './styleRecommendationItem'
 const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
-    // StyleSheet defined
-    const style = isRecommendation !== undefined ? styleRecommendation : styleCatalog;
+    const isRealtor = percentButton !== undefined ? true : false;
+
+    const isRealtorScreen = isRealtor ? 'ScreenRealtor' : 'ScreenUser'
+    const isRealtorLink = isRealtor ? 'CardPageRealtor' : 'CardPage'
+    const isRealtorHeight = isRealtor ? '97px' : '64px'
+
+    // StyleSheet defined first check if recommendation block and after block realtor or user
+    const style = isRecommendation !== undefined ? styleRecommendationItem : styleCatalogItem;
     const {
         СatalogItem,
         CatalogItemImageBlock,
@@ -64,15 +70,11 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
     const spacedPrice = spaceInPriceValue(price)
     const spacedOldPrice = spaceInPriceValue(oldPrice)
 
-    const isRealtor = percentButton !== undefined ? 'ScreenRealtor' : 'ScreenUser'
-    const isRealtorLink = percentButton !== undefined ? 'CardPageRealtor' : 'CardPage'
-    const isRealtorHeight = percentButton !== undefined ? '97px' : '64px'
-
     return (
         <СatalogItem>
             <CatalogItemImageBlock
                 onPress={() => {
-                    navigation.navigate(isRealtor, {
+                    navigation.navigate(isRealtorScreen, {
                         screen: isRealtorLink,
                         params: {
                             itemId: id,
@@ -105,8 +107,13 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
             </CatalogItemImageBlock>
 
             {/* Item Name */}
-            <CatalogItemInfo>
-                <CatalogItemInfoBlock isRealtorHeight={isRealtorHeight} >
+            <CatalogItemInfo
+                isRealtorPaddingRight={isRealtor}
+            >
+                <CatalogItemInfoBlock
+                    isRealtorHeight={isRealtorHeight}
+                    isRealtorPaddingRight={isRealtor}
+                >
                     {/* Price */}
                     {oldPrice !== undefined && price !== undefined ?
                         <PriceBlock>
@@ -119,7 +126,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     {/* Name */}
                     {name !== undefined && <CatalogItemInfoName
                         onPress={() => {
-                            navigation.navigate(isRealtor, {
+                            navigation.navigate(isRealtorScreen, {
                                 screen: isRealtorLink,
                                 params: {
                                     itemId: id,
@@ -164,7 +171,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     </CatalogItemFooterBlock>
                     <CatalogItemFooterLink
                         onPress={() => {
-                            navigation.navigate(isRealtor, {
+                            navigation.navigate(isRealtorScreen, {
                                 screen: isRealtorLink,
                                 params: {
                                     itemId: id,
@@ -178,7 +185,6 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                         </CatalogItemFooterLinkText>
                     </CatalogItemFooterLink>
                 </CatalogItemFooter>
-
 
                 {/* Buttons  */}
                 <DetailsBtnBlock>

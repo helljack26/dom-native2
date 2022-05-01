@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import PageLocation from '@/components/helpers/pageLocation'
@@ -69,6 +69,15 @@ const CardAccordion = ({ objectDetails, description }) => {
     const [isEnabled2, setIsEnabled2] = useState(false);
     const [collapsed1, setCollapsed1] = useState(true);
     const [collapsed2, setCollapsed2] = useState(true);
+    // Reset state if new page
+    useEffect(() => {
+        if (objectDetails) {
+            setIsEnabled1(false)
+            setIsEnabled2(false)
+            setCollapsed1(true)
+            setCollapsed2(true)
+        }
+    }, [objectDetails])
 
     // Open Accordion and change Arrow Icon
     const combine1 = function () {
@@ -80,7 +89,7 @@ const CardAccordion = ({ objectDetails, description }) => {
         setIsEnabled2((previousState) => !previousState)
     }
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView >
             <About >
                 {/* First */}
                 <Block_header onPress={combine1}   >

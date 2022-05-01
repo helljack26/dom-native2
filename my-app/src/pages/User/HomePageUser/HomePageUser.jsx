@@ -1,6 +1,7 @@
-import  React from 'react';
-import { useRef } from 'react';
+import React from 'react';
+import { useRef, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
+import { useCatalogApiStore } from '@/stores/CatalogApi';
 
 import F from '@/res/fonts'
 import { StyleSheet, ScrollView, Text } from 'react-native';
@@ -11,14 +12,20 @@ import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 export default function HomePageUser() {
     const route = useRoute();
     const scrollViewRef = useRef(null)
+    const { setCatalog } = useCatalogApiStore();
+
     const scrollTop = () => {
         if (scrollViewRef.current) {
             scrollViewRef.current.scrollTo({ y: 0, animated: false })
         }
     }
-    if (route) {
-        scrollTop()
-    }
+    useEffect(() => {
+        if (route) {
+            scrollTop()
+            setCatalog('Объявления User')
+        }
+    }, [route]);
+
     return (
         <ScrollView
             ref={scrollViewRef}
