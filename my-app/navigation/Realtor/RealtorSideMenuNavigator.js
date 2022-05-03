@@ -26,10 +26,7 @@ function CustomDrawerContent(props) {
                 <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NewsRealtor" })} />
                 <DrawerItem label="Новинки" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NoveltiesPageRealtor" })} />
                 <DrawerItem label="Контакты" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ContactsPageRealtor" })} />
-                <DrawerItem label="Шахматка" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ApartmentsComplexPlanPageRealtor" }, {
-                    complexId: 2658,
-                    planId: 1215
-                })} />
+                <DrawerItem label="Шахматка" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ApartmentsComplexPlanPageRealtor", params: { complexId: 2658, planId: 1215 } })} />
                 <DrawerItem label="Выход" onPress={() => props.navigation.navigate("Start")} />
             </Animated.View>
         </DrawerContentScrollView>

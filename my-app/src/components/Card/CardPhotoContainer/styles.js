@@ -19,7 +19,7 @@ margin-top: 23px;
 const MapButton = styled.TouchableOpacity`
 bottom: 16px;
 border-radius: 8px;
-width: 48.8%;
+width: 100%;
 font-size: 16px;
 flex-direction: row;
 display: flex;

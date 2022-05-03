@@ -5,6 +5,7 @@ import C from '@/res/colors'
 const PlanFiltersMobile = styled.TouchableOpacity`
 display: flex;
 flex-direction: row;
+z-index: 0;
 justify-content: center;
 align-items: center;
 width: 100%;

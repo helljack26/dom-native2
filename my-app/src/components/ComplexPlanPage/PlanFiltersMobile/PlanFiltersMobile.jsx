@@ -13,7 +13,13 @@ const PlanFilters = () => {
     const filterCounter = 3;
 
     return (<>
-        < PlanFiltersMobile >
+        < PlanFiltersMobile
+            style={{
+                zIndex: 0,
+                elevation: 0,
+                // overflow: 'visible',
+            }}
+        >
             <PlanFiltersMobileText>
                 Фильтры
             </PlanFiltersMobileText>

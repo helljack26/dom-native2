@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { apiMocks } from '@/api/mock/apiMocks'
 
+import PlanHeaderSelect from '@/components/ComplexPlanPage/PlanHeaderSelect/PlanHeaderSelect'
 import PlanFiltersMobile from '@/components/ComplexPlanPage/PlanFiltersMobile/PlanFiltersMobile'
 import PlanChessRealtor from '@/components/ComplexPlanPage/PlanChessRealtor/PlanChessRealtor'
 
@@ -35,18 +36,22 @@ export default function ApartmentsComplexPlanPageRealtor() {
     const { complexId, planId } = route.params;
 
     const complexApi = apiMocks.ApartmentComplexMockApi;
-    const cardDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
-    const planDetails = cardDetails.plans.find((item) => item.planId === Number(planId) && item);
+    const complexDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
+    const planDetails = complexDetails.plans.find((item) => item.planId === Number(planId) && item);
 
     const {
         name
-    } = cardDetails;
+    } = complexDetails;
     const {
         planName,
         isDone,
         planEntrance,
     } = planDetails;
 
+    // const forChessItemHashUrl = {
+    //     complexId: complexId,
+    //     planId: planId,
+    // }
 
     return (<SafeAreaView >
         <Main horizontal={false}>
@@ -92,6 +97,14 @@ export default function ApartmentsComplexPlanPageRealtor() {
                 <PlanHeaderComplex>{name}</PlanHeaderComplex>
 
             </PlanHeader>
+
+            {/* Chess select */}
+            <PlanHeaderSelect
+                complexDetails={complexDetails}
+                currentPlanName={planName}
+                screen={'ScreenRealtor'}
+                planPageLink={'ApartmentsComplexPlanPageRealtor'}
+            />
 
             {/* Filters */}
             <PlanFiltersMobile />

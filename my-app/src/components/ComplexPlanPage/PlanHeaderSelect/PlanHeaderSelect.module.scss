@@ -1,0 +1,157 @@
+@import "src/scss/_variables.scss";
+
+.dropBlock {
+    width: 100%;
+    .drop {
+        position: relative;
+
+        color: $secondBlack;
+        background-color: white;
+        width: inherit;
+        border-radius: 5px;
+        border: 1px solid #e6ecf5;
+        user-select: none;
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            background-color: whitesmoke;
+        }
+
+        &_header {
+            background-color: white;
+            width: inherit;
+            cursor: pointer;
+            display: flex;
+            padding: 7px 0px;
+            line-height: 2rem;
+            background: $arrowDownSelect;
+            background-position-x: calc(100% - 15px);
+            transition: all 0.3s ease-in-out;
+            padding-left: 13px;
+            padding-right: 40px;
+            white-space: nowrap;
+            align-items: center;
+            border: none;
+            font-family: $lightFont;
+
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                background-color: rgba(241, 241, 241, 0.466);
+            }
+        }
+
+        &_container {
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            z-index: 999;
+            background-color: white;
+        }
+        &_container_list {
+            width: 100%;
+            border: 1px solid #e6ecf5;
+            font-family: $regularFont;
+
+            li,
+            a {
+                cursor: pointer;
+                font-family: $lightFont;
+                font-size: 13px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 10px 0px;
+                padding-left: 15px;
+                line-height: 2rem;
+                transition: all 0.3s ease-in-out;
+
+                list-style-type: none;
+                &:hover {
+                    background-color: rgba(241, 241, 241, 0.466);
+                }
+            }
+            &_disable {
+                pointer-events: none;
+                cursor: default;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .dropBlock {
+        .drop {
+            position: relative;
+            color: $secondBlack;
+            width: fit-content;
+            border: 1px solid #e6ecf5;
+            user-select: none;
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                background-color: whitesmoke;
+            }
+
+            &_header {
+                background-color: white;
+                width: fit-content;
+                min-width: 160px;
+                display: flex;
+                padding: 5px 0px;
+                line-height: 2rem;
+                border-radius: 5px;
+                background-position-x: calc(100% - 15px);
+                transition: all 0.3s ease-in-out;
+                padding-left: 13px;
+                white-space: nowrap;
+                padding-right: 7vw;
+                align-items: center;
+                border: none;
+                font-family: $lightFont;
+
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    background-color: rgba(241, 241, 241, 0.466);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 914px) {
+    .dropBlock {
+        .drop {
+            width: 100%;
+
+            border-radius: 5px;
+            &_header {
+                width: 100%;
+
+                // padding-right: 6vw;
+
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    background-color: rgba(241, 241, 241, 0.466);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 850px) {
+    .dropBlock {
+        width: 44vw;
+    }
+}
+@media screen and (max-width: 567px) {
+    .dropBlock {
+        width: 100vw;
+    }
+}

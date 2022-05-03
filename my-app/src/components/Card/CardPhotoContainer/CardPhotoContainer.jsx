@@ -57,14 +57,10 @@ export default function CardPhotoContainer({ photoCollection }) {
             </Button>
             <BtnBlock>
                 <MapButton>
-                    <ShowOnMapIcon width={18} />
-                    <AllPhotoText
-                    >На карте</AllPhotoText>
-                </MapButton>
-                <MapButton>
-                    <RouteIcon width={18} />
-                    <AllPhotoText
-                    >Маршрут</AllPhotoText>
+                    <ShowOnMapIcon width={16} />
+                    <AllPhotoText >
+                        Смотреть на карте
+                    </AllPhotoText>
                 </MapButton>
             </BtnBlock>
         </View>
