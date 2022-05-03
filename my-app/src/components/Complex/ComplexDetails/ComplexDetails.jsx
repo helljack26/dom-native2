@@ -1,10 +1,12 @@
 import React from 'react';
+
 import { StyleSheet, View } from 'react-native';
 
 import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
 import CardDetailsButtonBar from '@/components/Card/CardDetailsButtonBar/CardDetailsButtonBar'
 import ComplexAccordion from '../ComplexAccordion/ComplexAccordion'
+import PhoneButton from '@/components/Buttons/PhoneButton/PhoneButton'
 
 import { style } from './style'
 const { Container,
@@ -22,7 +24,7 @@ const { Container,
     Price_block_price_square,
 } = style;
 
-const ComplexDetails = ({ details,percentButtonLarge }) => {
+const ComplexDetails = ({ details, percentButtonLarge }) => {
     const {
         name,
         price,
@@ -33,6 +35,7 @@ const ComplexDetails = ({ details,percentButtonLarge }) => {
         totalArea,
         inFavorite,
         isDone,
+        contactNumbers,
         // coords,
         // agentId,
         // percentageText,
@@ -76,8 +79,10 @@ const ComplexDetails = ({ details,percentButtonLarge }) => {
                         <Price_block_price_square>от {priceForSquareMeter} $ за м²</Price_block_price_square>
                     </Price_block_square_rating>
                 </Price_block>
-                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge}/>
+                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge} />
             </Price>
+            {/* Contacts button */}
+            <PhoneButton contactNumbers={contactNumbers} />
 
             {/* About object */}
             <ComplexAccordion details={details} />
