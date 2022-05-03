@@ -39,6 +39,13 @@ font-family: ${F.medium};
 color: ${C.mainBlack};
 font-size: 19px;
 `;
+const PlanHeaderChess = styled(PlanHeaderName)`
+font-family: ${F.regular};
+color: ${C.mainBlack};
+font-size: 16px;
+margin-top: 22px;
+/* margin-bottom: 5px; */
+`;
 const PlanHeaderComplex = styled.Text`
 font-family: ${F.light};
 color: ${C.mainBlack};
@@ -81,6 +88,7 @@ export const style = {
     Main: Main,
     PlanHeader: PlanHeader,
     PlanHeaderNameBlock: PlanHeaderNameBlock,
+    PlanHeaderChess: PlanHeaderChess,
     PlanHeaderName: PlanHeaderName,
     PlanHeaderComplex: PlanHeaderComplex,
     DoneLabel: DoneLabel,

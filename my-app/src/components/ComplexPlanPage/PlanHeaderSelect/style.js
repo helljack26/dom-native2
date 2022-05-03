@@ -3,7 +3,6 @@ import F from '@/res/fonts'
 import C from '@/res/colors'
 
 const DropBlock = styled.View`
-margin-top: 22px;
 width: 100%;
 `;
 const Drop = styled.TouchableOpacity`
@@ -52,7 +51,7 @@ flex-direction: row;
 align-items: center;
 border-bottom-color: ${C.borderGray};
 border-bottom-width: 1px;
-height: 42px;
+height: 45px;
 padding: 0px 16px;
 
 `;

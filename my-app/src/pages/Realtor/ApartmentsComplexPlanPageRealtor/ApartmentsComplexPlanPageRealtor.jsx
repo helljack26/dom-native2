@@ -18,6 +18,7 @@ const {
     PlanHeader,
     PlanHeaderNameBlock,
     PlanHeaderName,
+    PlanHeaderChess,
     PlanHeaderComplex,
     DoneLabel,
     LabelText,
@@ -99,6 +100,9 @@ export default function ApartmentsComplexPlanPageRealtor() {
             </PlanHeader>
 
             {/* Chess select */}
+            <PlanHeaderChess>
+                Шахматки
+            </PlanHeaderChess>
             <PlanHeaderSelect
                 complexDetails={complexDetails}
                 currentPlanName={planName}

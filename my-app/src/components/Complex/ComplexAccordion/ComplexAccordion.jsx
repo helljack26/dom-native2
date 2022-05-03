@@ -25,6 +25,7 @@ const ComplexAccordion = ({ details }) => {
     const {
         name,
         description,
+        objectContacts,
         objectDetails,
         objectBenefits,
     } = details;
@@ -42,6 +43,9 @@ const ComplexAccordion = ({ details }) => {
         </About_block_ul_li>
     }
 
+    const [collapsed0, setCollapsed0] = useState(true);
+    const [isEnabled0, setIsEnabled0] = useState(false);
+
     const [collapsed1, setCollapsed1] = useState(true);
     const [isEnabled1, setIsEnabled1] = useState(false);
 
@@ -52,6 +56,10 @@ const ComplexAccordion = ({ details }) => {
     const [isEnabled3, setIsEnabled3] = useState(false);
 
     // Open Accordion and change Arrow Icon
+    const combine0 = function () {
+        setCollapsed0(!collapsed0)
+        setIsEnabled0((previousState) => !previousState)
+    }
     const combine1 = function () {
         setCollapsed1(!collapsed1)
         setIsEnabled1((previousState) => !previousState)
@@ -67,7 +75,30 @@ const ComplexAccordion = ({ details }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <About >
-                {/* First */}
+                {/* Contacts */}
+                <Block_header onPress={combine0}   >
+                    <Block_header_Text >
+                        Контакты
+                    </Block_header_Text>
+                    <AntDesign
+                        name={isEnabled0 ? 'up' : 'down'}
+                        size={15}
+                        color="black" />
+                </Block_header>
+                <ScrollView>
+                    {/*Content of Single Collapsible*/}
+                    <Collapsible collapsed={collapsed0} align="center">
+                        <About_block>
+                            <About_block_ul>
+                                {objectContacts !== undefined ?
+                                    objectContacts.map((item, id) => <Li data={item} key={id} />) : null
+                                }
+                            </About_block_ul>
+                        </About_block>
+                    </Collapsible>
+                </ScrollView>
+
+                {/* About */}
                 <Block_header onPress={combine1}   >
                     <Block_header_Text >
                         Про {name}

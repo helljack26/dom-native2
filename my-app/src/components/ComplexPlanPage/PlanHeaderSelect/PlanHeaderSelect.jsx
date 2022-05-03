@@ -34,7 +34,6 @@ const PlanHeaderSelect = ({ complexDetails, currentPlanName, screen, planPageLin
 
     }
     selectGenerate(complexDetails.plans)
-    console.log(DecorateFilters);
     const { header, item } = DecorateFilters;
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
