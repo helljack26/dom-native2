@@ -93,8 +93,8 @@ const ComplexDetailsPlans = ({ details, isRealtor }) => {
     }
 
     // Open Accordion and change Arrow Icon
-    const [collapsed, setCollapsed] = useState(true);
-    const [isEnabled, setIsEnabled] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
+    const [isEnabled, setIsEnabled] = useState(true);
     const combine = function () {
         setCollapsed(!collapsed)
         setIsEnabled((previousState) => !previousState)
@@ -104,7 +104,7 @@ const ComplexDetailsPlans = ({ details, isRealtor }) => {
             <Plans>
                 <Block_header onPress={combine}>
                     <Block_header_Text >
-                        Корпуса
+                        Шахматки
                     </Block_header_Text>
                     <AntDesign
                         name={isEnabled ? 'up' : 'down'}

@@ -107,9 +107,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
             </CatalogItemImageBlock>
 
             {/* Item Name */}
-            <CatalogItemInfo
-                isRealtorPaddingRight={isRealtor}
-            >
+            <CatalogItemInfo isRealtorPaddingRight={isRealtor}>
                 <CatalogItemInfoBlock
                     isRealtorHeight={isRealtorHeight}
                     isRealtorPaddingRight={isRealtor}
@@ -133,8 +131,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                                     category: category,
                                 }
                             });
-                        }}
-                    >
+                        }} >
                         <CatalogItemInfoNameText>
                             {name}
                         </CatalogItemInfoNameText>
@@ -193,7 +190,6 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     <AddToFavoriteButton inFavorite={inFavorite} isBig={false} isRecommendation={isRecommendation} />
                 </DetailsBtnBlock>
             </CatalogItemInfo>
-
 
         </СatalogItem>
     )

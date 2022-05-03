@@ -8,7 +8,7 @@ import { useRoute } from '@react-navigation/native';
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import CardDetailsContainerRealtor from '@/components/Card/CardDetailsContainerRealtor/CardDetailsContainerRealtor'
+import CardDetailsContainer from '@/components/Card/CardDetailsContainer/CardDetailsContainer'
 import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
 import CardAgentContainer from '@/components/Card/CardAgentContainer/CardAgentContainer'
 import CardSimilarObject from '@/components/Card/CardSimilarObject/CardSimilarObject'
@@ -59,14 +59,16 @@ export default function CardPageRealtor() {
 
     const { id, photoLargePath } = objectDetails;
     const percentButton = <PercentButton isBig={false} />
+    const percentButtonLarge = <PercentButton isBig={true} />
     return (
         <SafeAreaView style={styles.body}>
             <Main
                 ref={scrollViewRef}
-                horizontal={false}>
+                horizontal={false}
+            >
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={photoLargePath} />
-                <CardDetailsContainerRealtor details={objectDetails} />
+                <CardDetailsContainer details={objectDetails} percentButtonLarge={percentButtonLarge} />
                 <CardSaveButton />
                 <CardAgentContainer agentId={id} />
                 <CardSimilarObject percentButton={percentButton} />

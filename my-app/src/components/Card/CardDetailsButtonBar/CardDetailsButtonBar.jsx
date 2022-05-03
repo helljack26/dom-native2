@@ -17,7 +17,7 @@ const {
     FavoriteView_block_text,
 } = styles;
 
-const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
+const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber, percentButtonLarge }) => {
 
     return (
         <Card_details>
@@ -42,6 +42,7 @@ const CardDetailsButtonBar = ({ inFavorite, favoriteNumber, viewNumber }) => {
 
             {/* Buttons */}
             <Details_mobile>
+                {percentButtonLarge !== undefined && percentButtonLarge}
                 <ShareButton isBig={true} />
                 <AddToFavoriteButton isBig={true} inFavorite={inFavorite} />
             </Details_mobile>

@@ -6,7 +6,7 @@ import F from '@/res/fonts'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import ComplexDetailsUser from '@/components/Complex/ComplexDetailsUser/ComplexDetailsUser'
+import ComplexDetails from '@/components/Complex/ComplexDetails/ComplexDetails'
 import ComplexDetailsPlans from '@/components/Complex/ComplexDetailsPlans/ComplexDetailsPlans'
 import ComplainLink from '@/components/Buttons/ComplainLink/ComplainLink'
 
@@ -46,7 +46,7 @@ export default function ApartmentsComplexPageUser() {
                 horizontal={false}>
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={photoLargePath} />
-                <ComplexDetailsUser details={objectDetails} />
+                <ComplexDetails details={objectDetails} />
                 <ComplexDetailsPlans details={objectDetails} isRealtor={false}/>
 
                 {/* Complain link */}

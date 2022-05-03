@@ -25,7 +25,7 @@ const {
     Price_block_price_rating,
 } = style;
 
-const CardDetailsContainer = ({ details }) => {
+const CardDetailsContainer = ({ details,percentButtonLarge }) => {
     const {
         name,
         price,
@@ -82,7 +82,7 @@ const CardDetailsContainer = ({ details }) => {
                         <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
                     </Price_block_square_rating>
                 </Price_block>
-                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
+                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge}/>
             </Price>
 
             {/* About object */}

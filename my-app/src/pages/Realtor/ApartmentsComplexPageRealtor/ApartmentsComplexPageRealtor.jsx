@@ -7,7 +7,7 @@ import { useRoute } from '@react-navigation/native';
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
-import ComplexDetailsRealtor from '@/components/Complex/ComplexDetailsRealtor/ComplexDetailsRealtor'
+import ComplexDetails from '@/components/Complex/ComplexDetails/ComplexDetails'
 import ComplexDetailsPlans from '@/components/Complex/ComplexDetailsPlans/ComplexDetailsPlans'
 
 import CardSaveButton from '@/components/Card/CardSaveButton/CardSaveButton'
@@ -43,6 +43,7 @@ export default function ApartmentsComplexPageRealtor() {
     const { photoLargePath } = objectDetails;
 
     const percentButton = <PercentButton isBig={false} />
+    const percentButtonLarge = <PercentButton isBig={true} />
 
     return (
         <SafeAreaView>
@@ -50,7 +51,7 @@ export default function ApartmentsComplexPageRealtor() {
 
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={photoLargePath} />
-                <ComplexDetailsRealtor details={objectDetails} />
+                <ComplexDetails details={objectDetails} percentButtonLarge={percentButtonLarge}/>
                 <ComplexDetailsPlans details={objectDetails} isRealtor={true} />
 
                 <CardSaveButton />

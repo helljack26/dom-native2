@@ -50,6 +50,8 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 font-size: 13px;
+padding-right: 132px;
+
 `;
 const Price = styled.Text`
 font-family: ${F.medium};
@@ -65,22 +67,19 @@ text-decoration: line-through;
 
 const DetailsBtnBlock = styled.View`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 position: absolute;
-top: 0;
+top: -5px;
 right: 0;
-
 `;
 const CatalogItemInfo = styled.View`
 display: flex;
 flex-direction: column;
 margin-top: 10px;
+padding-top: 5px;
 min-height: 122px;
-padding-right: ${props => props.isRealtorPaddingRight ? 45 + 'px' : 0 + 'px'};
 `;
 const CatalogItemInfoBlock = styled.View`
-padding-right: 45px;
-padding-right: ${props => props.isRealtorPaddingRight ? 0 + 'px' : 45 + 'px'};
 display: flex;
 flex-direction: column;
 `;

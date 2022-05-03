@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native';
 
 import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
-import CardDetailsButtonBarRealtor from '../CardDetailsButtonBarRealtor/CardDetailsButtonBarRealtor'
-import CardAccordion from '../CardAccordion/CardAccordion'
+import CardDetailsButtonBar from '@/components/Card/CardDetailsButtonBar/CardDetailsButtonBar'
+import ComplexAccordion from '../ComplexAccordion/ComplexAccordion'
 
 import { style } from './style'
 const { Container,
@@ -20,10 +20,9 @@ const { Container,
     Price_block_price,
     Price_block_square_rating,
     Price_block_price_square,
-    Price_block_price_rating,
 } = style;
 
-const CardDetailsContainerRealtor = ({ details }) => {
+const ComplexDetails = ({ details,percentButtonLarge }) => {
     const {
         name,
         price,
@@ -33,9 +32,7 @@ const CardDetailsContainerRealtor = ({ details }) => {
         viewNumber,
         totalArea,
         inFavorite,
-        isNewHouse,
-        objectDetails,
-        description,
+        isDone,
         // coords,
         // agentId,
         // percentageText,
@@ -52,16 +49,16 @@ const CardDetailsContainerRealtor = ({ details }) => {
                     <Name_block_header_text>
                         {name}
                         <View style={styles.catalog_item_separate}></View>
-                        {isNewHouse !== undefined ? isNewHouse === true ?
+                        {isDone !== undefined ? isDone === true ?
                             <Name_block_header_text_block_new>
                                 <Name_block_header_type>
-                                    Новостройка
+                                    Сдан
                                 </Name_block_header_type>
                             </Name_block_header_text_block_new>
                             :
                             <Name_block_header_text_block>
                                 <Name_block_header_type>
-                                    Вторичное жилье
+                                    {isDone}
                                 </Name_block_header_type>
                             </Name_block_header_text_block> : null}
                     </Name_block_header_text>
@@ -74,25 +71,24 @@ const CardDetailsContainerRealtor = ({ details }) => {
             {/* Price */}
             <Price>
                 <Price_block>
-                    <Price_block_price>{spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
+                    <Price_block_price>от {spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
                     <Price_block_square_rating>
-                        <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>
-                        <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
+                        <Price_block_price_square>от {priceForSquareMeter} $ за м²</Price_block_price_square>
                     </Price_block_square_rating>
                 </Price_block>
-                <CardDetailsButtonBarRealtor inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} />
+                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge}/>
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails} description={description} />
+            <ComplexAccordion details={details} />
         </Container>
     )
 }
 
-export default CardDetailsContainerRealtor;
+export default ComplexDetails;
+
 const styles = StyleSheet.create({
     catalog_item_separate: {
         width: 7,
-    },
-
+    }
 });
