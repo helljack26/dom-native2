@@ -8,8 +8,6 @@ padding: 0px 30px;
 height: 100%;
 width: 100%;
 background-color: white;
-padding-top: 35px;
-padding-bottom: 25px;
 display: flex;
 justify-content: center;
 flex-direction: column;

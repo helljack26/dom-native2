@@ -1,7 +1,10 @@
 import React from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import {
+    useNavigation
+    // , useRoute 
+} from '@react-navigation/native';
 import C from '@/res/colors'
 
 // Images
@@ -32,6 +35,7 @@ const {
 
 const LoginPage = () => {
     const navigation = useNavigation();
+    // const route = useRoute();
 
     const { control, handleSubmit, resetField, formState: { errors } } = useForm({
         defaultValues: { userValue: '', password: '' }
@@ -42,6 +46,7 @@ const LoginPage = () => {
     const [inputFocus2, setInputFocus2] = useState(C.borderGray);
 
     const onSubmit = (data) => {
+        console.log("🚀 ~ file: LoginPage.jsx ~ line 49 ~ onSubmit ~ data", data)
         // Clear input value
         resetField('userValue');
         resetField('password');
@@ -62,8 +67,7 @@ const LoginPage = () => {
                     <Controller
                         control={control}
                         rules={{
-                            required: 'Не валидный email',
-                            message: 'Не можем найти ваш аккаунт'
+                            required: true,
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <FormInputBlock>
@@ -84,7 +88,7 @@ const LoginPage = () => {
                                         borderColor: `${errors.userValue ? 'red' : inputFocus1}`
                                     }}
                                 />
-                                {errors.userValue && <ErrorMessage>{errors.userValue.message}</ErrorMessage>}
+                                {errors.userValue && <ErrorMessage>Не валидный email</ErrorMessage>}
                             </FormInputBlock>
                         )}
                         name="userValue"
@@ -94,8 +98,7 @@ const LoginPage = () => {
                     <Controller
                         control={control}
                         rules={{
-                            required: 'Обязательное поле*',
-                            message: 'Проверьте правильность пароля'
+                            required: true,
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <FormInputBlock>
@@ -128,7 +131,7 @@ const LoginPage = () => {
                                     </ShowPasswordIconButton>
                                 </FormInputContainer>
 
-                                {errors.password && <ErrorMessage>{errors.userValue.message}</ErrorMessage>}
+                                {errors.password && <ErrorMessage>Проверьте правильность пароля</ErrorMessage>}
                             </FormInputBlock>
                         )}
                         name="password"

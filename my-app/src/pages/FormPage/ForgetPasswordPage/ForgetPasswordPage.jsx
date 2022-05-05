@@ -34,7 +34,7 @@ const ForgetPasswordPage = () => {
     const navigation = useNavigation();
 
     const { control, handleSubmit, resetField, formState: { errors } } = useForm({
-        defaultValues: { email: '', password: '' }
+        defaultValues: { email: '', codeWord: '' }
     });
 
     const [codeWordShown, setCodeWordShown] = useState(false);
@@ -42,9 +42,10 @@ const ForgetPasswordPage = () => {
     const [inputFocus2, setInputFocus2] = useState(C.borderGray);
 
     const onSubmit = (data) => {
+        console.log("🚀 ~ file: ForgetPasswordPage.jsx ~ line 45 ~ onSubmit ~ data", data)
         // Clear input value
         resetField('email');
-        resetField('password');
+        resetField('codeWord');
         return
     };
 
@@ -62,9 +63,8 @@ const ForgetPasswordPage = () => {
                     <Controller
                         control={control}
                         rules={{
-                            required: 'Обязательное поле',
-                            value: /\S+@\S+\.\S+/,
-                            message: 'Не валидный email'
+                            required: true,
+                            value: /\S+@\S+\.\S+/
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <FormInputBlock>
@@ -85,7 +85,7 @@ const ForgetPasswordPage = () => {
                                         borderColor: `${errors.email ? 'red' : inputFocus1}`
                                     }}
                                 />
-                                {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+                                {errors.email && <ErrorMessage>Не валидный email</ErrorMessage>}
                             </FormInputBlock>
                         )}
                         name="email"
@@ -95,8 +95,7 @@ const ForgetPasswordPage = () => {
                     <Controller
                         control={control}
                         rules={{
-                            required: 'Обязательное поле*',
-                            message: 'Кодовое слово не совпадает'
+                            required: true,
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <FormInputBlock>
@@ -118,7 +117,6 @@ const ForgetPasswordPage = () => {
                                         style={{ borderColor: `${errors.codeWord ? 'red' : inputFocus2}` }}
                                     />
                                     <ShowPasswordIconButton
-                                        type='button'
                                         onPress={() => setCodeWordShown(!codeWordShown)}
                                     >
                                         {!codeWordShown ?
@@ -129,7 +127,7 @@ const ForgetPasswordPage = () => {
                                     </ShowPasswordIconButton>
                                 </FormInputContainer>
 
-                                {errors.codeWord && <ErrorMessage>{errors.codeWord.message}</ErrorMessage>}
+                                {errors.codeWord && <ErrorMessage>Кодовое слово не совпадает</ErrorMessage>}
                             </FormInputBlock>
                         )}
                         name="codeWord"
@@ -146,7 +144,7 @@ const ForgetPasswordPage = () => {
                             Вспомнили пароль?
                         </FooterText>
 
-                        <Link onPress={() => navigation.navigate('LogimPage')}>
+                        <Link onPress={() => navigation.navigate('LoginPage')}>
                             <LinkText>
                                 Войдите в личный кабинет
                             </LinkText>

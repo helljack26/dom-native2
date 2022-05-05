@@ -1,20 +1,20 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from "react-hook-form";
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import C from '@/res/colors'
 
-import C from 'res/colors'
-import HeaderDesktopUser from 'components/HeaderDesktopUser'
-import HeaderMobileUser from 'components/HeaderMobileUser'
-
-import Footer from 'components/Footer'
-import TapbarMobile from 'components/TapbarMobile'
-
-import IMAGES from 'res/images';
+// Images
+import IMAGES from '@/res/images'
+const {
+    CheckedIcon,
+    ShowPasswordIcon,
+    ShowPasswordBlueIcon
+} = IMAGES;
 // Styles
 import { style } from './style'
 const {
     Container,
-    ContainerBlock,
     HeaderText,
     FormBlock,
     FormInputBlock,
@@ -26,22 +26,32 @@ const {
     ShowPasswordIconButton,
     Link,
     LinkText,
+    LinkTextDisable,
     AgreementBlock,
+    CheckboxBlock,
+    Checkbox,
     AgreementText,
     FooterBlock,
     FooterText,
-    CheckboxBlock,
-    Checkbox,
-    CheckboxImg,
     ErrorMessage,
 } = style;
 
 const RegistrationPage = () => {
-    const { register, handleSubmit, resetField, formState: { errors } } = useForm();
-    const [checkboxState, setCheckboxState] = useState(false);
+    const navigation = useNavigation();
+
+    const { control, handleSubmit, resetField, formState: { errors } } = useForm({
+        defaultValues: { userValue: '', password: '', codeWord: '', agreementCheckbox: '' }
+    });
 
     const [passwordShown, setPasswordShown] = useState(false);
     const [codeWordShown, setCodeWordShown] = useState(false);
+
+    const [inputFocus1, setInputFocus1] = useState(C.borderGray);
+    const [inputFocus2, setInputFocus2] = useState(C.borderGray);
+    const [inputFocus3, setInputFocus3] = useState(C.borderGray);
+
+    const [checkboxBorder, setCheckboxBorder] = useState(C.borderGray);
+    const [checkboxState, setCheckboxState] = useState();
 
     const onSubmit = (data) => {
         // Clear input value
@@ -49,175 +59,220 @@ const RegistrationPage = () => {
         resetField('password');
         resetField('codeWord');
         setCheckboxState(false)
-        window.location = '#/'
+        console.log(data);
+        navigation.navigate(
+            'LoginPage',
+            // TODO тут может быть текст успешной регистрации
+            // {
+            //     params: {
+            //         afterRegistration: [`Пользователь ${userValue} успешно зарегистрирован`,`Проверьте почту и `],
+            //     }
+            // }
+        )
         return
     };
 
     return (
         <>
-            <HeaderDesktopUser />
-            <HeaderMobileUser />
-
             <Container>
-                <ContainerBlock>
-                    <HeaderText>
-                        Регистрация
-                    </HeaderText>
+                <HeaderText>
+                    Регистрация
+                </HeaderText>
 
-                    {/* Form */}
-                    <FormBlock onSubmit={handleSubmit(onSubmit)}>
+                {/* Form */}
+                <FormBlock >
+                    {/* Email or number */}
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: 'Обязательное поле',
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <FormInputBlock>
+                                <FormInputLabel>
+                                    E-mail или номер телефона &nbsp;&nbsp;
+                                </FormInputLabel>
+                                <FormInput
+                                    selectionColor={C.mainBlue}
+                                    cursorColor={C.mainBlue}
+                                    onFocus={() => setInputFocus1(C.mainBlue)}
+                                    onBlur={() => {
+                                        onBlur
+                                        setInputFocus1(C.borderGray)
+                                    }}
+                                    onChangeText={onChange}
+                                    value={value}
+                                    style={{
+                                        borderColor: `${errors.userValue ? 'red' : inputFocus1}`
+                                    }}
+                                />
+                                {errors.userValue && <ErrorMessage>Обязательное поле</ErrorMessage>}
+                            </FormInputBlock>
+                        )}
+                        name="userValue"
+                    />
 
-                        {/* Email or Number */}
-                        <FormInputBlock>
+                    {/* Password */}
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: 'Обязательное поле',
+                            // value: '^([@#](?=[^aeiou]{7,13}$)(?=[[:alnum:]]{7,13}$)(?=.*[A-Z]{1,}.*$).+)$'
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <FormInputBlock>
+                                <FormInputLabel>
+                                    Пароль &nbsp;&nbsp;
+                                </FormInputLabel>
+                                <FormInputContainer>
+                                    <FormInput
+                                        secureTextEntry={!passwordShown ? true : false}
+                                        selectionColor={C.mainBlue}
+                                        cursorColor={C.mainBlue}
+                                        onFocus={() => setInputFocus2(C.mainBlue)}
+                                        onBlur={() => {
+                                            onBlur
+                                            setInputFocus2(C.borderGray)
+                                        }}
+                                        onChangeText={onChange}
+                                        value={value}
+                                        style={{ borderColor: `${errors.password ? 'red' : inputFocus2}` }}
+                                    />
+                                    <ShowPasswordIconButton
+                                        onPress={() => setPasswordShown(!passwordShown)}
+                                    >
+                                        {!passwordShown ?
+                                            <ShowPasswordIcon width={20} height={20} />
+                                            :
+                                            <ShowPasswordBlueIcon width={20} height={20} />
+                                        }
+                                    </ShowPasswordIconButton>
+                                </FormInputContainer>
 
-                            <FormInputLabel htmlFor="userValue">
-                                E-mail или номер телефона &nbsp;&nbsp;
-                                {errors.userValue && <ErrorMessage>{errors.userValue.message}</ErrorMessage>}
-                            </FormInputLabel>
+                                {errors.password && <ErrorMessage>Обязательное поле</ErrorMessage>}
+                            </FormInputBlock>
+                        )}
+                        name="password"
+                    />
 
-                            <FormInput
-                                style={{
-                                    outlineColor: errors.userValue !== undefined && 'red'
-                                }}
+                    {/* Code word */}
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: 'Обязательное поле',
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <FormInputBlock>
+                                <FormInputLabel>
+                                    Кодовое слово &nbsp;&nbsp;
+                                </FormInputLabel>
+                                <FormInputContainer>
+                                    <FormInput
+                                        secureTextEntry={!codeWordShown ? true : false}
+                                        selectionColor={C.mainBlue}
+                                        cursorColor={C.mainBlue}
+                                        onFocus={() => setInputFocus3(C.mainBlue)}
+                                        onBlur={() => {
+                                            onBlur
+                                            setInputFocus3(C.borderGray)
+                                        }}
+                                        onChangeText={onChange}
+                                        value={value}
+                                        style={{ borderColor: `${errors.codeWord ? 'red' : inputFocus3}` }}
+                                    />
+                                    <ShowPasswordIconButton
+                                        type='button'
+                                        onPress={() => setCodeWordShown(!codeWordShown)}
+                                    >
+                                        {!codeWordShown ?
+                                            <ShowPasswordIcon width={20} height={20} />
+                                            :
+                                            <ShowPasswordBlueIcon width={20} height={20} />
+                                        }
+                                    </ShowPasswordIconButton>
+                                </FormInputContainer>
 
-                                id="userValue"
-                                {...register('userValue', {
-                                    required: "Обязательное поле*",
-                                    pattern: {
-                                        // value: /\S+@\S+\.\S+/,
-                                        message: "Введите ваш e-mail"
+                                {errors.codeWord && <ErrorMessage>Обязательное поле</ErrorMessage>}
+                            </FormInputBlock>
+                        )}
+                        name="codeWord"
+                    />
+
+                    {/* Agreement checkbox */}
+                    <AgreementBlock>
+                        <Controller
+                            control={control}
+                            rules={{
+                                required: true,
+                            }}
+                            render={({ field: { onChange } }) => (
+                                <CheckboxBlock
+                                    onPress={() => {
+                                        setCheckboxBorder(C.borderGray)
+                                        setCheckboxState(checkboxState ? false : true)
+                                        onChange(true)
+                                        checkboxState === true && onChange('')
                                     }
-                                })} />
-                        </FormInputBlock>
-
-                        {/* Password */}
-                        <FormInputBlock>
-
-                            <FormInputLabel htmlFor="password">
-                                Пароль&nbsp;&nbsp;
-                                {errors.password && <ErrorMessage role="alert">Не правильный пароль</ErrorMessage>}
-                            </FormInputLabel>
-
-                            <FormInputContainer>
-                                <FormInput
+                                    }
                                     style={{
-                                        outlineColor: errors.password !== undefined && 'red'
+                                        borderColor: errors.agreementCheckbox ? 'red' : checkboxBorder,
                                     }}
-                                    as='input'
-                                    type={passwordShown ? "text" : "password"}
-                                    id="password"
-                                    {...register("password", {
-                                        required: "Обязательное поле*",
-                                        pattern: {
-                                            message: "Не правильный пароль"
-                                        }
-                                    })}
-                                />
+                                >
+                                    <Checkbox
+                                        style={{
+                                            opacity: 0,
+                                            width: 0,
+                                            height: 0,
+                                        }}
+                                    />
+                                    {checkboxState ? <CheckedIcon width={20} height={20} /> : null}
 
-                                <ShowPasswordIconButton
-                                    type='button'
-                                    isActive={passwordShown}
-                                    buttonImage={IMAGES.ShowPasswordIcon}
-                                    onClick={() => setPasswordShown(!passwordShown)}
-                                ></ShowPasswordIconButton>
-                            </FormInputContainer>
+                                </CheckboxBlock>
+                            )}
+                            name="agreementCheckbox"
+                        />
 
-                        </FormInputBlock>
-
-                        {/* Code word */}
-                        <FormInputBlock>
-
-                            <FormInputLabel htmlFor="codeWord">
-                                Кодовое слово&nbsp;&nbsp;
-                                {errors.codeWord && <ErrorMessage role="alert">{errors.codeWord.message}</ErrorMessage>}
-                            </FormInputLabel>
-
-                            <FormInputContainer>
-                                <FormInput
-                                    style={{
-                                        outlineColor: errors.codeWord !== undefined && 'red',
-                                    }}
-                                    as='input'
-                                    type={codeWordShown ? "text" : "password"}
-                                    id="codeWord"
-                                    {...register("codeWord", {
-                                        required: "Обязательное поле*",
-                                        pattern: {
-                                            message: "Введите кодовое слово"
-                                        }
-                                    })}
-                                />
-
-                                <ShowPasswordIconButton
-                                    type='button'
-                                    isActive={codeWordShown}
-                                    buttonImage={IMAGES.ShowPasswordIcon}
-                                    onClick={() => setCodeWordShown(!codeWordShown)}
-                                ></ShowPasswordIconButton>
-                            </FormInputContainer>
-
-                        </FormInputBlock>
-
-                        <AgreementBlock>
-                            <CheckboxBlock
-                                htmlFor="checkbox"
-                                style={{
-                                    border: errors.checkbox !== undefined ? '1px solid red' : `1px solid ${C.borderGray}`
-                                }}
-                            >
-                                <Checkbox
-                                    as='input'
-                                    id="checkbox"
-                                    type="checkbox" value={true}
-                                    {...register("checkbox",
-                                        { required: true }
-                                    )}
-                                    onClick={() => setCheckboxState(checkboxState === true ? false : true)}
-
-                                />
-                                <CheckboxImg>
-                                    {checkboxState === true ? <img src={IMAGES.CheckedIcon} alt='Checked icon' /> : null}
-                                </CheckboxImg>
-
-                            </CheckboxBlock>
-
-
-                            <AgreementText>
-                                Я соглашаюсь с
-                                <Link href='#/rules'>
-                                    <LinkText> правилами использования сервиса</LinkText>
-                                </Link>
-                                , а также с передачей
-                                и обработкой моих данных сервисом. Я подтверждаю своё совершеннолетие и
-                                ответственность за размещение объявления
-                            </AgreementText>
-                        </AgreementBlock>
-
-                        <ButtonSubmit
-                            as='button'
-                            type="submit"
-                        >
-                            <ButtonSubmitText>
-                                Зарегистрироваться
-                            </ButtonSubmitText>
-                        </ButtonSubmit>
-
-                        <FooterBlock>
-                            <FooterText>
-                                Уже есть аккаунт?
-                            </FooterText>
-
-                            <Link href='#/login'>
-                                <LinkText>Войдите в личный кабинет</LinkText>
+                        <AgreementText>
+                            <Link
+                                // TODO тут должна быть ссылка на соглашение 
+                                onPress={() => navigation.navigate('RulePage')}>
+                                <LinkText>
+                                    <LinkTextDisable
+                                        pointerEvents="none"
+                                        style={{
+                                            elevation: 2,
+                                            zIndex: 5
+                                        }}
+                                    >Я соглашаюсь с </LinkTextDisable>
+                                    правилами использования сервиса
+                                    <LinkTextDisable>, </LinkTextDisable>
+                                </LinkText>
                             </Link>
-                        </FooterBlock>
-                    </FormBlock>
-                </ContainerBlock>
+                            а также с передачей
+                            и обработкой моих данных сервисом. Я подтверждаю своё совершеннолетие и
+                            ответственность за размещение объявления
+                        </AgreementText>
+                    </AgreementBlock>
 
+                    <ButtonSubmit onPress={handleSubmit(onSubmit)}>
+                        <ButtonSubmitText>
+                            Зарегистрироваться
+                        </ButtonSubmitText>
+                    </ButtonSubmit>
+
+                    <FooterBlock>
+                        <FooterText>
+                            Уже есть аккаунт?
+                        </FooterText>
+
+                        <Link onPress={() => navigation.navigate('LoginPage')}>
+                            <LinkText>
+                                Войдите в личный кабинет
+                            </LinkText>
+                        </Link>
+                    </FooterBlock>
+                </FormBlock>
             </Container>
-
-            <Footer />
-            <TapbarMobile />
         </>
     )
 }
