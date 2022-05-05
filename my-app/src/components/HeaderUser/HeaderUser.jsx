@@ -1,11 +1,14 @@
+import React from 'react'
+import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
+
+import { useNavigation } from '@react-navigation/native';
+
 import IMAGES from '@/res/images'
 const { BurgerMenuIcon, SearchIcon, BellIcon, UserHeaderIcon } = IMAGES;
 
+export default function HeaderUser() {
+    const navigation = useNavigation();
 
-import React from 'react';
-import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
-
-export default function HeaderUser({ navigation }) {
     const [number, onChangeText] = React.useState(null);
 
     const NavigationDrawerStructure = ({ navigationProps }) => {
@@ -44,8 +47,12 @@ export default function HeaderUser({ navigation }) {
                         <BellIcon height={33} width={25} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.userIcon} onPress={() => { alert("you clicked me") }}>
-                        {/* Сюда должна прилетать картинка юзера */}
+                    <TouchableOpacity style={styles.userIcon}
+                        onPress={() => {
+                            navigation.navigate('ScreenUser', {
+                                screen: 'LoginPage'
+                            });
+                        }}>
                         <UserHeaderIcon />
                     </TouchableOpacity>
                 </View>

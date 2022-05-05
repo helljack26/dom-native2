@@ -37,13 +37,18 @@ const ContactsPageRealtor = () => {
         defaultValues: { firstName: '', email: '', message: '', }
     });
     const [isSuccess, setSuccess] = useState(false);
+
+    const [inputFocus1, setInputFocus1] = useState(C.borderGray);
+    const [inputFocus2, setInputFocus2] = useState(C.borderGray);
+    const [inputFocus3, setInputFocus3] = useState(C.borderGray);
+
     const onSubmit = (data) => {
-        // Open success window
-        setSuccess(true)
         // Clear input value
         resetField('firstName');
         resetField('email');
         resetField('message');
+        // Open success window
+        setSuccess(true)
     }
 
     useEffect(() => {
@@ -108,13 +113,17 @@ const ContactsPageRealtor = () => {
                             </FormInputLabel>
                             <FormInput
                                 selectionColor={C.mainBlue}
-                                cursorColor={'blue'}
-
-
-                                onBlur={onBlur}
+                                cursorColor={C.mainBlue}
+                                onFocus={() => setInputFocus1(C.mainBlue)}
+                                onBlur={() => {
+                                    onBlur
+                                    setInputFocus1(C.borderGray)
+                                }}
                                 onChangeText={onChange}
                                 value={value}
-                                style={{ borderColor: `${errors.firstName ? 'red' : C.borderGray}` }}
+                                style={{
+                                    borderColor: `${errors.firstName ? 'red' : inputFocus1}`
+                                }}
                             />
                         </FormInputBlock>
                     )}
@@ -138,10 +147,15 @@ const ContactsPageRealtor = () => {
                             </FormInputLabel>
                             <FormInput
                                 selectionColor={C.mainBlue}
-                                onBlur={onBlur}
+                                cursorColor={C.mainBlue}
+                                onFocus={() => setInputFocus2(C.mainBlue)}
+                                onBlur={() => {
+                                    onBlur
+                                    setInputFocus2(C.borderGray)
+                                }}
                                 onChangeText={onChange}
                                 value={value}
-                                style={{ borderColor: `${errors.email ? 'red' : C.borderGray}` }}
+                                style={{ borderColor: `${errors.email ? 'red' : inputFocus2}` }}
                             />
                         </FormInputBlock>
                     )}
@@ -162,13 +176,18 @@ const ContactsPageRealtor = () => {
                             </FormInputLabel>
                             <FormTextArea
                                 selectionColor={C.mainBlue}
-                                onBlur={onBlur}
+                                cursorColor={C.mainBlue}
                                 multiline={true}
                                 numberOfLines={4}
+                                onFocus={() => setInputFocus3(C.mainBlue)}
+                                onBlur={() => {
+                                    onBlur
+                                    setInputFocus3(C.borderGray)
+                                }}
                                 onChangeText={onChange}
                                 value={value}
                                 style={{
-                                    borderColor: `${errors.message ? 'red' : C.borderGray}`,
+                                    borderColor: `${errors.message ? 'red' : inputFocus3}`,
                                     textAlignVertical: 'top'
                                 }}
                             />

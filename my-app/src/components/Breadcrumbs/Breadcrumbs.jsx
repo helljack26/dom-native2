@@ -55,7 +55,8 @@ const Breadcrumbs = observer(({ goBack }) => {
     const isGoBack = goBack &&
         <GoBack
             style={styles.breadcrumbs_goBack}
-            onPress={() => navigation.goBack(null)}>
+            onPress={() => navigation.goBack(null)}
+            >
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>
