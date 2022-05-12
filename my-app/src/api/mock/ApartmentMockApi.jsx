@@ -2,9 +2,8 @@ export const ApartmentMockApi =
     [
         {
             id: 10848,
-            name: "Гостиница, 90 м²",
+            adTitle: "Гостиница, 90 м²",
             category: 'apartments',
-            totalArea: 35,
             price: 3100000,
             oldPrice: 3400000,
             location: "жилой район Адлер, ул. Просвещения, 74Б",
@@ -18,43 +17,22 @@ export const ApartmentMockApi =
             viewNumber: 341,
             percentageText: 'Процент на ипотеку',
             description: 'ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ!!! Продается однокомнатная квартира с кухней-гостинной в новом жилом комплексе в центре Адлера!<br><br> По площади это самый большой комплекс в Сочи – 12.5 гектаров земли. Объект реально хорош и для проживания (раз уже берут избалованные сочинцы), и для краткосрочного инвестирования. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. ',
-
-            objectDetails: [
-                {
-                    title: 'Тип недвижимости:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Общая площадь:',
-                    value: '22.8 м²'
-                },
-                {
-                    title: 'Расстояние до моря:',
-                    value: '240 м'
-                },
-                {
-                    title: 'Отделка:',
-                    value: 'без отделки'
-                },
-                {
-                    title: 'ЖК:',
-                    value: 'АК Архитектор',
+            objectDetails: {
+                propertyArea: 22.8,
+                propertyType: 'апартаменты',
+                distanceToSea: 240,
+                propertyDecorate: false,
+                apartmentComplex: {
+                    complexName: 'АК Архитектор',
                     complexId: 2658
                 },
-                {
-                    title: 'Место на шахматке:',
+                apartmentChess: {
                     value: '16б',
-                    link: '/'
+                    chessId: 10848,
+                    planId: 1215,
                 },
-                {
-                    title: 'Класс дома:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Срок сдачи:',
-                    value: 'сдан'
-                },
-            ],
+                deadlineDate: 'сдан',
+            },
             agentId: 1,
             isNewHouse: true,
             coords: [{
@@ -65,9 +43,8 @@ export const ApartmentMockApi =
         },
         {
             id: 17093,
-            name: "Апартаменты-студия, 22,8 м², 4/8 эт.",
+            adTitle: "Апартаменты-студия, 22,8 м², 4/8 эт.",
             category: 'apartments',
-            totalArea: 30,
             price: 8430000,
             location: "жилой район Адлер, ул. Просвещения, 74Б • р-н Хостинский",
             size: "1 комната · 75 м²",
@@ -81,42 +58,22 @@ export const ApartmentMockApi =
             itemStatus: 'Новинка',
             percentageText: 'Процент на ипотеку',
             description: 'ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ!!! Продается однокомнатная квартира с кухней-гостинной в новом жилом комплексе в центре Адлера! По площади это самый большой комплекс в Сочи – 12.5 гектаров земли. Объект реально хорош и для проживания (раз уже берут избалованные сочинцы), и для краткосрочного инвестирования. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции.Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. ',
-            objectDetails: [
-                {
-                    title: 'Тип недвижимости:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Общая площадь:',
-                    value: '22.8 м²'
-                },
-                {
-                    title: 'Расстояние до моря:',
-                    value: '240 м'
-                },
-                {
-                    title: 'Отделка:',
-                    value: 'без отделки'
-                },
-                {
-                    title: 'ЖК:',
-                    value: 'АК Архитектор',
+            objectDetails: {
+                propertyArea: 90,
+                propertyType: 'апартаменты',
+                distanceToSea: 240,
+                propertyDecorate: false,
+                apartmentComplex: {
+                    complexName: 'АК Архитектор',
                     complexId: 2658
                 },
-                {
-                    title: 'Место на шахматке:',
+                apartmentChess: {
                     value: '16б',
-                    link: '/'
+                    chessId: 17093,
+                    planId: 1215,
                 },
-                {
-                    title: 'Класс дома:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Срок сдачи:',
-                    value: 'сдан'
-                },
-            ],
+                deadlineDate: 'сдан',
+            },
             agentId: 1,
             isNewHouse: false,
             coords: [{
@@ -124,14 +81,12 @@ export const ApartmentMockApi =
                 lon: 856156,
             }],
             inFavorite: true
-
         },
 
         {
-            id: 3,
-            name: "1-к. Квартира, 18,3 м², 15/19 эт.",
+            id: 91681,
+            adTitle: "1-к. Квартира, 18,3 м², 15/19 эт.",
             category: 'apartments',
-            totalArea: 30,
             price: 7887300,
             location: "ул. Ясногорская, стр. 9 р-н Хостинский",
             size: "1 комната · 8,3 м²",
@@ -145,42 +100,22 @@ export const ApartmentMockApi =
             itemStatus: 'Акция',
             percentageText: 'Процент на ипотеку',
             description: 'ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ!!! Продается однокомнатная квартира с кухней-гостинной в новом жилом комплексе в центре Адлера!<br><br> По площади это самый большой комплекс в Сочи – 12.5 гектаров земли. Объект реально хорош и для проживания (раз уже берут избалованные сочинцы), и для краткосрочного инвестирования. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. ',
-            objectDetails: [
-                {
-                    title: 'Тип недвижимости:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Общая площадь:',
-                    value: '22.8 м²'
-                },
-                {
-                    title: 'Расстояние до моря:',
-                    value: '240 м'
-                },
-                {
-                    title: 'Отделка:',
-                    value: 'без отделки'
-                },
-                {
-                    title: 'ЖК:',
-                    value: 'АК Архитектор',
+            objectDetails: {
+                propertyArea: 18.3,
+                propertyType: 'апартаменты',
+                distanceToSea: 240,
+                propertyDecorate: false,
+                apartmentComplex: {
+                    complexName: 'АК Архитектор',
                     complexId: 2658
                 },
-                {
-                    title: 'Место на шахматке:',
-                    value: '16б',
-                    link: '/'
+                apartmentChess: {
+                    value: '15б',
+                    chessId: 91681,
+                    planId: 1215,
                 },
-                {
-                    title: 'Класс дома:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Срок сдачи:',
-                    value: 'сдан'
-                },
-            ],
+                deadlineDate: 'сдан',
+            },
             agentId: 1,
             isNewHouse: true,
             coords: [{
@@ -188,71 +123,8 @@ export const ApartmentMockApi =
                 lon: 856156,
             }],
             inFavorite: true
-
-        },
-        {
-            id: 4,
-            name: "Гостиница, 90 м²",
-            category: 'apartments',
-            totalArea: 30,
-            price: 3100000,
-            oldPrice: 3400000,
-            location: "жилой район Адлер, ул. Просвещения, 74Б",
-            size: "90 м²",
-            photoSmallPath: require('../../../assets/apartment/appartment_2.png'),
-            photoLargePath: [
-                { url: require('../../../assets/apartment/appartment_2.png') },
-                { url: require('../../../assets/detail_card/2.png') }
-            ],
-            favoriteNumber: 9,
-            viewNumber: 341,
-            percentageText: 'Процент на ипотеку',
-            description: 'ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ!!! Продается однокомнатная квартира с кухней-гостинной в новом жилом комплексе в центре Адлера!<br><br> По площади это самый большой комплекс в Сочи – 12.5 гектаров земли. Объект реально хорош и для проживания (раз уже берут избалованные сочинцы), и для краткосрочного инвестирования. Для тех, кто хочет инвестировать в «Курортный» как в долгосрочный проект есть свои преференции. ',
-            objectDetails: [
-                {
-                    title: 'Тип недвижимости:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Общая площадь:',
-                    value: '22.8 м²'
-                },
-                {
-                    title: 'Расстояние до моря:',
-                    value: '240 м'
-                },
-                {
-                    title: 'Отделка:',
-                    value: 'без отделки'
-                },
-                {
-                    title: 'ЖК:',
-                    value: 'АК Архитектор',
-                    complexId: 2658
-                },
-                {
-                    title: 'Место на шахматке:',
-                    value: '16б',
-                    link: '/'
-                },
-                {
-                    title: 'Класс дома:',
-                    value: 'апартаменты'
-                },
-                {
-                    title: 'Срок сдачи:',
-                    value: 'сдан'
-                },
-            ],
-            agentId: 1,
-            isNewHouse: true,
-            coords: [{
-                lat: 654654,
-                lon: 856156,
-            }],
-            inFavorite: false
-
-        }]
+        }
+    ]
 
 
 

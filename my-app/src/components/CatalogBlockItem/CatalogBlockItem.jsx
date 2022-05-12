@@ -52,7 +52,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
     // Data
     const {
         id,
-        name,
+        adTitle,
         price,
         oldPrice,
         category,
@@ -107,7 +107,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                 <CatalogItemImage source={photoSmallPath} resizeMode="stretch" />
             </CatalogItemImageBlock>
 
-            {/* Item Name */}
+            {/* Item adTitle */}
             <CatalogItemInfo isRealtorPaddingRight={isRealtor}>
                 <CatalogItemInfoBlock
                     isRealtorHeight={isRealtorHeight}
@@ -122,8 +122,8 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                         :
                         price !== undefined && <Price>{spacedPrice} $</Price>
                     }
-                    {/* Name */}
-                    {name !== undefined && <CatalogItemInfoName
+                    {/* adTitle */}
+                    {adTitle !== undefined && <CatalogItemInfoName
                         onPress={() => {
                             navigation.navigate(isRealtorScreen, {
                                 screen: isRealtorLink,
@@ -134,7 +134,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                             });
                         }} >
                         <CatalogItemInfoNameText>
-                            {name}
+                            {adTitle}
                         </CatalogItemInfoNameText>
                     </CatalogItemInfoName>}
 

@@ -26,7 +26,7 @@ const {
 
 const ComplexDetails = ({ details, percentButtonLarge }) => {
     const {
-        name,
+        adTitle,
         price,
         priceAfter,
         location,
@@ -45,11 +45,11 @@ const ComplexDetails = ({ details, percentButtonLarge }) => {
 
     return (
         <Container>
-            {/* Main name */}
+            {/* Main adTitle */}
             <Name_block>
                 <Name_block_header>
                     <Name_block_header_text>
-                        {name}
+                        {adTitle}
                         <View style={styles.catalog_item_separate}></View>
                         {isDone !== undefined ? isDone === true ?
                             <Name_block_header_text_block_new>

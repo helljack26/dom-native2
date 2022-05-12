@@ -34,7 +34,7 @@ export default function ApartmentsComplexPlanPageRealtor() {
     const planDetails = complexDetails.plans.find((item) => item.planId === Number(planId) && item);
 
     const {
-        name
+        adTitle
     } = complexDetails;
     const {
         planName,
@@ -68,6 +68,7 @@ export default function ApartmentsComplexPlanPageRealtor() {
             <PlanHeaderChess>
                 Шахматки
             </PlanHeaderChess>
+            
             <PlanHeaderSelect
                 complexDetails={complexDetails}
                 currentPlanName={planName}

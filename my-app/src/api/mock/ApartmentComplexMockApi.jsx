@@ -1,11 +1,10 @@
 
 export const ApartmentComplexMockApi = [{
     complexId: 2658,
-    name: "АК Архитектор",
+    adTitle: "АК Архитектор",
     category: 'apartmentsComplex',
     price: 8430000,
     location: "Центр, ул. Конституции, 18, Сочи",
-    totalArea: 22.8,
     photoSmallPath: require('../../../assets/apartment_complex/apartment_complex_1.png'),
     photoLargePath: [
         { url: require('../../../assets/apartment_complex/apartment_complex_1.png') },
@@ -107,7 +106,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 10848,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -123,7 +122,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 38562,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 55,
                                     areaSize: 71,
                                     price: 8430000,
@@ -139,7 +138,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 96391,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 56,
                                     areaSize: 71,
                                     price: 8430000,
@@ -155,7 +154,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 61818,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 57,
                                     areaSize: 71,
                                     price: 8430000,
@@ -171,7 +170,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 16796,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 58,
                                     areaSize: 71,
                                     price: 8430000,
@@ -192,7 +191,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 49526,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 59,
                                     areaSize: 71,
                                     price: 8430000,
@@ -208,7 +207,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 14887,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 60,
                                     areaSize: 71,
                                     price: 8430000,
@@ -224,7 +223,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 82697,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 61,
                                     areaSize: 71,
                                     price: 8430000,
@@ -240,7 +239,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 76470,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 62,
                                     areaSize: 71,
                                     price: 8430000,
@@ -256,7 +255,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 47992,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 63,
                                     areaSize: 71,
                                     price: 8430000,
@@ -277,7 +276,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 64391,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -293,7 +292,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 65548,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -309,7 +308,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 86776,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -325,7 +324,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 89738,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -341,7 +340,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 23796,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -362,7 +361,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 21260,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -378,7 +377,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 66222,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -394,7 +393,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 39854,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -410,7 +409,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 75954,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -426,7 +425,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 50175,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -447,7 +446,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 45753,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -463,7 +462,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 18138,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -479,7 +478,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 68894,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -495,7 +494,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 51753,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -511,7 +510,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 38457,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -532,7 +531,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 59215,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -548,7 +547,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 17093,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -564,7 +563,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 30663,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -580,7 +579,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 83393,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -596,7 +595,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 81379,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -622,7 +621,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 67272,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -638,7 +637,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 84694,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -654,7 +653,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 58740,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -670,7 +669,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 92711,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -686,7 +685,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 91681,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -707,7 +706,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 14852,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -723,7 +722,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 91350,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -739,7 +738,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 83673,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -755,7 +754,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 54810,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -771,7 +770,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 20999,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -792,7 +791,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 34783,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -808,7 +807,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 84959,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -824,7 +823,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 65992,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -840,7 +839,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 91376,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -856,7 +855,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 82219,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -877,7 +876,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 47379,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -893,7 +892,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 90207,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -909,7 +908,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 54918,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -925,7 +924,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 36480,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -941,7 +940,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 58193,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -962,7 +961,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 44315,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -978,7 +977,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 82935,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -994,7 +993,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 78467,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1010,7 +1009,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 50362,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1026,7 +1025,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 79676,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1047,7 +1046,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 25092,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1063,7 +1062,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 79264,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1079,7 +1078,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 45062,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1095,7 +1094,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 38567,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1111,7 +1110,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 14924,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1137,7 +1136,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 56850,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1153,7 +1152,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 40462,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1169,7 +1168,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 33142,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1185,7 +1184,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 64596,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1201,7 +1200,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 75421,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1222,7 +1221,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 85612,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1238,7 +1237,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 54535,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1254,7 +1253,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 86860,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1270,7 +1269,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 69866,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1286,7 +1285,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 83881,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1307,7 +1306,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 86458,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1323,7 +1322,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 57516,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1339,7 +1338,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 73915,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1355,7 +1354,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 59654,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1371,7 +1370,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 51981,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1392,7 +1391,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 55228,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1408,7 +1407,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 85116,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1424,7 +1423,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 54919,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1440,7 +1439,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 79668,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1456,7 +1455,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 92137,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1477,7 +1476,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 48131,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1493,7 +1492,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 35035,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1509,7 +1508,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 56867,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1525,7 +1524,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 11034,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1541,7 +1540,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 77374,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1562,7 +1561,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 54905,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1578,7 +1577,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 24308,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1594,7 +1593,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 23252,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1610,7 +1609,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 68905,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1626,7 +1625,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 44490,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1661,7 +1660,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 92846,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1677,7 +1676,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 87012,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1693,7 +1692,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 20214,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1709,7 +1708,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 11938,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1725,7 +1724,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 49279,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1746,7 +1745,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 44823,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1762,7 +1761,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 38056,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1778,7 +1777,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 18511,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1794,7 +1793,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 52138,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1810,7 +1809,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 24951,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1831,7 +1830,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 66211,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1847,7 +1846,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 29403,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1863,7 +1862,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 31792,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1879,7 +1878,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 86237,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1895,7 +1894,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 97948,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1916,7 +1915,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 98415,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1932,7 +1931,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 19227,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1948,7 +1947,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 72692,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1964,7 +1963,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 81861,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -1980,7 +1979,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 33674,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2001,7 +2000,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 67312,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2017,7 +2016,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 18230,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2033,7 +2032,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 30062,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2049,7 +2048,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 29595,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2065,7 +2064,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 65688,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2086,7 +2085,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 94540,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2102,7 +2101,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 75381,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2118,7 +2117,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 74532,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2134,7 +2133,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 69885,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2150,7 +2149,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 88923,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2176,7 +2175,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 39467,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2192,7 +2191,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 80966,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2208,7 +2207,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 80531,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2224,7 +2223,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 36282,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2240,7 +2239,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 18678,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2261,7 +2260,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 45505,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2277,7 +2276,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 30577,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2293,7 +2292,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 71321,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2309,7 +2308,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 18270,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2325,7 +2324,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 72467,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2346,7 +2345,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 16906,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2362,7 +2361,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 14355,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2378,7 +2377,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 35529,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2394,7 +2393,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 17894,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2410,7 +2409,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 94029,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2431,7 +2430,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 27563,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2447,7 +2446,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 58189,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2463,7 +2462,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 55993,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2479,7 +2478,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 47130,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2495,7 +2494,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 75626,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2516,7 +2515,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 94970,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2532,7 +2531,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 67451,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2548,7 +2547,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 95892,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2564,7 +2563,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 80279,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2580,7 +2579,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 68356,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2601,7 +2600,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 88574,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2617,7 +2616,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 75658,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2633,7 +2632,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 18273,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2649,7 +2648,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 93986,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2665,7 +2664,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 40791,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2691,7 +2690,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 79083,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2707,7 +2706,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 14585,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2723,7 +2722,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 92000,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2739,7 +2738,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 39644,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2755,7 +2754,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 29266,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2776,7 +2775,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 44006,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2792,7 +2791,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 68934,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2808,7 +2807,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 71849,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2824,7 +2823,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 34868,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2840,7 +2839,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 61631,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2861,7 +2860,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 57534,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2877,7 +2876,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 84581,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2893,7 +2892,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 48775,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2909,7 +2908,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 57032,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2925,7 +2924,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 47352,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2946,7 +2945,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 90239,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2962,7 +2961,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 58358,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2978,7 +2977,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 59944,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -2994,7 +2993,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 84810,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3010,7 +3009,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 75282,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3031,7 +3030,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 56490,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3047,7 +3046,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 96784,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3063,7 +3062,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 26239,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3079,7 +3078,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 85032,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3095,7 +3094,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 31073,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3116,7 +3115,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 61541,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3132,7 +3131,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 21652,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3148,7 +3147,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 19910,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3164,7 +3163,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 29808,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,
@@ -3180,7 +3179,7 @@ export const ApartmentComplexMockApi = [{
                                 {
                                     id: 54850,
                                     category: 'apartments',
-                                    name: '3-к. квартира 71м²',
+                                    adTitle: '3-к. квартира 71м²',
                                     apartmentNumber: 54,
                                     areaSize: 71,
                                     price: 8430000,

@@ -56,7 +56,7 @@ const ApartmentPopupBlock = observer((props) => {
     const {
         id,
         category,
-        name,
+        adTitle,
         photoUrl,
         apartmentNumber,
         price,
@@ -115,7 +115,7 @@ const ApartmentPopupBlock = observer((props) => {
                                 {spacedPrice} $
                             </PopupDetailsPrice>
                             <PopupDetailsName>
-                                {name}
+                                {adTitle}
                             </PopupDetailsName>
                             <PopupDetailsArea>
                                 {size}

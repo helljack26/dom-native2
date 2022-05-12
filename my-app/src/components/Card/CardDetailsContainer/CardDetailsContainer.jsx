@@ -25,9 +25,9 @@ const {
     Price_block_price_rating,
 } = style;
 
-const CardDetailsContainer = ({ details, percentButtonLarge }) => {
+const CardDetailsContainer = ({ details, percentButtonLarge,complexPath }) => {
     const {
-        name,
+        adTitle,
         price,
         priceAfter,
         location,
@@ -48,11 +48,11 @@ const CardDetailsContainer = ({ details, percentButtonLarge }) => {
 
     return (
         <Container>
-            {/* Main name */}
+            {/* Main adTitle */}
             <Name_block>
                 <Name_block_header>
                     <Name_block_header_text>
-                        {name}
+                        {adTitle}
                         <View style={styles.catalog_item_separate}></View>
                         {isNewHouse !== undefined ? isNewHouse === true ?
                             <Name_block_header_text_block_new>
@@ -86,7 +86,7 @@ const CardDetailsContainer = ({ details, percentButtonLarge }) => {
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails} description={description} />
+            <CardAccordion objectDetails={objectDetails} description={description}  complexPath={complexPath}/>
 
             {/* Complain link */}
             {percentButtonLarge === undefined && <ComplainLink />}

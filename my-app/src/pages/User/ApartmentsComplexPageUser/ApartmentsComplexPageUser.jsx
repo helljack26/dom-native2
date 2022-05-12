@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
-import F from '@/res/fonts'
+
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
@@ -31,7 +31,6 @@ justify-content: space-between;
 align-items: flex-start;
 flex-direction: row;
 margin-top: 8px;
-margin-bottom: 22px;
 `;
 export default function ApartmentsComplexPageUser() {
     const route = useRoute();
@@ -50,7 +49,7 @@ export default function ApartmentsComplexPageUser() {
     const complexApi = apiMocks.ApartmentComplexMockApi;
     const objectDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
 
-    const { photoLargePath, plans } = objectDetails;
+    const { photoLargePath, plans, contactNumbers } = objectDetails;
     return (
         <SafeAreaView >
             <Main

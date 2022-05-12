@@ -23,7 +23,7 @@ const {
 
 const ComplexAccordion = ({ details }) => {
     const {
-        name,
+        adTitle,
         description,
         objectContacts,
         objectDetails,
@@ -101,7 +101,7 @@ const ComplexAccordion = ({ details }) => {
                 {/* About */}
                 <Block_header onPress={combine1}   >
                     <Block_header_Text >
-                        Про {name}
+                        Про {adTitle}
                     </Block_header_Text>
                     <AntDesign
                         name={isEnabled1 ? 'up' : 'down'}

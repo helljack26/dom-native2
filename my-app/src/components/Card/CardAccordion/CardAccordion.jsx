@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import PageLocation from '@/components/helpers/pageLocation'
+
+import { prepareObjectKeyValueForListItem } from '@/components/helpers/prepareObjectKeyValueForListItem';
+
+import AboutListItem from './AboutListItem/AboutListItem'
 
 // Icon
 import { AntDesign } from '@expo/vector-icons';
@@ -15,55 +17,13 @@ const {
     Block_header_Text,
     About_block,
     About_block_ul,
-    About_block_ul_li,
-    About_block_ul_title,
-    About_block_ul_value,
-    About_block_ul_link,
-    About_block_ul_link_text,
     Description,
     Description_text,
 } = styles;
 
-const CardAccordion = ({ objectDetails, description }) => {
-    const navigation = useNavigation();
-    const { isRealtor } = PageLocation();
-    // TODO неособо секьюрно
-    const complexPath = isRealtor === true ? 'ApartmentsComplexPageRealtor' : 'ApartmentsComplexPage'
-    // Li component
-    const Li = ({ data }) => {
-        if (data === undefined) {
-            return
-        } else if (data.complexId !== undefined) {
-            return (
-                <About_block_ul_li>
-                    <About_block_ul_title>
-                        {data.title} &nbsp;
-                    </About_block_ul_title>
-                    <About_block_ul_link
-                        onPress={() => {
-                            /* 1. Navigate to the Details route with params */
-                            navigation.navigate(`${complexPath}`, {
-                                complexId: data.complexId
-                            });
-                        }}
-                    >
-                        <About_block_ul_link_text>{data.value}</About_block_ul_link_text>
-                    </About_block_ul_link>
-                </About_block_ul_li>
-            )
-        } else {
-            return (
-                <About_block_ul_li>
-                    <About_block_ul_title>
-                        {data.title} &nbsp;
-                    </About_block_ul_title>
-                    <About_block_ul_value>
-                        {data.value}
-                    </About_block_ul_value>
-                </About_block_ul_li>
-            )
-        }
-    }
+const CardAccordion = ({ objectDetails, description, complexPath }) => {
+
+    const convertedObjectDetails = prepareObjectKeyValueForListItem(objectDetails)
 
     const [isEnabled1, setIsEnabled1] = useState(false);
     const [isEnabled2, setIsEnabled2] = useState(false);
@@ -107,7 +67,16 @@ const CardAccordion = ({ objectDetails, description }) => {
                         <About_block>
                             <About_block_ul>
                                 {objectDetails !== undefined ?
-                                    objectDetails.map((item, id) => <Li data={item} key={id} />) : null
+                                    convertedObjectDetails.map((item, id) => {
+                                        console.log(item);
+                                        return <AboutListItem
+                                            titleKey={item.titleKey}
+                                            value={item.value}
+                                            key={id}
+                                            propertyComplexId={convertedObjectDetails.complexId}
+                                            complexPath={complexPath}
+                                        />
+                                    }) : null
                                 }
                             </About_block_ul>
                         </About_block>

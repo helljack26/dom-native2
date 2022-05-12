@@ -37,7 +37,7 @@ const NewsUserPage = observer(() => {
     }, []);
 
     const NewsItem = ({ data }) => {
-        const { id, name, creationDate, photoPath } = data;
+        const { id, adTitle, creationDate, photoPath } = data;
         return <NewsItemBlock onPress={() => {
             navigation.navigate('NewsCardRealtor', {
                 itemId: id,
@@ -50,7 +50,7 @@ const NewsUserPage = observer(() => {
             </NewsItemImageBlock>
             <NewsItemInfo>
                 <NewsItemTitle>
-                    {name}
+                    {adTitle}
                 </NewsItemTitle>
                 <NewsItemDate>
                     {creationDate}

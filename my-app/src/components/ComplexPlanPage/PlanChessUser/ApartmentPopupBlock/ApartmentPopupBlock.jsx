@@ -38,7 +38,7 @@ const ApartmentPopupBlock = ({ apartmentData, leftOffset }) => {
     const {
         id,
         category,
-        name,
+        adTitle,
         photoUrl,
         apartmentNumber,
         price,
@@ -96,7 +96,7 @@ const ApartmentPopupBlock = ({ apartmentData, leftOffset }) => {
                                 {spacedPrice} $
                             </PopupDetailsPrice>
                             <PopupDetailsName>
-                                {name}
+                                {adTitle}
                             </PopupDetailsName>
                             <PopupDetailsArea>
                                 {size}
