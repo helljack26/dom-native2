@@ -4,7 +4,7 @@ import C from '@/res/colors'
 
 
 const Container = styled.View`
-margin-top: 5px;
+margin-top: 22px;
 width: 100%;
 `;
 const Name_block = styled.View`

@@ -1,12 +1,16 @@
 import F from '@/res/fonts'
 
 import React from 'react';
-import {  SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CardPhotoContainer from '@/components/Card/CardPhotoContainer/CardPhotoContainer'
+
+import ComplexButtonToChess from '@/components/Buttons/ComplexButtonToChess/ComplexButtonToChess';
+import PhoneButton from '@/components/Buttons/PhoneButton/PhoneButton'
+
 import ComplexDetails from '@/components/Complex/ComplexDetails/ComplexDetails'
 import ComplexDetailsPlans from '@/components/Complex/ComplexDetailsPlans/ComplexDetailsPlans'
 
@@ -21,6 +25,14 @@ const Main = styled.ScrollView`
 width: 100%;
 background-color: white;
 padding: 0px 4%;
+`;
+const MainButtons = styled.View`
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-direction: row;
+margin-top: 8px;
 `;
 
 export default function ApartmentsComplexPageRealtor() {
@@ -40,7 +52,7 @@ export default function ApartmentsComplexPageRealtor() {
     const complexApi = apiMocks.ApartmentComplexMockApi;
     const objectDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
 
-    const { photoLargePath } = objectDetails;
+    const { photoLargePath, contactNumbers } = objectDetails;
 
     const percentButton = <PercentButton isBig={false} />
     const percentButtonLarge = <PercentButton isBig={true} />
@@ -51,7 +63,19 @@ export default function ApartmentsComplexPageRealtor() {
 
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={photoLargePath} />
-                <ComplexDetails details={objectDetails} percentButtonLarge={percentButtonLarge}/>
+
+                <MainButtons>
+                    <ComplexButtonToChess
+                        screenName='ScreenRealtor'
+                        planPageName='ApartmentsComplexPlanPageRealtor'
+                        complexId={objectDetails.complexId}
+                        planId={objectDetails.plans[0].planId}
+                    />
+
+                    <PhoneButton contactNumbers={contactNumbers} />
+
+                </MainButtons>
+                <ComplexDetails details={objectDetails} percentButtonLarge={percentButtonLarge} />
                 <ComplexDetailsPlans details={objectDetails} isRealtor={true} />
 
                 <CardSaveButton />

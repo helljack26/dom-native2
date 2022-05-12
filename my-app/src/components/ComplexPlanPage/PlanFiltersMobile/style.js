@@ -11,7 +11,7 @@ align-items: center;
 width: 100%;
 border-color: ${C.mainBlack};
 border-width: 1px;
-margin-top: 23px;
+margin-top: 22px;
 background-color: white;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;

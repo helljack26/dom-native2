@@ -4,7 +4,6 @@ import C from '@/res/colors'
 
 // Styles
 const Button = styled.TouchableOpacity`
-bottom: 16px;
 border-radius: 8px;
 width: 100%;
 font-size: 16px;
@@ -14,20 +13,19 @@ align-items: center;
 justify-content: center;
 padding: 11px 0px;
 background-color: rgba(34, 34, 34, 0.7);
-margin-top: 23px;
+margin-top: 8px;
 `;
 const MapButton = styled.TouchableOpacity`
-bottom: 16px;
 border-radius: 8px;
 width: 100%;
 font-size: 16px;
 flex-direction: row;
 display: flex;
+margin-top: 8px;
 align-items: center;
 justify-content: center;
 padding: 9px 0px;
 background-color: rgba(34, 34, 34, 0.7);
-margin-top: 23px;
 `;
 const BtnBlock = styled.View`
 width: 100%;
@@ -36,7 +34,6 @@ flex-direction: row;
 display: flex;
 align-items: center;
 justify-content: space-between;
-margin-top: -16px;
 `;
 const AllPhotoText = styled.Text`
 font-family: ${F.medium};

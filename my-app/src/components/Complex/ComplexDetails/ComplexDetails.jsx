@@ -6,10 +6,10 @@ import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
 import CardDetailsButtonBar from '@/components/Card/CardDetailsButtonBar/CardDetailsButtonBar'
 import ComplexAccordion from '../ComplexAccordion/ComplexAccordion'
-import PhoneButton from '@/components/Buttons/PhoneButton/PhoneButton'
 
 import { style } from './style'
-const { Container,
+const {
+    Container,
     Name_block,
     Name_block_header,
     Name_block_header_text,
@@ -35,7 +35,6 @@ const ComplexDetails = ({ details, percentButtonLarge }) => {
         totalArea,
         inFavorite,
         isDone,
-        contactNumbers,
         // coords,
         // agentId,
         // percentageText,
@@ -81,8 +80,7 @@ const ComplexDetails = ({ details, percentButtonLarge }) => {
                 </Price_block>
                 <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge} />
             </Price>
-            {/* Contacts button */}
-            <PhoneButton contactNumbers={contactNumbers} />
+
 
             {/* About object */}
             <ComplexAccordion details={details} />

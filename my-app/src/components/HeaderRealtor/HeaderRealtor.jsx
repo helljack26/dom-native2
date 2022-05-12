@@ -1,4 +1,5 @@
 import IMAGES from '@/res/images'
+import C from '@/res/colors'
 const { BurgerMenuIcon, SearchIcon, BellIcon } = IMAGES;
 
 import React from 'react';
@@ -55,6 +56,8 @@ const styles = StyleSheet.create({
         height: 42,
         width: '100%',
         paddingBottom: 5,
+        borderBottomColor: C.borderGray,
+        borderBottomWidth: 1.5,
     },
 
     header_block: {
@@ -74,7 +77,6 @@ const styles = StyleSheet.create({
     button: {
         width: 25,
         height: 25,
-
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,

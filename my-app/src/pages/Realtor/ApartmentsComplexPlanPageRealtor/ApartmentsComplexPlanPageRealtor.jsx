@@ -15,14 +15,7 @@ import IMAGES from '@/res/images'
 import { style } from './style.js'
 const {
     Main,
-    PlanHeader,
-    PlanHeaderNameBlock,
-    PlanHeaderName,
     PlanHeaderChess,
-    PlanHeaderComplex,
-    DoneLabel,
-    LabelText,
-    ExpiryDateLabel,
     PlanChessContainer,
     ContainerBlockBorder,
     PlanHeaderBackButtonMobile,
@@ -70,34 +63,6 @@ export default function ApartmentsComplexPlanPageRealtor() {
                     Вернуться к карточке ЖК
                 </PlanHeaderBackButtonMobileText>
             </PlanHeaderBackButtonMobile>
-
-            {/* Header */}
-            <PlanHeader>
-
-                <PlanHeaderNameBlock>
-                    <PlanHeaderName>
-                        {planName}
-                    </PlanHeaderName>
-
-                    {isDone !== undefined ? (
-                        isDone === true ?
-                            <DoneLabel>
-                                <LabelText>
-                                    Сдан
-                                </LabelText>
-                            </DoneLabel>
-                            :
-                            <ExpiryDateLabel>
-                                <LabelText>
-                                    {isDone}
-                                </LabelText>
-                            </ExpiryDateLabel>)
-                        : null}
-                </PlanHeaderNameBlock>
-
-                <PlanHeaderComplex>{name}</PlanHeaderComplex>
-
-            </PlanHeader>
 
             {/* Chess select */}
             <PlanHeaderChess>

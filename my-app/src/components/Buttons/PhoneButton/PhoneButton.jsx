@@ -7,9 +7,8 @@ import C from '@/res/colors'
 import F from '@/res/fonts'
 
 const PhoneBtn = styled.TouchableOpacity`
-margin-top: 35px;
 border-radius: 8px;
-width: 100%;
+width: 49%;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -22,12 +21,15 @@ font-family: ${F.medium};
 color: white;
 `
 const Contact = styled.View`
-margin-top: 20px;
+margin-top: 5px;
+width: 49%;
 display: flex;
 flex-direction: column;
+align-items: center;
+
 `
 const ContactNumber = styled.Text`
-font-size: 20px;
+font-size: 17px;
 font-family: ${F.medium};
 color: ${C.mainBlue};
 `
@@ -37,7 +39,7 @@ const PhoneButton = ({ contactNumbers }) => {
 
     return (contactNumbers !== undefined &&
         <>
-            {isOpen === false && <PhoneBtn onPress={() => setType(true)}  >
+            {isOpen === false && <PhoneBtn onPress={() => setType(true)}>
                 <PhoneButtonText>
                     Позвонить
                 </PhoneButtonText>

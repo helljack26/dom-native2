@@ -16,7 +16,6 @@ const PlanHeaderBackButtonMobile = styled.TouchableOpacity`
 display: flex;
 flex-direction: row;
 align-items: center;
-margin-bottom: 22px;
 `;
 const PlanHeaderBackButtonMobileText = styled.Text`
 margin-left: 8px;
@@ -42,9 +41,8 @@ font-size: 19px;
 const PlanHeaderChess = styled(PlanHeaderName)`
 font-family: ${F.regular};
 color: ${C.mainBlack};
-font-size: 16px;
+font-size: 18px;
 margin-top: 22px;
-/* margin-bottom: 5px; */
 `;
 const PlanHeaderComplex = styled.Text`
 font-family: ${F.light};
