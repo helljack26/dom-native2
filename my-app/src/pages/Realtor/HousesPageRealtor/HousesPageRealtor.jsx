@@ -8,7 +8,7 @@ import CatalogBlock from '@/components/CatalogBlock/CatalogBlock';
 import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
 export default function HousesPageRealtor() {
-    const percentButton = <PercentButton isBig={false} />
+    const percentButton = <PercentButton isBig={false} isRecommendation={true} />
 
     return (
         <View style={styles.body}>

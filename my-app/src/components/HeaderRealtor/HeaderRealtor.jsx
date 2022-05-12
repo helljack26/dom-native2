@@ -72,10 +72,9 @@ const styles = StyleSheet.create({
         marginRight: 15,
     },
     button: {
-        width: 19,
+        width: 25,
         height: 25,
-        paddingVertical: 10,
-        marginBottom: 20,
+
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,
@@ -115,15 +114,20 @@ const styles = StyleSheet.create({
     bellButton: {
         resizeMode: 'stretch',
         marginLeft: 0,
+        width: 25,
     },
     bellButtonImg: {
         width: 20,
         resizeMode: 'contain',
         height: 23
     },
-    userPhotoImg: {
+    userIcon: {
         width: 32,
         height: 32,
         marginLeft: 15,
+    },
+    userPhotoImg: {
+        width: 32,
+        height: 32,
     },
 });

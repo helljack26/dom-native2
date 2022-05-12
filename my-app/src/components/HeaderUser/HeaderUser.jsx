@@ -86,10 +86,8 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     button: {
-        width: 19,
+        width: 25,
         height: 25,
-        paddingVertical: 10,
-        marginBottom: 15,
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,
@@ -136,8 +134,11 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         height: 23
     },
-    userPhotoImg: {
-        width: 32,
-        height: 32,
+    userIcon: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 25,
+        height: 33,
     },
 });

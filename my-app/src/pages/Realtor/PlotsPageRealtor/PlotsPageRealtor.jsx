@@ -9,7 +9,7 @@ import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 
 
 export default function PlotsPageRealtor() {
-    const percentButton = <PercentButton isBig={false} />
+    const percentButton = <PercentButton isBig={false} isRecommendation={true} />
 
     return (
         <View style={styles.body}>

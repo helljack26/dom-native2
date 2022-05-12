@@ -11,8 +11,8 @@ import ShareButton from '@/components/Buttons/ShareButton/ShareButton';
 import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
 // Styles
-import { styleCatalogItem } from './styleCatalogItem'
 import { styleRecommendationItem } from './styleRecommendationItem'
+import { styleCatalogItem } from './styleCatalogItem'
 const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
     const isRealtor = percentButton !== undefined ? true : false;
 
@@ -22,6 +22,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
 
     // StyleSheet defined first check if recommendation block and after block realtor or user
     const style = isRecommendation !== undefined ? styleRecommendationItem : styleCatalogItem;
+    // const style = styleRecommendationItem;
     const {
         СatalogItem,
         CatalogItemImageBlock,

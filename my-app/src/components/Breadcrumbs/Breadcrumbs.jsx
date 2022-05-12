@@ -56,7 +56,7 @@ const Breadcrumbs = observer(({ goBack }) => {
         <GoBack
             style={styles.breadcrumbs_goBack}
             onPress={() => navigation.goBack(null)}
-            >
+        >
             <ArrowLeft />
             <Text style={styles.goBack}>Вернуться назад</Text>
         </GoBack>
@@ -84,8 +84,13 @@ const styles = StyleSheet.create({
         fontFamily: F.light
     },
     breadcrumbs: {
-        flex: 1,
+        flex: 2,
+        justifyContent: 'flex-start',
         flexDirection: 'row'
+    },
+    breadcrumbs_goBack: {
+        width: '40%',
+
     },
     ads: {
         fontSize: 12,

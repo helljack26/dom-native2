@@ -25,7 +25,7 @@ const {
     Price_block_price_rating,
 } = style;
 
-const CardDetailsContainer = ({ details,percentButtonLarge }) => {
+const CardDetailsContainer = ({ details, percentButtonLarge }) => {
     const {
         name,
         price,
@@ -82,14 +82,14 @@ const CardDetailsContainer = ({ details,percentButtonLarge }) => {
                         <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
                     </Price_block_square_rating>
                 </Price_block>
-                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge}/>
+                <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge} />
             </Price>
 
             {/* About object */}
             <CardAccordion objectDetails={objectDetails} description={description} />
 
             {/* Complain link */}
-            <ComplainLink />
+            {percentButtonLarge === undefined && <ComplainLink />}
 
         </Container>
     )

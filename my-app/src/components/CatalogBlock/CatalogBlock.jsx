@@ -10,18 +10,18 @@ import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';
 
 // Styles
-import { styleCatalogBlock } from './styleCatalogBlock'
+// import { styleCatalogBlock } from './styleCatalogBlock'
 import { styleRecommendationBlock } from './styleRecommendationBlock'
 
 const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
 
     // StyleSheet defined
-    const style = isRecommendation !== undefined ? styleRecommendationBlock : styleCatalogBlock;
+    // const style = isRecommendation !== undefined ? styleRecommendationBlock : styleCatalogBlock;
     const { isGallery, catalog, setCatalog } = useCatalogApiStore();
     const {
         Main,
         MainBlock
-    } = style;
+    } = styleRecommendationBlock;
 
     const route = useRoute();
     useEffect(() => {
@@ -38,7 +38,7 @@ const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
                             <CatalogBlockItem
                                 data={item}
                                 key={item.id}
-                                isRecommendation={isRecommendation}
+                                isRecommendation={true}
                                 percentButton={percentButton}
                             />)}
                     </MainBlock>
