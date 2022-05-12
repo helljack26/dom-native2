@@ -1,46 +1,46 @@
 import C from '@/res/colors'
 import F from '@/res/fonts'
 import React from 'react';
+import { useEffect } from 'react';
 
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useCatalogApiStore } from '@/stores/CatalogApi';
+import PageLocation from '@/components/helpers/pageLocation'
 
-const AdsFilterBar = observer(() => {
-    const { isGallery, setGallery, setMap } = useCatalogApiStore();
+const AdsButtonsObjectComplex = observer(() => {
+    const { title } = PageLocation();
+    const { isSingle, setSingleObject, setComplex } = useCatalogApiStore();
 
-    const filterCounter = 3;
+    const singleClass = isSingle === true ? styles.active : styles.default;
+    const complexClass = isSingle === false ? styles.active : styles.default;
+
+    const complexButtonText = title === 'Квартиры' ? 'Жилые комплексы' : 'Коттеджные поселки'
+    const isApartment = title === 'Квартиры'
+
     return (
         <View style={styles.filter_mobile}>
             <TouchableOpacity
-                style={styles.button}>
-                <Text style={styles.filterBtn_text} >
-                    Фильтры
-                </Text>
-                {/* TODO где то здесь нужно получать в фильтра данные */}
-                <Text style={styles.filterBtn_number} >
-                    {filterCounter}
-                </Text>
+                onPress={() => setSingleObject(isApartment)}
+                style={singleClass}>
+                <Text style={{ color: isSingle ? 'white' : C.mainBlack }}
+                >{title}</Text>
             </TouchableOpacity>
+
             <View style={styles.border}></View>
-            {isGallery === false ?
-                <TouchableOpacity
-                    onPress={setGallery}
-                    style={styles.button}>
-                    <Text>Галерея</Text>
-                </TouchableOpacity>
-                :
-                <TouchableOpacity
-                    onPress={setMap}
-                    style={styles.button}>
-                    <Text>На карте</Text>
-                </TouchableOpacity>
-            }
+
+            <TouchableOpacity
+                onPress={() => setComplex(isApartment)}
+                style={complexClass}>
+                <Text style={{ color: !isSingle ? 'white' : C.mainBlack }}
+                >{complexButtonText}</Text>
+            </TouchableOpacity>
+
         </View >
     )
 })
 
-export default AdsFilterBar;
+export default AdsButtonsObjectComplex;
 
 const styles = StyleSheet.create({
     filter_mobile: {
@@ -52,10 +52,24 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         borderStyle: 'solid',
+        marginTop: 22,
+        marginBottom: 12,
+        overflow: 'hidden',
         backgroundColor: "white",
         borderRadius: 5
     },
-    button: {
+    default: {
+        width: "50%",
+        height: 42,
+        display: "flex",
+        flexDirection: 'row',
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: 14,
+        backgroundColor: "white",
+    },
+    active: {
+        backgroundColor: C.mainBlue,
         width: "50%",
         height: 42,
         display: "flex",

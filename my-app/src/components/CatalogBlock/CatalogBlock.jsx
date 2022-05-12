@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 import IMAGES from '@/res/images'
 
@@ -13,31 +13,35 @@ import { useCatalogApiStore } from '@/stores/CatalogApi';
 // import { styleCatalogBlock } from './styleCatalogBlock'
 import { styleRecommendationBlock } from './styleRecommendationBlock'
 
-const CatalogBlock = observer(({ isRecommendation, percentButton }) => {
+const CatalogBlock = observer(({ percentButton }) => {
 
     // StyleSheet defined
     // const style = isRecommendation !== undefined ? styleRecommendationBlock : styleCatalogBlock;
     const { isGallery, catalog, setCatalog } = useCatalogApiStore();
+
     const {
         Main,
         MainBlock
     } = styleRecommendationBlock;
+    const navigation = useNavigation();
 
     const route = useRoute();
     useEffect(() => {
-        if (route) {
+        const unsubscribe = navigation.addListener('focus', () => {
             setCatalog(route.name);
-        }
-    }, [route]);
+        });
+        return unsubscribe;
+    }, [navigation]);
+
     return (
         <>
             {isGallery &&
                 <Main>
                     <MainBlock>
-                        {catalog.map(item =>
+                        {catalog.map((item, id) =>
                             <CatalogBlockItem
                                 data={item}
-                                key={item.id}
+                                key={id}
                                 isRecommendation={true}
                                 percentButton={percentButton}
                             />)}

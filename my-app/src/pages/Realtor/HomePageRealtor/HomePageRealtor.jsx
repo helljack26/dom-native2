@@ -38,7 +38,7 @@ export default function HomePageRealtor() {
                 <Text style={styles.mainHeader}>
                     Рекомендации для вас
                 </Text>
-                <CatalogBlock percentButton={percentButton} isRecommendation={true} />
+                <CatalogBlock percentButton={percentButton} />
             </ScrollView>
         </ScrollView>
     );

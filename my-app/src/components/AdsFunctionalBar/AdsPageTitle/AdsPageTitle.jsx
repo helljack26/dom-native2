@@ -41,5 +41,7 @@ const styles = StyleSheet.create({
     adsQueryNumber: {
         fontSize: 12,
         color: C.mainBlack,
+        marginBottom: 20,
+
     }
 });

@@ -24,7 +24,7 @@ margin-top: 15px;
 const Breadcrumbs = observer(({ goBack }) => {
     const { title, ads, isRealtor } = PageLocation();
     const navigation = useNavigation();
-    const state = navigation.getState();
+
     const { setCatalog } = useCatalogApiStore();
 
     // Reset catalog when press Обьявления

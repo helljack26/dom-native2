@@ -10,11 +10,6 @@ const PageLocation = () => {
             title = 'Объявления'
 
             break;
-        case 'ApartmentsPage':
-            title = 'Квартиры'
-            isRealtor = false
-            ads = true
-            break;
         // Apartments
         case 'ApartmentsPage':
             title = 'Квартиры'
