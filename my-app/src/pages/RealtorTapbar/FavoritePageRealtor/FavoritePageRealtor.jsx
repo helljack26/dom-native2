@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Text } from 'react-native';
 
 import { useState } from 'react'
 
@@ -28,6 +27,7 @@ const {
 
 export default function FavoritePageRealtor() {
     const { title } = PageLocation();
+
     const [isItemBlock, setItemBlock] = useState(true);
     const itemsInFavorite = 0;
     const searchesInFavorite = 0;
@@ -62,9 +62,14 @@ export default function FavoritePageRealtor() {
             {isItemBlock === true ?
                 // Item
                 <FavoriteItemContainer>
-                    <CatalogBlockItem data={ApartmentMockApi[1]} percentButton={percentButton} />
-                    <CatalogBlockItem data={ApartmentMockApi[3]} percentButton={percentButton} />
-                    <CatalogBlockItem data={ApartmentMockApi[2]} percentButton={percentButton} />
+                    {ApartmentMockApi.map((item, id) => {
+                        if (id === 3) return
+                        return <CatalogBlockItem
+                            data={item}
+                            key={id}
+                            percentButton={percentButton}
+                        />
+                    })}
                 </FavoriteItemContainer>
                 :
                 // Search

@@ -11,7 +11,7 @@ import PlotsPageRealtor from '../../src/pages/Realtor/PlotsPageRealtor/PlotsPage
 import CommercePageRealtor from '../../src/pages/Realtor/CommercePageRealtor/CommercePageRealtor.jsx'
 import RentPageRealtor from '../../src/pages/Realtor/RentPageRealtor/RentPageRealtor.jsx'
 // Side navigation
-import NewsRealtorPage from '../../src/pages/RealtorSideMenuPages/NewsRealtorPage/NewsRealtorPage';
+import NewsPageRealtor from '../../src/pages/RealtorSideMenuPages/NewsPageRealtor/NewsPageRealtor';
 import NewsCardRealtor from '../../src/pages/RealtorSideMenuPages/NewsCardRealtor/NewsCardRealtor';
 import NoveltiesPageRealtor from '../../src/pages/RealtorSideMenuPages/NoveltiesPageRealtor/NoveltiesPageRealtor';
 import ContactsPageRealtor from '../../src/pages/RealtorSideMenuPages/ContactsPageRealtor/ContactsPageRealtor';
@@ -34,7 +34,7 @@ export default function RealtorStackNavigator() {
             <Stack.Screen name="CommercePageRealtor" component={CommercePageRealtor} />
             <Stack.Screen name="RentPageRealtor" component={RentPageRealtor} />
             {/* Side navigation */}
-            <Stack.Screen name="NewsRealtor" component={NewsRealtorPage} />
+            <Stack.Screen name="NewsPageRealtor" component={NewsPageRealtor} />
             <Stack.Screen name="NewsCardRealtor" component={NewsCardRealtor} />
             <Stack.Screen name="NoveltiesPageRealtor" component={NoveltiesPageRealtor} />
             <Stack.Screen name="ContactsPageRealtor" component={ContactsPageRealtor} />

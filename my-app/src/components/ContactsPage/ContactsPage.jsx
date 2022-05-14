@@ -43,6 +43,7 @@ const ContactsPage = () => {
     const [inputFocus3, setInputFocus3] = useState(C.borderGray);
 
     const onSubmit = (data) => {
+        console.log("Кайф из формы", data)
         // Clear input value
         resetField('firstName');
         resetField('email');

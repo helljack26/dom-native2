@@ -7,6 +7,7 @@ const Container = styled.ScrollView`
     width: 100%;
     padding: 0px 4%;
     padding-top: 50px;
+    background-color: white;
     padding-bottom: 100px;
 `;
 // Header

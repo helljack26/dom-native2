@@ -14,7 +14,7 @@ import PlotsPageUser from '../../src/pages/User/PlotsPageUser/PlotsPageUser.jsx'
 import CommercePageUser from '../../src/pages/User/CommercePageUser/CommercePageUser.jsx'
 import RentPageUser from '../../src/pages/User/RentPageUser/RentPageUser.jsx'
 // Side navigation
-import NewsUserPage from '../../src/pages/UserSideMenuPages/NewsUserPage/NewsUserPage';
+import NewsPageUser from '../../src/pages/UserSideMenuPages/NewsPageUser/NewsPageUser';
 import NewsCardUser from '../../src/pages/UserSideMenuPages/NewsCardUser/NewsCardUser';
 import NoveltiesPageUser from '../../src/pages/UserSideMenuPages/NoveltiesPageUser/NoveltiesPageUser';
 import ContactsPageUser from '../../src/pages/UserSideMenuPages/ContactsPageUser/ContactsPageUser';
@@ -42,7 +42,7 @@ export default function UserStackNavigator() {
             <Stack.Screen name="CommercePage" component={CommercePageUser} />
             <Stack.Screen name="RentPage" component={RentPageUser} />
             {/* Side navigation */}
-            <Stack.Screen name="NewsUser" component={NewsUserPage} />
+            <Stack.Screen name="NewsPageUser" component={NewsPageUser} />
             <Stack.Screen name="NewsCardUser" component={NewsCardUser} />
             <Stack.Screen name="NoveltiesPage" component={NoveltiesPageUser} />
             <Stack.Screen name="ContactsPage" component={ContactsPageUser} />

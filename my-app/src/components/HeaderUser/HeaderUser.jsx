@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, TouchableOpacity, View, Image, TextInput } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, TextInput } from 'react-native';
+import C from '@/res/colors'
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -69,6 +70,8 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingBottom: 5,
         paddingRight: 10,
+        borderBottomColor: C.borderGray,
+        borderBottomWidth: 1.5,
     },
 
     header_block: {

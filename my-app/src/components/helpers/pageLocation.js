@@ -124,10 +124,10 @@ const PageLocation = () => {
             break;
 
         // SideMenu
-        case 'NewsUser':
+        case 'NewsPageUser':
             title = 'Новости'
             break;
-        case 'NewsRealtor':
+        case 'NewsPageRealtor':
             title = 'Новости'
             isRealtor = true
             break;

@@ -23,7 +23,7 @@ function CustomDrawerContent(props) {
                         setCatalog('Объявления Realtor')
                 }
                 } />
-                <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NewsRealtor" })} />
+                <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NewsPageRealtor" })} />
                 <DrawerItem label="Новинки" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "NoveltiesPageRealtor" })} />
                 <DrawerItem label="Контакты" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ContactsPageRealtor" })} />
                 <DrawerItem label="Шахматка" onPress={() => props.navigation.navigate('ScreenRealtor', { screen: "ApartmentsComplexPlanPageRealtor", params: { complexId: 2658, planId: 1215 } })} />

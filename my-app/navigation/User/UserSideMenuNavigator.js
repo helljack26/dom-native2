@@ -22,7 +22,7 @@ function CustomDrawerContent(props) {
                         setCatalog('Объявления User')
                 }
                 } />
-                <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenUser', { screen: "NewsUser" })} />
+                <DrawerItem label="Новости" onPress={() => props.navigation.navigate('ScreenUser', { screen: "NewsPageUser" })} />
                 <DrawerItem label="Новинки" onPress={() => props.navigation.navigate('ScreenUser', { screen: "NoveltiesPage" })} />
                 <DrawerItem label="Контакты" onPress={() => props.navigation.navigate('ScreenUser', { screen: "ContactsPage" })} />
                 <DrawerItem label="Выход" onPress={() => props.navigation.navigate("Start")} />

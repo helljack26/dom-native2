@@ -82,7 +82,6 @@ export const ApartmentMockApi =
             }],
             inFavorite: true
         },
-
         {
             id: 91681,
             adTitle: "1-к. Квартира, 18,3 м², 15/19 эт.",

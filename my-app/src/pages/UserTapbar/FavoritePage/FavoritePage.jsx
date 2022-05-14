@@ -59,9 +59,13 @@ export default function FavoritePage() {
             {isItemBlock === true ?
                 // Item
                 <FavoriteItemContainer>
-                    <CatalogBlockItem data={ApartmentMockApi[1]} />
-                    <CatalogBlockItem data={ApartmentMockApi[3]} />
-                    <CatalogBlockItem data={ApartmentMockApi[2]} />
+                    {ApartmentMockApi.map((item, id) => {
+                        if (id === 3) return
+                        return <CatalogBlockItem
+                            data={item}
+                            key={id}
+                        />
+                    })}
                 </FavoriteItemContainer>
                 :
                 // Search

@@ -1,12 +1,9 @@
 import F from '@/res/fonts'
 import React from 'react';
 import { useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import PageLocation from '@/components/helpers/pageLocation'
-
-import Pagination from '@/components/Buttons/Pagination/Pagination';
 import { useNewsApiStore } from '@/stores/NewsApi';
 
 import { observer } from 'mobx-react-lite';
@@ -14,11 +11,11 @@ import { toJS } from "mobx";
 
 // Styles
 import { style } from './style'
+
 const {
     Container,
     AdsHeader,
     AdsHeaderText,
-    AdsQueryNumber,
     NewsContainer,
     NewsItemBlock,
     NewsItemImageBlock,
@@ -28,23 +25,21 @@ const {
     NewsItemDate,
 } = style;
 
-const NewsUserPage = observer(() => {
-    const { title } = PageLocation();
+const NewsCardSimilar = observer(({ linkToPage }) => {
     const navigation = useNavigation();
 
-    const { news, setNews } = useNewsApiStore();
-    const numberOfNews = news !== undefined && news.length
-    const newsApi = toJS(news)
+    const { similarNews, getSimilarNews } = useNewsApiStore();
+    const newsApi = toJS(similarNews)
     const isNews = newsApi ? newsApi : []
 
     useEffect(() => {
-        setNews();
+        getSimilarNews();
     }, []);
 
     const NewsItem = ({ data }) => {
-        const { id, name, creationDate, photoPath } = data;
+        const { id, adTitle, creationDate, photoPath } = data;
         return <NewsItemBlock onPress={() => {
-            navigation.navigate('NewsCardUser', {
+            navigation.navigate(linkToPage, {
                 itemId: id,
             })
         }} >
@@ -55,7 +50,7 @@ const NewsUserPage = observer(() => {
             </NewsItemImageBlock>
             <NewsItemInfo>
                 <NewsItemTitle>
-                    {name}
+                    {adTitle}
                 </NewsItemTitle>
                 <NewsItemDate>
                     {creationDate}
@@ -69,23 +64,21 @@ const NewsUserPage = observer(() => {
                 horizontal={false}
                 style={styles.container}>
                 <Container>
-                    {/* TODO  в обсервер прикинуть как можно получать в компоненте число объектов в тайтл */}
                     <AdsHeader>
-                        <AdsHeaderText>{title}</AdsHeaderText>
-                        <AdsQueryNumber>{numberOfNews} новости</AdsQueryNumber>
+                        <AdsHeaderText>Похожие новости</AdsHeaderText>
                     </AdsHeader>
                     <NewsContainer>
                         {isNews.map((item, id) => <NewsItem data={item} key={id} />)}
                     </NewsContainer>
                 </Container>
-                <Pagination />
 
             </ScrollView>
         </View>
     );
 })
 
-export default NewsUserPage;
+export default NewsCardSimilar;
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
