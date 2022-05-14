@@ -31,24 +31,6 @@ const About_block_ul = styled.View`
 font-family: ${F.light};
 margin-bottom: 10px;
 `;
-const About_block_ul_li = styled.View`
-flex-direction: row;
-display: flex;
-`;
-const About_block_ul_title = styled.Text`
-margin-bottom: 12px;
-display: flex;
-font-size: 14px;
-color: ${C.secondBlack};
-align-items: center;
-`;
-const About_block_ul_value = styled.Text`
-margin-bottom: 10px;
-display: flex;
-font-size: 14px;
-color: ${C.mainBlack};
-align-items: center;
-`;
 const Benefits_value = styled.Text`
 margin-bottom: 10px;
 display: flex;
@@ -56,13 +38,6 @@ margin-left: 5px;
 font-size: 14px;
 color: ${C.mainBlack};
 align-items: center;
-`;
-const About_block_ul_link = styled.TouchableOpacity`
-
-`;
-const About_block_ul_link_text = styled.Text`
-text-decoration: underline;
-color: ${C.mainBlue};
 `;
 const Description = styled.View`
 display:flex;
@@ -84,11 +59,6 @@ export const styles = {
   Block_header_Text: Block_header_Text,
   About_block: About_block,
   About_block_ul: About_block_ul,
-  About_block_ul_li: About_block_ul_li,
-  About_block_ul_title: About_block_ul_title,
-  About_block_ul_value: About_block_ul_value,
-  About_block_ul_link: About_block_ul_link,
-  About_block_ul_link_text: About_block_ul_link_text,
   Benefits_value: Benefits_value,
   Description: Description,
   Description_text: Description_text,

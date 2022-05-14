@@ -112,7 +112,6 @@ const convertObjectKeyToTitle = (titleKey) => {
 const AboutListItem = (props) => {
     const navigation = useNavigation();
 
-    console.log("🚀 ~ file: AboutListItem.jsx ~ line 110 ~ AboutListItem ~ props", props)
     const { titleKey, value, propertyComplexId, complexPath } = props
     const { title, prefix } = convertObjectKeyToTitle(titleKey)
 

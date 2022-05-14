@@ -74,9 +74,9 @@ const ComplexDetails = ({ details, percentButtonLarge }) => {
             <Price>
                 <Price_block>
                     <Price_block_price>от {spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
-                    <Price_block_square_rating>
+                    {/* <Price_block_square_rating>
                         <Price_block_price_square>от {priceForSquareMeter} $ за м²</Price_block_price_square>
-                    </Price_block_square_rating>
+                    </Price_block_square_rating> */}
                 </Price_block>
                 <CardDetailsButtonBar inFavorite={inFavorite} favoriteNumber={favoriteNumber} viewNumber={viewNumber} percentButtonLarge={percentButtonLarge} />
             </Price>

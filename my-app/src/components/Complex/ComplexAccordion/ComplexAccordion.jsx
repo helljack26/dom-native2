@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 
+import AboutListItem from '../../Card/CardAccordion/AboutListItem/AboutListItem'
+
+import { prepareObjectKeyValueForListItem } from '@/components/helpers/prepareObjectKeyValueForListItem';
+
 // Icon
 import { AntDesign } from '@expo/vector-icons';
 // Accordion
@@ -13,9 +17,6 @@ const {
     Block_header_Text,
     About_block,
     About_block_ul,
-    About_block_ul_li,
-    About_block_ul_title,
-    About_block_ul_value,
     Benefits_value,
     Description,
     Description_text,
@@ -30,18 +31,9 @@ const ComplexAccordion = ({ details }) => {
         objectBenefits,
     } = details;
 
-    // Li component
-    const Li = ({ data }) => {
-        return <About_block_ul_li>
-            {/* TODO add link */}
-            <About_block_ul_title>
-                {data.title} &nbsp;
-            </About_block_ul_title>
-            <About_block_ul_value>
-                {data.value}
-            </About_block_ul_value>
-        </About_block_ul_li>
-    }
+    const convertedObjectContacts = prepareObjectKeyValueForListItem(objectContacts)
+    const convertedObjectDetails = prepareObjectKeyValueForListItem(objectDetails)
+    const convertedObjectBenefits = prepareObjectKeyValueForListItem(objectBenefits)
 
     const [collapsed0, setCollapsed0] = useState(true);
     const [isEnabled0, setIsEnabled0] = useState(false);
@@ -90,8 +82,8 @@ const ComplexAccordion = ({ details }) => {
                     <Collapsible collapsed={collapsed0} align="center">
                         <About_block>
                             <About_block_ul>
-                                {objectContacts !== undefined ?
-                                    objectContacts.map((item, id) => <Li data={item} key={id} />) : null
+                                {convertedObjectContacts !== undefined ?
+                                    convertedObjectContacts.map((item, id) => <AboutListItem titleKey={item.titleKey} value={item.value} key={id} />) : null
                                 }
                             </About_block_ul>
                         </About_block>
@@ -113,8 +105,8 @@ const ComplexAccordion = ({ details }) => {
                     <Collapsible collapsed={collapsed1} align="center">
                         <About_block>
                             <About_block_ul>
-                                {objectDetails !== undefined ?
-                                    objectDetails.map((item, id) => <Li data={item} key={id} />) : null
+                                {convertedObjectDetails !== undefined ?
+                                    convertedObjectDetails.map((item, id) => <AboutListItem titleKey={item.titleKey} value={item.value} key={id} />) : null
                                 }
                             </About_block_ul>
                         </About_block>
@@ -137,8 +129,8 @@ const ComplexAccordion = ({ details }) => {
                     <Collapsible collapsed={collapsed2} align="center">
                         <About_block>
                             <About_block_ul>
-                                {objectBenefits !== undefined ?
-                                    objectBenefits.map((item, id) => <Benefits_value key={id}>• &nbsp; {item}</Benefits_value>) : null
+                                {convertedObjectBenefits !== undefined ?
+                                    convertedObjectBenefits.map((item, id) => <Benefits_value key={id}>• &nbsp; {item.value}</Benefits_value>) : null
                                 }
                             </About_block_ul>
                         </About_block>

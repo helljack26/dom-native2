@@ -68,7 +68,6 @@ const CardAccordion = ({ objectDetails, description, complexPath }) => {
                             <About_block_ul>
                                 {objectDetails !== undefined ?
                                     convertedObjectDetails.map((item, id) => {
-                                        console.log(item);
                                         return <AboutListItem
                                             titleKey={item.titleKey}
                                             value={item.value}

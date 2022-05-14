@@ -25,7 +25,7 @@ const {
     Price_block_price_rating,
 } = style;
 
-const CardDetailsContainer = ({ details, percentButtonLarge,complexPath }) => {
+const CardDetailsContainer = ({ details, percentButtonLarge, complexPath }) => {
     const {
         adTitle,
         price,
@@ -42,9 +42,12 @@ const CardDetailsContainer = ({ details, percentButtonLarge,complexPath }) => {
         // agentId,
         // percentageText,
     } = details;
+    const { propertyArea, plotArea } = objectDetails;
 
     const spacedPrice = spaceInPriceValue(price)
-    const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / totalArea))
+    const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / propertyArea))
+    const priceForPlotPart = spaceInPriceValue(Math.trunc(price / plotArea))
+    const isSquareMeter = propertyArea !== undefined && plotArea === undefined
 
     return (
         <Container>
@@ -78,7 +81,11 @@ const CardDetailsContainer = ({ details, percentButtonLarge,complexPath }) => {
                 <Price_block>
                     <Price_block_price>{spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
                     <Price_block_square_rating>
-                        <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>
+                        {/* For square meter property */}
+                        {isSquareMeter && <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>}
+
+                        {/* For plot property */}
+                        {plotArea !== undefined && <Price_block_price_square>{priceForPlotPart} $ за сотку &nbsp;·&nbsp; </Price_block_price_square>}
                         <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
                     </Price_block_square_rating>
                 </Price_block>
@@ -86,7 +93,7 @@ const CardDetailsContainer = ({ details, percentButtonLarge,complexPath }) => {
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails} description={description}  complexPath={complexPath}/>
+            <CardAccordion objectDetails={objectDetails} description={description} complexPath={complexPath} />
 
             {/* Complain link */}
             {percentButtonLarge === undefined && <ComplainLink />}
