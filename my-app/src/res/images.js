@@ -66,6 +66,7 @@ import DuplicateIcon from '../../assets/icon/duplicate_icon.svg'
 import RenameIcon from '../../assets/icon/rename_icon.svg'
 import ShowPasswordIcon from '../../assets/icon/show_password_icon.svg'
 import ShowPasswordBlueIcon from '../../assets/icon/show_password_blue_icon.svg'
+import ExitIcon from '../../assets/icon/exit_icon.svg'
 // Form
 import PhoneIcon from '../../assets/icon/phone_icon.svg'
 import MessageIcon from '../../assets/icon/message_icon.svg'
@@ -141,6 +142,7 @@ const IMAGES = {
     RenameIcon: RenameIcon,
     ShowPasswordIcon: ShowPasswordIcon,
     ShowPasswordBlueIcon: ShowPasswordBlueIcon,
+    ExitIcon: ExitIcon,
 
     // Form
     PhoneIcon: PhoneIcon,

@@ -39,7 +39,14 @@ export default function HeaderRealtor({ navigation }) {
                         <BellIcon height={33} width={25} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.userIcon} onPress={() => { alert("you clicked me") }}>
+                    <TouchableOpacity style={styles.userIcon}
+                        onPress={() => {
+                            navigation.navigate('ScreenRealtor', {
+                                screen: 'RealtorAccountPage'
+                            });
+                        }}
+
+                    >
                         {/* Сюда должна прилетать картинка юзера */}
                         <Image style={styles.userPhotoImg} source={IMAGES.UserPhoto} />
                     </TouchableOpacity>
@@ -56,8 +63,8 @@ const styles = StyleSheet.create({
         height: 42,
         width: '100%',
         paddingBottom: 5,
-        borderBottomColor: C.borderGray,
-        borderBottomWidth: 1.5,
+        // borderBottomColor: C.borderGray,
+        // borderBottomWidth: 1.5,
     },
 
     header_block: {

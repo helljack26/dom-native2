@@ -119,10 +119,7 @@ const LoginPage = () => {
                                         value={value}
                                         style={{ borderColor: `${errors.password ? 'red' : inputFocus2}` }}
                                     />
-                                    <ShowPasswordIconButton
-                                        type='button'
-                                        onPress={() => setPasswordShown(!passwordShown)}
-                                    >
+                                    <ShowPasswordIconButton onPress={() => setPasswordShown(!passwordShown)}       >
                                         {!passwordShown ?
                                             <ShowPasswordIcon width={20} height={20} />
                                             :
