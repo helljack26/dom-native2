@@ -61,6 +61,7 @@ const HeaderExitButtonText = styled.Text`
 color: ${C.mainBlue};
 font-family: ${F.regular};
 font-size: 14px;
+margin-left: 5px;
 `;
 const HeaderExitButton = styled.TouchableOpacity`
 display: flex;

@@ -59,6 +59,7 @@ import LockGrayIcon from '../../assets/icon/lock_gray_icon.svg';
 
 // Icon
 import CrossIcon from '../../assets/icon/cross_icon.svg';
+import CrossWhiteIcon from '../../assets/icon/cross_white_icon.svg';
 import CrossBlueIcon from '../../assets/icon/cross_blue_icon.svg';
 import CheckedIcon from '../../assets/icon/checked_icon.svg';
 import CheckIcon from '../../assets/icon/check_icon.svg'
@@ -68,6 +69,7 @@ import ShowPasswordIcon from '../../assets/icon/show_password_icon.svg'
 import ShowPasswordBlueIcon from '../../assets/icon/show_password_blue_icon.svg'
 import ExitIcon from '../../assets/icon/exit_icon.svg'
 import ArchiveIcon from '../../assets/icon/archive_icon.svg'
+import AddEmployeeIcon from '../../assets/icon/add_employee_icon.svg'
 // Form
 import PhoneIcon from '../../assets/icon/phone_icon.svg'
 import MessageIcon from '../../assets/icon/message_icon.svg'
@@ -136,6 +138,7 @@ const IMAGES = {
 
     // Icon
     CrossIcon: CrossIcon,
+    CrossWhiteIcon: CrossWhiteIcon,
     CrossBlueIcon: CrossBlueIcon,
     CheckedIcon: CheckedIcon,
     CheckIcon: CheckIcon,
@@ -145,6 +148,7 @@ const IMAGES = {
     ShowPasswordBlueIcon: ShowPasswordBlueIcon,
     ExitIcon: ExitIcon,
     ArchiveIcon: ArchiveIcon,
+    AddEmployeeIcon: AddEmployeeIcon,
 
     // Form
     PhoneIcon: PhoneIcon,

@@ -1,8 +1,16 @@
 import React from "react";
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useState } from 'react';
+import C from '@/res/colors'
+import { Image, Linking } from 'react-native';
 
-import IMAGES from 'res/images'
+// Images
+import IMAGES from '@/res/images'
+const {
+    AddEmployeeIcon,
+    CrossIcon,
+    CrossWhiteIcon
+} = IMAGES;
 
 // Styles
 import { style } from './style'
@@ -21,9 +29,6 @@ const {
     ButtonSubmit,
     ButtonSubmitText,
     LinkToAddNewObject,
-    LinkToAddNewObjectText,
-    LinkToAddNewObjectIconMobile,
-    LinkToAddNewObjectIconMobileCross,
     EmployeeItem,
     EmployeeItemBlock,
     EmployeeImage,
@@ -42,7 +47,11 @@ const {
 } = style;
 
 const EmployeesData = ({ userEmployees, tabTitle }) => {
-    const { register, handleSubmit, resetField, formState: { errors }, } = useForm();
+    const { control, handleSubmit, resetField, formState: { errors } } = useForm({
+        defaultValues: {
+            newEmployeeNumber: '',
+        }
+    });
 
     const onSubmit = (data) => {
         console.log("🚀 ~ file: EmployeesData.jsx ~ line 44 ~ onSubmit ~ data", data)
@@ -52,14 +61,14 @@ const EmployeesData = ({ userEmployees, tabTitle }) => {
         toggling(false)
         return
     };
-    // const {
 
-    // } = userEmployees;
+    const [inputFocus5, setInputFocus5] = useState(C.borderGray);
     const [isOpen, setIsOpen] = useState(false);
     const toggling = (state) => setIsOpen(state);
 
     const employeesCount = userEmployees !== undefined && userEmployees.length
-
+    // Message for input error
+    const requiredMessage = 'Не может остаться пустым'
     return (
         <Container>
             <ContainerHeader>
@@ -73,48 +82,57 @@ const EmployeesData = ({ userEmployees, tabTitle }) => {
                     </HeaderSubText>
                 </ContainerHeaderBlock>
 
-                <Drop
-                // onMouseLeave={() => toggling(false)}
-                >
-                    <LinkToAddNewObject onClick={() => toggling(!isOpen)}  >
-                        <LinkToAddNewObjectText>
-                            {isOpen ? 'X' : 'Добавить сотрудника'}
-                        </LinkToAddNewObjectText>
-
-                        {isOpen ? <LinkToAddNewObjectIconMobileCross
-                            source={IMAGES.CrossIcon}
-                        ></LinkToAddNewObjectIconMobileCross>
-                            :
-                            <LinkToAddNewObjectIconMobile
-                                source={IMAGES.AddEmployeeIcon}
-                            ></LinkToAddNewObjectIconMobile>
-                        }
+                <Drop>
+                    <LinkToAddNewObject onPress={() => toggling(!isOpen)}>
+                        {isOpen ? <CrossWhiteIcon width={12} height={12} /> : <AddEmployeeIcon width={18} height={18} />}
                     </LinkToAddNewObject>
+
                     {isOpen && (
-                        <DropContainer as='form' onSubmit={handleSubmit(onSubmit)}>
-                            <FormInputBlock>
+                        <DropContainer
+                            style={{
+                                shadowColor: '#000',
+                                shadowOffset: { width: 0, height: 1 },
+                                shadowOpacity: 0.8,
+                                shadowRadius: 2,
+                                elevation: 5
+                            }}
+                        >
+                            {/*New Employee Phone Number */}
+                            <Controller
+                                control={control}
+                                rules={{ required: true, }}
+                                render={({ field: { onChange, onBlur, value } }) => (
+                                    <FormInputBlock>
+                                        <FormInputLabel>
+                                            Номер телефона нового сотрудника  &nbsp;&nbsp;
+                                        </FormInputLabel>
+                                        <FormInput
+                                            keyboardType='numeric'
+                                            selectionColor={C.mainBlue}
+                                            cursorColor={C.mainBlue}
+                                            onFocus={() => setInputFocus5(C.mainBlue)}
+                                            onBlur={() => {
+                                                onBlur
+                                                setInputFocus5(C.borderGray)
+                                            }}
+                                            onChangeText={onChange}
+                                            value={value}
+                                            style={{
+                                                borderColor: `${errors.newEmployeeNumber ? 'red' : inputFocus5}`,
+                                            }}
+                                        />
+                                        {errors.newEmployeeNumber && <ErrorMessage>{requiredMessage}</ErrorMessage>}
+                                    </FormInputBlock>
+                                )}
+                                name="newEmployeeNumber"
+                            />
 
-                                <FormInputLabel htmlFor="newEmployeeNumber">
-                                    Номер телефона нового сотрудника &nbsp;&nbsp;
-                                    {errors.newEmployeeNumber && <ErrorMessage>{errors.newEmployeeNumber.message}</ErrorMessage>}
-                                </FormInputLabel>
-
-                                <FormInput
-                                    type='number'
-                                    style={{
-                                        outlineColor: errors.newEmployeeNumber !== undefined && 'red'
-                                    }}
-                                    id="newEmployeeNumber"
-                                    {...register('newEmployeeNumber', {
-                                        required: "Обязательное поле",
-                                        // pattern: {
-                                        //     value: /\S+@\S+\.\S+/,
-                                        //     message: "Не валидный e-mail"
-                                        // }
-                                    })} />
-                            </FormInputBlock>
                             <ButtonSubmit
-                                as='button' type="submit">
+                                onPress={handleSubmit(onSubmit)}
+                                style={{
+                                    marginTop: errors.newEmployeeNumber ? 22 : 12,
+                                }}
+                            >
                                 <ButtonSubmitText>
                                     Добавить
                                 </ButtonSubmitText>
@@ -133,7 +151,7 @@ const EmployeesData = ({ userEmployees, tabTitle }) => {
                         <EmployeeItem key={id}>
                             <EmployeeItemBlock>
                                 <EmployeeImage>
-                                    <img src={userImage} width='100%' height='100%' alt={`${userName} ${userSurName}`} />
+                                    <Image source={userImage} style={{ width: 122, height: 122 }} resizeMode='stretch' />
                                 </EmployeeImage>
                                 <EmployeeInfoContainer>
 
@@ -147,11 +165,14 @@ const EmployeesData = ({ userEmployees, tabTitle }) => {
                                         </EmployeeInfoPosition>
                                     </EmployeeInfoBlock>
 
-                                    <EmployeeText as='a' href={`tel:${userPhoneNumber}`}  >
+                                    <EmployeeText
+                                        onPress={() => Linking.openURL(`tel:${userPhoneNumber}`)}>
                                         {userPhoneNumber}
                                     </EmployeeText>
 
-                                    <EmployeeText as='a' href={`mailto:${userEmail}`}>
+                                    <EmployeeText
+                                        onPress={() => Linking.openURL(`mailto:${userEmail}`)}>
+
                                         {userEmail}
                                     </EmployeeText>
                                 </EmployeeInfoContainer>
@@ -161,13 +182,9 @@ const EmployeesData = ({ userEmployees, tabTitle }) => {
                             <ButtonContainer>
                                 <ButtonContainedAbsolute>
 
-                                    <Button
-                                        as='button'
-                                        type='button'
-                                        buttonImage={IMAGES.CrossIcon}
-                                    >
+                                    <Button>
+                                        <CrossIcon width={15} height={15} />
                                     </Button>
-                                    <TooltipRemove>Удалить</TooltipRemove>
                                 </ButtonContainedAbsolute>
 
                             </ButtonContainer>

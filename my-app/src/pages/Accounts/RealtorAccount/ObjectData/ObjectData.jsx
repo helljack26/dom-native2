@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ObjectDataItem from './ObjectDataItem/ObjectDataItem';
 import { useNavigation } from '@react-navigation/native';
 

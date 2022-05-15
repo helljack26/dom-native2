@@ -15,6 +15,7 @@ const {
     RenameIcon,
     CrossIcon,
 } = IMAGES;
+
 // Styles
 import { style } from './style.js'
 const {
@@ -59,7 +60,6 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
         favoriteNumber,
         viewNumber,
         plans,
-        // totalArea,
         // percentageText,
     } = data;
 
@@ -70,13 +70,6 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
 
     const isComplexLink = plans !== undefined ? 'ApartmentsComplexPageRealtor' : 'CardPageRealtor'
     const isComplexId = plans !== undefined ? complexId : id
-
-
-    // This button after 576px hiding on this component and teleportate to CardSaveButton
-    // const TeleportButtonActive = 
-
-    // const TeleportButtonArchive = 
-
 
     return (
         <ItemContainer>
@@ -176,17 +169,12 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
 
                 <ItemContainerFooterButtons>
 
-                    {isActiveObject && <FooterButton
-                    // style={{ marginTop: 30, marginBottom: -10 }}
-                    >
+                    {isActiveObject && <FooterButton  >
                         <ArchiveIcon height={13} width={13} />
                         <FooterButtonText>Архивировать</FooterButtonText>
                     </FooterButton>}
 
-                    {!isActiveObject && <FooterButton
-                        // style={{ marginTop: 30, marginBottom: -10 }}
-
-                        isActive={true}>
+                    {!isActiveObject && <FooterButton isActive={true}>
                         <FooterButtonText isActive={true}>Активировать</FooterButtonText>
                     </FooterButton>}
 

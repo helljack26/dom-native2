@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import C from '@/res/colors'
 import F from '@/res/fonts'
-import { M } from '@/res/mixin'
 
 const ItemContainer = styled.View`
 display: flex;
@@ -19,8 +18,6 @@ width: 100%;
 flex-direction: column;
 margin-bottom: -14px;
 `;
-
-
 const ItemColImageBlock = styled.TouchableOpacity`
 width: 100%;
 height: 170px;
@@ -45,13 +42,11 @@ width: 100%;
 display: flex;
 flex-direction: column;
 `;
-
 const PriceBlock = styled.View`
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 `;
-
 const Price = styled.Text`
 font-family: ${F.medium};
 font-size: 14px;
@@ -104,7 +99,6 @@ justify-content: center;
 flex-direction: row;
 width: 100%;
 `;
-
 const MessageButtonText = styled.Text`
 font-size: 13px;
 font-family: ${F.light};
@@ -122,7 +116,6 @@ display: flex;
 align-items: center;
 flex-direction: column;
 width: 100%;
-
 `;
 const FooterButton = styled.TouchableOpacity`
 height: 42px;
@@ -138,7 +131,6 @@ border-radius: 4px;
 border-width: ${props => !props.isActive ? 1 + 'px' : 0 + 'px'};
 background-color: ${props => props.isActive ? C.mainBlue : 'white'};
 `;
-
 const FooterButtonText = styled.Text`
 font-family: ${props => props.isActive ? F.medium : F.regular};
 color: ${props => props.isActive ? 'white' : C.mainBlack};

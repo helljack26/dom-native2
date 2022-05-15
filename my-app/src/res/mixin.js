@@ -33,10 +33,18 @@ color: white;
 font-family: ${F.medium};
 font-weight: 100;
 `
+const ErrorMessage = styled.Text`
+color: red;
+font-size: 13.5px;
+position:absolute;
+bottom:-18px ;
+left:0px ;
+`;
 
 export const M = {
     MainContainer: MainContainer,
     HeaderH1: HeaderH1,
     ButtonBlue: ButtonBlue,
     ButtonBlueText: ButtonBlueText,
+    ErrorMessage: ErrorMessage,
 }

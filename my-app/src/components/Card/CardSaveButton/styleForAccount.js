@@ -7,7 +7,6 @@ width: 100%;
 background-color: white;
 display: flex;
 flex-direction: column;
-/* margin-top: -14px; */
 `
 const Container_title = styled.View`
 font-family: ${F.light};

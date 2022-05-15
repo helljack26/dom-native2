@@ -5,7 +5,7 @@ import { accountRealtorData } from '@/stores/accountRealtorData.js'
 
 import PersonalData from './PersonalData/PersonalData';
 import ObjectData from './ObjectData/ObjectData';
-// import EmployeesData from './EmployeesData/EmployeesData';
+import EmployeesData from './EmployeesData/EmployeesData';
 // import SubscriptionData from './SubscriptionData/SubscriptionData';
 
 // Images
@@ -103,7 +103,7 @@ const RealtorAccount = () => {
 
                         {tab === ACCOUNTHASHLINK[1].hash && <ObjectData userObject={userObject} />}
 
-                        {/* {pageHash === ACCOUNTHASHLINK[2].hash.slice(1) && <EmployeesData userEmployees={userEmployees} tabTitle={ACCOUNTHASHLINK[2].title} />} */}
+                        {tab === ACCOUNTHASHLINK[2].hash && <EmployeesData userEmployees={userEmployees} tabTitle={ACCOUNTHASHLINK[2].title} />}
 
                         {/* {pageHash === ACCOUNTHASHLINK[3].hash.slice(1) && <SubscriptionData userEmployees={userEmployees} userSubscription={userSubscription} tabTitle={ACCOUNTHASHLINK[3].title} />} */}
                     </ContainerBlock>
