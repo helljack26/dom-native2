@@ -1,12 +1,12 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { accountRealtorData } from '@/stores/accountRealtorData.js'
 
 import PersonalData from './PersonalData/PersonalData';
 import ObjectData from './ObjectData/ObjectData';
 import EmployeesData from './EmployeesData/EmployeesData';
-// import SubscriptionData from './SubscriptionData/SubscriptionData';
+import SubscriptionData from './SubscriptionData/SubscriptionData';
 
 // Images
 import IMAGES from '@/res/images'
@@ -73,9 +73,7 @@ const RealtorAccount = () => {
                                         onPress={() => setTab(hash)}
                                         key={id}
                                     >
-                                        <HeaderNavbarLinkText
-                                            isActive={isActive}
-                                        >
+                                        <HeaderNavbarLinkText isActive={isActive}  >
                                             {title}
                                         </HeaderNavbarLinkText>
                                     </HeaderNavbarLink>
@@ -105,7 +103,8 @@ const RealtorAccount = () => {
 
                         {tab === ACCOUNTHASHLINK[2].hash && <EmployeesData userEmployees={userEmployees} tabTitle={ACCOUNTHASHLINK[2].title} />}
 
-                        {/* {pageHash === ACCOUNTHASHLINK[3].hash.slice(1) && <SubscriptionData userEmployees={userEmployees} userSubscription={userSubscription} tabTitle={ACCOUNTHASHLINK[3].title} />} */}
+                        {tab === ACCOUNTHASHLINK[3].hash && <SubscriptionData userEmployees={userEmployees} userSubscription={userSubscription} tabTitle={ACCOUNTHASHLINK[3].title} />}
+
                     </ContainerBlock>
 
                 </Container>

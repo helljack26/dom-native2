@@ -8,6 +8,7 @@ const C = {
     green: "#6abd24",
     violet: "#9b51e0",
     orange: '#F2994A',
+    disabledButton: 'gray',
 }
 
 export default C;

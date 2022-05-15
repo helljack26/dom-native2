@@ -151,7 +151,7 @@ const EmployeeText = styled.Text`
 font-size: 18px;
 font-family: ${F.light};
 color: ${C.mainBlack};
-margin-top: 10px;
+margin-top: 14px;
 `;
 
 const ButtonContainer = styled.View`

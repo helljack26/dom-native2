@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 
-import IMAGES from 'res/images'
+// Icon
+import { AntDesign } from '@expo/vector-icons';
 
 // Styles
 import { style } from './style'
@@ -15,13 +16,16 @@ const {
     ContainerBlockRowValue,
     HeaderText,
     LinkToAddNewObject,
+    LinkToAddNewObjectDisable,
     LinkToAddNewObjectText,
     DropApartmentTypeBlock,
+    DropBlock,
     Drop,
     DropHeader,
     DropContainer,
     DropContainerList,
-    DropContainerLi,
+    DropContainerListLink,
+    DropContainerListLinkText,
 } = style;
 
 const SubscriptionData = ({ userEmployees, userSubscription, tabTitle }) => {
@@ -51,7 +55,7 @@ const SubscriptionData = ({ userEmployees, userSubscription, tabTitle }) => {
     } = getDaysLeftString(subscriptionDueDate)
 
     const [isOpen, setIsOpen] = useState(false);
-    const [subscriptionTypeState, setSubscriptionTypeState] = useState();
+    const [subscriptionTypeState, setSubscriptionTypeState] = useState(subscriptionType);
     const toggling = (state) => setIsOpen(state);
     const onSubscriptionTypeSelectClicked = value => () => { setSubscriptionTypeState(value); setIsOpen(false); };
 
@@ -63,8 +67,9 @@ const SubscriptionData = ({ userEmployees, userSubscription, tabTitle }) => {
         }
         return
     };
+    const isShowSubmitButton = subscriptionType !== subscriptionTypeState
     return (
-        <Container as='form' onSubmit={handleSubmit(onSubmit)}>
+        <Container>
             <ContainerHeader>
 
                 <HeaderText >
@@ -99,35 +104,49 @@ const SubscriptionData = ({ userEmployees, userSubscription, tabTitle }) => {
                 <DropApartmentTypeBlock>
                     <ContainerBlockRowTitle>Тарифы</ContainerBlockRowTitle>
 
-                    <Drop onMouseLeave={() => toggling(false)}>
-                        <DropHeader value='any' onClick={() => toggling(true)}
-                            style={{ backgroundImage: `url(${isOpen ? IMAGES.arrow_down : IMAGES.arrow_up})` }}
-                        >
-                            {subscriptionTypeState || subscriptionType}
-                        </DropHeader>
-
+                    <DropBlock>
+                        <Drop onPress={() => toggling(false)}  >
+                            <DropHeader onPress={() => toggling(!isOpen)} >
+                                <DropContainerListLinkText>
+                                    {subscriptionTypeState || subscriptionType}
+                                </DropContainerListLinkText>
+                                <AntDesign
+                                    name={isOpen ? 'up' : 'down'}
+                                    size={15}
+                                    color="black" />
+                            </DropHeader>
+                        </Drop>
                         {isOpen && (
-                            <DropContainer>
+                            <DropContainer style={{
+                                zIndex: 2
+                            }}>
                                 <DropContainerList>
-                                    {subscriptionTypes.map((option, id) => {
-                                        const isActive = option === subscriptionTypeState
-                                        return <DropContainerLi isActive={isActive} value={option} key={id}
-                                            onClick={onSubscriptionTypeSelectClicked(option)}>
+                                    {subscriptionTypes.map((option, id) => <DropContainerListLink
+                                        onPress={onSubscriptionTypeSelectClicked(option)}
+                                        key={id}>
+                                        <DropContainerListLinkText>
                                             {option}
-                                        </DropContainerLi>
-                                    })}
+                                        </DropContainerListLinkText>
+                                    </DropContainerListLink>
+                                    )
+                                    }
+
                                 </DropContainerList>
                             </DropContainer>
                         )}
-                    </Drop>
+                    </DropBlock >
+
                 </DropApartmentTypeBlock>
 
                 {/* Continue */}
-                <LinkToAddNewObject
-                    as='button'
-                    type="submit">
+                {isShowSubmitButton ? <LinkToAddNewObject onPress={handleSubmit(onSubmit)}  >
                     <LinkToAddNewObjectText>Продолжить</LinkToAddNewObjectText>
                 </LinkToAddNewObject>
+                    :
+                    <LinkToAddNewObjectDisable>
+                        <LinkToAddNewObjectText>Продолжить</LinkToAddNewObjectText>
+                    </LinkToAddNewObjectDisable>
+                }
 
             </ContainerBlock>
         </Container >

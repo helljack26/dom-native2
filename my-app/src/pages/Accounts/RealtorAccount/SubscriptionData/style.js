@@ -3,11 +3,16 @@ import C from '@/res/colors'
 import F from '@/res/fonts'
 import { M } from '@/res/mixin'
 
-const Container = styled.View`
+const Container = styled.ScrollView`
 width: 100%;
+height: 100%;
+margin-top: 20px;
+margin-bottom: 60px;
 `;
 const ContainerBlock = styled.View`
 width: 100%;
+height: 100%;
+
 display: flex;
 flex-direction: column;
 margin-top: 20px;
@@ -27,21 +32,26 @@ font-size: 20px;
 
 `;
 const ContainerBlockRow = styled.View`
+display: flex;
+flex-direction: row;
+margin-bottom: 16px;
 `;
 const ContainerBlockRowTitle = styled.Text`
 font-family: ${F.light};
 color: ${C.secondBlack};
 margin-right: 4px;
-font-size: 15px;
+font-size: 17px;
 
 `;
 const ContainerBlockRowValue = styled.Text`
 font-family: ${F.light};
 color: ${C.mainBlack};
-font-size: 15px;
+font-size: 17px;
 `;
 
 const LinkToAddNewObject = styled.TouchableOpacity`
+margin-top: 20px;
+margin-bottom: 50%;
 padding: 15px 0px;
 background-color: ${C.mainBlue};
 border-radius: 4px;
@@ -51,87 +61,80 @@ align-items: center;
 flex-direction: row;
 width: 100%;
 `;
+const LinkToAddNewObjectDisable = styled.View`
+background-color: ${C.disabledButton};
+margin-top: 20px;
+margin-bottom: 50%;
+padding: 15px 0px;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+width: 100%;
+`;
 const LinkToAddNewObjectText = styled.Text`
 color: white;
-font-size: 13px;
+font-size: 15px;
 font-weight: 100;
 font-family: ${F.regular};
 `;
 
 const DropApartmentTypeBlock = styled.View`
-min-width: 350px;
-width: 350px;
-@media screen and (max-width: 450px) {
-min-width: 100%;
 width: 100%;
-}
 `;
-const Drop = styled.View`
+const DropBlock = styled.View`
+width: 100%;
 margin-top: 8px;
-position: relative;
-color: ${C.secondBlack};
-background-color: white;
-border-radius: 5px;
-border: 1px solid ${C.borderGray};
 `;
-const DropHeader = styled.Text`
+const Drop = styled.TouchableOpacity`
+color: ${C.mainBlack};
 background-color: white;
 width: 100%;
+border-radius: 5px;
+border: 1px solid ${C.borderDarkGray};
+`;
+const DropHeader = styled.TouchableOpacity`
+background-color: white;
+width: 100%;
+height: 42px;
 display: flex;
-padding: 5px 0px;
-line-height: 2rem;
-background-size: 11px 10px;
-background-repeat: no-repeat;
-background-position-x: calc(100% - 15px);
-background-position-y: 50%;
-transition: all 0.3s ease-in-out;
-padding-left: 13px;
-padding-right: 20px;
+flex-direction: row;
+border-radius: 5px;
+justify-content: space-between;
+padding: 0px 16px;
 align-items: center;
 border: none;
-font-weight: 100;
 font-family: ${F.light};
-font-size: 17px;
-&:focus {
-outline: none;
-}
-&:hover {
-background-color: rgba(241, 241, 241, 0.466);
-}
-@media screen and (max-width: 450px) {
-font-size: 15px;
-}
 `;
 const DropContainer = styled.View`
 width: 100%;
 position: absolute;
-top: 100%;
+top: 44px;
+background-color: white;
 left: 0px;
 z-index: 999;
-background-color: white;
+border-left-color: ${C.borderGray};
+border-left-width: 1px;
+border-right-color: ${C.borderGray};
+border-right-width: 1px;
 `;
-const DropContainerList = styled.ul`
+const DropContainerList = styled.View`
 width: 100%;
-border: 1px solid ${C.borderGray};
+height: 100%;
 `;
-const DropContainerLi = styled.li`
-font-family: ${F.light};
-font-size: 17px;
-width: 100%;
+const DropContainerListLink = styled.TouchableOpacity`
 display: flex;
+flex-direction: row;
 align-items: center;
-padding: 10px 0px;
-padding-left: 15px;
-line-height: 2rem;
-transition: all 0.3s ease-in-out;
-background-color: ${props => props.isActive && C.backgroundGray};
-list-style-type: none;
-&:hover {
-background-color: rgba(241, 241, 241, 0.466);
-}
-@media screen and (max-width: 450px) {
-font-size: 15px;
-}
+border-bottom-color: ${C.borderGray};
+border-bottom-width: 1px;
+height: 45px;
+padding: 0px 16px;
+`;
+const DropContainerListLinkText = styled.Text`
+font-family: ${F.light};
+font-size: 16px;
 `;
 export const style = {
     Container: Container,
@@ -143,11 +146,14 @@ export const style = {
     ContainerBlockRowValue: ContainerBlockRowValue,
     HeaderText: HeaderText,
     LinkToAddNewObject: LinkToAddNewObject,
+    LinkToAddNewObjectDisable: LinkToAddNewObjectDisable,
     LinkToAddNewObjectText: LinkToAddNewObjectText,
     DropApartmentTypeBlock: DropApartmentTypeBlock,
+    DropBlock: DropBlock,
     Drop: Drop,
     DropHeader: DropHeader,
     DropContainer: DropContainer,
     DropContainerList: DropContainerList,
-    DropContainerLi: DropContainerLi,
+    DropContainerListLink: DropContainerListLink,
+    DropContainerListLinkText: DropContainerListLinkText,
 }

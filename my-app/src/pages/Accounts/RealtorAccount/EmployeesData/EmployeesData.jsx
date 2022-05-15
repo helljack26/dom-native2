@@ -39,8 +39,6 @@ const {
     EmployeeInfoContainer,
     Button,
     ButtonContainedAbsolute,
-
-    TooltipRemove,
     ButtonContainer,
     ErrorMessage,
 
