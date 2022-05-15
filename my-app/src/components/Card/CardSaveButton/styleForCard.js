@@ -43,7 +43,7 @@ color: ${C.mainBlack};
 `
 
 
-export const styles = {
+export const styleForCard = {
     Container: Container,
     Container_title: Container_title,
     Container_block: Container_block,

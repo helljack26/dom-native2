@@ -37,7 +37,8 @@ margin-top: 8px;
 
 export default function ApartmentsComplexPageRealtor() {
     const route = useRoute();
-    const { complexId } = route.params;
+    console.log("🚀 ~ file: ApartmentsComplexPageRealtor.jsx ~ line 40 ~ ApartmentsComplexPageRealtor ~ route", route)
+    const { itemId } = route.params;
 
     const scrollViewRef = useRef(null)
     const scrollTop = () => {
@@ -45,14 +46,14 @@ export default function ApartmentsComplexPageRealtor() {
             scrollViewRef.current.scrollTo({ y: 0, animated: false })
         }
     }
-    if (complexId) {
+    if (itemId) {
         scrollTop()
     }
 
     const complexApi = apiMocks.ApartmentComplexMockApi;
-    const objectDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
+    const objectDetails = complexApi.find((item) => item.complexId === Number(itemId) && item);
 
-    const { photoLargePath, contactNumbers } = objectDetails;
+    const { imagePath, contactNumbers } = objectDetails;
 
     const percentButton = <PercentButton isBig={false} />
     const percentButtonLarge = <PercentButton isBig={true} />
@@ -62,7 +63,7 @@ export default function ApartmentsComplexPageRealtor() {
             <Main ref={scrollViewRef} horizontal={false}>
 
                 <Breadcrumbs goBack={true} />
-                <CardPhotoContainer photoCollection={photoLargePath} />
+                <CardPhotoContainer photoCollection={imagePath} />
 
                 <MainButtons>
                     <ComplexButtonToChess

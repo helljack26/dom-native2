@@ -34,7 +34,7 @@ const RenderItem = ({ item }) => {
                 overflow: 'hidden',
                 backgroundColor: 'white',
             }}>
-            <Image source={item.url} style={{ width: '100%', height: 200 }} />
+            <Image source={item} style={{ width: '100%', height: 200 }} />
         </View>
     );
 };

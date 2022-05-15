@@ -95,7 +95,6 @@ const PersonalData = ({ userPersonalData }) => {
             setShowSubmitButton(true)
         } else {
             setShowSubmitButton(false)
-
         }
     }, [isDirty]);
 

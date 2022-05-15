@@ -55,15 +55,15 @@ export default function CardPageUser() {
     const catalogDefined = whichCatalog(category)
     const objectDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
 
-    const { id, photoLargePath } = objectDetails;
+    const { id, imagePath } = objectDetails;
     return (<SafeAreaView style={styles.body}>
 
         <Main
             ref={scrollViewRef}
             horizontal={false}>
             <Breadcrumbs goBack={true} />
-            <CardPhotoContainer photoCollection={photoLargePath} />
-            <CardDetailsContainer details={objectDetails}  complexPath={'ApartmentsComplexPage'}/>
+            <CardPhotoContainer photoCollection={imagePath} />
+            <CardDetailsContainer details={objectDetails} complexPath={'ApartmentsComplexPage'} />
             <CardAgentContainer agentId={id} />
             <CardSimilarObject />
         </Main>

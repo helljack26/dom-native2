@@ -49,14 +49,14 @@ export default function ApartmentsComplexPageUser() {
     const complexApi = apiMocks.ApartmentComplexMockApi;
     const objectDetails = complexApi.find((item) => item.complexId === Number(complexId) && item);
 
-    const { photoLargePath, plans, contactNumbers } = objectDetails;
+    const { imagePath, plans, contactNumbers } = objectDetails;
     return (
         <SafeAreaView >
             <Main
                 ref={scrollViewRef}
                 horizontal={false}>
                 <Breadcrumbs goBack={true} />
-                <CardPhotoContainer photoCollection={photoLargePath} />
+                <CardPhotoContainer photoCollection={imagePath} />
                 <MainButtons>
                     <ComplexButtonToChess
                         screenName='ScreenUser'

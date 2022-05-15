@@ -7,11 +7,7 @@ export const SimilarMockApi =
             price: 227699000,
             location: "Краснодарский край, Сочи, микрорайон Новый Сочи, пер. Рахманинова",
             size: "5 комнат • 280 м² • 7,5 соток",
-            photoSmallPath: require('../../../assets/houses/house_small_3.png'),
-            photoLargePath: [
-                { url: require('../../../assets/houses/house_small_3.png') },
-                { url: require('../../../assets/houses/house_small_1.png') },
-            ],
+            imagePath: [require('../../../assets/houses/house_small_3.png'), require('../../../assets/houses/house_small_1.png')],
             favoriteNumber: 5,
             viewNumber: 2650,
             percentageText: 'Процент на ипотеку',
@@ -40,11 +36,7 @@ export const SimilarMockApi =
             priceAfter: '/мес',
             location: "Краснодарский край, Сочи, р-н Центральный, мкр. Мамайка, ул. Волжская, 34/3",
             size: "47 м²",
-            photoSmallPath: require('../../../assets/rent_mock/rent_1.png'),
-            photoLargePath: [
-                { url: require('../../../assets/rent_mock/rent_1.png') },
-                { url: require('../../../assets/rent_mock/rent_4.png') },
-            ],
+            imagePath: [require('../../../assets/rent_mock/rent_1.png'), require('../../../assets/rent_mock/rent_4.png')],
             favoriteNumber: 25,
             viewNumber: 281,
             percentageText: 'Процент на ипотеку',
@@ -69,11 +61,7 @@ export const SimilarMockApi =
             price: 8430000,
             location: "жилой район Адлер, ул. Просвещения, 74Б • р-н Хостинский",
             size: "1 комната · 75 м²",
-            photoSmallPath: require('../../../assets/apartment/appartment_2.png'),
-            photoLargePath: [
-                { url: require('../../../assets/apartment/appartment_2.png') },
-                { url: require('../../../assets/detail_card/2.png') }
-            ],
+            imagePath: [require('../../../assets/apartment/appartment_2.png'), require('../../../assets/detail_card/2.png')],
             favoriteNumber: 9,
             viewNumber: 341,
             itemStatus: 'Новинка',

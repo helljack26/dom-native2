@@ -57,7 +57,7 @@ export default function CardPageRealtor() {
     const catalogDefined = whichCatalog(category)
     const objectDetails = catalogDefined.find((item) => item.id === Number(itemId) && item);
 
-    const { id, photoLargePath } = objectDetails;
+    const { id, imagePath } = objectDetails;
     const percentButton = <PercentButton isBig={false} />
     const percentButtonLarge = <PercentButton isBig={true} />
     return (
@@ -67,8 +67,8 @@ export default function CardPageRealtor() {
                 horizontal={false}
             >
                 <Breadcrumbs goBack={true} />
-                <CardPhotoContainer photoCollection={photoLargePath} />
-                <CardDetailsContainer details={objectDetails} percentButtonLarge={percentButtonLarge} complexPath={'ApartmentsComplexPageRealtor'}/>
+                <CardPhotoContainer photoCollection={imagePath} />
+                <CardDetailsContainer details={objectDetails} percentButtonLarge={percentButtonLarge} complexPath={'ApartmentsComplexPageRealtor'} />
                 <CardSaveButton />
                 <CardAgentContainer agentId={id} />
                 <CardSimilarObject percentButton={percentButton} />

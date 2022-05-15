@@ -1,124 +1,64 @@
-import styled from "styled-components";
-import C from 'res/colors'
-import F from 'res/fonts'
-import { M } from 'res/mixin'
+import styled from 'styled-components/native';
+import C from '@/res/colors'
+import F from '@/res/fonts'
+import { M } from '@/res/mixin'
 
-const Container = styled.div`
-padding: 0px 10px;
-margin: 0 auto;
-margin-top: -38px;
+const Container = styled.View`
 width: 100%;
-max-width: 1200px;
-@media screen and (max-width: 1099px) {
-padding: 0px 0px;
-}
-@media screen and (max-width: 992px) {
-margin-top: -20px;
-}
-@media screen and (max-width: 576px) {
-margin-top:0px;
-}
 `;
-const ContainerBlock = styled.div`
+const ContainerBlock = styled.View`
 width: 100%;
 display: flex;
 flex-direction: column;
-row-gap: 26px;
 margin-top: 20px;
-@media screen and (max-width: 992px) {
-margin-top: 28px;
-}
-@media screen and (max-width: 768px) {
-margin-top: 17px;
-}
-@media screen and (max-width: 576px) {
-grid-template-columns: 1fr;
-margin-top: 25px;
-}
-@media screen and (max-width: 400px) {
-
-}
 `;
 
-const ContainerHeader = styled.div`
+const ContainerHeader = styled.View`
 width: 100%;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: space-between;
-column-gap: 14px;
-
-position: relative;
-@media screen and (max-width: 610px) {
-flex-direction: column-reverse;   
-row-gap: 30px;
-}
-@media screen and (max-width: 400px) {
-row-gap: 20px;
-}
 `;
-const ContainerHeaderBlock = styled.div`
+const ContainerHeaderBlock = styled.View`
 
 `;
 const HeaderText = styled(M.HeaderH1)`
-font-size: 22px;
-@media screen and (max-width: 450px) {
 font-size: 20px;
-}
+
 `;
-const ContainerBlockRow = styled.div`
+const ContainerBlockRow = styled.View`
 `;
-const ContainerBlockRowTitle = styled.span`
-font-size: 17px;
+const ContainerBlockRowTitle = styled.Text`
 font-family: ${F.light};
 color: ${C.secondBlack};
 margin-right: 4px;
-@media screen and (max-width: 450px) {
 font-size: 15px;
-}
+
 `;
-const ContainerBlockRowValue = styled.span`
-font-size: 17px;
+const ContainerBlockRowValue = styled.Text`
 font-family: ${F.light};
 color: ${C.mainBlack};
-@media screen and (max-width: 450px) {
 font-size: 15px;
-}
 `;
 
-const LinkToAddNewObject = styled.button`
-padding: 15px 28px;
-min-width: 350px;
-width: 350px;
+const LinkToAddNewObject = styled.TouchableOpacity`
+padding: 15px 0px;
 background-color: ${C.mainBlue};
 border-radius: 4px;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: row;
-transition: all 0.3s ease-in-out;
-&:hover{
-background-color: ${C.hoverBlue};
-}
-@media screen and (max-width: 500px) {
-&:hover{
-background-color: ${C.mainBlue};
-}
-}
-@media screen and (max-width: 450px) {
-min-width: 100%;
 width: 100%;
-}
 `;
-const LinkToAddNewObjectText = styled.span`
+const LinkToAddNewObjectText = styled.Text`
 color: white;
 font-size: 13px;
 font-weight: 100;
-white-space: nowrap;
 font-family: ${F.regular};
-user-select: none;
 `;
 
-const DropApartmentTypeBlock = styled.div`
+const DropApartmentTypeBlock = styled.View`
 min-width: 350px;
 width: 350px;
 @media screen and (max-width: 450px) {
@@ -126,23 +66,15 @@ min-width: 100%;
 width: 100%;
 }
 `;
-const Drop = styled.div`
+const Drop = styled.View`
 margin-top: 8px;
 position: relative;
-cursor: pointer;
 color: ${C.secondBlack};
 background-color: white;
 border-radius: 5px;
 border: 1px solid ${C.borderGray};
-user-select: none;
-&:focus {
-outline: none;
-}
-&:hover {
-background-color: whitesmoke;
-}
 `;
-const DropHeader = styled.span`
+const DropHeader = styled.Text`
 background-color: white;
 width: 100%;
 display: flex;
@@ -154,7 +86,6 @@ background-position-x: calc(100% - 15px);
 background-position-y: 50%;
 transition: all 0.3s ease-in-out;
 padding-left: 13px;
-white-space: nowrap;
 padding-right: 20px;
 align-items: center;
 border: none;
@@ -171,7 +102,7 @@ background-color: rgba(241, 241, 241, 0.466);
 font-size: 15px;
 }
 `;
-const DropContainer = styled.div`
+const DropContainer = styled.View`
 width: 100%;
 position: absolute;
 top: 100%;

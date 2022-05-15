@@ -30,7 +30,7 @@ const {
 const CollectionItem = ({ data }) => {
     const { collectionId, collectionName, collectionItems } = data;
 
-    const imageCollectionItem = collectionItems[0].photoSmallPath;
+    const imageCollectionItem = collectionItems[0].imagePath[0];
     const numberOfCollectionItem = collectionItems.length;
 
     const [rename, setRename] = useState(false);

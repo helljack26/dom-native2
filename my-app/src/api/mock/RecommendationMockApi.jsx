@@ -7,11 +7,7 @@ export const RecommendationMockApi =
             price: 8430000,
             location: "жилой район Адлер, ул. Просвещения, 74Б • р-н Хостинский",
             size: "1 комната · 75 м²",
-            photoSmallPath: require('../../../assets/apartment/appartment_2.png'),
-            photoLargePath: [
-                { url: require('../../../assets/apartment/appartment_2.png') },
-                { url: require('../../../assets/detail_card/2.png') }
-            ],
+            imagePath: [require('../../../assets/apartment/appartment_2.png'), require('../../../assets/detail_card/2.png')],
             favoriteNumber: 9,
             viewNumber: 341,
             itemStatus: 'Новинка',
@@ -49,11 +45,7 @@ export const RecommendationMockApi =
             oldPrice: 3400000,
             location: "жилой район Адлер, ул. Просвещения, 74Б",
             size: "90 м²",
-            photoSmallPath: require('../../../assets/apartment/appartment_3.png'),
-            photoLargePath: [
-                { url: require('../../../assets/apartment/appartment_3.png') },
-                { url: require('../../../assets/detail_card/2.png') }
-            ],
+            imagePath: [require('../../../assets/apartment/appartment_3.png'), require('../../../assets/detail_card/2.png')],
             favoriteNumber: 9,
             viewNumber: 341,
             percentageText: 'Процент на ипотеку',
@@ -89,11 +81,7 @@ export const RecommendationMockApi =
             price: 7887300,
             location: "ул. Ясногорская, стр. 9 р-н Хостинский",
             size: "1 комната · 8,3 м²",
-            photoSmallPath: require('../../../assets/apartment/appartment_1.png'),
-            photoLargePath: [
-                { url: require('../../../assets/apartment/appartment_1.png') },
-                { url: require('../../../assets/detail_card/2.png') }
-            ],
+            imagePath: [require('../../../assets/apartment/appartment_1.png'), require('../../../assets/detail_card/2.png')],
             favoriteNumber: 9,
             viewNumber: 341,
             itemStatus: 'Акция',

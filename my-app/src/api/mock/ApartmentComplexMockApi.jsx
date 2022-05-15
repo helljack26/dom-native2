@@ -5,11 +5,7 @@ export const ApartmentComplexMockApi = [{
     category: 'apartmentsComplex',
     price: 8430000,
     location: "Центр, ул. Конституции, 18, Сочи",
-    photoSmallPath: require('../../../assets/apartment_complex/apartment_complex_1.png'),
-    photoLargePath: [
-        { url: require('../../../assets/apartment_complex/apartment_complex_1.png') },
-        { url: require('../../../assets/apartment/appartment_1.png') }
-    ],
+    imagePath: [require('../../../assets/apartment_complex/apartment_complex_1.png'), require('../../../assets/apartment/appartment_1.png')],
     favoriteNumber: 29,
     viewNumber: 407,
     percentageText: 'Процент на ипотеку',

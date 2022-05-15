@@ -1,10 +1,8 @@
 import React from 'react';
 
-import IMAGES from '@/res/images'
-const { ViewIcon, HeartSmallIcon } = IMAGES;
-
 import { useNavigation } from '@react-navigation/native';
 
+import FavoriteAndViewNumBlock from "@/components/FavoriteAndViewNumBlock";
 import AddToFavoriteButton from '@/components/Buttons/AddToFavoriteButton/AddToFavoriteButton';
 import ShareButton from '@/components/Buttons/ShareButton/ShareButton';
 
@@ -14,12 +12,6 @@ import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 import { styleRecommendationItem } from './styleRecommendationItem'
 import { styleCatalogItem } from './styleCatalogItem'
 const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
-    const isRealtor = percentButton !== undefined ? true : false;
-
-    const isRealtorScreen = isRealtor ? 'ScreenRealtor' : 'ScreenUser'
-    const isRealtorLink = isRealtor ? 'CardPageRealtor' : 'CardPage'
-    const isRealtorHeight = isRealtor ? '97px' : '64px'
-
     // StyleSheet defined first check if recommendation block and after block realtor or user
     const style = isRecommendation !== undefined ? styleRecommendationItem : styleCatalogItem;
     // const style = styleRecommendationItem;
@@ -43,8 +35,6 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
         CatalogItemInfoSize,
         CatalogItemFooter,
         CatalogItemFooterBlock,
-        CatalogItemFooterBlockItem,
-        CatalogItemFooterBlockItemText,
         CatalogItemFooterLink,
         CatalogItemFooterLinkText,
     } = style;
@@ -52,6 +42,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
     // Data
     const {
         id,
+        complexId,
         adTitle,
         price,
         oldPrice,
@@ -59,12 +50,24 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
         location,
         complexName,
         size,
-        photoSmallPath,
+        imagePath,
         inFavorite,
         viewNumber,
         itemStatus,
+        plans,
         favoriteNumber
     } = data;
+
+    const isRealtor = percentButton !== undefined ? true : false;
+
+    const isRealtorScreen = isRealtor ? 'ScreenRealtor' : 'ScreenUser'
+    const isRealtorCardLink = isRealtor ? 'CardPageRealtor' : 'CardPage'
+    const isRealtorComplexLink = isRealtor ? 'ApartmentsComplexPageRealtor' : 'ApartmentsComplexPage'
+
+    const isComplexLink = plans !== undefined ? isRealtorComplexLink : isRealtorCardLink
+    const isComplexId = plans !== undefined ? complexId : id
+
+    const isRealtorHeight = isRealtor ? '97px' : '64px'
 
     const navigation = useNavigation();
 
@@ -76,9 +79,9 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
             <CatalogItemImageBlock
                 onPress={() => {
                     navigation.navigate(isRealtorScreen, {
-                        screen: isRealtorLink,
+                        screen: isComplexLink,
                         params: {
-                            itemId: id,
+                            itemId: isComplexId,
                             category: category,
                         }
                     });
@@ -104,7 +107,7 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                 }
 
                 {/* Item image */}
-                <CatalogItemImage source={photoSmallPath} resizeMode="stretch" />
+                <CatalogItemImage source={imagePath[0]} resizeMode="stretch" />
             </CatalogItemImageBlock>
 
             {/* Item adTitle */}
@@ -126,9 +129,9 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     {adTitle !== undefined && <CatalogItemInfoName
                         onPress={() => {
                             navigation.navigate(isRealtorScreen, {
-                                screen: isRealtorLink,
+                                screen: isComplexLink,
                                 params: {
-                                    itemId: id,
+                                    itemId: isComplexId,
                                     category: category,
                                 }
                             });
@@ -152,27 +155,18 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                 <CatalogItemFooter>
                     <CatalogItemFooterBlock>
 
-                        {favoriteNumber !== undefined && <CatalogItemFooterBlockItem>
-                            <HeartSmallIcon width={10} />
-                            <CatalogItemFooterBlockItemText ellipsizeMode='clip' numberOfLines={1}  >
-                                {favoriteNumber}
-                            </CatalogItemFooterBlockItemText>
-                        </CatalogItemFooterBlockItem >}
-
-                        {viewNumber !== undefined && <CatalogItemFooterBlockItem>
-                            <ViewIcon />
-                            <CatalogItemFooterBlockItemText ellipsizeMode='clip' numberOfLines={1}  >
-                                {viewNumber}
-                            </CatalogItemFooterBlockItemText>
-                        </CatalogItemFooterBlockItem >}
+                        <FavoriteAndViewNumBlock
+                            favoriteNumber={favoriteNumber}
+                            viewNumber={viewNumber}
+                        />
 
                     </CatalogItemFooterBlock>
                     <CatalogItemFooterLink
                         onPress={() => {
                             navigation.navigate(isRealtorScreen, {
-                                screen: isRealtorLink,
+                                screen: isComplexLink,
                                 params: {
-                                    itemId: id,
+                                    itemId: isComplexId,
                                     category: category,
                                 }
                             });

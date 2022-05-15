@@ -127,7 +127,7 @@ const AboutListItem = (props) => {
                 <AboutBlockLiLink
                     onPress={() => {
                         navigation.navigate(`${complexPath}`, {
-                            complexId: value.complexId
+                            itemId: value.complexId
                         });
                     }} >
                     <AboutBlockLiLinkText>

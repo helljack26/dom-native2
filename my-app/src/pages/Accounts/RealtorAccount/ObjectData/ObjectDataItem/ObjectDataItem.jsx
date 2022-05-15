@@ -1,14 +1,20 @@
 import React from "react";
+import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import FavoriteAndViewNumBlock from "components/FavoriteAndViewNumBlock";
-import PercentButton from 'components/Buttons/PercentButton';
-import CardSaveButton from "components/Card/CardSaveButton";
+import FavoriteAndViewNumBlock from "@/components/FavoriteAndViewNumBlock";
+import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
+import CardSaveButton from "@/components/Card/CardSaveButton/CardSaveButton";
 
-import { spaceInPriceValue } from 'components/helpers/spaceInPriceValue'
+import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
 
 // Images
-import IMAGES from 'res/images'
-
+import IMAGES from '@/res/images'
+const {
+    ArchiveIcon,
+    RenameIcon,
+    CrossIcon,
+} = IMAGES;
 // Styles
 import { style } from './style.js'
 const {
@@ -22,6 +28,7 @@ const {
     OldPrice,
     Price,
     CatalogItemInfoName,
+    CatalogItemInfoNameText,
     CatalogItemInfoPlace,
     CatalogItemInfoSize,
     ItemColRightBlock,
@@ -32,16 +39,16 @@ const {
     ItemContainerFooter,
     ItemContainerFooterButtons,
     FooterButton,
-    FooterButtonImage,
     FooterButtonText,
-    HideOnMobile,
 } = style;
 
-const ObjectDataItem = ({ data, pageHash }) => {
+const ObjectDataItem = ({ data, isActiveObject }) => {
+    const navigation = useNavigation();
+
     const {
         id,
         complexId,
-        name,
+        adTitle,
         category,
         oldPrice,
         price,
@@ -61,25 +68,34 @@ const ObjectDataItem = ({ data, pageHash }) => {
     const spacedPrice = spaceInPriceValue(price)
     const spacedOldPrice = spaceInPriceValue(oldPrice)
 
-    const isComplexLink = plans !== undefined ? `#/realtor/complex/${complexId}` : `#/realtor/${category}/${id}`
-    const isActiveObject = pageHash === '#active'
-    // This button after 576px hiding on this component and teleportate to CardSaveButton
-    const TeleportButtonActive = isActiveObject && <FooterButton isTeleportButton={true} as='button' type='button'>
-        <FooterButtonImage height='13px' width='13px' as='img' src={IMAGES.ArchiveIcon} />
-        <FooterButtonText>Архивировать</FooterButtonText>
-    </FooterButton>
+    const isComplexLink = plans !== undefined ? 'ApartmentsComplexPageRealtor' : 'CardPageRealtor'
+    const isComplexId = plans !== undefined ? complexId : id
 
-    const TeleportButtonArchive = !isActiveObject && <FooterButton isTeleportButton={true} isActive={true} as='button' type='button'>
-        <FooterButtonText isActive={true}>Активировать</FooterButtonText>
-    </FooterButton>
+
+    // This button after 576px hiding on this component and teleportate to CardSaveButton
+    // const TeleportButtonActive = 
+
+    // const TeleportButtonArchive = 
 
 
     return (
         <ItemContainer>
             <ItemContainerBlock>
 
-                <ItemColImageBlock href={isComplexLink} >
-                    <img src={imagePath[0]} width='100%' height='100%' alt={name} />
+                <ItemColImageBlock
+                    onPress={() => {
+                        navigation.navigate('ScreenRealtor', {
+                            screen: isComplexLink,
+                            params: {
+                                itemId: isComplexId,
+                                category: category,
+                            }
+                        });
+                    }}
+                >
+                    <Image source={imagePath[0]}
+                        style={{ width: '100%', height: '100%' }}
+                        resizeMode='stretch' />
                 </ItemColImageBlock>
 
                 <ItemContainerItemCol>
@@ -97,8 +113,20 @@ const ObjectDataItem = ({ data, pageHash }) => {
                             </Price>
                         }
 
-                        <CatalogItemInfoName href={isComplexLink} >
-                            {name}
+                        <CatalogItemInfoName
+                            onPress={() => {
+                                navigation.navigate('ScreenRealtor', {
+                                    screen: isComplexLink,
+                                    params: {
+                                        itemId: isComplexId,
+                                        category: category,
+                                    }
+                                });
+                            }}
+                        >
+                            <CatalogItemInfoNameText>
+                                {adTitle}
+                            </CatalogItemInfoNameText>
                         </CatalogItemInfoName>
 
                         {complexName !== undefined && <CatalogItemInfoPlace>{complexName}</CatalogItemInfoPlace>}
@@ -114,6 +142,7 @@ const ObjectDataItem = ({ data, pageHash }) => {
                         <FavoriteAndViewNumBlock
                             favoriteNumber={favoriteNumber}
                             viewNumber={viewNumber}
+                            isForCard={true}
                         />
 
                         <ItemColRightBlockButtons>
@@ -121,8 +150,6 @@ const ObjectDataItem = ({ data, pageHash }) => {
                             <PercentButton isBig={true} />
                             {/* 
                             <MessageButton
-                                as='button'
-                                type='button'
                                 isActive={false}
                             >
                                 <MessageButtonImage
@@ -145,29 +172,33 @@ const ObjectDataItem = ({ data, pageHash }) => {
             </ItemContainerBlock>
 
             <ItemContainerFooter>
-                <CardSaveButton
-                    isForAccount={true}
-                    isActiveObject={isActiveObject}
-                    TeleportButtonActive={TeleportButtonActive}
-                    TeleportButtonArchive={TeleportButtonArchive}
-                />
+                <CardSaveButton isForAccount={true} />
 
                 <ItemContainerFooterButtons>
-                    <HideOnMobile>
-                        {TeleportButtonActive}
-                        {TeleportButtonArchive}
-                    </HideOnMobile>
 
-                    <FooterButton as='button' type='button'>
-                        <FooterButtonImage height='13px' as='img' src={IMAGES.RenameIcon} />
+                    {isActiveObject && <FooterButton
+                    // style={{ marginTop: 30, marginBottom: -10 }}
+                    >
+                        <ArchiveIcon height={13} width={13} />
+                        <FooterButtonText>Архивировать</FooterButtonText>
+                    </FooterButton>}
+
+                    {!isActiveObject && <FooterButton
+                        // style={{ marginTop: 30, marginBottom: -10 }}
+
+                        isActive={true}>
+                        <FooterButtonText isActive={true}>Активировать</FooterButtonText>
+                    </FooterButton>}
+
+
+                    <FooterButton >
+                        <RenameIcon height={13} width={13} />
                         <FooterButtonText >Редактировать</FooterButtonText>
-
                     </FooterButton>
 
-                    <FooterButton as='button' type='button'>
-                        <FooterButtonImage height='10px' as='img' src={IMAGES.CrossIcon} />
+                    <FooterButton >
+                        <CrossIcon height={10} width={10} />
                         <FooterButtonText >Удалить</FooterButtonText>
-
                     </FooterButton>
 
                 </ItemContainerFooterButtons>

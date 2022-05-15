@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { accountRealtorData } from '@/stores/accountRealtorData.js'
 
 import PersonalData from './PersonalData/PersonalData';
-// import ObjectData from './ObjectData/ObjectData';
+import ObjectData from './ObjectData/ObjectData';
 // import EmployeesData from './EmployeesData/EmployeesData';
 // import SubscriptionData from './SubscriptionData/SubscriptionData';
 
@@ -50,6 +50,8 @@ const RealtorAccount = () => {
     } = request;
 
     const [tab, setTab] = useState('');
+
+    // const isObjectData = tab === 'ActiveTab' || tab === 'ArchiveTab'
 
     return (
         <>
@@ -99,7 +101,7 @@ const RealtorAccount = () => {
 
                         {tab === ACCOUNTHASHLINK[0].hash && <PersonalData userPersonalData={userPersonalData} />}
 
-                        {/* {isObjectData && <ObjectData userObject={userObject} hashLinks={ACCOUNTHASHLINK[1]} />} */}
+                        {tab === ACCOUNTHASHLINK[1].hash && <ObjectData userObject={userObject} />}
 
                         {/* {pageHash === ACCOUNTHASHLINK[2].hash.slice(1) && <EmployeesData userEmployees={userEmployees} tabTitle={ACCOUNTHASHLINK[2].title} />} */}
 

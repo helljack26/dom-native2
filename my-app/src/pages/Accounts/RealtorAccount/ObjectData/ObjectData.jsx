@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom"
 import ObjectDataItem from './ObjectDataItem/ObjectDataItem';
-// import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
 // Styles
 import { style } from './style'
@@ -12,35 +11,22 @@ const {
     ContainerBlock,
     SwitchBlock,
     SwitchButton,
-    SwitchBlockButtonTextDesktop,
     SwitchBlockButtonTextMobile,
     ContainerButtonsBlock,
     LinkToAddNewObject,
     LinkToAddNewObjectText,
 } = style;
 
-const ObjectData = ({ userObject, hashLinks }) => {
+const ObjectData = ({ userObject }) => {
+    const navigation = useNavigation();
+
     const {
         userActiveObject,
         userArchiveObject
     } = userObject;
 
-    // Get hash from url if it exist
-    const location = useLocation();
-    const pageHash = location.hash
-
     const [isActiveObject, setIsActiveObject] = useState(true);
 
-    useEffect(() => {
-        // Switch to archive if archive hash
-        if (pageHash === hashLinks.subHash.slice(1)) setIsActiveObject(false)
-    }, [pageHash, hashLinks.subHash]);
-
-    const switchHandler = (bool) => {
-        setIsActiveObject(bool)
-        const hashToSwitch = bool === true ? hashLinks.hash : hashLinks.subHash
-        window.location.hash = `#/realtor/account${hashToSwitch}`
-    }
     // Length for switch buttons
     const userActiveObjectLength = userActiveObject !== undefined && userActiveObject.length
     const userArchiveObjectLength = userArchiveObject !== undefined && userArchiveObject.length
@@ -48,44 +34,38 @@ const ObjectData = ({ userObject, hashLinks }) => {
     const currentObjectData = isActiveObject ? userActiveObject : userArchiveObject;
     return (
         <Container>
+            {/* To page Add new item  */}
+            <LinkToAddNewObject onPress={() => navigation.navigate('Создать Realtor')}>
+                <LinkToAddNewObjectText>
+                    Создать объявление
+                </LinkToAddNewObjectText>
+            </LinkToAddNewObject>
+
+            {/* Switch buttons */}
             <ContainerButtonsBlock>
-                {/* Switch buttons */}
                 <SwitchBlock>
                     <SwitchButton
                         isActiveButton={isActiveObject}
-                        onClick={() => switchHandler(true)}
-                        type='button'
+                        onPress={() => setIsActiveObject(true)}
                     >
-                        <SwitchBlockButtonTextDesktop>
-                            Активные объекты ({userActiveObjectLength})
-                        </SwitchBlockButtonTextDesktop>
-                        <SwitchBlockButtonTextMobile>
+                        <SwitchBlockButtonTextMobile
+                            isActiveButton={isActiveObject}>
                             Активных ({userActiveObjectLength})
                         </SwitchBlockButtonTextMobile>
                     </SwitchButton>
 
                     <SwitchButton
                         isActiveButton={!isActiveObject}
-                        onClick={() => switchHandler(false)}
-                        type='button'
+                        onPress={() => setIsActiveObject(false)}
                     >
-                        <SwitchBlockButtonTextDesktop>
-                            Архивные объекты ({userArchiveObjectLength})
-                        </SwitchBlockButtonTextDesktop>
-                        <SwitchBlockButtonTextMobile>
+                        <SwitchBlockButtonTextMobile
+                            isActiveButton={!isActiveObject}>
                             Архивных ({userArchiveObjectLength})
                         </SwitchBlockButtonTextMobile>
                     </SwitchButton>
                 </SwitchBlock>
 
-                <LinkToAddNewObject
-                    as='a'
-                    href='#/realtor/add'
-                >
-                    <LinkToAddNewObjectText>
-                        Создать объявление
-                    </LinkToAddNewObjectText>
-                </LinkToAddNewObject>
+
             </ContainerButtonsBlock>
 
             <ContainerBlock>
@@ -94,7 +74,7 @@ const ObjectData = ({ userObject, hashLinks }) => {
                         <ObjectDataItem
                             data={item}
                             key={id}
-                            pageHash={pageHash}
+                            isActiveObject={isActiveObject}
                         />)
                 })}
             </ContainerBlock>
