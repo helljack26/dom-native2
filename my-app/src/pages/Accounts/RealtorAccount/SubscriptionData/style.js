@@ -28,7 +28,7 @@ const ContainerHeaderBlock = styled.View`
 
 `;
 const HeaderText = styled(M.HeaderH1)`
-font-size: 20px;
+font-size: 22px;
 
 `;
 const ContainerBlockRow = styled.View`
@@ -79,7 +79,6 @@ font-size: 15px;
 font-weight: 100;
 font-family: ${F.regular};
 `;
-
 const DropApartmentTypeBlock = styled.View`
 width: 100%;
 `;

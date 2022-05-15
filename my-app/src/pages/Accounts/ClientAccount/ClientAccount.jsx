@@ -2,12 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import { accountRealtorData } from '@/stores/accountRealtorData.js'
+import { accountClientData } from '@/stores/accountClientData.js'
 
 import PersonalData from './PersonalData/PersonalData';
 import ObjectData from './ObjectData/ObjectData';
-import EmployeesData from './EmployeesData/EmployeesData';
-import SubscriptionData from './SubscriptionData/SubscriptionData';
 
 // Images
 import IMAGES from '@/res/images'
@@ -15,7 +13,8 @@ const {
     ExitIcon,
 } = IMAGES;
 // Styles
-import { style } from './style'
+import { style } from '../RealtorAccount/style'
+
 const {
     MainContainer,
     Container,
@@ -35,20 +34,17 @@ const ACCOUNTHASHLINK = [
     { title: 'Личные данные', hash: '' },
     { title: 'Мои объекты', hash: 'ActiveTab', subHash: 'ArchiveTab' },
     // {     title: 'Сообщения',     hash: '/#message' },
-    { title: 'Сотрудники', hash: 'Employees' },
-    { title: 'Подписка', hash: 'Subscribtion' },
 ]
 
-const RealtorAccount = () => {
+const ClientAccount = () => {
     const navigation = useNavigation();
-    const request = accountRealtorData(1)
+
+    const request = accountClientData(1)
 
     const {
         userPersonalData,
         userObject,
         // userMessage,
-        userEmployees,
-        userSubscription
     } = request;
 
     const [tab, setTab] = useState('');
@@ -101,25 +97,19 @@ const RealtorAccount = () => {
 
                         {tab === ACCOUNTHASHLINK[1].hash && <ObjectData userObject={userObject} />}
 
-                        {tab === ACCOUNTHASHLINK[2].hash && <EmployeesData userEmployees={userEmployees} tabTitle={ACCOUNTHASHLINK[2].title} />}
-
-                        {tab === ACCOUNTHASHLINK[3].hash && <SubscriptionData userEmployees={userEmployees} userSubscription={userSubscription} tabTitle={ACCOUNTHASHLINK[3].title} />}
-
                     </ContainerBlock>
 
                 </Container>
-
                 <HeaderNavbarLinkText
-                    onPress={() => navigation.navigate('ClientAccountPage')} >
+                    onPress={() => navigation.navigate('RealtorAccountPage')} >
                     <HeaderNavbarLinkText>
-                        Аккаунт клиента
+                        Аккаунт Риелтора
                     </HeaderNavbarLinkText>
                 </HeaderNavbarLinkText>
-
             </MainContainer>
         </>
     )
 }
 
 
-export default RealtorAccount;
+export default ClientAccount;
