@@ -39,7 +39,7 @@ const FloorColumnHeader = styled(Item)`
     height: 32px;
 `;
 const FloorItems = styled(Item)`
-    height: 52px;
+    height: 40px;
 
 `;
 const FloorItemsNumber = styled.Text`

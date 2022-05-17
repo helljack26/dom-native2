@@ -45,7 +45,8 @@ const { HeartSmallIcon, ViewIcon, CrossBlueIcon } = IMAGES;
 const ApartmentPopupBlock = observer((props) => {
     const { popupData, popupClientLeft } = usePopupStore();
     const data = toJS(popupData)
-    console.log('levfff', popupClientLeft);
+    console.log("🚀 ~ file: ApartmentPopupBlock.jsx ~ line 48 ~ ApartmentPopupBlock ~ data", data)
+
     // Props
     const {
         scrollWidth,
@@ -73,6 +74,7 @@ const ApartmentPopupBlock = observer((props) => {
         // roomCount,
     } = data;
 
+    const popupBackGroundRef = useRef(null);
     const popupRef = useRef(null);
     // const scrollIntoView = useScrollIntoView();
 
@@ -84,21 +86,21 @@ const ApartmentPopupBlock = observer((props) => {
 
     const spacedPrice = spaceInPriceValue(adPrice)
     const currencySymbol = currencyType !== undefined ? currencyType : ''
-
+    console.log('прямо перед отображением попапа');
     return (
         <Popup
-            // ref={popupBackGroundRef}
-            clientX={popupClientLeft}
+            ref={popupBackGroundRef}
+            // clientX={popupClientLeft}
             scrollWidth={scrollWidth}
             scrollHeight={scrollHeight}
         >
             <PopupContainer
-            // ref={popupRef}
+                ref={popupRef}
             >
                 <PopupBlock>
                     <PopupHeader>
                         <PopupHeaderNumber>
-                            №{apartmentNumber}
+                            {apartmentNumber !== undefined && '№ ' + apartmentNumber}
                         </PopupHeaderNumber>
 
                     </PopupHeader>

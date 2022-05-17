@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
 import C from '@/res/colors'
+import S from '@/res/strings'
 
 import useComponentVisible from '@/components/helpers/useComponentVisible'
 
@@ -12,7 +13,8 @@ const { spaceInPriceValue } = HELPERS
 // Images
 import IMAGES from '@/res/images'
 
-const { LockGrayIcon } = IMAGES;
+const { LockGrayIcon,
+    CrossGrayIcon } = IMAGES;
 
 // Styles
 import { style } from './style.js'
@@ -28,25 +30,23 @@ const {
 } = style;
 
 const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
+
     const {
         id,
         isSold,
-        roomCount,
-        adPrice,
-        currencyType,
+        propertyArea,
     } = apartmentData;
-
-    const ApartmentSmallCellName = typeof (roomCount) !== 'number' ? roomCount : `${roomCount} кв`
-    const spacedPrice = spaceInPriceValue(adPrice)
-    const currencySymbol = currencyType !== undefined ? currencyType : ''
 
     const marginRight = isLast ? 0 : 8;
 
     const [itemXPosition, setItemXPosition] = useState();
 
+    const [coordinate, setCoordinate] = useState([])
+
     const { setPopupDataStore } = usePopupStore();
 
     const { ref, isComponentVisible, setIsComponentVisible, setLeftOffset } = useComponentVisible(false);
+
 
     // const UIManager = require('NativeModules').UIManager;
     // const handle = React.findNodeHandle(this.refs.ref);
@@ -60,60 +60,42 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
     // TODO остановился на вычислении расстояния относильно ячейки, при скролле берет значение относительно страницы и все что уезжает в лево устанавливает в минус, найти способ как узнать сдвиг относительно родительского контейнера 
 
     const openPopup = () => {
+        // ref.current.scrollTo({ x: coordinate[item.key] - 50 })
         setIsComponentVisible(true)
+        console.log('открываю попап');
         setPopupDataStore(apartmentData)
-        console.log('из копонента', itemXPosition);
-        setLeftOffset(itemXPosition)
+
+        // setLeftOffset(itemXPosition)
     }
 
     switch (isSold) {
         case true:
-            return (<ApartmentSmallCellDisable
-                style={{
-                    marginRight: marginRight,
-                    flexDirection: 'column',
-                }}
-            >
-                <ApartmentSmallCellDisableText>
-                    Квартира
-                </ApartmentSmallCellDisableText>
-                <ApartmentSmallCellDisableText>
-                    продана
-                </ApartmentSmallCellDisableText>
-            </ApartmentSmallCellDisable>)
+            return (
+                <ApartmentSmallCellDisable style={{ marginRight: marginRight, flexDirection: 'column', }}    >
+                    <CrossGrayIcon width={14} height={14} />
+                </ApartmentSmallCellDisable>)
 
         case 'reserved':
-            return (<ApartmentSmallCellReserved
-                style={{ marginRight: marginRight }}
-            >
-                <ApartmentSmallCellCol>
-                    <ApartmentSmallCellHeader
-                        style={{ color: '#a6a6a6' }}
-                    >
-                        {ApartmentSmallCellName}
-                    </ApartmentSmallCellHeader>
-                    <ApartmentSmallCellDisableText
-                        style={{ color: '#a6a6a6' }}
-                    >
-                        Резерв
-                    </ApartmentSmallCellDisableText>
-                </ApartmentSmallCellCol>
-                <ApartmentSmallCellCol>
-                    <LockGrayIcon />
-                </ApartmentSmallCellCol>
-            </ApartmentSmallCellReserved>)
+            return (
+                <ApartmentSmallCellReserved style={{ marginRight: marginRight }}     >
+                    <LockGrayIcon width={14} height={14} />
+                </ApartmentSmallCellReserved>)
         //Available 
         default:
             return (
                 <>
                     <ApartmentSmallCell
                         id={id}
-                        // ref={ref}
                         ref={ref}
                         onPress={() => openPopup()}
                         style={{
                             marginRight: marginRight,
                             borderColor: isComponentVisible === true ? C.mainBlue : C.borderGray
+                        }}
+                        onLayout={(event) => {
+                            const layout = event.nativeEvent.layout;
+                            // coordinate[id] = layout.x;
+                            // console.log(layout.x);
                         }}
                     // onLayout={(event) => {
                     //     event.target.measure(
@@ -122,19 +104,12 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
                     //         },
                     //     );
                     // }}
-                    // onLayout={(event) => {
-                    //     event.target.measure(
-                    //         (x, y, width, height, pageX, pageY) => setItemXPosition(x));
-                    // }}
                     >
                         <ApartmentSmallCellHeader>
-
-                            {/* {ApartmentSmallCellName} */}
-                            {itemXPosition}
+                            {propertyArea}
+                            {itemXPosition} {S.squareMeterSymbol}
                         </ApartmentSmallCellHeader>
-                        <ApartmentSmallCellPrice>
-                            {spacedPrice} {currencySymbol}
-                        </ApartmentSmallCellPrice>
+
                     </ApartmentSmallCell>
                 </>
             )

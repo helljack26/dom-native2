@@ -61,6 +61,7 @@ import LockGrayIcon from '../../assets/icon/lock_gray_icon.svg';
 import CrossIcon from '../../assets/icon/cross_icon.svg';
 import CrossWhiteIcon from '../../assets/icon/cross_white_icon.svg';
 import CrossBlueIcon from '../../assets/icon/cross_blue_icon.svg';
+import CrossGrayIcon from '../../assets/icon/cross_gray_icon.svg';
 import CheckedIcon from '../../assets/icon/checked_icon.svg';
 import CheckIcon from '../../assets/icon/check_icon.svg'
 import DuplicateIcon from '../../assets/icon/duplicate_icon.svg'
@@ -151,6 +152,7 @@ const IMAGES = {
     ArchiveIcon: ArchiveIcon,
     AddEmployeeIcon: AddEmployeeIcon,
     CalendarIcon: CalendarIcon,
+    CrossGrayIcon: CrossGrayIcon,
 
     // Form
     PhoneIcon: PhoneIcon,

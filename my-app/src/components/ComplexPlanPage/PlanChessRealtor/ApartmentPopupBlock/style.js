@@ -3,15 +3,15 @@ import F from '@/res/fonts'
 import C from '@/res/colors'
 
 const Popup = styled.View`
-width: ${props => props.scrollWidth - 8 + 'px'};
-height: ${props => props.scrollHeight - 8 + 'px'};
+width: ${props => props.scrollWidth !== undefined ? props.scrollWidth - 8 + 'px' : 0};
+height: ${props => props.scrollHeight !== undefined ? props.scrollHeight - 8 + 'px' : 0};
 background-color: rgba(236, 236, 236, 0.353);
 border-radius: 8px;
 margin-top: 40px;
 margin-bottom: 25px;
 padding-top: 14px;
 /* padding-left: 800px; */
-padding-left: ${props => props.clientX + 'px'};
+padding-left: ${props => props.clientX !== undefined ? props.clientX + 'px' : 0};
  position: absolute;
  top: 0;
  left: 0;

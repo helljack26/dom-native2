@@ -4,6 +4,7 @@ import C from '@/res/colors'
 
 const Main = styled.ScrollView`
 width: 100%;
+height: 100%;
 background-color: white;
 padding: 0px 4%;
 padding-top: 15px;

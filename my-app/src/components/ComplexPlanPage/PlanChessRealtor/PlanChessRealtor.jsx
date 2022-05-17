@@ -69,6 +69,7 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
 
     const onLayout = (event) => {
         const { width, height } = event.nativeEvent.layout;
+        console.log("🚀 ~ file: PlanChessRealtor.jsx ~ line 72 ~ onLayout ~ width, height", width, height)
 
         setParentContainerWidth(width)
 
@@ -76,8 +77,6 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
         setScrollHeight(height)
         return
     }
-
-
 
     // const CustomScrollView = wrapScrollView(ScrollView);
     return (<>
@@ -130,7 +129,6 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
 
                     {/* Popup */}
                     {popupVisible === true && <ApartmentPopupBlock
-                        // modalVisible={modalVisible}
                         // leftOffset={leftOffset}
                         setPopupHide={setPopupHide}
                         // apartmentData={popupData}
