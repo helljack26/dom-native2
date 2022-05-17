@@ -22,10 +22,13 @@ align-items: center;
 padding: 0px 16px;
 font-family: ${F.light};
 `;
-const DropContainer = styled.View`
+const DropContainer = styled.ScrollView`
 width: 100%;
 position: absolute;
 top: 44px;
+max-height: 180px;
+
+/* overflow: auto; */
 background-color: white;
 left: 0px;
 z-index: 999;
@@ -35,12 +38,16 @@ border-right-color: ${C.borderGray};
 border-right-width: 1px;
 `;
 const OptionsList = styled.View`
-background-color: white;
+height: 100%;
+
+/* background-color: white; */
 width: 100%;
+
 `;
 const Option = styled.TouchableOpacity`
 width: 100%;
 display: flex;
+background-color: ${props => props.isActive === true ? C.backgroundGray : 'white'};
 flex-direction: row;
 align-items: center;
 border-bottom-color: ${C.borderGray};

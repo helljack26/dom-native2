@@ -498,7 +498,7 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
       </DropApartmentTypeBlock>
 
       return (
-            <Form>
+            <Form >
                   <FormRowName>
                         {/*=============== Rent type select  ===============*/}
                         {isRentTab === true && <DropApartmentTypeBlock>
@@ -845,8 +845,7 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
                               {deadlineTypeSelect}
                               {classTypeSelect}
                               <BorderLine></BorderLine>
-                        </FormRowDetailsComplex>
-                        }
+                        </FormRowDetailsComplex>}
 
                         {/* House */}
                         {categoryForSubmit === HouseTab && <FormRowDetailsHouse>
@@ -919,8 +918,7 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
                                     name="dealingProcessing"
                               />
                               <BorderLine></BorderLine>
-                        </FormRowDetailsPlot>
-                        }
+                        </FormRowDetailsPlot>}
 
                         {/* Commerce */}
                         {categoryForSubmit === CommerceTab && <FormRowDetailsCommerce>

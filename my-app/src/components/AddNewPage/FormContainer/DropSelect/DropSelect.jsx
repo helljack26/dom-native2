@@ -61,21 +61,29 @@ const DropSelect = ({ selectOptions, selectedValue, toggling, isOpen, onSelect,
                     </DropHeader>
                 </Drop>
                 {isOpen && (
-                    <DropContainer style={{
-                        zIndex: 999,
-                        elevation: 3
-                    }}>
+                    <DropContainer
+                        nestedScrollEnabled={true}
+                        style={{
+                            zIndex: 999,
+                            elevation: 3
+                        }}>
                         <OptionsList>
                             {!isCurrency && <Option onPress={onSelect('Выбрать')}>
                                 <OptionText>
                                     Выбрать
                                 </OptionText>
                             </Option>}
-                            {selectOptions.map((option, id) => <Option onPress={onSelect(option)} key={id}>
-                                <OptionText>
-                                    {option}
-                                </OptionText>
-                            </Option>
+                            {selectOptions.map((option, id) => {
+                                const isActive = option === selectedValue
+
+                                return <Option
+                                    isActive={isActive}
+                                    onPress={onSelect(option)} key={id}>
+                                    <OptionText>
+                                        {option}
+                                    </OptionText>
+                                </Option>
+                            }
                             )
                             }
                             {isDeadlineSelect === true && <FormDateInputBlock>
