@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useFormState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Image } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
@@ -35,12 +35,9 @@ const {
     FormInput,
     ShowPasswordIconButton,
     ErrorMessage,
-
     ButtonSubmit,
     ButtonSubmitDisabled,
     ButtonSubmitText,
-
-
 } = style;
 
 const PersonalData = ({ userPersonalData }) => {

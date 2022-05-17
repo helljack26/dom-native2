@@ -6,7 +6,6 @@ import { Image } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import C from '@/res/colors'
 
-// import axios from 'axios';
 // Images
 import IMAGES from '@/res/images'
 const {

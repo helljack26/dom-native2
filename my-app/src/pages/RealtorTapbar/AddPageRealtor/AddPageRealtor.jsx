@@ -1,10 +1,9 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import AddNewPage from '@/components/AddNewPage'
+
 
 export default function AddPageRealtor() {
-    return <Text numberOfLines={1}>
-        Добавить объявление
-    </Text>
-
+    return <AddNewPage />
 }
 

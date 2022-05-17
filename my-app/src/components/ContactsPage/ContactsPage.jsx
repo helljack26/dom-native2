@@ -109,7 +109,7 @@ const ContactsPage = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <FormInputBlock>
                             <FormInputLabel>
-                                Ваше имя&nbsp;&nbsp;
+                                Ваше имя
                                 {errors.firstName && <ErrorMessage>Обязательное поле*</ErrorMessage>}
                             </FormInputLabel>
                             <FormInput
@@ -143,7 +143,7 @@ const ContactsPage = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <FormInputBlock>
                             <FormInputLabel>
-                                E-mail&nbsp;&nbsp;
+                                E-mail
                                 {errors.email && <ErrorMessage>{errors.email.message || 'Обязательное поле*'}</ErrorMessage>}
                             </FormInputLabel>
                             <FormInput
@@ -172,7 +172,7 @@ const ContactsPage = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <FormInputBlock>
                             <FormInputLabel>
-                                Сообщение&nbsp;&nbsp;
+                                Сообщение
                                 {errors.message && <ErrorMessage>Обязательное поле*</ErrorMessage>}
                             </FormInputLabel>
                             <FormTextArea

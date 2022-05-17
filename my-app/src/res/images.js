@@ -70,6 +70,7 @@ import ShowPasswordBlueIcon from '../../assets/icon/show_password_blue_icon.svg'
 import ExitIcon from '../../assets/icon/exit_icon.svg'
 import ArchiveIcon from '../../assets/icon/archive_icon.svg'
 import AddEmployeeIcon from '../../assets/icon/add_employee_icon.svg'
+import CalendarIcon from '../../assets/icon/calendar_icon.svg'
 // Form
 import PhoneIcon from '../../assets/icon/phone_icon.svg'
 import MessageIcon from '../../assets/icon/message_icon.svg'
@@ -149,6 +150,7 @@ const IMAGES = {
     ExitIcon: ExitIcon,
     ArchiveIcon: ArchiveIcon,
     AddEmployeeIcon: AddEmployeeIcon,
+    CalendarIcon: CalendarIcon,
 
     // Form
     PhoneIcon: PhoneIcon,

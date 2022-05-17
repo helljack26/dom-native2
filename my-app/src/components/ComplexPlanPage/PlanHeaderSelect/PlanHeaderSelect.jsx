@@ -50,7 +50,8 @@ const PlanHeaderSelect = ({ complexDetails, currentPlanName, screen, planPageLin
                         <AntDesign
                             name={isOpen ? 'up' : 'down'}
                             size={15}
-                            color="black" />
+                            color="black"
+                        />
                     </DropHeader>
                 </Drop>
                 {isOpen && (
