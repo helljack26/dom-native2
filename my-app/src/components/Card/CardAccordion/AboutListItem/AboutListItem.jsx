@@ -11,8 +11,8 @@ const {
 } = style;
 
 const convertObjectKeyToTitle = (titleKey) => {
-    const squareMeter = ' м²'
-    const meter = ' м'
+    const squareMeter = 'м²'
+    const meter = 'м'
     const plotPrefix = ' cоток'
     let title, prefix
     switch (titleKey) {
@@ -100,6 +100,25 @@ const convertObjectKeyToTitle = (titleKey) => {
             break
         case 'complexWaterSupply':
             title = 'Водоснабжение:'
+            break
+        case 'yearWhenAppeared':
+            title = 'Год сдачи:'
+            prefix = 'год'
+            break
+        case 'floorNumber':
+            title = 'Этаж:'
+            break
+        case 'apartmentRoomNumber':
+            title = 'Количество комнат:'
+            break
+        case 'fullFloorNumber':
+            title = 'Этажность:'
+            break
+        case 'propertyRoomNumber':
+            title = 'Количество комнат:'
+            break
+        case 'commerceAppointment':
+            title = 'Назначение:'
             break
 
         default:

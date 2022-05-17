@@ -5,7 +5,9 @@ import { toJS } from "mobx";
 import { usePopupStore } from '@/stores/popupStore';
 // import { useScrollIntoView } from 'react-native-scroll-into-view';
 
-import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+import HELPERS from '@/components/helpers/helpers'
+const { spaceInPriceValue } = HELPERS
+
 import { observer } from "mobx-react-lite";
 import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 import ShareButton from '@/components/Buttons/ShareButton/ShareButton';
@@ -57,15 +59,16 @@ const ApartmentPopupBlock = observer((props) => {
         id,
         category,
         adTitle,
+        currencyType,
         photoUrl,
         apartmentNumber,
-        price,
+        adPrice,
         size,
         favoriteNumber,
         viewNumber,
         inFavorite,
         // isSold,
-        // areaSize,
+        // propertyArea,
         // percentValue,
         // roomCount,
     } = data;
@@ -79,7 +82,8 @@ const ApartmentPopupBlock = observer((props) => {
     //     }
     // }, [popupClientLeft])
 
-    const spacedPrice = spaceInPriceValue(price)
+    const spacedPrice = spaceInPriceValue(adPrice)
+    const currencySymbol = currencyType !== undefined ? currencyType : ''
 
     return (
         <Popup
@@ -112,7 +116,7 @@ const ApartmentPopupBlock = observer((props) => {
 
                         <PopupDetailsCol>
                             <PopupDetailsPrice>
-                                {spacedPrice} $
+                                {spacedPrice} {currencySymbol}
                             </PopupDetailsPrice>
                             <PopupDetailsName>
                                 {adTitle}

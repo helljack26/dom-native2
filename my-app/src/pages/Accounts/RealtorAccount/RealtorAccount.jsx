@@ -4,8 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import { accountRealtorData } from '@/stores/accountRealtorData.js'
 
+import PercentButton from '@/components/Buttons/PercentButton/PercentButton';
 import PersonalData from './PersonalData/PersonalData';
-import ObjectData from './ObjectData/ObjectData';
+import ObjectData from '@/components/Accounts/ObjectData/ObjectData';
 import EmployeesData from './EmployeesData/EmployeesData';
 import SubscriptionData from './SubscriptionData/SubscriptionData';
 
@@ -53,6 +54,7 @@ const RealtorAccount = () => {
 
     const [tab, setTab] = useState('');
 
+    const percentButton = <PercentButton isBig={true} />
     return (
         <>
             <MainContainer>
@@ -99,7 +101,7 @@ const RealtorAccount = () => {
 
                         {tab === ACCOUNTHASHLINK[0].hash && <PersonalData userPersonalData={userPersonalData} />}
 
-                        {tab === ACCOUNTHASHLINK[1].hash && <ObjectData userObject={userObject} />}
+                        {tab === ACCOUNTHASHLINK[1].hash && <ObjectData userObject={userObject} percentButton={percentButton} />}
 
                         {tab === ACCOUNTHASHLINK[2].hash && <EmployeesData userEmployees={userEmployees} tabTitle={ACCOUNTHASHLINK[2].title} />}
 

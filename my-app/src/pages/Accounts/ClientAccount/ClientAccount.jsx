@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { accountClientData } from '@/stores/accountClientData.js'
 
 import PersonalData from './PersonalData/PersonalData';
-import ObjectData from './ObjectData/ObjectData';
+import ObjectData from '@/components/Accounts/ObjectData/ObjectData';
 
 // Images
 import IMAGES from '@/res/images'

@@ -54,7 +54,7 @@ export default function ApartmentsComplexPlanPageRealtor() {
             <PlanHeaderBackButtonMobile
                 onPress={() => {
                     navigation.navigate('ApartmentsComplexPageRealtor', {
-                        complexId: complexId
+                        complexId: complexDetails.complexId
                     });
                 }}
             >
@@ -68,7 +68,7 @@ export default function ApartmentsComplexPlanPageRealtor() {
             <PlanHeaderChess>
                 Шахматки
             </PlanHeaderChess>
-            
+
             <PlanHeaderSelect
                 complexDetails={complexDetails}
                 currentPlanName={planName}

@@ -17,7 +17,7 @@ const {
     LinkToAddNewObjectText,
 } = style;
 
-const ObjectData = ({ userObject }) => {
+const ObjectData = ({ userObject, percentButton }) => {
     const navigation = useNavigation();
 
     const {
@@ -75,6 +75,7 @@ const ObjectData = ({ userObject }) => {
                             data={item}
                             key={id}
                             isActiveObject={isActiveObject}
+                            percentButton={percentButton}
                         />)
                 })}
             </ContainerBlock>

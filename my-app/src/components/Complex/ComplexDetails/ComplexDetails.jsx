@@ -2,7 +2,8 @@ import React from 'react';
 
 import { StyleSheet, View } from 'react-native';
 
-import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+import HELPERS from '@/components/helpers/helpers'
+const { spaceInPriceValue, locationStringCombine } = HELPERS
 
 import CardDetailsButtonBar from '@/components/Card/CardDetailsButtonBar/CardDetailsButtonBar'
 import ComplexAccordion from '../ComplexAccordion/ComplexAccordion'
@@ -27,12 +28,14 @@ const {
 const ComplexDetails = ({ details, percentButtonLarge }) => {
     const {
         adTitle,
-        price,
-        priceAfter,
-        location,
+        adPrice,
+        currencyType,
+        adCity,
+        adStreet,
+        adDistrict,
+        adHouseNumber,
         favoriteNumber,
         viewNumber,
-        totalArea,
         inFavorite,
         isDone,
         // coords,
@@ -40,8 +43,11 @@ const ComplexDetails = ({ details, percentButtonLarge }) => {
         // percentageText,
     } = details;
 
-    const spacedPrice = spaceInPriceValue(price)
-    const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / totalArea))
+    const spacedPrice = spaceInPriceValue(adPrice)
+    // const priceForSquareMeter = spaceInPriceValue(Math.trunc(adPrice / totalArea))
+    const currencySymbol = currencyType !== undefined ? currencyType : ''
+
+    const adLocation = locationStringCombine({ adCity, adStreet, adDistrict, adHouseNumber })
 
     return (
         <Container>
@@ -68,12 +74,14 @@ const ComplexDetails = ({ details, percentButtonLarge }) => {
             </Name_block>
 
             {/* Location */}
-            <Place>{location}</Place>
+            <Place>
+                {adLocation !== undefined && adLocation}
+            </Place>
 
             {/* Price */}
             <Price>
                 <Price_block>
-                    <Price_block_price>от {spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
+                    <Price_block_price>от {spacedPrice} {currencySymbol}</Price_block_price>
                     {/* <Price_block_square_rating>
                         <Price_block_price_square>от {priceForSquareMeter} $ за м²</Price_block_price_square>
                     </Price_block_square_rating> */}

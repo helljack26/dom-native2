@@ -25,7 +25,7 @@ const {
 const ComplexAccordion = ({ details }) => {
     const {
         adTitle,
-        description,
+        adDescription,
         objectContacts,
         objectDetails,
         objectBenefits,
@@ -152,7 +152,7 @@ const ComplexAccordion = ({ details }) => {
                 <ScrollView>
                     <Collapsible collapsed={collapsed3} align="center">
                         <Description>
-                            <Description_text>{description}</Description_text>
+                            <Description_text>{adDescription}</Description_text>
                         </Description>
                     </Collapsible>
                 </ScrollView>

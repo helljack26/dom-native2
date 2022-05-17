@@ -63,7 +63,7 @@ export default function CardPageUser() {
             horizontal={false}>
             <Breadcrumbs goBack={true} />
             <CardPhotoContainer photoCollection={imagePath} />
-            <CardDetailsContainer details={objectDetails} complexPath={'ApartmentsComplexPage'} />
+            <CardDetailsContainer details={objectDetails} complexPath={'ApartmentsComplexPage'} isRent={objectDetails.isRent} />
             <CardAgentContainer agentId={id} />
             <CardSimilarObject />
         </Main>

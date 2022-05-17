@@ -1,12 +1,8 @@
 import React from 'react';
-
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState, useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import { ADDNEWITEMHASHLINK } from '@/res/addNewItemHashLink';
-
-// import { accountRealtorData } from 'stores/accountRealtorData.js'
 
 import FormContainer from './FormContainer/FormContainer';
 
@@ -28,15 +24,12 @@ const {
     RadioText,
 } = style;
 
-// const ADDNEWITEMHASHLINK = [
-//     { title: 'Квартира', hash: 'Apartment', rentHash: 'ApartmentRent' },
-//     { title: 'Жилой комплекс', hash: 'Complex', rentHash: 'ComplexRent' },
-//     { title: 'Дом', hash: 'House', rentHash: 'HouseRent' },
-//     { title: 'Участок', hash: 'Plot', rentHash: 'PlotRent' },
-//     { title: 'Коммерция', hash: 'Commerce', rentHash: 'CommerceRent' },
-// ]
+const AddNewPage = () => {
+    const scrollViewRef = useRef(null)
+    const scrollTop = () => {
+        if (scrollViewRef.current) scrollViewRef.current.scrollTo({ y: 0, animated: false })
+    }
 
-const AddNewPage = ({ urlPrefix }) => {
     const navigation = useNavigation();
     const initialCategoty = ADDNEWITEMHASHLINK[0].hash
     const [categoryForSubmit, setCategoryForSubmit] = useState(initialCategoty);
@@ -47,6 +40,7 @@ const AddNewPage = ({ urlPrefix }) => {
 
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
+            scrollTop()
             setTab(initialCategoty)
             setCategoryForSubmit(initialCategoty)
             setRentTab(false)
@@ -66,7 +60,7 @@ const AddNewPage = ({ urlPrefix }) => {
         setCategoryForSubmit(hash)
     }
     return (
-        <Container>
+        <Container ref={scrollViewRef}>
             <Header>
                 <HeaderText>
                     Разместить объявление

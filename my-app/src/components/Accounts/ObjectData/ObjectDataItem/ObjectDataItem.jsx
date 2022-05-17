@@ -3,9 +3,10 @@ import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import FavoriteAndViewNumBlock from "@/components/FavoriteAndViewNumBlock";
+import CardSaveButton from "@/components/Card/CardSaveButton/CardSaveButton";
 
-import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
-
+import HELPERS from '@/components/helpers/helpers'
+const { spaceInPriceValue, locationStringCombine } = HELPERS
 // Images
 import IMAGES from '@/res/images'
 const {
@@ -15,7 +16,7 @@ const {
 } = IMAGES;
 
 // Styles
-import { style } from '../../../RealtorAccount/ObjectData/ObjectDataItem/style'
+import { style } from './style.js'
 const {
     ItemContainer,
     ItemContainerBlock,
@@ -41,7 +42,7 @@ const {
     FooterButtonText,
 } = style;
 
-const ObjectDataItem = ({ data, isActiveObject }) => {
+const ObjectDataItem = ({ data, isActiveObject, percentButton }) => {
     const navigation = useNavigation();
 
     const {
@@ -49,10 +50,15 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
         complexId,
         adTitle,
         category,
-        oldPrice,
-        price,
+        discountPrice,
+        adPrice,
+        isRent,
+        currencyType,
         complexName,
-        location,
+        adCity,
+        adStreet,
+        adDistrict,
+        adHouseNumber,
         size,
         imagePath,
         favoriteNumber,
@@ -63,8 +69,11 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
 
     // const messageNumber = 0;
 
-    const spacedPrice = spaceInPriceValue(price)
-    const spacedOldPrice = spaceInPriceValue(oldPrice)
+    const spacedPrice = spaceInPriceValue(adPrice)
+    const spacedDiscountPrice = spaceInPriceValue(discountPrice)
+    const currencySymbol = currencyType !== undefined ? currencyType : ''
+
+    const adLocation = locationStringCombine({ adCity, adStreet, adDistrict, adHouseNumber })
 
     const isComplexLink = plans !== undefined ? 'ApartmentsComplexPageRealtor' : 'CardPageRealtor'
     const isComplexId = plans !== undefined ? complexId : id
@@ -75,7 +84,6 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
 
                 <ItemColImageBlock
                     onPress={() => {
-                        // TODO тут сделать что то что бы переходило на роут клиента
                         navigation.navigate('ScreenRealtor', {
                             screen: isComplexLink,
                             params: {
@@ -93,16 +101,14 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
                 <ItemContainerItemCol>
                     <ItemColInfoBlock>
 
-                        {oldPrice !== undefined ? <PriceBlock >
-                            {price !== undefined && <NewPrice>{spacedPrice} $</NewPrice>}
-                            {oldPrice !== undefined && <OldPrice>{spacedOldPrice} $</OldPrice>}
-                        </PriceBlock>
+                        {/* Price */}
+                        {discountPrice !== undefined && adPrice !== undefined ?
+                            <PriceBlock>
+                                {discountPrice !== undefined && <NewPrice>{spacedDiscountPrice} {currencySymbol} {isRent === true && '/мес'}</NewPrice>}
+                                {adPrice !== undefined && <OldPrice>{spacedPrice} {currencySymbol}</OldPrice>}
+                            </PriceBlock>
                             :
-                            price !== undefined &&
-                            <Price>
-                                {plans !== undefined && 'от '}
-                                {spacedPrice} $
-                            </Price>
+                            adPrice !== undefined && <Price>{spacedPrice} {currencySymbol} {isRent === true && '/мес'}</Price>
                         }
 
                         <CatalogItemInfoName
@@ -123,22 +129,23 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
 
                         {complexName !== undefined && <CatalogItemInfoPlace>{complexName}</CatalogItemInfoPlace>}
 
-                        {location !== undefined && <CatalogItemInfoPlace>{location}</CatalogItemInfoPlace>}
+                        {adLocation !== undefined && <CatalogItemInfoPlace>{adLocation}</CatalogItemInfoPlace>}
 
                         {size !== undefined && <CatalogItemInfoSize>{size}</CatalogItemInfoSize>}
 
                     </ItemColInfoBlock>
 
-                    <ItemColRightBlock
-                        style={{ marginTop: 10 }}
-                    >
+                    <ItemColRightBlock>
 
                         <FavoriteAndViewNumBlock
                             favoriteNumber={favoriteNumber}
                             viewNumber={viewNumber}
+                            isForCard={true}
                         />
 
                         <ItemColRightBlockButtons>
+
+                            {percentButton !== undefined && percentButton}
                             {/* 
                             <MessageButton
                                 isActive={false}
@@ -163,6 +170,7 @@ const ObjectDataItem = ({ data, isActiveObject }) => {
             </ItemContainerBlock>
 
             <ItemContainerFooter>
+                <CardSaveButton isForAccount={true} />
 
                 <ItemContainerFooterButtons>
 

@@ -6,7 +6,8 @@ import FavoriteAndViewNumBlock from "@/components/FavoriteAndViewNumBlock";
 import AddToFavoriteButton from '@/components/Buttons/AddToFavoriteButton/AddToFavoriteButton';
 import ShareButton from '@/components/Buttons/ShareButton/ShareButton';
 
-import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+import HELPERS from '@/components/helpers/helpers'
+const { spaceInPriceValue, locationStringCombine, sizeStringCombine } = HELPERS
 
 // Styles
 import { styleRecommendationItem } from './styleRecommendationItem'
@@ -44,19 +45,26 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
         id,
         complexId,
         adTitle,
-        price,
-        oldPrice,
+        discountPrice,
+        currencyType,
+        adPrice,
+        isRent,
         category,
-        location,
+        adCity,
+        adStreet,
+        adDistrict,
+        adHouseNumber,
         complexName,
-        size,
         imagePath,
         inFavorite,
         viewNumber,
         itemStatus,
         plans,
-        favoriteNumber
+        favoriteNumber,
+        objectDetails
     } = data;
+
+    const { propertyArea, plotArea, apartmentRoomNumber } = objectDetails
 
     const isRealtor = percentButton !== undefined ? true : false;
 
@@ -71,8 +79,12 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
 
     const navigation = useNavigation();
 
-    const spacedPrice = spaceInPriceValue(price)
-    const spacedOldPrice = spaceInPriceValue(oldPrice)
+    const spacedPrice = spaceInPriceValue(adPrice)
+    const spacedDiscountPrice = spaceInPriceValue(discountPrice)
+    const currencySymbol = currencyType !== undefined ? currencyType : ''
+
+    const adLocation = locationStringCombine({ adCity, adStreet, adDistrict, adHouseNumber })
+    const adSize = sizeStringCombine({ propertyArea, apartmentRoomNumber, plotArea })
 
     return (
         <СatalogItem>
@@ -117,13 +129,13 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
                     isRealtorPaddingRight={isRealtor}
                 >
                     {/* Price */}
-                    {oldPrice !== undefined && price !== undefined ?
+                    {discountPrice !== undefined && adPrice !== undefined ?
                         <PriceBlock>
-                            {price !== undefined && <NewPrice>{spacedPrice} $</NewPrice>}
-                            {oldPrice !== undefined && <OldPrice>{spacedOldPrice} $</OldPrice>}
+                            {discountPrice !== undefined && <NewPrice>{spacedDiscountPrice} {currencySymbol} {isRent === true && '/мес'}</NewPrice>}
+                            {adPrice !== undefined && <OldPrice>{spacedPrice} {currencySymbol}</OldPrice>}
                         </PriceBlock>
                         :
-                        price !== undefined && <Price>{spacedPrice} $</Price>
+                        adPrice !== undefined && <Price>{spacedPrice} {currencySymbol} {isRent === true && '/мес'}</Price>
                     }
                     {/* adTitle */}
                     {adTitle !== undefined && <CatalogItemInfoName
@@ -143,12 +155,13 @@ const CatalogBlockItem = ({ data, percentButton, isRecommendation }) => {
 
                     {/* Complex name */}
                     {complexName !== undefined && <CatalogItemInfoPlace>{complexName}</CatalogItemInfoPlace>}
-
                     {/* Location */}
-                    {location !== undefined && <CatalogItemInfoPlace>{location}</CatalogItemInfoPlace>}
+                    <CatalogItemInfoPlace>
+                        {adLocation !== undefined && adLocation}
+                    </CatalogItemInfoPlace>
 
                     {/* Size */}
-                    {size !== undefined && <CatalogItemInfoSize>{size}</CatalogItemInfoSize>}
+                    {adSize !== undefined && <CatalogItemInfoSize>{adSize}</CatalogItemInfoSize>}
                 </CatalogItemInfoBlock>
 
                 {/* Footer */}

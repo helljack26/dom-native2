@@ -27,8 +27,6 @@ width: 100%;
 position: absolute;
 top: 44px;
 max-height: 180px;
-
-/* overflow: auto; */
 background-color: white;
 left: 0px;
 z-index: 999;
@@ -39,10 +37,7 @@ border-right-width: 1px;
 `;
 const OptionsList = styled.View`
 height: 100%;
-
-/* background-color: white; */
 width: 100%;
-
 `;
 const Option = styled.TouchableOpacity`
 width: 100%;

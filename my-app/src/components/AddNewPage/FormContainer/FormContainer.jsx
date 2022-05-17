@@ -209,10 +209,10 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
             // if (data.adDiscountCheckbox === 'true') data.adDiscountCheckbox = true
 
             // Convert to number 
-            if (data.mainPrice !== undefined) data.mainPrice = Number(data.mainPrice)
-            if (data.price !== undefined) data.price = Number(data.price)
+            if (data.adPrice !== undefined) data.adPrice = Number(data.adPrice)
+            if (data.discountPrice !== undefined) data.discountPrice = Number(data.discountPrice)
             if (data.floorNumber !== undefined) data.floorNumber = Number(data.floorNumber)
-            if (data.apartmentRoomNumber !== undefined) data.apartmentRoomNumber = Number(data.apartmentRoomNumber)
+            if (data.propertyRoomNumber !== undefined) data.propertyRoomNumber = Number(data.propertyRoomNumber)
             if (data.propertyArea !== undefined) data.propertyArea = Number(data.propertyArea)
             if (data.yearWhenAppeared !== undefined) data.yearWhenAppeared = Number(data.yearWhenAppeared)
             if (data.distanceToSea !== undefined && data.distanceToSea !== '0') data.distanceToSea = Number(data.distanceToSea)
@@ -281,15 +281,15 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
                                     }}
                                     onChangeText={onChange}
                                     value={value}
-                                    style={{ borderColor: `${errors.apartmentRoomNumber ? 'red' : inputFocus10}` }}
+                                    style={{ borderColor: `${errors.propertyRoomNumber ? 'red' : inputFocus10}` }}
                               />
 
-                              {errors.apartmentRoomNumber && <ErrorMessage>{requiredMessage}</ErrorMessage>}
+                              {errors.propertyRoomNumber && <ErrorMessage>{requiredMessage}</ErrorMessage>}
                         </FormInputContainer>
 
                   </FormInputBlock>
             )}
-            name="apartmentRoomNumber"
+            name="propertyRoomNumber"
       />
 
       // Property area
@@ -564,16 +564,16 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
                                                       }}
                                                       onChangeText={onChange}
                                                       value={value}
-                                                      style={{ borderColor: `${errors.mainPrice ? 'red' : inputFocus2}` }}
+                                                      style={{ borderColor: `${errors.adPrice ? 'red' : inputFocus2}` }}
                                                 />
                                                 <FormInputIcon>{!selectedCurrency ? S.dollarSymbol : selectedCurrency}</FormInputIcon>
 
-                                                {errors.mainPrice && <ErrorMessage>{requiredMessage}</ErrorMessage>}
+                                                {errors.adPrice && <ErrorMessage>{requiredMessage}</ErrorMessage>}
                                           </FormInputContainer>
 
                                     </FormInputBlock>
                               )}
-                              name="mainPrice"
+                              name="adPrice"
                         />
 
                         {/* Discount checkbox не добавлять */}
@@ -611,16 +611,16 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
                                                             }}
                                                             onChangeText={onChange}
                                                             value={value}
-                                                            style={{ borderColor: `${errors.price ? 'red' : inputFocus3}` }}
+                                                            style={{ borderColor: `${errors.discountPrice ? 'red' : inputFocus3}` }}
                                                       />
                                                       <FormInputIcon>{!selectedCurrency ? S.dollarSymbol : selectedCurrency}</FormInputIcon>
 
-                                                      {errors.price && <ErrorMessage>{requiredMessage}</ErrorMessage>}
+                                                      {errors.discountPrice && <ErrorMessage>{requiredMessage}</ErrorMessage>}
                                                 </FormInputContainer>
 
                                           </FormInputBlock>
                                     )}
-                                    name="price"
+                                    name="discountPrice"
                               />
 
                               {/* Currency select */}
@@ -910,12 +910,12 @@ const FormContainer = ({ isRentTab, categoryForSubmit }) => {
                                                       }}
                                                       onChangeText={onChange}
                                                       value={value}
-                                                      style={{ borderColor: `${errors.dealingProcessing ? 'red' : inputFocus17}` }}
+                                                      style={{ borderColor: `${errors.dealProcessing ? 'red' : inputFocus17}` }}
                                                 />
-                                                {errors.dealingProcessing && <ErrorMessage>{requiredMessage}</ErrorMessage>}
+                                                {errors.dealProcessing && <ErrorMessage>{requiredMessage}</ErrorMessage>}
                                           </FormInputBlock>
                                     )}
-                                    name="dealingProcessing"
+                                    name="dealProcessing"
                               />
                               <BorderLine></BorderLine>
                         </FormRowDetailsPlot>}

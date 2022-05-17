@@ -68,7 +68,7 @@ export default function CardPageRealtor() {
             >
                 <Breadcrumbs goBack={true} />
                 <CardPhotoContainer photoCollection={imagePath} />
-                <CardDetailsContainer details={objectDetails} percentButtonLarge={percentButtonLarge} complexPath={'ApartmentsComplexPageRealtor'} />
+                <CardDetailsContainer details={objectDetails} percentButtonLarge={percentButtonLarge} complexPath={'ApartmentsComplexPageRealtor'} isRent={objectDetails.isRent} />
                 <CardSaveButton />
                 <CardAgentContainer agentId={id} />
                 <CardSimilarObject percentButton={percentButton} />

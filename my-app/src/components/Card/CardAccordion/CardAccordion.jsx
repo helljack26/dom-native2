@@ -21,7 +21,7 @@ const {
     Description_text,
 } = styles;
 
-const CardAccordion = ({ objectDetails, description, complexPath }) => {
+const CardAccordion = ({ objectDetails, adDescription, complexPath }) => {
 
     const convertedObjectDetails = prepareObjectKeyValueForListItem(objectDetails)
 
@@ -96,7 +96,7 @@ const CardAccordion = ({ objectDetails, description, complexPath }) => {
                 <ScrollView>
                     <Collapsible collapsed={collapsed2} align="center">
                         <Description>
-                            <Description_text>{description}</Description_text>
+                            <Description_text>{adDescription}</Description_text>
                         </Description>
                     </Collapsible>
                 </ScrollView>

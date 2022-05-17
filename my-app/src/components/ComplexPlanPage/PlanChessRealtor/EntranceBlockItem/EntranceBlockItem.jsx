@@ -6,7 +6,8 @@ import useComponentVisible from '@/components/helpers/useComponentVisible'
 
 import { usePopupStore } from '@/stores/popupStore';
 
-import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+import HELPERS from '@/components/helpers/helpers'
+const { spaceInPriceValue } = HELPERS
 
 // Images
 import IMAGES from '@/res/images'
@@ -31,11 +32,14 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
         id,
         isSold,
         roomCount,
-        price,
+        adPrice,
+        currencyType,
     } = apartmentData;
 
     const ApartmentSmallCellName = typeof (roomCount) !== 'number' ? roomCount : `${roomCount} кв`
-    const spacedPrice = spaceInPriceValue(price)
+    const spacedPrice = spaceInPriceValue(adPrice)
+    const currencySymbol = currencyType !== undefined ? currencyType : ''
+
     const marginRight = isLast ? 0 : 8;
 
     const [itemXPosition, setItemXPosition] = useState();
@@ -129,7 +133,7 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
                             {itemXPosition}
                         </ApartmentSmallCellHeader>
                         <ApartmentSmallCellPrice>
-                            {spacedPrice} $
+                            {spacedPrice} {currencySymbol}
                         </ApartmentSmallCellPrice>
                     </ApartmentSmallCell>
                 </>

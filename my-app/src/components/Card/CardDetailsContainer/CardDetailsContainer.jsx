@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { spaceInPriceValue } from '@/components/helpers/spaceInPriceValue'
+import HELPERS from '@/components/helpers/helpers'
+const { spaceInPriceValue, locationStringCombine } = HELPERS
 
 import CardDetailsButtonBar from '../CardDetailsButtonBar/CardDetailsButtonBar'
 import CardAccordion from '../CardAccordion/CardAccordion'
@@ -20,34 +21,46 @@ const {
     Price,
     Price_block,
     Price_block_price,
+    Price_block_price_new,
+    Price_block_price_old,
     Price_block_square_rating,
     Price_block_price_square,
     Price_block_price_rating,
 } = style;
 
-const CardDetailsContainer = ({ details, percentButtonLarge, complexPath }) => {
+const CardDetailsContainer = ({ details, isRent, percentButtonLarge, complexPath }) => {
     const {
         adTitle,
-        price,
-        priceAfter,
-        location,
+        adPrice,
+        currencyType,
+        discountPrice,
+        adCity,
+        adStreet,
+        adDistrict,
+        adHouseNumber,
         favoriteNumber,
         viewNumber,
-        totalArea,
         inFavorite,
         isNewHouse,
         objectDetails,
-        description,
+        adDescription,
         // coords,
         // agentId,
         // percentageText,
     } = details;
+
     const { propertyArea, plotArea } = objectDetails;
 
-    const spacedPrice = spaceInPriceValue(price)
-    const priceForSquareMeter = spaceInPriceValue(Math.trunc(price / propertyArea))
-    const priceForPlotPart = spaceInPriceValue(Math.trunc(price / plotArea))
+    const spacedPrice = spaceInPriceValue(adPrice)
+    const spacedDiscountPrice = spaceInPriceValue(discountPrice)
+    const currencySymbol = currencyType !== undefined ? currencyType : ''
+
+
+    const priceForSquareMeter = spaceInPriceValue(Math.trunc(adPrice / propertyArea))
+    const priceForPlotPart = spaceInPriceValue(Math.trunc(adPrice / plotArea))
     const isSquareMeter = propertyArea !== undefined && plotArea === undefined
+
+    const adLocation = locationStringCombine({ adCity, adStreet, adDistrict, adHouseNumber })
 
     return (
         <Container>
@@ -74,18 +87,30 @@ const CardDetailsContainer = ({ details, percentButtonLarge, complexPath }) => {
             </Name_block>
 
             {/* Location */}
-            <Place>{location}</Place>
+            <Place>
+                {adLocation !== undefined && adLocation}
+            </Place>
 
             {/* Price */}
             <Price>
                 <Price_block>
-                    <Price_block_price>{spacedPrice} $  {priceAfter !== undefined && priceAfter}</Price_block_price>
+                    {/* Price */}
+                    {discountPrice !== undefined && adPrice !== undefined ?
+                        <Price_block>
+                            {discountPrice !== undefined && <Price_block_price_new>{spacedDiscountPrice} {currencySymbol} {isRent === true && '/мес'}</Price_block_price_new>}
+                            {adPrice !== undefined && <Price_block_price_old>{spacedPrice} {currencySymbol}</Price_block_price_old>}
+                        </Price_block>
+                        :
+                        adPrice !== undefined && <Price_block_price>{spacedPrice} {currencySymbol} {isRent === true && '/мес'}</Price_block_price>
+                    }
+
+                    {/* <Price_block_price> */}
                     <Price_block_square_rating>
                         {/* For square meter property */}
-                        {isSquareMeter && <Price_block_price_square>{priceForSquareMeter} $ за м² &nbsp;·&nbsp; </Price_block_price_square>}
+                        {isSquareMeter && <Price_block_price_square>{priceForSquareMeter} {currencySymbol} за м² &nbsp;·&nbsp; </Price_block_price_square>}
 
                         {/* For plot property */}
-                        {plotArea !== undefined && <Price_block_price_square>{priceForPlotPart} $ за сотку &nbsp;·&nbsp; </Price_block_price_square>}
+                        {plotArea !== undefined && <Price_block_price_square>{priceForPlotPart} {currencySymbol} за сотку &nbsp;·&nbsp; </Price_block_price_square>}
                         <Price_block_price_rating>Ниже рыночной</Price_block_price_rating>
                     </Price_block_square_rating>
                 </Price_block>
@@ -93,7 +118,7 @@ const CardDetailsContainer = ({ details, percentButtonLarge, complexPath }) => {
             </Price>
 
             {/* About object */}
-            <CardAccordion objectDetails={objectDetails} description={description} complexPath={complexPath} />
+            <CardAccordion objectDetails={objectDetails} adDescription={adDescription} complexPath={complexPath} />
 
             {/* Complain link */}
             {percentButtonLarge === undefined && <ComplainLink />}
