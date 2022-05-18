@@ -5,7 +5,10 @@ import S from '@/res/strings'
 
 import useComponentVisible from '@/components/helpers/useComponentVisible'
 
+import ApartmentPopupBlock from '../ApartmentPopupBlock/ApartmentPopupBlock'
+
 import { usePopupStore } from '@/stores/popupStore';
+import { usePopupDataStore } from '@/stores/popupDataStore';
 
 import HELPERS from '@/components/helpers/helpers'
 const { spaceInPriceValue } = HELPERS
@@ -39,31 +42,24 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
 
     const marginRight = isLast ? 0 : 8;
 
+    // const [popupVisible, setPopupVisible] = useState(false);
     const [itemXPosition, setItemXPosition] = useState();
-
-    const [coordinate, setCoordinate] = useState([])
-
-    const { setPopupDataStore } = usePopupStore();
 
     const { ref, isComponentVisible, setIsComponentVisible, setLeftOffset } = useComponentVisible(false);
 
+    // TODO первая попытка остановился на вычислении расстояния относильно ячейки, при скролле берет значение относительно страницы и все что уезжает в лево устанавливает в минус, найти способ как узнать сдвиг относительно родительского контейнера
+    // TODO вторая попытка, попробовать с тем что есть убрать утечку по первому методу из статьи  
+    // https://www.loginradius.com/blog/engineering/how-to-fix-memory-leaks-in-react/#:~:text=Can't%20perform%20a%20React,in%20a%20useEffect%20cleanup%20function.
 
-    // const UIManager = require('NativeModules').UIManager;
-    // const handle = React.findNodeHandle(this.refs.ref);
+    // Popup store
+    const { popupVisibleStore, setPopupVisible } = usePopupStore();
+    const { setPopupData } = usePopupDataStore();
 
-    // UIManager.measureLayoutRelativeToParent(
-    //     handle,
-    //     (e) => { console.error(e) },
-    //     (x, y, w, h) => {
-    //         console.log('offset', x, y, w, h);
-    //     });
-    // TODO остановился на вычислении расстояния относильно ячейки, при скролле берет значение относительно страницы и все что уезжает в лево устанавливает в минус, найти способ как узнать сдвиг относительно родительского контейнера 
 
     const openPopup = () => {
-        // ref.current.scrollTo({ x: coordinate[item.key] - 50 })
+        setPopupData(apartmentData)
         setIsComponentVisible(true)
-        console.log('открываю попап');
-        setPopupDataStore(apartmentData)
+        setPopupVisible(true)
 
         // setLeftOffset(itemXPosition)
     }
@@ -92,25 +88,24 @@ const EntranceBlockItem = observer(({ apartmentData, isOpenPopup, isLast }) => {
                             marginRight: marginRight,
                             borderColor: isComponentVisible === true ? C.mainBlue : C.borderGray
                         }}
+
                         onLayout={(event) => {
-                            const layout = event.nativeEvent.layout;
-                            // coordinate[id] = layout.x;
-                            // console.log(layout.x);
+                            event.target.measure(
+                                (x, y, width, height, pageX, px) => {
+
+                                    setItemXPosition(Math.round(pageX));
+                                },
+                            );
                         }}
-                    // onLayout={(event) => {
-                    //     event.target.measure(
-                    //         (x, y, width, height, pageX, px) => {
-                    //             setItemXPosition(Math.round(px));
-                    //         },
-                    //     );
-                    // }}
                     >
                         <ApartmentSmallCellHeader>
-                            {propertyArea}
-                            {itemXPosition} {S.squareMeterSymbol}
+                            {/* {propertyArea} */}
+                            {itemXPosition}
+                            {/* {S.squareMeterSymbol} */}
                         </ApartmentSmallCellHeader>
 
                     </ApartmentSmallCell>
+
                 </>
             )
     }

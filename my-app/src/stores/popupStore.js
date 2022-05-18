@@ -2,38 +2,39 @@ import React from 'react';
 import { makeAutoObservable, action, observable } from 'mobx';
 
 class PopupStore {
-    popupData = []
-    popupVisible = false
+    popupVisibleStore
     popupClientLeft
     parentContainerWidth
+    parentContainerHeight
+
     constructor() {
         makeAutoObservable(this, {
-            popupData: observable,
-            popupVisible: observable,
+            popupVisibleStore: observable,
             popupClientLeft: observable,
             parentContainerWidth: observable,
+            parentContainerHeight: observable,
 
-            setPopupDataStore: action.bound,
             setPopupVisible: action.bound,
             setPopupClientLeft: action.bound,
             setParentContainerWidth: action.bound,
+            setParentContainerHeight: action.bound,
         })
     }
-    setPopupDataStore(data) {
-        console.log("🚀 ~ file: popupStore.js ~ line 23 ~ PopupStore ~ setPopupDataStore ~ data", data)
-        return this.popupData = data;
-    }
+
     setPopupVisible(boolean) {
-        console.log("🚀 ~ file: popupStore.js ~ line 26 ~ PopupStore ~ setPopupVisible ~ boolean", boolean)
-        return this.popupVisible = boolean;
+        return this.popupVisibleStore = boolean;
     }
     setPopupClientLeft(clientLeft) {
-        console.log("🚀 ~ file: popupStore.js ~ line 30 ~ PopupStore ~ setPopupClientLeft ~ clientLeft", clientLeft)
+        // console.log("🚀 ~ file: popupStore.js ~ line 29 ~ PopupStore ~ setPopupClientLeft ~ clientLeft", clientLeft)
         return this.popupClientLeft = clientLeft;
     }
     setParentContainerWidth(width) {
-        console.log("🚀 ~ file: popupStore.js ~ line 34 ~ PopupStore ~ setParentContainerWidth ~ width", width)
+        // console.log("🚀 ~ file: popupStore.js ~ line 37 ~ PopupStore ~ setParentContainerWidth ~ width", width)
         return this.parentContainerWidth = width;
+    }
+    setParentContainerHeight(height) {
+        // console.log("🚀 ~ file: popupStore.js ~ line 41 ~ PopupStore ~ setParentContainerHeight ~ height", height)
+        return this.parentContainerHeight = height;
     }
 
 }

@@ -43,18 +43,18 @@ const {
 const { HeartSmallIcon, ViewIcon, CrossBlueIcon } = IMAGES;
 
 const ApartmentPopupBlock = observer((props) => {
-    const { popupData, popupClientLeft } = usePopupStore();
-    const data = toJS(popupData)
-    console.log("🚀 ~ file: ApartmentPopupBlock.jsx ~ line 48 ~ ApartmentPopupBlock ~ data", data)
+    const { setPopupVisible } = usePopupStore();
 
     // Props
     const {
         scrollWidth,
         scrollHeight,
-        setPopupHide,
         modalVisible,
-        leftOffset
+        leftOffset,
+        popupData,
     } = props;
+
+    const data = toJS(popupData)
 
     const {
         id,
@@ -86,7 +86,11 @@ const ApartmentPopupBlock = observer((props) => {
 
     const spacedPrice = spaceInPriceValue(adPrice)
     const currencySymbol = currencyType !== undefined ? currencyType : ''
-    console.log('прямо перед отображением попапа');
+
+    const combine = () => {
+        setPopupVisible(false)
+        // setPopupData(undefined)
+    }
     return (
         <Popup
             ref={popupBackGroundRef}
@@ -160,7 +164,7 @@ const ApartmentPopupBlock = observer((props) => {
                         </PopupFooterLink>
                     </PopupFooter>
                     <PopupHeaderClose
-                        onPress={() => setPopupHide()}
+                        onPress={combine()}
                     >
                         <CrossBlueIcon />
                     </PopupHeaderClose>

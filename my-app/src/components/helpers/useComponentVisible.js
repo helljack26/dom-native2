@@ -19,19 +19,20 @@ export default function useComponentVisible(initialIsVisible) {
 
     useEffect(() => {
         if (isComponentVisible) {
-            setPopupVisible(true)
-
+            // setPopupVisible(true)
             // console.log('вотэтокайф',leftOffset);
             // There set popup position
-            // let scrollWidth = parentContainerWidth;
-            // const popupWidth = 300;
-            // const clientLeft = leftOffset
-            // // If not enough place for popup at right, place it left
-            // const isPlaceRightEnough = ((clientLeft + popupWidth) + 200) < scrollWidth;
-            // const placeAtLeftSide = clientLeft - (popupWidth + 15)
-            // // // Condition where placing popup
-            // const left = isPlaceRightEnough === true ? clientLeft + 110 : placeAtLeftSide;
-            // setPopupClientLeft(left)
+            let scrollWidth = parentContainerWidth;
+            const popupWidth = 300;
+            const clientLeft = leftOffset
+            // If not enough place for popup at right, place it left
+            const isPlaceRightEnough = ((clientLeft + popupWidth) + 200) < scrollWidth;
+            const placeAtLeftSide = clientLeft - (popupWidth + 15)
+            console.log("🚀 ~ file: useComponentVisible.js ~ line 31 ~ useEffect ~ placeAtLeftSide", placeAtLeftSide)
+            // // Condition where placing popup
+            const left = isPlaceRightEnough === true ? clientLeft + 110 : placeAtLeftSide;
+            console.log("🚀 ~ file: useComponentVisible.js ~ line 33 ~ useEffect ~ left", left)
+            setPopupClientLeft(left)
             // setIsComponentVisible(initialIsVisible)
             // if (scrollWidth === 0) {
             //     scrollWidth = scrollState.scrollWidth

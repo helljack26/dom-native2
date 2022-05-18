@@ -10,8 +10,7 @@ import EntranceBlock from "./EntranceBlock/EntranceBlock";
 import ApartmentPopupBlock from './ApartmentPopupBlock/ApartmentPopupBlock'
 
 import { usePopupStore } from '@/stores/popupStore';
-// import { wrapScrollView } from 'react-native-scroll-into-view';
-
+import { usePopupDataStore } from '@/stores/popupDataStore';
 
 // Styles
 import { style } from './style'
@@ -57,11 +56,11 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
         return floorColumn;
     }
 
-    // Popup store
-    const { popupVisible, setPopupVisible, setParentContainerWidth } = usePopupStore();
-    const setPopupHide = () => {
-        setPopupVisible(false)
-    }
+    // // Popup store
+    const { popupVisibleStore, setParentContainerHeight, setParentContainerWidth } = usePopupStore();
+    const { popupData } = usePopupDataStore();
+
+    console.log("🚀 ~ file: PlanChessRealtor.jsx ~ line 62 ~ PlanChessRealtor ~ popupVisibleStore", popupVisibleStore)
 
     // Set background size for popup
     const [scrollWidth, setScrollWidth] = useState();
@@ -69,18 +68,21 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
 
     const onLayout = (event) => {
         const { width, height } = event.nativeEvent.layout;
-        console.log("🚀 ~ file: PlanChessRealtor.jsx ~ line 72 ~ onLayout ~ width, height", width, height)
 
         setParentContainerWidth(width)
-
+        setParentContainerHeight(height)
         setScrollWidth(width)
         setScrollHeight(height)
         return
     }
+    const popupComponent = <ApartmentPopupBlock
+        // leftOffset={leftOffset}
+        popupData={popupData}
+        scrollWidth={scrollWidth}
+        scrollHeight={scrollHeight}
+    />
 
-    // const CustomScrollView = wrapScrollView(ScrollView);
     return (<>
-        {/* <CustomScrollView> */}
         <Container >
 
             <FloorIndication />
@@ -127,19 +129,12 @@ const PlanChessRealtor = observer(({ planEntrance }) => {
                         )
                     })}
 
-                    {/* Popup */}
-                    {popupVisible === true && <ApartmentPopupBlock
-                        // leftOffset={leftOffset}
-                        setPopupHide={setPopupHide}
-                        // apartmentData={popupData}
-                        scrollWidth={scrollWidth}
-                        scrollHeight={scrollHeight}
-                    />}
+                    {popupVisibleStore === true ? popupComponent : null}
+
                 </ContainerBlock>
             </ScrollIndicator>
 
         </Container>
-        {/* </CustomScrollView> */}
     </>
     )
 })

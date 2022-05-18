@@ -3,8 +3,10 @@ import F from '@/res/fonts'
 import C from '@/res/colors'
 
 const Popup = styled.View`
-width: ${props => props.scrollWidth !== undefined ? props.scrollWidth - 8 + 'px' : 0};
-height: ${props => props.scrollHeight !== undefined ? props.scrollHeight - 8 + 'px' : 0};
+/* width: ${props => props.scrollWidth !== undefined ? props.scrollWidth - 8 + 'px' : 0}; */
+/* height: ${props => props.scrollHeight !== undefined ? props.scrollHeight - 8 + 'px' : 0}; */
+width: 100%;
+height: 100%;
 background-color: rgba(236, 236, 236, 0.353);
 border-radius: 8px;
 margin-top: 40px;
@@ -14,7 +16,7 @@ padding-top: 14px;
 padding-left: ${props => props.clientX !== undefined ? props.clientX + 'px' : 0};
  position: absolute;
  top: 0;
- left: 0;
+ left: 50px;
 z-index: 998;
 `;
 const PopupContainer = styled.View`
@@ -22,13 +24,15 @@ const PopupContainer = styled.View`
 const PopupBlock = styled.View`
 width: 270px;
 min-height: 330px;
-background-color: white;
+/* background-color: white; */
 border-radius: 8px;
-border: 1px solid ${C.borderGray};
+/* border: 1px solid ${C.borderGray}; */
 display: flex;
 flex-direction:column;
 align-items: center;
 padding: 12px 16px;
+z-index: 998;
+
 
 `;
 const PopupHeader = styled.View`
