@@ -1,4 +1,4 @@
-  ## Real estate Android/Ios app "Dom"
+  ## Real estate Android/IOS app "Dom"
  
  In this project I used:
  - Expo
